@@ -9,7 +9,7 @@ import { SliderComponent } from './home/components/slider/slider.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { BannerComponent } from './shared/banner/banner.component';
-import { ProductsBannerComponent } from './shared/products-banner/products-banner.component';
+import { ServicesBannerComponent } from './shared/services-banner/services-banner.component';
 import { ContactFormComponent } from './contact/components/contact-form/contact-form.component';
 import { NavbarComponent } from './shared/header/navbar/navbar.component';
 
@@ -22,7 +22,7 @@ import { NavbarComponent } from './shared/header/navbar/navbar.component';
     HeaderComponent,
     FooterComponent,
     BannerComponent,
-    ProductsBannerComponent,
+    ServicesBannerComponent,
     ContactFormComponent,
     NavbarComponent,
   ],

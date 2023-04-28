@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductsBannerComponent } from './products-banner.component';
+import { ProductsBannerComponent } from './services-banner.component';
 
 describe('ProductsBannerComponent', () => {
   let component: ProductsBannerComponent;
