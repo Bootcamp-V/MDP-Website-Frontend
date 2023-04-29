@@ -6,71 +6,70 @@
   height: 510px;
   width: 100%;
   position: relative;
+  
 
   .primero {
     display: flex;
     position: absolute;
-    background: url(https://www.mdp.com.pe/wp-content/uploads/2017/05/Desarrollo_software.jpg);
     background-size: cover;
     left: 0;
     width: 30%;
     height: 100%;
     clip-path: polygon(0 0%, 100% 0, 67% 100%, 0% 100%);
+    transition: filter 0.5s ease;
+    filter: grayscale(100%);
+    
+  }
+  .primero:hover{
+    filter: grayscale(0%);
   }
 
   .segundo {
     position: absolute;
-    background: url(https://www.mdp.com.pe/wp-content/uploads/2017/05/Aseguramiento_Calidad.jpg);
     background-size: cover;
     left: 20%;
     width: 35%;
     height: 100%;
     clip-path: polygon(28.5% 0, 100% 0%, 71.5% 100%, 0% 100%);
+    transition: filter 0.5s ease;
+    filter: grayscale(100%);
+  }
+  .segundo:hover{
+    filter: grayscale(0%);
   }
 
   .tercero {
     position: absolute;
-    background: url(https://www.mdp.com.pe/wp-content/uploads/2017/05/escalamiento_agile_empresarial.jpg);
     background-size: cover;
     left: 45%;
     width: 35%;
     height: 100%;
     clip-path: polygon(28.5% 0, 100% 0%, 71.5% 100%, 0% 100%);
+    transition: filter 0.5s ease;
+    filter: grayscale(100%);
+  }
+  .tercero:hover{
+    filter: grayscale(0%);
   }
   .cuarto {
     position: absolute;
-    background: url(https://www.mdp.com.pe/wp-content/uploads/2017/05/talentoMDP.jpg);
     background-size: cover;
     left: 70%;
     width: 30%;
     height: 100%;
     clip-path: polygon(33% 0, 100% 0%, 100% 100%, 0 100%);
+    transition: filter 0.5s ease;
+    filter: grayscale(100%);
   }
-
-  .first {
-    //  border: solid 3px blue;
-    //clip-path: polygon(0 0%, 100% 0, 70% 100%, 0% 100%);/
-    //background-color: red;
+  .cuarto:hover{
+    filter: grayscale(0%);
   }
-
-  .second {
-    //border: solid 1px blue;
-    // clip-path: polygon(30% 0, 100% 0%, 70% 100%, 0% 100%);
-    /// background-color: red;
-  }
-
-  .third {
-    // border: solid 1px blue;
-    // clip-path: polygon(30% 0, 100% 0%, 70% 100%, 0% 100%);
-    // background-color: red;
-  }
-
-  .fourth {
-    // border: solid 1px blue;
-    // clip-path: polygon(30% 0, 100% 0%, 100% 100%, 0 100%);
-    //background-color: red;
+  .img-servicios{
+    width: 100%;
+    height: 100%;
   }
   .btn {
+    z-index: 5;
     position: absolute;
     display: flex;
     width: 100%;
