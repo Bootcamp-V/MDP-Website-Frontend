@@ -1,12 +1,12 @@
 @import "../../../styles/abstracts/variables";
+@import "../../../styles/styles.scss";
 
 .containerServices {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  height: 580px;
+  height: 480px;
   width: 100%;
   position: relative;
-
 
   .primero {
     display: flex;
@@ -18,10 +18,8 @@
     clip-path: polygon(0 0%, 99% 0, 66% 100%, 0% 100%);
     transition: filter 0.5s ease;
     filter: grayscale(100%);
-
-
   }
-  .primero:hover{
+  .primero:hover {
     filter: grayscale(0%);
   }
 
@@ -36,7 +34,7 @@
     transition: filter 0.5s ease;
     filter: grayscale(100%);
   }
-  .segundo:hover{
+  .segundo:hover {
     filter: grayscale(0%);
   }
 
@@ -50,7 +48,7 @@
     transition: filter 0.5s ease;
     filter: grayscale(100%);
   }
-  .tercero:hover{
+  .tercero:hover {
     filter: grayscale(0%);
   }
   .cuarto {
@@ -63,35 +61,82 @@
     transition: filter 0.5s ease;
     filter: grayscale(100%);
   }
-  .cuarto:hover{
+  .cuarto:hover {
     filter: grayscale(0%);
   }
-  .img-servicios{
+  .img-servicios {
     width: 100%;
     height: 100%;
   }
-
-   .info{
-
-   }
-
+  .info {
+  }
 
   .btn {
-    z-index: 1;
     display: flex;
-    width: 100%;
-    height: auto;
+    width: 80px;
+    height: 30px;
+    transform: skew(-9deg);
+    background-color: $background-blue-color;
+    margin-left: 55%;
+    margin-top: 400px;
+    border-radius: 3px;
   }
   .btn-more {
-    display: inline-block;
-
-    justify-content: center;
-    background-color: $background-blue-color;
+    position: absolute;
     color: white;
-    padding: 5px 20px;
-    clip-path: polygon(11% 0, 100% 0%, 90% 100%, 0% 100%);
-    border-top-left-radius: 5px;
-    margin-top:350px ;
-    margin-left: 60%;
+    margin-top: 405px;
+    margin-left: 15.5%;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: "Oswald", sans-serif;
+    z-index: 1;
+  }
+  .btn-2 {
+    display: flex;
+    width: 80px;
+    height: 30px;
+    transform: skew(-9deg);
+    background-color: $background-blue-color;
+    margin-left: 70%;
+    margin-top: 400px;
+    border-radius: 3px;
+  }
+  .btn-more-2 {
+    position: absolute;
+    color: white;
+    margin-top: 405px;
+    margin-left: 19%;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: "Oswald", sans-serif;
+    z-index: 1;
+  }
+  .title {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    bottom: 120px;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+  }
+  .btn-general {
+    display: block;
+    font-size: 25px;
+    color: white;
+    padding: 5px 5px;
+    font-family: "Oswald", sans-serif;
+
+    .btn-title {
+      margin-left: 15%;
+    }
+    .btn-title-2 {
+      margin-left: 30%;
+    }
+    .btn-title-3 {
+      margin-left: 50%;
+    }
+    .btn-title-4 {
+      margin-left: 70%;
+    }
   }
 }
