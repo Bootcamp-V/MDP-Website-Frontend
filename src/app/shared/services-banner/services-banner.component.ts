@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiciosService } from './serviceBanner/servicios.service';
+import { IDataServices, IServices } from './models/service.interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-services-banner',
@@ -8,26 +10,15 @@ import { ServiciosService } from './serviceBanner/servicios.service';
 })
 export class ServicesBannerComponent implements OnInit {
 
-  nombre!: string;
+  services$!:Observable<IServices>;
 
 constructor(private serv: ServiciosService){
 
 }
 
-
-
   ngOnInit(): void {
-  this.serv.getInfoService().subscribe(
-  (res)=>{
-    console.log(res);
-    this.nombre=res.data[0].attributes.name;
-    console.log(this.nombre);
+  this.services$=this.serv.getInfoService();
   }
-  );
-  }
-
-
-
 
 
 }

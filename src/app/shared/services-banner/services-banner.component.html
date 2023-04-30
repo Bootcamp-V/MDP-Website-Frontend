@@ -1,5 +1,6 @@
 
 <div class="containerServices">
+  <ng-container *ngIf="services$ | async as services">
   <div class="primero">
 
     <img class="img-servicios" src="https://www.mdp.com.pe/wp-content/uploads/2017/05/Desarrollo_software.jpg" alt="imh">
@@ -7,7 +8,7 @@
 
   <div class="info">
     <div class="btn">
-      <a class="btn-more" href="*">Ver más</a>
+      <a class="btn-more" href="">Ver más </a>
     </div>
   </div>
 
@@ -17,7 +18,7 @@
 
   <div class="info">
     <div class="btn">
-      <a class="btn-more" href="*">Ver más</a>
+      <a class="btn-more" href="">Ver más</a>
     </div>
   </div>
 
@@ -27,7 +28,7 @@
 
   <div class="info">
     <div class="btn">
-      <a class="btn-more" href="*">Ver más</a>
+      <a class="btn-more" href="">Ver más</a>
     </div>
   </div>
 
@@ -37,8 +38,9 @@
 
   <div class="info">
     <div class="btn">
-      <a class="btn-more" href="*">Ver más</a>
+      <a class="btn-more" href="">Ver más</a>
     </div>
   </div>
-
+</ng-container>
 </div>
+
