@@ -1,4 +1,5 @@
 <footer>
+  <ng-container *ngIf="footer$ | async as f">
   <div class="footer-container">
     <div class="up-footer">
       <div class="last-tweets">
@@ -16,11 +17,6 @@
         <div class="tweet-botton">
       <div class="form-tweet"></div>
         </div>
-
-
-
-
-
 
         <iframe
           id="twitter-widget-0"
@@ -46,13 +42,11 @@
         <ul class="list-contact">
           <li>
             Dirección:
-            <span
-              >Calle Amador Merino Reyna N° 465 interior 1002, San Isidro - Lima
-              - Perú</span
-            >
+            <span>{{f.data[0].attributes.direccion}}</span
+>
           </li>
-          <li>Teléfonos: <span>(511) 412 0570</span></li>
-          <li>Email: <a href="#">servicios@mdp.com.pe </a></li>
+          <li>Teléfonos: <span>{{f.data[0].attributes.telefono}}</span></li>
+          <li>Email: <a href="#">{{f.data[0].attributes.email}}</a></li>
         </ul>
       </div>
     </div>
@@ -60,23 +54,17 @@
     <div class="down-footer">
       <div class="logo-footer">
         <a href="#">
-          <img
-            src="https://www.mdp.com.pe/wp-content/uploads/2017/05/logo_footer_small_3.png"
-            alt=""
-          />
+          <img  src="{{f.data[0].attributes.logoUrl}}" alt="logoMdp"/>
         </a>
         <div class="footer-copy">
-          <span>© 2023 Derechos Reservados</span>
+          <span>© {{f.data[0].attributes.fechaCopyright}} Derechos Reservados</span>
         </div>
       </div>
 
       <div class="social-network-footer">
-        <a><i class="fa-brands fa-facebook-f"></i></a>
-        <a><i class="fa-brands fa-linkedin-in"></i></a>
-        <a><i class="fa-brands fa-twitter"></i></a>
-        <a><i class="fa-brands fa-instagram"></i></a>
-        <a><i class="fa-brands fa-vimeo-v"></i></a>
+        <a *ngFor="let item of f.data[0].attributes.social_networks.data" href="{{item.attributes.url}}"><i class="fa-brands {{item.attributes.icon}}"></i></a>
       </div>
     </div>
   </div>
+</ng-container>
 </footer>
