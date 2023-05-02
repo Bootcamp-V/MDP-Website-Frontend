@@ -8,7 +8,7 @@
   width: 100%;
   position: relative;
 
-  .primero {
+  .services-first {
     display: flex;
     position: absolute;
     background-size: cover;
@@ -18,12 +18,20 @@
     clip-path: polygon(0 0%, 99% 0, 66% 100%, 0% 100%);
     transition: filter 0.5s ease;
     filter: grayscale(100%);
+
+    .container-button {
+      .btn {
+        margin-right: 34%;
+      }
+    }
   }
-  .primero:hover {
+
+  .services-first:hover {
     filter: grayscale(0%);
   }
 
-  .segundo {
+  .services-second {
+    display: flex;
     position: absolute;
     background-size: cover;
     left: 20%;
@@ -34,11 +42,13 @@
     transition: filter 0.5s ease;
     filter: grayscale(100%);
   }
-  .segundo:hover {
+
+  .services-second:hover {
     filter: grayscale(0%);
   }
 
-  .tercero {
+  .services-third {
+    display: flex;
     position: absolute;
     background-size: cover;
     left: 45%;
@@ -48,10 +58,13 @@
     transition: filter 0.5s ease;
     filter: grayscale(100%);
   }
-  .tercero:hover {
+
+  .services-third:hover {
     filter: grayscale(0%);
   }
-  .cuarto {
+
+  .services-fourth {
+    display: flex;
     position: absolute;
     background-size: cover;
     left: 70%;
@@ -60,83 +73,167 @@
     clip-path: polygon(33% 0, 100% 0%, 100% 100%, 0 100%);
     transition: filter 0.5s ease;
     filter: grayscale(100%);
+
+    .container-button {
+      .btn {
+        margin-right: 6%;
+      }
+    }
   }
-  .cuarto:hover {
+
+  .services-fourth:hover {
     filter: grayscale(0%);
   }
+
   .img-servicios {
     width: 100%;
     height: 100%;
   }
-  .info {
+
+  .container-button {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    bottom: 13%;
+
+    .btn {
+      display: flex;
+      width: auto;
+      height: auto;
+
+      background-color: $background-blue-color;
+      transform: skew(-9deg);
+      color: white;
+
+      font-family: "Oswald", sans-serif;
+      justify-content: center;
+      margin-right: 30%;
+    }
+
+    .btn-more {
+      font-size: 13px;
+      transform: skew(9deg);
+      padding: 10px 18px;
+    }
   }
 
-  .btn {
-    display: flex;
-    width: 80px;
-    height: 30px;
-    transform: skew(-9deg);
-    background-color: $background-blue-color;
-    margin-left: 55%;
-    margin-top: 400px;
-    border-radius: 3px;
-  }
-  .btn-more {
-    position: absolute;
-    color: white;
-    margin-top: 405px;
-    margin-left: 15.5%;
-    font-size: 11px;
-    font-weight: bold;
-    font-family: "Oswald", sans-serif;
-    z-index: 1;
-  }
-  .btn-2 {
-    display: flex;
-    width: 80px;
-    height: 30px;
-    transform: skew(-9deg);
-    background-color: $background-blue-color;
-    margin-left: 70%;
-    margin-top: 400px;
-    border-radius: 3px;
-  }
-  .btn-more-2 {
-    position: absolute;
-    color: white;
-    margin-top: 405px;
-    margin-left: 19%;
-    font-size: 11px;
-    font-weight: bold;
-    font-family: "Oswald", sans-serif;
-    z-index: 1;
-  }
   .title {
     position: absolute;
     display: flex;
     width: 100%;
-    height: 50px;
-    bottom: 120px;
+    height: auto;
+    bottom: 25%;
     background-color: rgba($color: #000000, $alpha: 0.3);
-  }
-  .btn-general {
-    display: block;
     font-size: 25px;
     color: white;
     padding: 5px 5px;
     font-family: "Oswald", sans-serif;
+    justify-content: center;
 
-    .btn-title {
-      margin-left: 15%;
+    a {
+      width: 50%;
+      margin: auto;
+      text-align: center;
     }
-    .btn-title-2 {
-      margin-left: 30%;
+
+    .title-right {
+      text-align: right;
     }
-    .btn-title-3 {
-      margin-left: 50%;
+  }
+
+  .title-last {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: auto;
+    bottom: 25%;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    font-size: 25px;
+    color: white;
+    padding: 5px 5px;
+    font-family: "Oswald", sans-serif;
+    justify-content: right;
+
+    a {
+      margin-right: 5%;
     }
-    .btn-title-4 {
-      margin-left: 70%;
+  }
+}
+
+@include tablet {
+  .containerServices {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+    width: 100%;
+    position: relative;
+    gap: 3px;
+
+    .services-first {
+      display: flex;
+      position: relative;
+      left: 0;
+      width: auto;
+
+      clip-path: none;
+
+      .container-button {
+        .btn {
+          margin-right: 0;
+        }
+      }
     }
+
+    .services-second,
+    .services-third {
+      display: flex;
+      position: relative;
+      left: 0;
+      width: auto;
+      clip-path: none;
+    }
+
+    .services-fourth {
+      display: flex;
+      position: relative;
+      left: 0;
+      width: auto;
+      clip-path: none;
+
+      .container-button {
+        .btn {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .container-button {
+      justify-content: center;
+
+      .btn {
+        margin-right: 0;
+      }
+    }
+
+    .title {
+      .title-right {
+        text-align: center;
+      }
+    }
+
+    .title-last {
+      justify-content: center;
+
+      a {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .containerServices {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
