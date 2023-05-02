@@ -11,6 +11,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { BannerComponent } from './shared/banner/banner.component';
 import { ServicesBannerComponent } from './shared/services-banner/services-banner.component';
 import { ContactFormComponent } from './contact/components/contact-form/contact-form.component';
+import { BannerContentRectangleComponent } from './banner-content-rectangle/banner-content-rectangle.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ContactFormComponent } from './contact/components/contact-form/contact-
     FooterComponent,
     BannerComponent,
     ServicesBannerComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    BannerContentRectangleComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
