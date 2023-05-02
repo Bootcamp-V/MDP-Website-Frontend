@@ -1,0 +1,9 @@
+@import "./_variables.scss";
+
+@mixin main_title {
+  font-family: $font-title;
+  color: $title-text-color;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
