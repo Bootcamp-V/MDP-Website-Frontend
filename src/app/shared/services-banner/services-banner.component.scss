@@ -1,6 +1,15 @@
 @import "../../../styles/abstracts/variables";
 @import "../../../styles/styles.scss";
 
+.services-title-general{
+  text-align: center;
+  margin-bottom: 45px;
+  font-size: 24px;
+  font-family: "Oswald", sans-serif;
+  color: $grey-form-text-color;
+  font-weight: 300;
+}
+
 .containerServices {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -45,6 +54,8 @@
 
   .services-second:hover {
     filter: grayscale(0%);
+    transform: scale(1.01);
+    position: absolute;
   }
 
   .services-third {
