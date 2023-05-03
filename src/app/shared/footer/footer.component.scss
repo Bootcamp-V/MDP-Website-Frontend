@@ -8,7 +8,7 @@ footer {
   list-style-type: none;
   text-decoration: none;
   width: 100%;
-  height: 350px;
+  height: 380px;
   background-color: $background-blue-color;
   color: $background-white-color;
   display: flex;
@@ -16,12 +16,11 @@ footer {
 
   .footer-container {
     width: 100%;
-    /*border: red solid 1px;*/
     max-width: 80%;
     margin: auto;
 
     .up-footer {
-      /*border: white solid 1px;*/
+
 
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -35,29 +34,29 @@ footer {
     }
 
     .last-tweets {
-      /* border: solid green;*/
       padding: 0 15px;
       padding-bottom: 30px;
 
       .tweet {
         background-color: $background-grey-color;
-        padding: 15px;
-        border-radius: 3px;
+
+        border-radius: 4px;
         display: flex;
 
-        .tweet-icon {
-          color: rgba(255, 255, 255, 0.5);
-          font-size: 30px;
-          margin-right: 15px;
-          text-align: center;
-        }
-
-        .tweet-text {
+        .frame-twitter{
           font-size: 12px;
           font-family: "Open Sans", Helvetica, sans-serif;
           line-height: 1.7;
           font-style: italic;
+          position: static;
+          visibility: visible;
+          width: 100%;
+          height: 80px;
+          display: block;
+          flex-grow: 1;
         }
+
+
       }
 
       .tweet-botton {
@@ -76,7 +75,6 @@ footer {
     }
 
     .contact {
-      /*border: solid yellow;*/
       padding: 0 15px;
 
       .list-contact {
@@ -91,7 +89,6 @@ footer {
     }
 
     .down-footer {
-      /* border: solid yellow;*/
       padding-top: 60px;
       padding-right: 15px;
       display: flex;
@@ -164,10 +161,10 @@ footer {
 
       .last-tweets {
         .tweet {
-          .tweet-icon {
-            display: flex;
-            align-items: center;
-          }
+
+        .frame-twitter{
+          height: 110px;
+        }
         }
       }
 
