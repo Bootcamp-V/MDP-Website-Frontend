@@ -7,7 +7,7 @@
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
-  background-color: #cd2122;
+  background-color: red;
 }
 
 .logo-container{
@@ -50,19 +50,23 @@
 li{
   float: left;
   color:white;
-  margin-left:5px;
+
   display: block;
   position: relative;
 }
 
 a{
   position: relative;
-  padding: 6px 12px;
+  padding: 6px 15px;
   font-size:18px
 }
 
 .fx-hover:hover {
    background-color: #000124;
+}
+
+.fx-hover-items:hover{
+  background: rgba(0,0,0,.04);
 }
 
 ul.sub-menu {
@@ -121,6 +125,7 @@ ul li ul li {
   font-weight: 400;
   color: #000124;
   font-style: normal;
+  display: flex;
 }
 
 .menu-lista {
