@@ -1,41 +1,27 @@
-<div
-  class="main_container_WeAreMDP h-fit md:px-32 py-12 md:grid grid-cols-2 gap-6"
->
-  <div class="container_info">
-    <p class="title_WeAre">Somos MDP</p>
-    <p>
-      Nos apasiona la tecnología y durante más de 11 años hemos contribuido con
-      nuestra experiencia en las mejores empresas de nuestro país, sin embargo,
-      hemos sido testigos y participes de una nueva era en nuestra empresa,
-      donde la innovación y la investigación nos llevaron a replantearnos
-      nuestra propia esencia y comprometernos con romper el statu quo ofreciendo
-      servicios y soluciones que sean disruptivos desde su concepción.
-    </p>
-    <br />
-    <p>
-      Durante el 2016 e inicios del 2017, nos propusimos ir dos pasos más allá,
-      porque entendimos que uno no era suficiente, iniciando una gran
-      transformación con el objetivo de convertirnos en una empresa bimodal,
-      donde ambos núcleos de negocio están orientados en ofrecer una experiencia
-      de clase mundial para nuestros clientes, por un lado a nivel de la calidad
-      del servicio (núcleo dos - Operaciones ), y por el otro, ofrecer una
-      innovación lineal (Núcleo 1 - TICs Procesos e Innovación) de nuestros
-      servicios o incorporar nuevas soluciones de acuerdo a las últimas
-      tendencias a nivel global, además de esto, buscamos que la tecnología sea
-      un vehículo que cree experiencias en los clientes de nuestros clientes,
-      creemos que esto es un cambio en las reglas de juego y estamos listos para
-      empezar.
-    </p>
+<ng-container *ngIf="dataAbout$ | async as dataAbout">
+  <div
+    class="main_container_WeAreMDP h-fit px-16 md:px-32 py-12 grid grid-rows-2 md:grid-cols-2 gap-6"
+  >
+    <div class="container_info">
+      <p class="title_WeAre">{{ dataAbout.data[0].attributes.title }}</p>
+
+      <p>
+        {{ dataAbout.data[0].attributes.firstDescription }}
+      </p>
+      <br />
+      <p>
+        {{ dataAbout.data[0].attributes.secondDescription }}
+      </p>
+    </div>
+    <div class="container_video_WeAre">
+      <iframe
+        src="https://player.vimeo.com/video/258827665?h=c005fe139d"
+        width="640"
+        height="360"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
   </div>
-  <div class="container_video_WeAre">
-    <iframe
-      class="videoSomosMDP"
-      src="https://player.vimeo.com/video/258827665?h=c005fe139d"
-      width="400"
-      height="360"
-      frameborder="0"
-      allow="autoplay; fullscreen; picture-in-picture"
-      allowfullscreen
-    ></iframe>
-  </div>
-</div>
+</ng-container>
