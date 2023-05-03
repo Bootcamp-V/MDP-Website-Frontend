@@ -62,7 +62,7 @@
       </div>
 
       <div class="social-network-footer">
-        <a *ngFor="let item of f.data[0].attributes.social_networks.data" href="{{item.attributes.url}}"><i class="fa-brands {{item.attributes.icon}}"></i></a>
+        <a target="_blank" *ngFor="let item of f.data[0].attributes.social_networks.data" href="{{item.attributes.url}}"><i class="fa-brands {{item.attributes.icon}}"></i></a>
       </div>
     </div>
   </div>
