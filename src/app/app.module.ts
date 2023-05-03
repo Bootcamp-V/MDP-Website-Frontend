@@ -12,7 +12,7 @@ import { BannerComponent } from './shared/banner/banner.component';
 import { ServicesBannerComponent } from './shared/services-banner/services-banner.component';
 import { ContactFormComponent } from './contact/components/contact-form/contact-form.component';
 import { BannerContentRectangleComponent } from './banner-content-rectangle/banner-content-rectangle.component';
-
+import { SliderImagesModule } from './slider-images/slider-images.module'
 
 @NgModule({
   declarations: [
@@ -25,9 +25,9 @@ import { BannerContentRectangleComponent } from './banner-content-rectangle/bann
     BannerComponent,
     ServicesBannerComponent,
     ContactFormComponent,
-    BannerContentRectangleComponent
+    BannerContentRectangleComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, SliderImagesModule],
   providers: [],
   bootstrap: [AppComponent],
 })

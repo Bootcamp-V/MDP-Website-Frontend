@@ -1,18 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&family=Roboto+Mono&display=swap');
-.banner {
-    width: 100%;
-    height: 100vh;
-    background-color: antiquewhite;
-    position: relative;
-}
-.banner__p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    text-align: center;
-    font-size: 50px;
-    transform: translate(-50%, -50%);
-}
+
+// .banner__p {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     text-align: center;
+//     font-size: 50px;
+//     transform: translate(-50%, -50%);
+// }
 .contentRectangle {
     width: 100%;
     height: 300px;
