@@ -9,6 +9,7 @@ import { SliderComponent } from './home/components/slider/slider.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { BannerComponent } from './shared/banner/banner.component';
+import { NavbarComponent } from './shared/header/navbar/navbar.component';
 import { ServicesBannerComponent } from './shared/services-banner/services-banner.component';
 import { ContactFormComponent } from './contact/components/contact-form/contact-form.component';
 
@@ -21,6 +22,7 @@ import { ContactFormComponent } from './contact/components/contact-form/contact-
     SliderComponent,
     HeaderComponent,
     FooterComponent,
+    NavbarComponent,
     BannerComponent,
     ServicesBannerComponent,
     ContactFormComponent
