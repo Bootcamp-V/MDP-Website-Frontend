@@ -1,1 +1,83 @@
-<p>products-banner works!</p>
+<h1 class="services-title-general">Nuestros Servicios</h1>
+<div class="containerServices">
+  <ng-container *ngIf="services$ | async as services">
+
+  <div class="services-first">
+    <div class="services-first-box">
+    <img
+      class="img-servicios"
+      src="{{services.data[0].attributes.imageUrl}}"
+      alt="{{services.data[0].attributes.name}}"
+    />
+    <div class="title">
+      <a href="*">{{services.data[0].attributes.name}}</a>
+    </div>
+
+    <div class="container-button">
+      <div class="btn">
+        <a class="btn-more" href="">Ver más</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="services-second">
+    <div class="services-second-box">
+      <img
+        class="img-servicios"
+        src="{{services.data[1].attributes.imageUrl}}"
+        alt="{{services.data[1].attributes.name}}"
+      />
+      <div class="title">
+        <a class="title-right" href="*">{{services.data[1].attributes.name}}</a>
+      </div>
+
+      <div class="container-button">
+        <div class="btn">
+          <a class="btn-more" href="">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="services-third">
+    <div class="services-third-box">
+    <img
+      class="img-servicios"
+      src="{{services.data[2].attributes.imageUrl}}"
+      alt="{{services.data[2].attributes.name}}"
+    />
+    <div class="title">
+      <a class="title-right" href="*">{{services.data[2].attributes.name}}</a>
+    </div>
+
+    <div class="container-button">
+      <div class="btn">
+        <a class="btn-more" href="">Ver más</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="services-fourth">
+    <div class="services-fourth-box">
+    <img
+      class="img-servicios"
+      src="{{services.data[3].attributes.imageUrl}}"
+      alt="{{services.data[3].attributes.name}}"
+    />
+    <div class="title-last">
+      <a href="*">{{services.data[3].attributes.name}}</a>
+    </div>
+
+    <div class="container-button">
+      <div class="btn">
+        <a class="btn-more" href="">Ver más</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  </ng-container>
+</div>
+
