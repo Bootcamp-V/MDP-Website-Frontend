@@ -1,1 +1,65 @@
-<p>header works!</p>
+<div class="support_panel support-panel is-opened" id="sliding_panel" [hidden]="!isOpen ">
+  <div class="support-panel-close text-[28px] cursor-pointer
+    absolute text-center" (click)="tooglePanel(false)">
+    &times;
+  </div>
+
+  <div class="support-panel-container w-[80%] py-[15px] mx-auto">
+    <div class="support-panel-widget block mx-[15px] mb-0">
+      <h3 class="widgettitle block text-[14px] font-light relative pb-5">Intranet</h3>
+      <div class="correo-container block">
+        <ul class="menu text-[#000]  list-outside">
+          <li class="menu-item list-item list-outside list-none">
+            <a class=" block py-[5px] relative rounded-sm text-[#747474] leading-relaxed text-[13px]" target="_blank"
+              rel="noopener noreferrer" href="http://mail.mdp.com.pe">
+              Correo
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-wrapper h-auto" id="page-wrapper">
+
+  <header class="site-header">
+
+    <div class="kl-header-bg"></div>
+    <div id="site-header-wrapper sticky-top-area block">
+
+      <div class="site-header-top-wrapper h-[53px] relative">
+
+        <div class="siteheader-container mx-auto w-[80%] px-[15px] relative">
+          <div class="site-header-row flex h-[46px]">
+
+            <div class="socials-content flex flex-wrap justify-start items-center grow shrink">
+
+              <app-socials> </app-socials>
+
+              <div class="mx-[10px] text-white text-[12px] relative">
+                <h1>¿Preguntas? Llámamos al {{phone}} </h1>
+              </div>
+            </div>
+            <div class=" search-content flex justify-end items-center">
+              <div class="flex justify-end items-center">
+
+                <span [hidden]="!isOpen"> <i class="fa-regular fa-circle-xmark fa-xs mr-2 cursor-pointer items-center" style="color: #ffffff;"
+                  (click)="tooglePanel(false)" [hidden]="!isOpen"            
+                  ></i> </span>
+
+                <a class="items-center text-[13px] open-sliding-panel mr-5 ml-0.5" (click)="tooglePanel(true)">
+                  <span class="text-[#f0f0f0] font-semibold opacity-80 hover:opacity-100 cursor-pointer">Intranet</span>
+                </a>
+                <app-search></app-search>
+              </div>
+
+            </div>
+          </div>
+          <div class="separator block h-[1px] my-[3px] bg-[#fff] opacity-20 w-[100%]"></div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+</div>

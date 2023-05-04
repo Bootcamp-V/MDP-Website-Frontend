@@ -11,7 +11,9 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { BannerComponent } from './shared/banner/banner.component';
 import { ServicesBannerComponent } from './shared/services-banner/services-banner.component';
 import { ContactFormComponent } from './contact/components/contact-form/contact-form.component';
-
+import { SocialsComponent } from './shared/header/socials/socials.component';
+import { SearchComponent } from './shared/header/search/search.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -23,10 +25,12 @@ import { ContactFormComponent } from './contact/components/contact-form/contact-
     FooterComponent,
     BannerComponent,
     ServicesBannerComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    SocialsComponent,
+    SearchComponent
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
