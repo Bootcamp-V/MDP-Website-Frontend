@@ -58,6 +58,7 @@
         padding-top: 4px;
         padding-bottom: 4px;
         background-color: #000124;
+        border-radius: 3px;
       }
 
       .fx-hover {
@@ -85,12 +86,12 @@
 
 a {
   position: relative;
-  padding: 6px 6px;
+  padding: 6px 13px;
   font-size: 18px;
 }
 
 .fx-hover-items:hover {
-  background: rgba(0, 0, 0, 0.04);
+  color: #323232;
 }
 
 ul.sub-menu {
@@ -157,9 +158,9 @@ ul li ul li {
   color: #000124;
   font-style: normal;
   padding: 6px 0px;
-  // &:hover {
-  //   color: #323232;
-  // }
+   &:hover {
+
+   }
 }
 
 .menu-lista {
@@ -167,6 +168,7 @@ ul li ul li {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: rgba(0, 0, 0, 0.03);
+
   padding: 0.2rem 1rem;
   &:hover {
     background: rgba(0, 0, 0, 0.04);
