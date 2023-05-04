@@ -9,8 +9,8 @@ import { SlideInterface } from './slider-images/types/slide.interface'
 export class AppComponent {
   title = 'MDP-Website';
   slides: SlideInterface[] = [
-    { url: '/assets/image-1.jpeg', title: 'beach' },
-    { url: '/assets/image-2.jpeg', title: 'boat' },
-    { url: '/assets/image-3.jpeg', title: 'forest' },
+    { url: 'https://www.mdp.com.pe/wp-content/uploads/2018/08/Portada.png', title: 'beach' },
+    { url: 'https://www.mdp.com.pe/wp-content/uploads/2017/05/Portada_MDP.jpg', title: 'boat' },
+    { url: 'https://www.mdp.com.pe/wp-content/uploads/2017/05/nosotros_MDPAgil.jpg', title: 'forest' },
   ];
 }
