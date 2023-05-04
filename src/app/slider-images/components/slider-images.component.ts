@@ -57,6 +57,16 @@ export class SliderImagesComponent implements OnInit, OnDestroy {
   goToSlide(slideIndex: number): void {
     this.resetTimer();
     this.currentIndex = slideIndex;
+    
+    const bars = document.querySelectorAll(".dotsContainer__bar");
+    bars.forEach((bar, index) => {
+      if (index === slideIndex) {
+        bar.classList.add("active");
+      } else {
+        bar.classList.remove("active");
+      }
+    });
+
   }
 
   getCurrentSlideUrl() {
