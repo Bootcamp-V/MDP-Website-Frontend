@@ -44,6 +44,15 @@ export class SliderImagesComponent implements OnInit, OnDestroy {
 
     this.resetTimer();
     this.currentIndex = newIndex;
+
+    const bars = document.querySelectorAll(".dotsContainer__bar");
+    bars.forEach((bar, index) => {
+      if (index === newIndex) {
+        bar.classList.add("active");
+      } else {
+        bar.classList.remove("active");
+      }
+    });
   }
 
   goToNext(): void {
@@ -52,6 +61,16 @@ export class SliderImagesComponent implements OnInit, OnDestroy {
 
     this.resetTimer();
     this.currentIndex = newIndex;
+
+    const bars = document.querySelectorAll(".dotsContainer__bar");
+    bars.forEach((bar, index) => {
+      if (index === newIndex) {
+        bar.classList.add("active");
+      } else {
+        bar.classList.remove("active");
+      }
+    });
+    
   }
 
   goToSlide(slideIndex: number): void {
@@ -80,4 +99,7 @@ export class SliderImagesComponent implements OnInit, OnDestroy {
       behavior: 'smooth' // agrega un efecto de desplazamiento suave
     });
   }
+
+
+ 
 }
