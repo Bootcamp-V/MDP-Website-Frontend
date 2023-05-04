@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 //abstracts
+
 @import "./abstracts/mixins";
 @import "./abstracts/_variables";
 
@@ -9,6 +10,7 @@
 @import "./base/_resets";
 
 //components
+@import "../app/shared/header/navbar/navbar.component.scss";
 
 @import "../app/home/components/about/about.component.scss";
 
