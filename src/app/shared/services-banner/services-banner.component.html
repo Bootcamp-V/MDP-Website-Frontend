@@ -1,16 +1,16 @@
 <h1 class="services-title-general">Nuestros Servicios</h1>
 <div class="containerServices">
-  <!-- <ng-container *ngIf="services$ | async as services">-->
+  <ng-container *ngIf="services$ | async as services">
 
   <div class="services-first">
     <div class="services-first-box">
     <img
       class="img-servicios"
-      src="https://www.mdp.com.pe/wp-content/uploads/2017/05/Desarrollo_software.jpg"
-      alt="imh"
+      src="{{services.data[0].attributes.imageUrl}}"
+      alt="{{services.data[0].attributes.name}}"
     />
     <div class="title">
-      <a href="*">Desarrollo de Software</a>
+      <a href="*">{{services.data[0].attributes.name}}</a>
     </div>
 
     <div class="container-button">
@@ -25,11 +25,11 @@
     <div class="services-second-box">
       <img
         class="img-servicios"
-        src="https://www.mdp.com.pe/wp-content/uploads/2017/05/Aseguramiento_Calidad.jpg"
-        alt=""
+        src="{{services.data[1].attributes.imageUrl}}"
+        alt="{{services.data[1].attributes.name}}"
       />
       <div class="title">
-        <a class="title-right" href="*">Pruebas de Software</a>
+        <a class="title-right" href="*">{{services.data[1].attributes.name}}</a>
       </div>
 
       <div class="container-button">
@@ -44,11 +44,11 @@
     <div class="services-third-box">
     <img
       class="img-servicios"
-      src="https://www.mdp.com.pe/wp-content/uploads/2017/05/escalamiento_agile_empresarial.jpg"
-      alt=""
+      src="{{services.data[2].attributes.imageUrl}}"
+      alt="{{services.data[2].attributes.name}}"
     />
     <div class="title">
-      <a class="title-right" href="*">Consultoria</a>
+      <a class="title-right" href="*">{{services.data[2].attributes.name}}</a>
     </div>
 
     <div class="container-button">
@@ -63,11 +63,11 @@
     <div class="services-fourth-box">
     <img
       class="img-servicios"
-      src="https://www.mdp.com.pe/wp-content/uploads/2017/05/talentoMDP.jpg"
-      alt=""
+      src="{{services.data[3].attributes.imageUrl}}"
+      alt="{{services.data[3].attributes.name}}"
     />
     <div class="title-last">
-      <a href="*">Talento</a>
+      <a href="*">{{services.data[3].attributes.name}}</a>
     </div>
 
     <div class="container-button">
@@ -78,5 +78,5 @@
   </div>
   </div>
 
-  <!-- </ng-container>-->
+  </ng-container>
 </div>
