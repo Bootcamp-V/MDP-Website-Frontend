@@ -17,7 +17,6 @@ import { BannerContentRectangleComponent } from './banner-content-rectangle/bann
 import { SliderImagesModule } from './slider-images/slider-images.module'
 import { SocialsComponent } from './shared/header/socials/socials.component';
 import { SearchComponent } from './shared/header/search/search.component';
-import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
