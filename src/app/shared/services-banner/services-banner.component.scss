@@ -14,7 +14,7 @@
 .containerServices {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  height: 480px;
+  height: 584px;
   width: 100%;
   position: relative;
   z-index: 9;
@@ -136,6 +136,7 @@
   .img-servicios {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 
   .container-button {
@@ -210,6 +211,7 @@
     }
   }
 }
+
 
 @include tablet {
 
