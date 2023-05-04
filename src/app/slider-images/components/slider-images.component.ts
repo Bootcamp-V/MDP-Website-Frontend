@@ -9,6 +9,8 @@ import {
 } from 'rxjs';
 import { SlideInterface } from '../types/slide.interface';
 
+declare const window: Window; 
+
 @Component({
   selector: 'slider-images',
   templateUrl: './slider-images.component.html',
@@ -59,5 +61,13 @@ export class SliderImagesComponent implements OnInit, OnDestroy {
 
   getCurrentSlideUrl() {
     return `url('${this.slides[this.currentIndex].url}')`;
+  }
+
+  scrollDown() {
+    window.scrollBy({
+      top: 500, // ajusta la cantidad de desplazamiento según tus necesidades
+      left: 0,
+      behavior: 'smooth' // agrega un efecto de desplazamiento suave
+    });
   }
 }
