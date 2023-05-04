@@ -1,1 +1,24 @@
-<p>search works!</p>
+<div class="search">
+    <button class="rounded-sm cursor-pointer content-center items-center   
+        h-[30px] w-[30px]  text-center  text-[13px] searchBtn" (click)="toggleSearch()"
+        [ngStyle]="{ 'background-color': searchOpen ? '#f4f4f4': 'rgba(0,0,0,.5)'}"
+        [ngStyle]="{'background-color': (hover && !searchOpen) ? 'black': '#f4f4f4' }"
+        [ngStyle]="{'background-color': (!hover && !searchOpen) ? 'rgba(0,0,0,.5)': 'black' }"
+        (mouseenter)="hover = true" (mouseleave)="hover = false">
+
+        <i class="p-1 opacity-100" [ngClass]="iconName" class="not-italic leading-none text-[12px]"
+            [ngStyle]="{'color': searchOpen ? 'black' : 'white'}"></i>
+    </button>
+
+    <div class="search-container" [hidden]="!searchOpen">
+        <div class="separator block h-[1px] my-[3px] bg-[#fff] opacity-20 w-[100%]"></div>
+
+        <form id="searchform" class="searchform m-0 bg-[#f4f4f4]" action="https://www.mdp.com.pe/">
+            <input class="inputbox bg-[#f4f4f4] py-[5px] 
+        italic cursor-text m-0 text-[#999] " type="text" placeholder="BUSCAR..." />
+            <button type="submit" id="searchsubmit" value="go" class="fas fa-search"
+                style="color: rgb(204, 204, 204)"></button>
+
+        </form>
+    </div>
+</div>

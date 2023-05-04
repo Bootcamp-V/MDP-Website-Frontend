@@ -1,0 +1,12 @@
+.social-navbar a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  transition: all .2s ease-out;
+}
+
+.white-icon {
+  color: white;
+}

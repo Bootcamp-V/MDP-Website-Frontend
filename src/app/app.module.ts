@@ -15,6 +15,9 @@ import { ServicesBannerComponent } from './shared/services-banner/services-banne
 import { ContactFormComponent } from './contact/components/contact-form/contact-form.component';
 import { BannerContentRectangleComponent } from './banner-content-rectangle/banner-content-rectangle.component';
 import { SliderImagesModule } from './slider-images/slider-images.module'
+import { SocialsComponent } from './shared/header/socials/socials.component';
+import { SearchComponent } from './shared/header/search/search.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -28,9 +31,11 @@ import { SliderImagesModule } from './slider-images/slider-images.module'
     ServicesBannerComponent,
     ContactFormComponent,
     BannerContentRectangleComponent,
+    SocialsComponent,
+    SearchComponent
   ],
   imports: [BrowserModule, AppRoutingModule,HttpClientModule,SliderImagesModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
