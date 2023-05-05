@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiciosService } from './serviceBanner/servicios.service';
-import { IDataServices, IServices } from './models/service.interface';
+import {IServices } from './models/service.interface';
 import { Observable } from 'rxjs';
 
 @Component({
