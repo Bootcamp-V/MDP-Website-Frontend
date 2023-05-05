@@ -1,0 +1,30 @@
+<ng-container *ngIf="dataAbout$ | async as dataAbout">
+  <div
+    class="main_container_WeAreMDP h-fit px-16 md:px-32 py-12 grid grid-rows-2 gap-6"
+  >
+    <div class="container_info">
+      <p class="title_WeAre">{{ dataAbout.data[0].attributes.title }}</p>
+
+      <p>
+        {{ dataAbout.data[0].attributes.firstDescription }}
+      </p>
+      <br />
+      <p>
+        {{ dataAbout.data[0].attributes.secondDescription }}
+      </p>
+    </div>
+    <div class="container_video_WeAre">
+      <div class="container-iframe">
+        <iframe
+          itemprop="video"
+          itemtype="https://schema.org/VideoObject"
+          class="youtube-player"
+          src="//player.vimeo.com/video/258827665?autoplay=0&amp;loop=1&amp;controls=1&amp;title=1&amp;byline=1&amp;portrait=1"
+          width="425"
+          height="240"
+          allowFullScreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,34 @@
+* {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.search{
+  position: relative;
+  z-index: 100;
+}
+
+.search-container {
+  position: absolute;
+  right: -10px;
+  padding: 30px;
+  background: #f4f4f4;
+  width: 240px;
+  border-bottom: 1px solid #fff;
+  z-index: 1;
+  line-height: 22.1px;
+  box-shadow: 0 3px 7px rgba(0,0,0,.2);
+  }
+  
+.searchform{
+  font-size: 13px;
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+.inputbox{
+  background: none;
+  border: none;
+  display: inline-block;
+  box-shadow: none;
+  outline: none;
+  height: auto;
+  width: calc(100% - 30px);
+}

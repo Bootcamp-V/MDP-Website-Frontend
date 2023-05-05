@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&family=Roboto+Mono&display=swap");
+
+// .banner__p {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     text-align: center;
+//     font-size: 50px;
+//     transform: translate(-50%, -50%);
+// }
+.contentRectangle {
+  width: 100%;
+  height: 300px;
+  padding-top: 40px;
+  font-family: "Oswald", sans-serif;
+  font-family: "Roboto Mono", monospace;
+}
+.contentRectangle__transform {
+  position: relative;
+  text-align: center;
+  height: 300px;
+  width: 100%;
+  padding: 80px 35px 50px 35px;
+}
+.contentRectangle__transform::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000124;
+  transform: skew(0deg, 2.2deg);
+  border-radius: 6px 6px 0 0;
+  z-index: -1;
+}
+.contentRectangle__transform::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15%;
+  height: 50%;
+  width: 80%;
+  background: #000124;
+  transform: skew(0deg, -1.7deg);
+  border-radius: 6px 6px 0 0;
+  opacity: 0.3;
+  z-index: -5;
+}
+.contentBubleTriangle {
+  position: relative;
+  bottom: 30px;
+  width: 100%;
+  height: 55px;
+  background-color: #000124;
+  border-radius: 0 0 6px 6px;
+  z-index: -10;
+}
+.contentBubleTriangle::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 52px;
+  left: 19%;
+  border-top: 28px solid #000124;
+  border-left: 40px solid transparent;
+  border-radius: 6px;
+}
+
+.contentRectangle__transform-button {
+  backface-visibility: hidden;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  background: #000124;
+  border-radius: 0px;
+  border: 1px solid #fff;
+  border-width: 2px 2px 2px 2px;
+  padding: 5px 25px 5px 25px;
+  font-size: 22px;
+  font-family: Helvetica Neue;
+  font-weight: 600;
+  font-style: normal;
+  border-radius: 6px;
+  color: #fff;
+}
+.contentRectangle__transform-button:hover {
+  border: 1px solid rgb(166, 162, 162);
+  border-width: 2px 2px 2px 2px;
+}
+.contentRectangle__transform-contentText-h4 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 5%;
+  font-weight: 200;
+  font-size: 25px;
+  line-height: 1.4;
+  letter-spacing: -2.8px;
+}
+@media (max-width: 725px) {
+  .contentRectangle__transform {
+    height: 350px;
+  }
+}
+@media (max-width: 465px) {
+  .contentRectangle__transform {
+    height: 390px;
+  }
+}
+@media (max-width: 375px) {
+  .contentRectangle__transform {
+    height: 420px;
+  }
+}
+@media (max-width: 338px) {
+  .contentRectangle__transform {
+    height: 500px;
+  }
+}

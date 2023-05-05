@@ -1,1 +1,10 @@
-<p>socials works!</p>
+ 
+<div class="social-navbar flex justify-start items-center me-2.5 p-0 mr-[10px]">
+  <ul *ngFor="let social of socials_list" class="flex list-none m-0 relative" >
+      <a [href]="social.attributes.url" target="_blank">
+        <i class="white-icon" class="fa-brands {{ social.attributes.icon}}"></i>
+      </a>
+
+  </ul>
+</div>
+   

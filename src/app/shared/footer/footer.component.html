@@ -1,1 +1,80 @@
-<p>footer works!</p>
+<footer>
+  <ng-container *ngIf="footer$ | async as f; else noFooter">
+    <div class="footer-container">
+      <div class="up-footer">
+        <div class="last-tweets">
+          <h2 class="titulo-footer">Últimos Tweets</h2>
+          <div class="tweet">
+
+            <iframe id="twitter-widget-15" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="frame-twitter"  title="Twitter Timeline" src="https://syndication.twitter.com/srv/timeline-profile/screen-name/mdp_consulting?dnt=true&amp;embedId=twitter-widget-15&amp;features=eyJ0ZndfdGltZWxpbmVfbGlzdCI6eyJidWNrZXQiOltdLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X2ZvbGxvd2VyX2NvdW50X3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9iYWNrZW5kIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd19yZWZzcmNfc2Vzc2lvbiI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfZm9zbnJfc29mdF9pbnRlcnZlbnRpb25zX2VuYWJsZWQiOnsiYnVja2V0Ijoib24iLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X21peGVkX21lZGlhXzE1ODk3Ijp7ImJ1Y2tldCI6InRyZWF0bWVudCIsInZlcnNpb24iOm51bGx9LCJ0ZndfZXhwZXJpbWVudHNfY29va2llX2V4cGlyYXRpb24iOnsiYnVja2V0IjoxMjA5NjAwLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3Nob3dfYmlyZHdhdGNoX3Bpdm90c19lbmFibGVkIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd19kdXBsaWNhdGVfc2NyaWJlc190b19zZXR0aW5ncyI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfdXNlX3Byb2ZpbGVfaW1hZ2Vfc2hhcGVfZW5hYmxlZCI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfdmlkZW9faGxzX2R5bmFtaWNfbWFuaWZlc3RzXzE1MDgyIjp7ImJ1Y2tldCI6InRydWVfYml0cmF0ZSIsInZlcnNpb24iOm51bGx9LCJ0ZndfbGVnYWN5X3RpbWVsaW5lX3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9mcm9udGVuZCI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9fQ%3D%3D&amp;frame=false&amp;hideBorder=true&amp;hideFooter=false&amp;hideHeader=true&amp;hideScrollBar=true&amp;lang=en&amp;maxHeight=200px&amp;origin=https%3A%2F%2Fpublish.twitter.com%2F%23&amp;sessionId=441aaac1c1c28fa169a8e82d231bf861dfe92c39&amp;showHeader=false&amp;showReplies=false&amp;theme=dark&amp;transparent=true&amp;widgetsVersion=aaf4084522e3a%3A1674595607486"></iframe>
+          </div>
+
+          <div class="tweet-botton">
+            <div class="form-tweet"></div>
+          </div>
+
+          <iframe
+            id="twitter-widget-0"
+            scrolling="no"
+            frameborder="0"
+            allowtransparency="true"
+            allowfullscreen="true"
+            class="twitter-follow-button twitter-follow-button-rendered"
+            style="
+              position: static;
+              visibility: visible;
+              width: 186px;
+              height: 20px;
+            "
+            title="Twitter Follow Button"
+            src="https://platform.twitter.com/widgets/follow_button.2b2d73daf636805223fb11d48f3e94f7.es.html#dnt=false&amp;id=twitter-widget-0&amp;lang=es&amp;screen_name=mdp_consulting&amp;show_count=false&amp;show_screen_name=true&amp;size=m&amp;time=1682856010490"
+            data-screen-name="mdp_consulting"
+          ></iframe>
+        </div>
+
+        <div class="contact">
+          <h2 class="titulo-footer">Contáctenos</h2>
+          <ul class="list-contact">
+            <li>
+              Dirección:
+              <span>{{ f.data[0].attributes.direccion }}</span>
+            </li>
+            <li>
+              Teléfonos: <span>{{ f.data[0].attributes.telefono }}</span>
+            </li>
+            <li>
+              Email: <a href="mailto:{{f.data[0].attributes.email}}">{{f.data[0].attributes.email}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="down-footer">
+        <div class="logo-footer">
+          <a href="#">
+            <img src="{{ f.data[0].attributes.logoUrl }}" alt="logoMdp" />
+          </a>
+          <div class="footer-copy">
+            <span
+              >© {{ f.data[0].attributes.fechaCopyright }} Derechos
+              Reservados</span
+            >
+          </div>
+        </div>
+
+        <div class="social-network-footer">
+          <a
+            target="_blank"
+            *ngFor="let item of f.data[0].attributes.social_networks.data"
+            href="{{ item.attributes.url }}"
+            ><i class="fa-brands {{ item.attributes.icon }}"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #noFooter>
+    <div class="lds-dual-ring"></div>
+  </ng-template>
+</footer>
