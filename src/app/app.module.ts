@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from  '@angular/common/http';
-
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
@@ -15,9 +13,10 @@ import { NavbarComponent } from './shared/header/navbar/navbar.component';
 import { ServicesBannerComponent } from './shared/services-banner/services-banner.component';
 import { ContactFormComponent } from './contact/components/contact-form/contact-form.component';
 import { BannerContentRectangleComponent } from './banner-content-rectangle/banner-content-rectangle.component';
-import { SliderImagesModule } from './slider-images/slider-images.module'
+import { SliderImagesModule } from './slider-images/slider-images.module';
 import { SocialsComponent } from './shared/header/socials/socials.component';
 import { SearchComponent } from './shared/header/search/search.component';
+import { AboutComponent } from './home/components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -33,10 +32,17 @@ import { SearchComponent } from './shared/header/search/search.component';
     ContactFormComponent,
     BannerContentRectangleComponent,
     SocialsComponent,
-    SearchComponent
+    SearchComponent,
+    AboutComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule,HttpClientModule,SliderImagesModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    SliderImagesModule,
+  ],
+
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 //abstracts
-@import "./abstracts/_mixins";
+
+@import "./abstracts/mixins";
 @import "./abstracts/_variables";
 
 //base
+
 @import "./base/_base";
 @import "./base/_resets";
 
@@ -12,6 +14,8 @@
 
 //components
 @import "../app/shared/header/navbar/navbar.component.scss";
+
+@import "../app/home/components/about/about.component.scss";
 
 @tailwind base;
 @tailwind components;

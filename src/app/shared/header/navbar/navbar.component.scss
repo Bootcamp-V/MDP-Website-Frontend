@@ -13,7 +13,7 @@
   position: absolute;
   z-index: 9;
   top: 3rem;
-  left: 8rem;
+  left: 10%;
 
   .logo-container {
     height: 69px;
@@ -97,6 +97,7 @@ a {
 }
 
 ul.sub-menu {
+  z-index: 6;
   position: absolute;
   border-radius: 2px;
   border: 1px solid hsla(0, 0%, 100%, 0.8);
@@ -169,7 +170,6 @@ ul li ul li {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: rgba(0, 0, 0, 0.03);
-
   padding: 0.2rem 1rem;
   &:hover {
     background: rgba(0, 0, 0, 0.04);
