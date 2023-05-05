@@ -39,7 +39,7 @@
   margin-left: 20px;
   margin-right: 10px;
   box-sizing: border-box;
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center;
 
@@ -178,10 +178,15 @@ ul li ul li {
 
 @media (max-width: 767px)
 {
+
   nav{
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .nav-container{
+      width: 100%;
+    }
 
     .logo-container{
       justify-content: center;
@@ -219,7 +224,6 @@ ul li ul li {
     .menu-icon{
       display: inline-block;
       position: relative;
-
     }
 
     .menu-icon span{
@@ -233,10 +237,19 @@ ul li ul li {
       margin: 4px 0;
     }
 
-    .menu-class ul li{
-      display: block;
-      text-align: left;
+    .hide-menu ul{
+      display: none;
     }
+
+    .site-logo-anch{
+      padding: 0px;
+    }
+
+    .menu-container-items{
+      height: 40px;
+      margin-left: 10px;;
+    }
+
 
   }
 
