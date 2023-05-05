@@ -1,0 +1,26 @@
+<div class="slider">
+    <div>
+      <div (click)="goToPrevious()" class="leftArrow">❰</div>
+      <div (click)="goToNext()" class="rightArrow">❱</div>
+    </div>
+    <div
+      class="slide"
+      [ngStyle]="{ 'background-image': getCurrentSlideUrl() }"
+    >
+        <div class="dotsContainer">
+            <div
+            *ngFor="let slide of slides; let slideIndex = index"
+            class="dot"
+            (click)="goToSlide(slideIndex)"
+            >
+            <div class="dotsContainer__bar"></div>
+            </div>
+        </div>
+        <div class="iconMouse" (click)="scrollDown()">
+          <div class="iconMouse__bar"></div>
+        </div>
+
+    </div>
+   
+  </div>
+  

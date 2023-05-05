@@ -1,0 +1,136 @@
+.slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .rightArrow {
+    position: absolute;
+    width: 35px;
+    height: 50px;
+    top: 50%;
+    transform: translate(-10px, 0);
+    right: 32px;
+    font-size: 70px;
+    color: #ffffff;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    
+  }
+  
+  .leftArrow {
+    position: absolute;
+    width: 35px;
+    height: 50px;
+    top: 50%;
+    transform: translate(10px, 0);
+    left: 32px;
+    font-size: 70px;
+    color: #ffffff;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    
+  }
+  
+  .leftArrow:hover {
+    transform: translateX(-10px);
+    opacity: 1;
+  }
+  
+  .rightArrow:hover {
+    transform: translateX(10px);
+    opacity: 1;
+  }
+
+  
+  .slider {
+    position: relative;
+    height: 100%;
+  }
+  
+  .dotsContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 90%;
+    left: 90%;
+  }
+  
+  .dot {
+    margin: 0 3px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  .dotsContainer__bar {
+      margin-bottom: 10px;
+      width: 60px;
+      height: 3px;
+      background-color: #fff;  
+      transition: none;
+      opacity: 0.5;
+  }
+
+
+
+  .dotsContainer__bar:hover {
+    transform-origin: right;
+    transform: scaleX(1.2);
+    transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+
+    opacity: 1;
+  }
+
+  .dotsContainer__bar.active {
+    transform-origin: right;
+    transform: scaleX(1.2);
+    transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+
+    opacity: 1;
+  }
+
+  .iconMouse {
+    position: absolute;
+    width: 33px;
+    height: 55px;
+    background: #fff;
+    border-radius: 50px;
+    left: 49%;
+    top: 82%;
+    opacity: 0.3;
+  }
+  .iconMouse__bar {
+    position: absolute;
+    width: 3px;
+    height: 13px;
+    background: #000;
+    left: 46.7%;
+    top: 56%;
+    animation-name: bottomUp;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes bottomUp {
+    0% {
+        top: 56%;
+    }
+  
+    50% {
+        top: 20%;
+    }
+
+    100% {
+        top: 56%
+    }
+  }
+
+  .iconMouse:hover {
+    cursor: pointer;
+  }
+  
+  

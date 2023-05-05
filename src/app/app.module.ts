@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from  '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +14,10 @@ import { BannerComponent } from './shared/banner/banner.component';
 import { NavbarComponent } from './shared/header/navbar/navbar.component';
 import { ServicesBannerComponent } from './shared/services-banner/services-banner.component';
 import { ContactFormComponent } from './contact/components/contact-form/contact-form.component';
-
+import { BannerContentRectangleComponent } from './banner-content-rectangle/banner-content-rectangle.component';
+import { SliderImagesModule } from './slider-images/slider-images.module'
+import { SocialsComponent } from './shared/header/socials/socials.component';
+import { SearchComponent } from './shared/header/search/search.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +30,13 @@ import { ContactFormComponent } from './contact/components/contact-form/contact-
     NavbarComponent,
     BannerComponent,
     ServicesBannerComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    BannerContentRectangleComponent,
+    SocialsComponent,
+    SearchComponent
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule,HttpClientModule,SliderImagesModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

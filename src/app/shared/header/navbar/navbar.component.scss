@@ -8,19 +8,21 @@
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
-
-  background-color: #33333394;
-
   font-weight: 300;
-}
+  background-color: transparent;
+  position: absolute;
+  z-index: 9;
+  top: 3rem;
+  left: 8rem;
 
-.logo-container {
-  height: 69px;
-  display: flex;
-  align-items: center;
-  flex: 1;
-  flex-basis: auto;
-  flex-grow: 0;
+  .logo-container {
+    height: 69px;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    flex-basis: auto;
+    flex-grow: 0;
+  }
 }
 
 .menu-container {
@@ -158,9 +160,8 @@ ul li ul li {
   color: #000124;
   font-style: normal;
   padding: 6px 0px;
-   &:hover {
-
-   }
+  &:hover {
+  }
 }
 
 .menu-lista {
