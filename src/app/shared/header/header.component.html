@@ -46,7 +46,7 @@
               <div class="flex justify-end items-center">
 
                 <span [hidden]="!isOpen"> <i class="fa-regular fa-circle-xmark fa-xs mr-2 cursor-pointer items-center" style="color: #ffffff;"
-                  (click)="tooglePanel(false)" [hidden]="!isOpen"            
+                  (click)="tooglePanel(false)" [hidden]="!isOpen"
                   ></i> </span>
 
                 <a class="items-center text-[13px] open-sliding-panel mr-5 ml-0.5" (click)="tooglePanel(true)">
@@ -63,5 +63,8 @@
       </div>
 
     </div>
+
+    <app-navbar></app-navbar>
+
   </header>
 </div>

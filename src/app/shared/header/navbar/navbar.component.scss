@@ -175,3 +175,72 @@ ul li ul li {
     background: rgba(0, 0, 0, 0.04);
   }
 }
+
+@media (max-width: 767px)
+{
+  nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logo-container{
+      justify-content: center;
+    }
+
+    .flex-basis{
+      flex-basis: 100%;
+      order: 1;
+    }
+
+    .flex-basis-items{
+      flex-basis: 50%;
+      order: 0;
+    }
+
+    .flex-basis-extra{
+      flex-basis: 0%;
+      order: 2;
+    }
+
+    .logo-container{
+      width: 100%;
+      text-align: center;
+    }
+
+    .logo{
+      width: 100%;
+      height: auto;
+      min-height: 0!important;
+      max-height: 100px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .menu-icon{
+      display: inline-block;
+      position: relative;
+
+    }
+
+    .menu-icon span{
+      width: 40px;
+      height: 2px;
+      background-color: #fff;
+      display: block;
+    }
+
+    .menu-icon span:nth-child(2){
+      margin: 4px 0;
+    }
+
+    .menu-class ul li{
+      display: block;
+      text-align: left;
+    }
+
+  }
+
+
+
+
+}
