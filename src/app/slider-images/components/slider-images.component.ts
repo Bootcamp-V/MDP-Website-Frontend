@@ -76,7 +76,8 @@ export class SliderImagesComponent implements OnInit, OnDestroy {
   goToSlide(slideIndex: number): void {
     this.resetTimer();
     this.currentIndex = slideIndex;
-    
+
+
     const bars = document.querySelectorAll(".dotsContainer__bar");
     bars.forEach((bar, index) => {
       if (index === slideIndex) {
@@ -87,6 +88,8 @@ export class SliderImagesComponent implements OnInit, OnDestroy {
     });
 
   }
+  
+  
 
   getCurrentSlideUrl() {
     return `url('${this.slides[this.currentIndex].url}')`;
