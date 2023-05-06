@@ -46,13 +46,14 @@
               <div class="search-buttons flex justify-end items-center container-info">
 
               <div [hidden]="!isOpen" >
-                <i class="fa-regular fa-circle-xmark fa-xs mr-2 cursor-pointer items-center"  style="color: #ffffff;"
+                <i class="fa-regular fa-circle-xmark text-[12px] mr-2 cursor-pointer items-center"  style="color: #ffffff;"
                   (click)="tooglePanel(false)" [hidden]="!isOpen"></i>
               </div>
 
               <a class="items-center text-[13px] open-sliding-panel mr-5 ml-0.5 btn-information" (click)="tooglePanel(true)" >
-                <i class="fa-solid fa-circle-info fa-xs mr-2 cursor-pointer items-center " style="color: #ffffff;"
-                  [hidden]="isOpen"></i>
+               <span [hidden]="isOpen"> <i class="fa-sharp fa-solid fa-circle-info text-[15px] mr-2 cursor-pointer items-center " style="color: #ffffff;"
+                  ></i></span>
+             
                 <span class="text-span  text-[#f0f0f0] font-semibold opacity-80 hover:opacity-100 cursor-pointer">
                   Intranet</span>
               </a>
