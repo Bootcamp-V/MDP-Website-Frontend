@@ -31,36 +31,43 @@
       <div class="site-header-top-wrapper h-[53px] relative">
 
         <div class="siteheader-container mx-auto w-[80%] px-[15px] relative">
-          <div class="site-header-col">
+
           <div class="site-header-row flex h-[46px]">
 
             <div class="socials-content flex flex-wrap justify-start items-center grow shrink">
 
               <app-socials> </app-socials>
 
-              <div class="mx-[10px] text-white text-[12px] relative">
+              <div class="sh-component text-white text-[12px] relative">
                 <h1>¿Preguntas? Llámamos al {{phone}} </h1>
               </div>
             </div>
             <div class=" search-content flex justify-end items-center">
-              <div class="flex justify-end items-center">
+              <div class="search-buttons flex justify-end items-center">
 
-                <span [hidden]="!isOpen"> <i class="fa-regular fa-circle-xmark fa-xs mr-2 cursor-pointer items-center" style="color: #ffffff;"
-                  (click)="tooglePanel(false)" [hidden]="!isOpen"            
-                  ></i> </span>
-
-                <a class="items-center text-[13px] open-sliding-panel mr-5 ml-0.5" (click)="tooglePanel(true)">
-                  <span class="text-[#f0f0f0] font-semibold opacity-80 hover:opacity-100 cursor-pointer">Intranet</span>
-                </a>
-                <app-search></app-search>
+              <div [hidden]="!isOpen">
+                <i class="fa-regular fa-circle-xmark fa-xs mr-2 cursor-pointer items-center" style="color: #ffffff;"
+                  (click)="tooglePanel(false)" [hidden]="!isOpen"></i>
               </div>
 
+              <a class="items-center text-[13px] open-sliding-panel mr-5 ml-0.5" (click)="tooglePanel(true)">
+                <i class="fa-solid fa-circle-info fa-xs mr-2 cursor-pointer items-center" style="color: #ffffff;"
+                  [hidden]="isOpen"></i>
+                <span class="text-span  text-[#f0f0f0] font-semibold opacity-80 hover:opacity-100 cursor-pointer">
+                  Intranet</span>
+              </a>
+
+            </div>
+
+              <app-search></app-search>
             </div>
           </div>
-        </div>
+
           <div class="separator block h-[1px] my-[3px] bg-[#fff] opacity-20 w-[100%]"></div>
         </div>
+        
       </div>
+
 
     </div>
   </header>
