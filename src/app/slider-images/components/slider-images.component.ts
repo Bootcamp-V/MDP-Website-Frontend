@@ -18,7 +18,10 @@ declare const window: Window;
 })
 
 export class SliderImagesComponent implements OnInit, OnDestroy {
+
+  
   @Input() slides: SlideInterface[] = [];
+  
 
   currentIndex: number = 0;
   timeoutId?: number;
@@ -44,6 +47,7 @@ export class SliderImagesComponent implements OnInit, OnDestroy {
 
     this.resetTimer();
     this.currentIndex = newIndex;
+    
 
     const bars = document.querySelectorAll(".dotsContainer__bar");
     bars.forEach((bar, index) => {
