@@ -21,6 +21,7 @@
     height: 300px;
     width: 100%;
     padding: 80px 35px 50px 35px;
+
   }
 .contentRectangle__transform::before {
     content: "";
@@ -33,6 +34,8 @@
     transform: skew(0deg, 2.2deg);
     border-radius: 6px 6px 0 0;
     z-index: -1;
+    
+    
 }
 .contentRectangle__transform::after {
     content: "";
@@ -46,6 +49,7 @@
     border-radius: 6px 6px 0 0;
     opacity: 0.3;
     z-index: -5;
+
 }
 .contentBubleTriangle{
     position: relative;
@@ -55,6 +59,7 @@
     background-color: #000124;
     border-radius: 0 0 6px 6px;
     z-index: -10;
+    
 }
 .contentBubleTriangle::before{
     content: "";
