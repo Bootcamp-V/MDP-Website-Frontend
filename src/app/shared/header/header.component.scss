@@ -26,6 +26,8 @@ h3 {
   background-attachment: scroll;
 }
 
+
+
 .site-header {
   width: 100%;
   position: absolute;
@@ -52,7 +54,7 @@ h3 {
   opacity: 0.6;
   pointer-events: none;
   line-height: 22.1px;
- 
+
 }
 
 .support-panel {
@@ -190,6 +192,10 @@ li a:hover {
 
 @media screen and (max-width: 767px)  {
 
+
+
+
+
   .site-header-row {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -200,7 +206,7 @@ li a:hover {
     margin-left: 13px;
     margin-right: 13px;
   }
-  
+
   .site-header {
     background-color: #000124 !important;
   }
@@ -240,6 +246,17 @@ li a:hover {
 }
 
 @media screen and (max-width: 480px)  {
+
+  .container-icons{
+    display: inline;
+    height: 82px;
+
+    .container-info{
+      text-align: center;
+    }
+
+      }
+
 
   .info-icon {
     display: block;
