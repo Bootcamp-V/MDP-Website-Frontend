@@ -18,7 +18,10 @@ declare const window: Window;
 })
 
 export class SliderImagesComponent implements OnInit, OnDestroy {
+
+  
   @Input() slides: SlideInterface[] = [];
+  
 
   currentIndex: number = 0;
   timeoutId?: number;
@@ -44,6 +47,16 @@ export class SliderImagesComponent implements OnInit, OnDestroy {
 
     this.resetTimer();
     this.currentIndex = newIndex;
+    
+
+    const bars = document.querySelectorAll(".dotsContainer__bar");
+    bars.forEach((bar, index) => {
+      if (index === newIndex) {
+        bar.classList.add("active");
+      } else {
+        bar.classList.remove("active");
+      }
+    });
   }
 
   goToNext(): void {
@@ -52,12 +65,23 @@ export class SliderImagesComponent implements OnInit, OnDestroy {
 
     this.resetTimer();
     this.currentIndex = newIndex;
+
+    const bars = document.querySelectorAll(".dotsContainer__bar");
+    bars.forEach((bar, index) => {
+      if (index === newIndex) {
+        bar.classList.add("active");
+      } else {
+        bar.classList.remove("active");
+      }
+    });
+    
   }
 
   goToSlide(slideIndex: number): void {
     this.resetTimer();
     this.currentIndex = slideIndex;
-    
+
+
     const bars = document.querySelectorAll(".dotsContainer__bar");
     bars.forEach((bar, index) => {
       if (index === slideIndex) {
@@ -68,6 +92,8 @@ export class SliderImagesComponent implements OnInit, OnDestroy {
     });
 
   }
+  
+  
 
   getCurrentSlideUrl() {
     return `url('${this.slides[this.currentIndex].url}')`;
@@ -80,4 +106,7 @@ export class SliderImagesComponent implements OnInit, OnDestroy {
       behavior: 'smooth' // agrega un efecto de desplazamiento suave
     });
   }
+
+
+ 
 }
