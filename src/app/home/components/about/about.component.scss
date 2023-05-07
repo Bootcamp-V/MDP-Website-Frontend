@@ -45,7 +45,6 @@
       display: flex;
       justify-content: center;
       width: 50%;
-      justify-content: center;
     }
   }
 }
@@ -63,7 +62,25 @@
       display: flex;
       justify-content: center;
       width: 35%;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .main_container_WeAreMDP {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10% 15%;
+    gap: 1rem;
+    .container_info {
+      width: 100%;
+    }
+    .container_video_WeAre {
+      display: flex;
       justify-content: center;
+      width: 100%;
     }
   }
 }
