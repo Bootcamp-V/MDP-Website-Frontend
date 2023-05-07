@@ -1,26 +1,59 @@
-<div class="slider">
-    <div>
-      <div (click)="goToPrevious()" class="leftArrow">❰</div>
-      <div (click)="goToNext()" class="rightArrow">❱</div>
+<div class="slider" >
+  
+  <div>
+    <div (click)="goToPrevious()" class="leftArrow">❰</div>
+    <div (click)="goToNext()" class="rightArrow">❱</div>
+  </div>
+  <div class="slide" [ngStyle]="{ 'background-image': getCurrentSlideUrl() }">
+    <div class="dotsContainer">
+      <div *ngFor="let slide of slides; let slideIndex = index" class="dot" (click)="goToSlide(slideIndex)">
+        <div class="dotsContainer__bar"></div>
+      </div>
     </div>
-    <div
-      class="slide"
-      [ngStyle]="{ 'background-image': getCurrentSlideUrl() }"
-    >
-        <div class="dotsContainer">
-            <div
-            *ngFor="let slide of slides; let slideIndex = index"
-            class="dot"
-            (click)="goToSlide(slideIndex)"
-            >
-            <div class="dotsContainer__bar"></div>
-            </div>
-        </div>
-        <div class="iconMouse" (click)="scrollDown()">
-          <div class="iconMouse__bar"></div>
-        </div>
+    <div class="iconMouse" (click)="scrollDown()">
+      <div class="iconMouse__bar"></div>
+    </div>
+
+    <div class="button" *ngIf="currentIndex === 0 " >
+
+      <p class="line0" style="font-size: 1.5vw; color: white;"  >
+        <span>MDP lo hacemos diferente</span>
+
+      </p>
+
+      <button class="arrow-button">
+      </button>
 
     </div>
-   
+
+    <!--    ------------------------------------------------------------------------------------>
+
+    <div class="message">
+        <p class="line1" *ngIf="currentIndex === 1 " style="font-size: 1vw; color: white;font-weight: 800;"  >
+          <span>Nuestro propósito</span>
+        </p>
+        <p class="line2" *ngIf="currentIndex === 1 "  style="font-size: 3vw;color: white;font-weight: 800;">
+          <span>Creamos un mundo digital</span>
+          <br>
+          <span>para hacer tu vida más simple</span>
+        </p>
+        <p class="line3" *ngIf="currentIndex === 1 "  style="font-size: 2vw;color: white;font-weight: 800;">
+          <span>Desarrollamos soluciones diferentes</span>
+          <br>
+          <span>para crear experiencias únicas</span>
+          
+  <!--    ------------------------------------------------------------------------------------>
+
+          <p class="line1" *ngIf="currentIndex === 2 " style="font-size: 1vw; color: white;font-weight: 800;"  >
+            <span>Creamos soluciones que aportan valor</span>
+          </p>
+          <p class="line2" *ngIf="currentIndex === 2 "  style="font-size: 3vw;color: white;font-weight: 800;">
+            <span>En el menor tiempo posible</span>
+          </p>
+          <p class="line4" *ngIf="currentIndex === 2 "  style="font-size: 2vw;color: white;font-weight: 800;">
+            <span>Somos especialistas en marcos ágiles</span>
+
+        </p>
+    </div>
   </div>
-  
+</div>
