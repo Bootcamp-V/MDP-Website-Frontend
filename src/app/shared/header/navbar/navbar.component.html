@@ -139,8 +139,8 @@
     </li>
 
     <li class="menuppal-li">
-      <span class="submenu-trigger" (click)="toogleSubMenuServices()">
-        <i class="fa-solid fa-angle-right fa-sm"></i></span>
+      <span class="submenu-trigger" (click)="toogleSubMenuServices()"><i
+          class="fa-solid fa-angle-right fa-sm"></i></span>
       <a class="fx-hover has-children"> <span>{{ pages.data[1].attributes.name }}</span></a>
 
       <ul [ngClass]="submenuClass" [hidden]="!openSubmenuServices">
@@ -172,7 +172,6 @@
         </li>
       </ul>
     </li>
-
     <li class="menuppal-li">
       <span class="submenu-trigger" (click)="toogleSubMenuAbout()"><i class="fa-solid fa-angle-right fa-sm"></i></span>
       <a class="fx-hover has-children"><span>{{ pages.data[2].attributes.name }}</span></a>

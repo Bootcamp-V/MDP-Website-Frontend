@@ -302,8 +302,10 @@ li a:hover {
   app-search {
     margin-top: 16px;
   }
-  .btn-close{
-    margin-top: 20px;
+
+  .btn-close {
+    margin-top: 0;
+    margin-right: 0;
   }
 }
 
@@ -348,24 +350,31 @@ li a:hover {
     width: 70%;
   }
 
+  .btn-close {
+    margin-top: 24px;
+    margin-right: 20px;
+  }
 }
 
 @media screen and (max-width: 232px) {
   .site-header {
     height: 284px;
   }
+
   .sh-component {
     height: 80px;
     margin: 10px;
     width: 60%;
   }
+
   .site-header-row {
     height: 110px;
     position: relative;
     padding-top: 5px;
     align-items: flex-start;
   }
-  .btn-close{
+
+  .btn-close {
     margin-top: 25px;
   }
 }

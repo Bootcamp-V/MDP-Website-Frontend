@@ -15,29 +15,33 @@ export class NavbarComponent implements OnInit {
   menuClass : string = "menuppal";
 
   submenuClass : string = "sub-menupal";
-  openSubmenuServices = false;
-  openSubmenuAbout= false;
-  openSubmenuContact = false;
+  openSubmenuServices !: boolean;
+  openSubmenuAbout !: boolean;
+  openSubmenuContact !: boolean;
   constructor(private navService: NavbarService) {
 
   }
   ngOnInit() {
     this.navService.getPages().subscribe((res) => {
-        this.pages = res;
-        
+        this.pages = res;      
     });
   }
 
   toogle() {
     this.isOpen = !this.isOpen;
     this.iconName = ( this.isOpen ? 'hamburger is-active':'hamburger');
-    this.menuClass = (this.isOpen ? 'menuppal is-active' : 'menuppal')
+    this.menuClass = (this.isOpen ? 'menuppal is-active' : 'menuppal');
+    this.openSubmenuServices = false;
+    this.openSubmenuAbout = false;
+    this.openSubmenuContact = false;
+    console.log( "Service:" + this.openSubmenuServices);
   }
 
   toogleSubMenuServices(){
     this.isOpen = true;
     this.openSubmenuServices = !this.openSubmenuServices;
     this.submenuClass= (this.openSubmenuServices ? 'sub-menupal is-active' : 'sub-menupal')
+    console.log( "Service:" + this.openSubmenuServices);
   }
   toogleSubMenuAbout(){
     this.isOpen = true;
