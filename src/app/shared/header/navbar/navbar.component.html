@@ -9,110 +9,119 @@
               title="Lo hacemos diferente"
             />
           </a>
+  
       </div>
 
-      <div class="icon-hamburger">
-aaa
-      </div>
 
-      <div class="menu-container">
-        <div class="menu-container-items">
-          <ul class="menu-class">
+
+      <div class="menu-container flex-basis-items">
+
+
+
+        <div class="menu-container-items hide-menu">
+
+          <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <ul class="menu-class ">
             <li class="main-list-item">
               <a href="#" class="fx-hover" aria-current="page"
-                ><span>Inicio</span></a
+                ><span>{{ pages.data[0].attributes.name }} </span></a
               >
             </li>
             <li class="main-list-item">
-              <a href="#" class="fx-hover"><span>Servicios</span></a>
+              <a href="#" class="fx-hover has-children" ><span>{{ pages.data[1].attributes.name }}</span></a>
               <ul class="sub-menu">
                 <li id="" class="menu-lista">
                   <a
                     href="https://www.mdp.com.pe/servicios/"
                     class="menu-item fx-hover-items"
-                    >Servicios</a
+                    >{{ pages.data[1].attributes.sub_pages.data[0].attributes.name}}</a
                   >
                 </li>
                 <li id="" class="menu-lista">
                   <a
                     href="https://www.mdp.com.pe/servicios/desarrollo-de-software/"
                     class="menu-item fx-hover-items"
-                    >Desarrollo de Software</a
+                    >{{pages.data[1].attributes.sub_pages.data[1].attributes.name}}</a
                   >
                 </li>
                 <li id="" class="menu-lista">
                   <a
                     href="https://www.mdp.com.pe/servicios/pruebas-de-software/"
                     class="menu-item fx-hover-items"
-                    >Pruebas de software</a
+                    >{{pages.data[1].attributes.sub_pages.data[2].attributes.name}}</a
                   >
                 </li>
                 <li id="" class="menu-lista">
                   <a
                     href="https://www.mdp.com.pe/servicios/consultoria/"
                     class="menu-item fx-hover-items"
-                    >Consultoria</a
+                    >{{pages.data[1].attributes.sub_pages.data[3].attributes.name}}</a
                   >
                 </li>
                 <li id="" class="menu-lista">
                   <a
                     href="https://www.mdp.com.pe/servicios/talento/"
                     class="menu-item fx-hover-items"
-                    >Talento</a
+                    >{{pages.data[1].attributes.sub_pages.data[4].attributes.name}}</a
                   >
                 </li>
               </ul>
             </li>
             <li class="main-list-item">
-              <a href="#" class="fx-hover"><span>Nosotros</span></a>
+              <a href="#" class="fx-hover has-children"><span>{{ pages.data[2].attributes.name }}</span></a>
               <ul class="sub-menu">
                 <li id="" class="menu-lista">
                   <a
                     href="https://www.mdp.com.pe/nosotros/"
                     class="menu-item fx-hover-items"
-                    ><span>Nosotros</span></a
+                    ><span>{{pages.data[2].attributes.sub_pages.data[0].attributes.name}}</span></a
                   >
                 </li>
                 <li id="" class="menu-lista">
                   <a
                     href="https://www.mdp.com.pe/nosotros/vision-y-proposito/"
                     class="menu-item fx-hover-items"
-                    ><span>Visión y Propósito</span></a
+                    ><span>{{pages.data[2].attributes.sub_pages.data[1].attributes.name}}</span></a
                   >
                 </li>
                 <li id="" class="menu-lista">
                   <a
                     href="https://www.mdp.com.pe/nosotros/historia/"
                     class="menu-item fx-hover-items"
-                    ><span>Historia</span></a
+                    ><span>{{pages.data[2].attributes.sub_pages.data[2].attributes.name}}</span></a
                   >
                 </li>
                 <li id="" class="menu-lista">
                   <a
                     href="https://www.mdp.com.pe/nosotros/organizacion/"
                     class="menu-item fx-hover-items"
-                    ><span>Organización</span></a
+                    ><span>{{pages.data[2].attributes.sub_pages.data[3].attributes.name}}</span></a
                   >
                 </li>
                 <li id="" class="menu-lista">
                   <a
                     href="https://www.mdp.com.pe/nosotros/modelo-de-negocio/"
                     class="menu-item fx-hover-items"
-                    ><span>Modelo de Negocio</span></a
+                    ><span>{{pages.data[2].attributes.sub_pages.data[4].attributes.name}}</span></a
                   >
                 </li>
                 <li id="" class="menu-lista">
                   <a
                     href="https://www.mdp.com.pe/nosotros/certificaciones/"
                     class="menu-item fx-hover-items"
-                    ><span>Certificaciones</span></a
+                    ><span>{{pages.data[2].attributes.sub_pages.data[5].attributes.name}}</span></a
                   >
                 </li>
                 <li id="" class="menu-lista">
                   <a
                     href="https://www.mdp.com.pe/nosotros/sectores/"
                     class="menu-item fx-hover-items"
-                    ><span>Sectores</span></a
+                    ><span>{{pages.data[2].attributes.sub_pages.data[6].attributes.name}}</span></a
                   >
                 </li>
                 <li id="" class="menu-lista">
@@ -126,38 +135,40 @@ aaa
                 </li>
               </ul>
             </li>
+
             <li class="main-list-item">
-              <a href="#" class="fx-hover"><span>Clientes</span></a>
+              <a href="#" class="fx-hover"><span>{{ pages.data[3].attributes.name }}</span></a>
             </li>
             <li class="main-list-item">
-              <a href="#" class="fx-hover"><span>Blog</span></a>
+              <a href="#" class="fx-hover"><span>{{ pages.data[4].attributes.name }}</span></a>
             </li>
             <li class="main-list-item">
-              <a href="#" class="fx-hover"><span>Contacto</span></a>
+              <a href="#" class="fx-hover has-children"><span>{{ pages.data[5].attributes.name }}</span></a>
               <ul class="sub-menu">
                 <li id="" class="menu-lista">
                   <a
                     href="https://www.mdp.com.pe/contacto/"
                     class="menu-item fx-hover-items"
-                    ><span>Contáctenos</span></a
+                    ><span>{{pages.data[5].attributes.sub_pages.data[0].attributes.name}}</span></a
                   >
                 </li>
                 <li id="" class="menu-lista">
                   <a
                     href="https://www.mdp.com.pe/contacto/derechos-arco/"
                     class="menu-item fx-hover-items"
-                    ><span>Derechos ARCO</span></a
+                    ><span>{{pages.data[5].attributes.sub_pages.data[1].attributes.name}}</span></a
                   >
                 </li>
                 <li id="" class="menu-lista">
                   <a
                     href="https://www.mdp.com.pe/libro-de-reclamaciones/"
                     class="menu-item fx-hover-items"
-                    ><span>Libro de reclamaciones</span></a
+                    ><span>{{pages.data[5].attributes.sub_pages.data[2].attributes.name}}</span></a
                   >
                 </li>
               </ul>
             </li>
+            
           </ul>
         </div>
       </div>
@@ -166,3 +177,4 @@ aaa
     </div>
 
 </nav>
+
