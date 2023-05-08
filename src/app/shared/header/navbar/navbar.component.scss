@@ -1,8 +1,9 @@
 @import "../../../../styles/abstracts/_variables";
 .nav-container {
   box-sizing: border-box;
-  width: 80%;
-  height: fit-content;
+  width: 100%;
+  max-width: 80%;
+
   font-family: $font-nav;
   display: flex;
   margin: 0 auto;
@@ -11,28 +12,32 @@
   font-weight: 300;
   background-color: transparent;
   position: absolute;
-  z-index: 9;
+  z-index: 3;
   top: 3rem;
   left: 10%;
+border: solid 1px red;
+
 
   .logo-container {
-    height: 69px;
     display: flex;
     align-items: center;
-    flex: 1;
-    flex-basis: auto;
-    flex-grow: 0;
+    height: auto;
+
+    border: solid 1px yellow;
+
+    a{
+      padding: 0;
+    }
+
   }
 }
 
 .menu-container {
   display: flex;
   align-items: center;
-  margin-right: auto;
-  justify-content: center;
-  flex: 1;
-  flex-basis: auto;
-  flex-wrap: wrap;
+  margin-left: 10%;
+  justify-content:flex-start;
+
 }
 
 .menu-container-items {
@@ -76,14 +81,8 @@
   }
 }
 
-.div-extra {
-  display: flex;
-  box-sizing: border-box;
-  flex-basis: auto;
-  justify-content: flex-end;
-  align-items: center;
-  flex-wrap: wrap;
-  flex: 1;
+.icon-hamburger{
+  display: none;
 }
 
 a {
@@ -173,5 +172,15 @@ ul li ul li {
   padding: 0.2rem 1rem;
   &:hover {
     background: rgba(0, 0, 0, 0.04);
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  .menu-container{
+display: none;
+  }
+  .icon-hamburger{
+display:block;
   }
 }

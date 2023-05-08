@@ -2,7 +2,11 @@
 
 .main_container_WeAreMDP {
   margin-top: 6rem;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
   .container_info {
+    max-width: 50%;
+    padding: 0 15px;
     .title_WeAre {
       @include main_title;
     }
@@ -11,6 +15,7 @@
     }
   }
   .container_video_WeAre {
+    max-width: 50%;
     overflow: hidden;
     position: relative;
     .container-iframe {
@@ -24,13 +29,38 @@
 
 @include tablet {
   .main_container_WeAreMDP {
+    margin-top: 10rem;
+    grid-template-columns: repeat(1,1fr);
+
+    .container_info {
+   width: 80%;
+   margin: 20px auto;
+    }
     .container_video_WeAre {
+width: 100%;
+max-width: 100%;
+      .container-iframe {
+        max-width: none;
+        width: 425px;
+        margin: auto;
+      }
+    }
+  }
+}
+
+@include mobile{
+  .main_container_WeAreMDP {
+    margin-top: 15rem;
+
+    .container_video_WeAre {
+
       .container-iframe {
         justify-content: center;
       }
     }
   }
 }
+
 @media only screen and (min-width: 800px) {
   .main_container_WeAreMDP {
     display: flex;
@@ -45,7 +75,6 @@
       display: flex;
       justify-content: center;
       width: 50%;
-      justify-content: center;
     }
   }
 }
@@ -63,7 +92,6 @@
       display: flex;
       justify-content: center;
       width: 35%;
-      justify-content: center;
     }
   }
 }
