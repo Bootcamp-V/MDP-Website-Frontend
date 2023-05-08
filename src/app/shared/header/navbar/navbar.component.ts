@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
   isOpen = false;
   iconName : string = "hamburger";
   menuClass : string = "menuppal";
-
+  openSubmenu = false;
   constructor(private navService: NavbarService) {
 
   }
@@ -28,6 +28,9 @@ export class NavbarComponent implements OnInit {
     this.isOpen= !this.isOpen;
     this.iconName = ( this.isOpen ? 'hamburger is-active':'hamburger');
     //this.menuClass = (this.menuClass ? 'menuppal' : 'menuppal is-active')
+  }
+  toogleSubMenu(){
+    this.openSubmenu = !this.openSubmenu;
   }
 
 }

@@ -135,10 +135,10 @@
       <span>{{ pages.data[0].attributes.name }} </span></a>
   </li>
   <li class="menuppal-li">
-    <span class="submenu-trigger"><i class="fa-solid fa-angle-right fa-sm"></i></span>
+    <span class="submenu-trigger" (click)="toogleSubMenu()"><i class="fa-solid fa-angle-right fa-sm"></i></span>
     <a href="#" class="fx-hover has-children"> <span>{{ pages.data[1].attributes.name }}</span></a>
 
-    <ul class="sub-menupal">
+    <ul class="sub-menupal" [hidden]="openSubmenu">
       <li class="menu-back">
         <span class="back-icon"> <i class="fa-solid fa-angle-left fa-sm"></i></span>
         <a href="" class="back-link"> Back</a>
@@ -167,7 +167,7 @@
     </ul>
   </li>
   <li class="menuppal-li">
-    <span class="submenu-trigger"><i class="fa-solid fa-angle-right fa-sm"></i></span>
+    <span class="submenu-trigger" (click)="toogleSubMenu()"><i class="fa-solid fa-angle-right fa-sm"></i></span>
     <a href="#" class="fx-hover has-children"><span>{{ pages.data[2].attributes.name }}</span></a>
 
     <ul class="sub-menupal">
@@ -221,7 +221,7 @@
   </li>
 
   <li class="menuppal-li">
-    <span class="submenu-trigger"><i class="fa-solid fa-angle-right fa-sm"></i></span>
+    <span class="submenu-trigger" (click)="toogleSubMenu()"><i class="fa-solid fa-angle-right fa-sm"></i></span>
     <a href="#" class="fx-hover has-children"><span>{{ pages.data[5].attributes.name }}</span></a>
 
     <ul class="sub-menupal">
