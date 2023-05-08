@@ -29,23 +29,23 @@ export class NavbarComponent implements OnInit {
   }
 
   toogle() {
-    this.isOpen= !this.isOpen;
+    this.isOpen = !this.isOpen;
     this.iconName = ( this.isOpen ? 'hamburger is-active':'hamburger');
     this.menuClass = (this.isOpen ? 'menuppal is-active' : 'menuppal')
   }
 
   toogleSubMenuServices(){
-    this.isOpen= true;
+    this.isOpen = true;
     this.openSubmenuServices = !this.openSubmenuServices;
     this.submenuClass= (this.openSubmenuServices ? 'sub-menupal is-active' : 'sub-menupal')
   }
   toogleSubMenuAbout(){
-    this.isOpen= true;
+    this.isOpen = true;
     this.openSubmenuAbout = !this.openSubmenuAbout;
     this.submenuClass= (this.openSubmenuAbout ? 'sub-menupal is-active' : 'sub-menupal')
   }
   toogleSubMenuContact(){
-    this.isOpen= true;
+    this.isOpen = true;
     this.openSubmenuContact = !this.openSubmenuContact;
     this.submenuClass= (this.openSubmenuContact ? 'sub-menupal is-active' : 'sub-menupal')
   }
