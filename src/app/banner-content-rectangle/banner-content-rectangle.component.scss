@@ -1,26 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&family=Roboto+Mono&display=swap");
 
-// .banner__p {
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     text-align: center;
-//     font-size: 50px;
-//     transform: translate(-50%, -50%);
-// }
 .contentRectangle {
   width: 100%;
   height: 300px;
-  padding-top: 40px;
+  padding-top: 35px;
   font-family: "Oswald", sans-serif;
   font-family: "Roboto Mono", monospace;
 }
 .contentRectangle__transform {
   position: relative;
   text-align: center;
-  height: 300px;
+  height: auto;
   width: 100%;
-  padding: 80px 35px 50px 35px;
+  padding: 80px 15% 50px 15%;
+  display: flex;
+
 }
 .contentRectangle__transform::before {
   content: "";
@@ -69,22 +62,21 @@
 }
 
 .contentRectangle__transform-button {
-  backface-visibility: hidden;
+
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
   position: relative;
-  cursor: pointer;
-  display: inline-block;
-  white-space: nowrap;
+  display: block;
   background: #000124;
-  border-radius: 0px;
   border: 1px solid #fff;
   border-width: 2px 2px 2px 2px;
-  padding: 5px 25px 5px 25px;
-  font-size: 22px;
-  font-family: Helvetica Neue;
-  font-weight: 600;
+  padding: 7px 20px;
+  font-weight: bold;
   font-style: normal;
-  border-radius: 6px;
+  border-radius: 4px;
   color: #fff;
+  height: auto;
+  margin: auto ;
 }
 .contentRectangle__transform-button:hover {
   border: 1px solid rgb(166, 162, 162);
@@ -92,16 +84,35 @@
 }
 .contentRectangle__transform-contentText-h4 {
   color: #fff;
-  text-align: center;
+  text-align: left;
   margin-bottom: 5%;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 25px;
   line-height: 1.4;
-  letter-spacing: -2.8px;
+  font-family: "Oswald", Helvetica, sans-serif;
 }
 @media (max-width: 725px) {
+
   .contentRectangle__transform {
-    height: 350px;
+    position: relative;
+    text-align: center;
+    height: auto;
+    width: 100%;
+    padding: 80px 15% 50px 15%;
+
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .contentRectangle__transform-contentText-h4 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 5%;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 1.4;
+    font-family: "Oswald", Helvetica, sans-serif;
   }
 }
 @media (max-width: 465px) {
