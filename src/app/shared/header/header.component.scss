@@ -302,6 +302,9 @@ li a:hover {
   app-search {
     margin-top: 16px;
   }
+  .btn-close{
+    margin-top: 20px;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -361,5 +364,8 @@ li a:hover {
     position: relative;
     padding-top: 5px;
     align-items: flex-start;
+  }
+  .btn-close{
+    margin-top: 25px;
   }
 }
