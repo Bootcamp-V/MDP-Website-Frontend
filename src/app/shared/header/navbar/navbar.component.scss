@@ -206,6 +206,9 @@ ul li ul li {
   -webkit-transition: opacity .2s ease-in-out;
   transition: opacity .2s ease-in-out;
 }
+.menu-responsive{
+  visibility: hidden;
+}
 
 @media (max-width: 993px) {
 
@@ -282,14 +285,16 @@ ul li ul li {
 
 }
 
+
 @media screen and (max-width: 480px) {
   .nav-container {
     margin-top: 20px;
   }
 }
 
-@media screen and (max-width:991px) {
-  .nav-container {
+@media screen and (max-width:993px) {
+
+   .nav-container {
     margin: 0 auto;
     margin-top: 15px;
 
@@ -300,6 +305,9 @@ ul li ul li {
     }
   }
 
+  .menu-responsive{
+    visibility: visible;
+  }
   .hamburger {
     display: block;
     position: absolute;
@@ -367,12 +375,13 @@ ul li ul li {
     transform: translateY(-200%) rotate(135deg) !important;
   }
 
-  
+
   .menuppal.is_active {
     transform: translate3d(0px, 0px, 0px);
   }
 
   .menuppal {
+    display: block;
     max-width: 400px;
     height: 1007px;
     right: 0;
@@ -403,6 +412,7 @@ ul li ul li {
 
   .menuppal-li,
   .menupal-item {
+    display: block;
     position: static;
     height: 46px;
     border-bottom: 1px solid rgba(0, 0, 0, .15);
@@ -420,11 +430,9 @@ ul li ul li {
     border-color: rgba(0, 0, 0, .15);
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
     font-size: 13px;
-  }
+  } 
 
-  .menupal-link,
-  .fx-hover,
-  .fx-hover-items {
+  .fx-hover{
     display: block;
     text-decoration-style: solid;
     text-decoration-color: rgba(0, 0, 0, .45);
@@ -441,51 +449,68 @@ ul li ul li {
     width: 351px;
   }
 
-  .menupal-link span {
+ .fx-hover-items {
+    display: block;
+    text-decoration-style: solid;
+    text-decoration-color: rgba(0, 0, 0, .45);
+    padding: 12px 28px 11px;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: rgba(0, 0, 0, .45);
+    cursor: pointer;
+    line-height: 1.7;
+    backface-visibility: hidden;
+    border-color: rgba(0, 0, 0, .15);
+    background-color: rgba(0, 0, 0, .05);
+    width: 351px;
+  }
+
+  .menupal-link span, .menu-item span {
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
     font-size: 13px;
   }
 
-  .menupal-link:hover {
+  .menupal-link:hover, .fx-hover:hover {
     text-decoration: none;
     color: #000000;
     background-color: rgb(105, 146, 165);
   }
 
+
+  .sub-menupal.is-active {
+    transform: translate3d(0px, 0px, 0px);
+  }
+
   .sub-menupal {
     max-width: 400px;
     height: 1007px;
-    display: block;
     right: 0;
-    top: 0;
+    top: 1000px;
     position: absolute;
-    background-color: #fff;
-    border-color: rgba(0, 0, 0, .15);
-    overflow: hidden;
+    width: 400px;
+    line-height: 22.1px;
+    background: #fff;
+
     z-index: 10000;
-    backface-visibility: hidden;
-    transform: translate3d(100%, 0, 0);
-    transition: transform .5s ease, -webkit-transform .5s ease;
+    transform: translate3d(0px, -100%, 0px);
+    transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
     transform-style: preserve-3d;
     padding: 0;
     margin: 0;
     list-style: none;
-    line-height: 1.7;
+    background-origin: padding-box;
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
     color: #535353;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 13px;
   }
 
-  .sub-menupal:before {
-    content: " ";
-    display: table;
-    clear: both;
-  }
-
-  .sub-menupal:after {
-    content: " ";
-    display: table;
-  }
-
-  .submenu-trigger {
+   .submenu-trigger {
     position: absolute;
     right: 0;
     width: 49px;
@@ -503,7 +528,7 @@ ul li ul li {
     font-style: normal;
     list-style: none;
     border-color: rgba(0, 0, 0, .15);
-  
+
   }
 
   .menu-back {
