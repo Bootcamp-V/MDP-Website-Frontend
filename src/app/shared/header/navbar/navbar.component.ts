@@ -10,7 +10,10 @@ import { IPage } from './models/page.interface';
 export class NavbarComponent implements OnInit {
 
   pages !:IPage;
-  
+  isOpen = false;
+  iconName : string = "hamburger";
+  menuClass : string = "menuppal";
+
   constructor(private navService: NavbarService) {
 
   }
@@ -19,6 +22,12 @@ export class NavbarComponent implements OnInit {
         this.pages = res;
         
     });
+  }
+
+  toogle() {
+    this.isOpen= !this.isOpen;
+    this.iconName = ( this.isOpen ? 'hamburger is-active':'hamburger');
+    //this.menuClass = (this.menuClass ? 'menuppal' : 'menuppal is-active')
   }
 
 }
