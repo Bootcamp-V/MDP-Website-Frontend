@@ -1,6 +1,6 @@
 export interface IHeader {
   data: IHeaderData[]
-  meta: Meta
+  meta: HeaderMeta
 }
 
 export interface IHeaderData {
@@ -16,11 +16,11 @@ export interface HeaderAttributes {
   logotypeUrl: string
 }
 
-export interface Meta {
-  pagination: Pagination
+export interface HeaderMeta {
+  pagination: HeaderPagination
 }
 
-export interface Pagination {
+export interface HeaderPagination {
   page: number
   pageSize: number
   pageCount: number

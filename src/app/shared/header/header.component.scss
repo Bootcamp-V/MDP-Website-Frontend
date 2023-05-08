@@ -3,7 +3,8 @@
 }
 
 h1,
-body {
+body,
+a {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 12px;
 }
@@ -165,6 +166,10 @@ li a:hover {
   margin-right: 10px;
 }
 
+.menu-item a {
+  font-size: 13px;
+}
+
 @media screen and (max-width: 1199px) {
 
   .support-panel.is-opened:before {
@@ -199,7 +204,7 @@ li a:hover {
   .site-header-row {
     padding-top: 5px;
     padding-bottom: 5px;
-    height: auto !important;
+    height: auto;
     position: relative;
   }
 
@@ -247,13 +252,17 @@ li a:hover {
   .text-span {
     display: none;
   }
+
+  .btn-information {
+    margin: 0;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
 
-  .container-icons {
-    display: inline;
-    height: 82px;
+  .site-header {
+    height: 218px;
   }
 
   .container-info {
@@ -265,27 +274,100 @@ li a:hover {
   }
 
   .site-header-row {
-    height: 104px;
+    height: 60px;
     position: relative;
     padding-top: 5px;
     padding-bottom: 5px;
+    align-items: center;
+  }
+
+  .socials-content {
+    height: 50px;
   }
 
   .site-header-wrapper .sh-component {
     margin: 10px
   }
 
-  .siteheader-container, .site-header-top-wrapper {
+  .siteheader-container,
+  .site-header-top-wrapper {
+    height: 111px;
+  }
+
+  .sh-component {
+    height: 24px;
+    margin: 10px;
+  }
+
+  app-search {
+    margin-top: 16px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+  .site-header {
+    height: 262px;
+  }
+
+  .container-icons {
+    display: inline;
+  }
+
+  .container-info {
+    text-align: center;
+  }
+
+  .info-icon {
+    display: block;
+  }
+
+  .site-header-row {
+    height: 94px;
+    position: relative;
+    padding-top: 5px;
+    align-items: flex-start;
+  }
+
+  .siteheader-container,
+  .site-header-top-wrapper {
     height: 111px;
   }
 
   .search-buttons {
     display: inline-block;
+    margin-top: -10px;
   }
+
 
   .site-header {
     background-color: #000124 !important;
     height: 250px;
+
+  .sh-component {
+    height: 72px;
+    margin: 10px;
+    width: 70%;
+
   }
+
+}
+
+@media screen and (max-width: 232px) {
+  .site-header {
+    height: 284px;
+  }
+  .sh-component {
+    height: 80px;
+    margin: 10px;
+    width: 60%;
+  }
+  .site-header-row {
+    height: 110px;
+    position: relative;
+    padding-top: 5px;
+    align-items: flex-start;
+  }
+}
 
 }
