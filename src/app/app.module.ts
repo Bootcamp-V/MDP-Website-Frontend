@@ -23,7 +23,7 @@ import { SoftwareDevelopmentComponent } from './services-page/software-developme
 import { SoftwareTestingComponent } from './services-page/software-testing/software-testing.component';
 import { ConsultingComponent } from './services-page/consulting/consulting.component';
 import { TalentComponent } from './services-page/talent/talent.component';
-import { ServicesPageModule } from './services-page/services-page.module';
+import { ServicesMainComponent } from './services-page/services-main/services-main.component';
 
 @NgModule({
   declarations: [
@@ -43,14 +43,19 @@ import { ServicesPageModule } from './services-page/services-page.module';
     CustomersPageComponent,
     BlogPageComponent,
     ContactPageComponent,
+    ServicesPageComponent,
+    SoftwareDevelopmentComponent,
+    SoftwareTestingComponent,
+    ConsultingComponent,
+    TalentComponent,
+    ServicesMainComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ServicesPageModule,
   ],
-
   providers: [],
   bootstrap: [AppComponent],
 })
