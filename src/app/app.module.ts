@@ -3,43 +3,52 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
-import { SliderComponent } from './home/components/slider/slider.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { BannerComponent } from './shared/banner/banner.component';
 import { NavbarComponent } from './shared/header/navbar/navbar.component';
 import { ServicesBannerComponent } from './shared/services-banner/services-banner.component';
-import { ContactFormComponent } from './contact/components/contact-form/contact-form.component';
-import { BannerContentRectangleComponent } from './banner-content-rectangle/banner-content-rectangle.component';
-import { SliderImagesModule } from './slider-images/slider-images.module';
+import { BannerContentRectangleComponent } from './shared/banner-content-rectangle/banner-content-rectangle.component';
 import { SocialsComponent } from './shared/header/socials/socials.component';
 import { SearchComponent } from './shared/header/search/search.component';
 import { AboutComponent } from './home/components/about/about.component';
+import { SliderHomeComponent } from './home/components/slider-home/slider-home.component';
+import { ServicesPageComponent } from './services-page/services-page.component';
+import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
+import { CustomersPageComponent } from './customers-page/customers-page.component';
+import { BlogPageComponent } from './blog-page/blog-page.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
+import { SoftwareDevelopmentComponent } from './services-page/software-development/software-development.component';
+import { SoftwareTestingComponent } from './services-page/software-testing/software-testing.component';
+import { ConsultingComponent } from './services-page/consulting/consulting.component';
+import { TalentComponent } from './services-page/talent/talent.component';
+import { ServicesPageModule } from './services-page/services-page.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactComponent,
     HomeComponent,
-    SliderComponent,
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
     BannerComponent,
     ServicesBannerComponent,
-    ContactFormComponent,
     BannerContentRectangleComponent,
     SocialsComponent,
     SearchComponent,
     AboutComponent,
+    SliderHomeComponent,
+    AboutUsPageComponent,
+    CustomersPageComponent,
+    BlogPageComponent,
+    ContactPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SliderImagesModule,
+    ServicesPageModule,
   ],
 
   providers: [],

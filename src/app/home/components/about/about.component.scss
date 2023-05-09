@@ -3,7 +3,7 @@
 .main_container_WeAreMDP {
   margin-top: 6rem;
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   .container_info {
     max-width: 50%;
     padding: 0 15px;
@@ -29,16 +29,17 @@
 
 @include tablet {
   .main_container_WeAreMDP {
-    margin-top: 10rem;
-    grid-template-columns: repeat(1,1fr);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    grid-template-columns: repeat(1, 1fr);
 
     .container_info {
-   width: 80%;
-   margin: 20px auto;
+      width: 80%;
+      margin: 20px auto;
     }
     .container_video_WeAre {
-width: 100%;
-max-width: 100%;
+      width: 100%;
+      max-width: 100%;
       .container-iframe {
         max-width: none;
         width: 425px;
@@ -48,12 +49,11 @@ max-width: 100%;
   }
 }
 
-@include mobile{
+@include mobile {
   .main_container_WeAreMDP {
-    margin-top: 15rem;
+    margin-top: 1rem;
 
     .container_video_WeAre {
-
       .container-iframe {
         justify-content: center;
       }
