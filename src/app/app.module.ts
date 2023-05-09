@@ -24,6 +24,12 @@ import { SoftwareTestingComponent } from './services-page/software-testing/softw
 import { ConsultingComponent } from './services-page/consulting/consulting.component';
 import { TalentComponent } from './services-page/talent/talent.component';
 import { ServicesPageModule } from './services-page/services-page.module';
+import { AboutUsComponent } from './about-us-page/about-us/about-us.component';
+import { GridComponent } from './about-us-page/about-us/components/grid/grid.component';
+import { Grid2Component } from './about-us-page/about-us/components/grid2/grid2.component';
+import { TimelineComponent } from './about-us-page/about-us/components/timeline/timeline.component';
+import { ContainerComponent } from './about-us-page/about-us/components/container/container.component';
+import { ImageFigureAboutUsComponent } from './about-us-page/about-us/components/image-figure-about-us/image-figure-about-us.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +49,12 @@ import { ServicesPageModule } from './services-page/services-page.module';
     CustomersPageComponent,
     BlogPageComponent,
     ContactPageComponent,
+    AboutUsComponent,
+    GridComponent,
+    Grid2Component,
+    TimelineComponent,
+    ContainerComponent,
+    ImageFigureAboutUsComponent,
   ],
   imports: [
     BrowserModule,

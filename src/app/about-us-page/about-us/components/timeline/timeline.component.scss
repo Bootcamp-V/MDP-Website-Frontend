@@ -1,0 +1,167 @@
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%; /* Ancho máximo del contenedor */
+    height: auto;
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 0 20px; /* Añadir un poco de espacio en los bordes */
+    background-color: #000124;
+    margin-bottom: 2vw;
+    
+  }
+
+  .left-container{
+    background-color: transparent;
+    padding: 10px;
+    left: 50% ;
+    display: inline-block;
+ 
+    h2 {
+      font-size: 2em;
+      color: #00B7E1;
+      text-align: left;
+      margin-bottom: 1em;
+      font-family: 'Oswald', 'Helvetica', 'Arial', sans-serif;
+    }
+  
+    p {
+      font-size: 13px;
+      line-height: 1.5;
+       color: #ffffff;
+      text-align: left;
+      font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+    }
+  }
+  
+  .left-column {
+    flex-basis: 100%;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: auto ;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+  }
+  
+  
+
+  @media (min-width: 768px) {
+    .left-column {
+      flex-basis: 50%;
+      text-align: center;
+      
+    }
+
+    h2{
+      
+      margin-left: 0;
+      text-align: center;
+    }
+    p{
+      margin-left: 0;
+      text-align: center;
+
+    }
+  
+    .right-column {
+      flex-basis: 50%;
+      text-align: center;
+
+    }
+
+  }
+
+  ///////////////////////////////////
+
+    
+  .right-column {
+    flex-basis: 50%;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+  }
+
+  .tablero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* asegura que el tablero esté encima del contenido */
+    background-color: transparent  ; /* un fondo semi-transparente para el tablero */
+    /* cualquier otro estilo que quieras darle al tablero */
+  }
+  
+  .linea-punteada {
+    border-top: 1px dotted #f7f4f4;
+    position: absolute;
+    top: 50%; /* ajustar la posición vertical */
+    left: 0;
+    right: 0;
+    height: 0;
+  }
+
+  .linea-vertical {
+    position: absolute;
+    width: 1px;
+    border-left: 1px dashed white;
+  } 
+  
+  .right-container{
+    background-color: transparent;
+    padding: 10px;
+    left: 50% ;
+    display: inline-block;
+    
+  }
+  
+
+  
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(60px, 1fr));
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+    max-width: 80%;
+    z-index: 2; 
+    position: relative; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    
+ }
+
+  
+ h1 {
+  font-size: 2em;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-family: 'Oswald', 'Helvetica', 'Arial', sans-serif;
+}
+
+h3 {
+  font-size: 13px;
+  line-height: 1.5;
+   color: #ffffff;
+   text-align: center;
+   font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+}
+
+.icono{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+}
