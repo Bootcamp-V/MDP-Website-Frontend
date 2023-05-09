@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { BannerComponent } from './shared/banner/banner.component';
 import { NavbarComponent } from './shared/header/navbar/navbar.component';
 import { ServicesBannerComponent } from './shared/services-banner/services-banner.component';
 import { BannerContentRectangleComponent } from './shared/banner-content-rectangle/banner-content-rectangle.component';
@@ -24,6 +23,7 @@ import { SoftwareTestingComponent } from './services-page/software-testing/softw
 import { ConsultingComponent } from './services-page/consulting/consulting.component';
 import { TalentComponent } from './services-page/talent/talent.component';
 import { ServicesMainComponent } from './services-page/services-main/services-main.component';
+import { BannerServiceComponent } from './services-page/components/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,6 @@ import { ServicesMainComponent } from './services-page/services-main/services-ma
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
-    BannerComponent,
     ServicesBannerComponent,
     BannerContentRectangleComponent,
     SocialsComponent,
@@ -49,6 +48,7 @@ import { ServicesMainComponent } from './services-page/services-main/services-ma
     ConsultingComponent,
     TalentComponent,
     ServicesMainComponent,
+    BannerServiceComponent
 
   ],
   imports: [
