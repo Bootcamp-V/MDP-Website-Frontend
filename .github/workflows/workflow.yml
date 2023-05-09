@@ -1,0 +1,28 @@
+name: Github Pages Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [14.17]
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Install and build
+              working-directory: ./MDP-Website-Frontend
+              run: npm install && npm run build && cp dist/MDP-Website-Frontend/index.html dist/MDP-Website-Frontend/404.html
+
+            - name: Deploy
+              uses: JamesIves/github-pages-deploy-action@4.1.0
+              with:
+                branch: gh-pages
+                folder: MDP-Website-Frontend/dist/MDP-Website-Frontend
