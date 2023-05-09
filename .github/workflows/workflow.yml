@@ -1,28 +1,23 @@
-name: Github Pages Deploy
-
+name: Build and Deploy
 on:
   push:
     branches:
-      - main
-
+      - master
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
 
-        strategy:
-            matrix:
-                node-version: [14.17]
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v1
+    steps:
+    - uses: actions/checkout@v3
+    - name: All things angular
+      uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0 ## replace by latest version without it you will see Expected format {org}/{repo}[/path]@ref. Actual 'AhsanAyaz/angular-deploy-gh-pages-actions',Input string was not in a correct format.
+      with:
+        github_access_token: ${{ secrets.GITHUB_TOKEN }} # see the Configuration section for how you can create secrets
+        build_configuration: staging # The build environment for the app. please look configurations in your angular.json
+        base_href: /MDP-Website-Frontend/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
+        deploy_branch: gh-pages # The branch the action should deploy to.
+        angular_dist_build_folder: dist/mdp-website # The folder where your project is supposed to be after running ng build by the action.
 
-            - name: Install and build
-              working-directory: ./MDP-Website-Frontend
-              run: npm install && npm run build && cp dist/MDP-Website-Frontend/index.html dist/MDP-Website-Frontend/404.html
-
-            - name: Deploy
-              uses: JamesIves/github-pages-deploy-action@4.1.0
-              with:
-                branch: gh-pages
-                folder: MDP-Website-Frontend/dist/MDP-Website-Frontend
+permissions:
+  contents: write # Allow write permission to GITHUB_TOKEN to commit to deploy branch.
