@@ -24,6 +24,7 @@ import { ConsultingComponent } from './services-page/consulting/consulting.compo
 import { TalentComponent } from './services-page/talent/talent.component';
 import { ServicesMainComponent } from './services-page/services-main/services-main.component';
 import { BannerServiceComponent } from './services-page/components/banner/banner.component';
+import { BusinessModelComponent } from './about-us-page/business-model/business-model.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { BannerServiceComponent } from './services-page/components/banner/banner
     ConsultingComponent,
     TalentComponent,
     ServicesMainComponent,
-    BannerServiceComponent
+    BannerServiceComponent,
+    BusinessModelComponent
 
   ],
   imports: [

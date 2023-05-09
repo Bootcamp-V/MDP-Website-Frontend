@@ -11,6 +11,7 @@ import { SoftwareTestingComponent } from './services-page/software-testing/softw
 import { ConsultingComponent } from './services-page/consulting/consulting.component';
 import { TalentComponent } from './services-page/talent/talent.component';
 import { ServicesMainComponent } from './services-page/services-main/services-main.component';
+import { BusinessModelComponent } from './about-us-page/business-model/business-model.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -31,7 +32,22 @@ const routes: Routes = [
       { path: 'talento', component: TalentComponent },
     ],
   },
-  { path: 'nosotros', component: AboutUsPageComponent },
+  {
+    path: 'nosotros',
+    component: AboutUsPageComponent,
+    children: [
+    {
+      path: '', component: AboutUsPageComponent,
+    },
+    { path: 'vision-y-proposito', component: AboutUsPageComponent },
+    { path: 'historia', component: AboutUsPageComponent },
+    { path: 'organizacion', component: AboutUsPageComponent },
+    { path: 'modelo-de-negocio', component: BusinessModelComponent },
+    { path: 'certificaciones', component: AboutUsPageComponent },
+    { path: 'sectores', component: AboutUsPageComponent },
+
+    ],
+  },
   { path: 'clientes', component: CustomersPageComponent },
   { path: 'blog', component: BlogPageComponent },
   { path: 'contacto', component: ContactPageComponent },
