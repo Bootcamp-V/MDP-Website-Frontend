@@ -10,6 +10,7 @@ import { SoftwareDevelopmentComponent } from './services-page/software-developme
 import { SoftwareTestingComponent } from './services-page/software-testing/software-testing.component';
 import { ConsultingComponent } from './services-page/consulting/consulting.component';
 import { TalentComponent } from './services-page/talent/talent.component';
+import { SectorsComponent } from './about-us-page/sectors/sectors.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,7 +27,11 @@ const routes: Routes = [
       { path: 'talento', component: TalentComponent },
     ],
   },
-  { path: 'nosotros', component: AboutUsPageComponent },
+  {
+    path: 'nosotros',
+    component: AboutUsPageComponent,
+    children: [{ path: 'sectores', component: SectorsComponent }],
+  },
   { path: 'clientes', component: CustomersPageComponent },
   { path: 'blog', component: BlogPageComponent },
   { path: 'contacto', component: ContactPageComponent },

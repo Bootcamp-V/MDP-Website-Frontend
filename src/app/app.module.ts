@@ -24,6 +24,7 @@ import { SoftwareTestingComponent } from './services-page/software-testing/softw
 import { ConsultingComponent } from './services-page/consulting/consulting.component';
 import { TalentComponent } from './services-page/talent/talent.component';
 import { ServicesPageModule } from './services-page/services-page.module';
+import { SectorsComponent } from './about-us-page/sectors/sectors.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ServicesPageModule } from './services-page/services-page.module';
     CustomersPageComponent,
     BlogPageComponent,
     ContactPageComponent,
+    SectorsComponent,
   ],
   imports: [
     BrowserModule,
