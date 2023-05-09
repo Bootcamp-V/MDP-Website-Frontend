@@ -1,4 +1,4 @@
 export const environment={
 production:false,
-baseUrl:'http://localhost:1337'
+baseUrl:'https://mdp-website-backend.onrender.com'
 }
