@@ -9,10 +9,12 @@
 }
 
 @mixin paragraph {
-  color: $grey-form-text-color;
+  text-align: left;
+  font-size: 13px;
+  color: #535353;
   font-weight: 400;
+  font-family: $font-paragraph;
   line-height: 1.7;
-  font-size: 12px;
 }
 
 @mixin tablet {
