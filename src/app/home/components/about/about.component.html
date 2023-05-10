@@ -1,29 +1,45 @@
 <ng-container *ngIf="dataAbout$ | async as dataAbout">
-  <div
-    class="main_container_WeAreMDP"
-  >
-    <div class="container_info">
-      <p class="title_WeAre">{{ dataAbout.data[0].attributes.title }}</p>
+  <div class="section-space"></div>
+  <div class="main_container_WeAreMDP">
+    <div class="container_WeAreMDP grid grid-cols-1 md:grid-cols-2">
+      <div class="container_info_WeAre">
+        <span class="title_span_WeAre"
+          ><p class="title_WeAre">
+            {{ dataAbout.data[0].attributes.title }}
+          </p></span
+        >
+        <div class="container_description_WeAre">
+          <p class="first-title-description">
+            {{ dataAbout.data[0].attributes.firstDescription }}
+          </p>
 
-      <p>
-        {{ dataAbout.data[0].attributes.firstDescription }}
-      </p>
-      <br />
-      <p>
-        {{ dataAbout.data[0].attributes.secondDescription }}
-      </p>
-    </div>
-    <div class="container_video_WeAre">
-      <div class="container-iframe">
-        <iframe
-          itemprop="video"
-          itemtype="https://schema.org/VideoObject"
-          class="youtube-player"
-          src="//player.vimeo.com/video/258827665?autoplay=0&amp;loop=1&amp;controls=1&amp;title=1&amp;byline=1&amp;portrait=1"
-          width="425"
-          height="240"
-          allowFullScreen
-        ></iframe>
+          <p class="second-title-description">
+            {{ dataAbout.data[0].attributes.secondDescription }}
+          </p>
+        </div>
+      </div>
+      <div class="container_video_WeAre">
+        <div class="container-iframe">
+          <iframe
+            itemprop="video"
+            itemtype="https://schema.org/VideoObject"
+            class="youtube-player"
+            src="//player.vimeo.com/video/258827665?autoplay=0&amp;loop=1&amp;controls=1&amp;title=1&amp;byline=1&amp;portrait=1"
+            allowfullscreen
+            width="100%"
+            height="240"
+            id="fitvid0"
+          ></iframe>
+          <!-- <iframe
+            itemprop="video"
+            itemtype="https://schema.org/VideoObject"
+            class="youtube-player"
+            src="//player.vimeo.com/video/258827665?autoplay=0&amp;loop=1&amp;controls=1&amp;title=1&amp;byline=1&amp;portrait=1"
+            width="425"
+            height="240"
+            allowFullScreen
+          ></iframe> -->
+        </div>
       </div>
     </div>
   </div>
