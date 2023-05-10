@@ -25,6 +25,10 @@ import { TalentComponent } from './services-page/talent/talent.component';
 import { ServicesMainComponent } from './services-page/services-main/services-main.component';
 import { BannerServiceComponent } from './services-page/components/banner/banner.component';
 import { StepsComponent } from './services-page/components/steps/steps.component';
+import { WeOfferComponent } from './services-page/components/we-offer/we-offer.component';
+import { ContactInfoServicesComponent } from './services-page/components/contact-info-services/contact-info-services.component';
+import { ContactservicesComponent } from './services-page/components/contactservices/contactservices.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -50,13 +54,17 @@ import { StepsComponent } from './services-page/components/steps/steps.component
     TalentComponent,
     ServicesMainComponent,
     BannerServiceComponent,
-    StepsComponent
+    StepsComponent,
+    WeOfferComponent,
+    ContactInfoServicesComponent,
+    ContactservicesComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { BannerModel } from '../models/banner.model';
 import { stepsModel } from '../models/steps.model';
+import { InfoOffer, WeOffer } from '../models/we-offer-model';
+import { ContactService } from '../models/contactService.model';
 
 @Component({
   selector: 'app-talent',
@@ -29,4 +31,16 @@ export class TalentComponent {
       'Finalizadas las entrevistas, usted podrá seleccionar el mejor candidato y nosotros nos encargamos de la contratación e inducción para que inicie el trabajo en el menor tiempo posible (sujeto a la disponibilidad del colaborador)',
     ]
   );
+
+
+  offer:WeOffer = new WeOffer('¿Qué ofrecemos?',['Búsqueda, selección y contratación personal de acuerdo a sus requerimientos.',
+  'Encuestas de Satisfacción realizadas periódicamente para medir la efectividad de nuestro servicio y talento.',
+  'Mapa de conocimiento, administramos el conocimiento de gestión a través de nuestra plataforma DOM, con el objetivo de poder mantener una continuidad en el servicio si se da el cambio de personal.',
+  'Seguimiento y gestión administrativa (control de asistencia, seguimiento y control de actividades, reportes de gestión) a través de nuestro aplicativo AppDOM',
+  'Capacitaciones constantes, nos esforzamos por incrementar el conocimiento de nuestros colaboradores.',
+  'Flexibilidad para poder cambiar el perfil de acuerdos a las necesidades del negocio.'],[new InfoOffer('fa-lock','+30','Empresas confían en nosotros'),
+  new InfoOffer('fa-clock','+26,000','de horas mensuales'),new InfoOffer('fa-user-large','+160','Colaboradores en el puesto correcto')]);
+
+  lista:ContactService= new ContactService('Perfiles más solicitados en los últimos 30 días',['Analista Programador .NET','Analista Programador COBOL','Consultor SAP','Analista QA','Analista Programador Móviles']);
+
 }

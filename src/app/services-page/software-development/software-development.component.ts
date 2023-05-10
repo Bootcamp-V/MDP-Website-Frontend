@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { BannerModel } from '../models/banner.model';
 import { stepsModel } from '../models/steps.model';
+import { InfoOffer, WeOffer } from '../models/we-offer-model';
+import { ContactService } from '../models/contactService.model';
 
 @Component({
   selector: 'app-software-development',
@@ -32,4 +34,18 @@ export class SoftwareDevelopmentComponent {
       'Dependiendo de la solución, modelo y marco de trabajo seleccionado se realiza una presentación de nuestra propuesta o estimación para profundizar más sobre la alternativa seleccionada (alcance, tiempos y equipo necesario) para lograr acuerdos que nos lleven al inicio del servicio.',
     ]
   );
+
+
+
+offer:WeOffer = new WeOffer('¿Qué ofrecemos?',['Desarrollo a medida de soluciones de software.','Trabajamos bajo dos modelos: Fábricas de Software y Proyectos.',
+'Preferimos desarrollar soluciones sobre marcos ágiles, pero también podemos realizarlos bajo un marco tradicional o cascada.',
+'Mapa de conocimiento, administramos el conocimiento a través de nuestra plataforma DOM, con el objetivo de poder mejorar el servicio en el tiempo.',
+'Completa visibilidad de nuestros procesos a través de nuestra plataforma DOM, finalista del concurso creatividad empresarial 2016',
+'Capacitaciones constantes, nos esforzamos por incrementar el conocimiento de nuestros colaboradores.'],[new InfoOffer('fa-folder-open','+10','Fábricas activas'),
+new InfoOffer('fa-gear','+50','Proyectos al año'),new InfoOffer('fa-user-large','+280','Desarrolladores')]);
+
+
+lista:ContactService= new ContactService('Lenguajes de programación con los que más trabajamos',['Java','.NET','COBOL','SAP','Android/ IOS']);
+
+
 }

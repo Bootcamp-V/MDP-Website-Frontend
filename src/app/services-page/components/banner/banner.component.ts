@@ -9,7 +9,7 @@ import { BannerModel } from '../../models/banner.model';
 export class BannerServiceComponent {
 
   @Input() banner!:BannerModel;
-  urlima="https://www.mdp.com.pe/wp-content/uploads/2017/05/servicios.jpg";
+
 
 
 }
