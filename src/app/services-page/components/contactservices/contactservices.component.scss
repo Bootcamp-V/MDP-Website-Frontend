@@ -1,6 +1,14 @@
 @import "../../../../styles/abstracts/variables";
 @import "../../../../styles/abstracts/mixins";
 
+input:focus {
+  outline: unset;
+}
+
+.warning{
+  border: solid 1px red;
+}
+
 label{
   color: #969696;
   font-family: "Open Sans", Helvetica, sans-serif;

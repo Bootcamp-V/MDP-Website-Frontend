@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from '../../models/contactService.model';
 
 @Component({
@@ -16,19 +16,44 @@ this.createForm();
   }
 
 
+
+ validarForm(){
+
+  if(this.form.get('nombre')?.valid && this.form.get('email')?.valid && this.form.get('telefono')?.valid && this.form.get('mensaje')?.valid){
+    return true;
+  }
+   return false;
+
+  }
+
+
+
+
+
+
+
+
+
+
 createForm(){
   this.form=this.fb.group({
 
-nombre:['',Validators.required],
-email:['',Validators.required],
-telefono:['',Validators.required],
-mensaje:['',Validators.required],
+nombre: ['',[Validators.required,Validators.minLength(5)]],
+email:['',[Validators.required,Validators.email]],
+telefono:['',[Validators.required]],
+mensaje:['',[Validators.required]],
 
   })
 }
 
 sendForm(){
-  console.log(this.form);
+
+  if(this.validarForm()){
+    console.log(this.form);
+  }else{
+    console.log('revice los campos de entrada');
+  }
+
 }
 
 
