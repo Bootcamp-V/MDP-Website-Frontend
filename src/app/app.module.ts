@@ -29,6 +29,8 @@ import { WeOfferComponent } from './services-page/components/we-offer/we-offer.c
 import { ContactInfoServicesComponent } from './services-page/components/contact-info-services/contact-info-services.component';
 import { ContactservicesComponent } from './services-page/components/contactservices/contactservices.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ServicesBussinesComponent } from './services-page/components/services-bussines/services-bussines.component';
+import { ConsultingPlanComponent } from './services-page/components/consulting-plan/consulting-plan.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     StepsComponent,
     WeOfferComponent,
     ContactInfoServicesComponent,
-    ContactservicesComponent
+    ContactservicesComponent,
+    ServicesBussinesComponent,
+    ConsultingPlanComponent
 
   ],
   imports: [
