@@ -1,6 +1,6 @@
 export interface IBannerPages {
   data: IDataBP[]
-  meta: Meta
+  meta: IMetaBP
 }
 
 export interface IDataBP {
@@ -150,7 +150,7 @@ export interface IDescriptionBannerPages {
   data: any[]
 }
 
-export interface Meta {
+export interface IMetaBP {
   pagination: Pagination
 }
 
