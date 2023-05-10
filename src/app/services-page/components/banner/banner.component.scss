@@ -5,32 +5,31 @@
   height: 100vh;
   position: relative;
 
-
-  .banner_container{
+  .banner_container {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-repeat:no-repeat;
-    background-attachment:scroll;
-    background-position:center center;
-    background-size:cover;
-    img{
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    img {
       width: 100%;
       height: 100%;
     }
   }
 }
 
-.down-banner-container{
+.down-banner-container {
   width: 25px;
   height: 15px;
-  background-color:#000124;
+  background-color: #000124;
   clip-path: polygon(100% 0, 0 0, 100% 100%);
   border-radius: 0px 0px 5% 0px;
   margin-left: 20%;
+  margin-top: 180px;
   border-bottom-right-radius: 4px;
 }
-
 
 .shadow {
   background: rgba(5, 7, 12, 0.3);
@@ -38,9 +37,8 @@
   width: 90%;
   height: 150px;
   position: absolute;
-  bottom: 110px;
+  bottom: -70px;
   right: 5%;
-
 }
 
 .develop {
@@ -49,12 +47,11 @@
   height: 250px;
   clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
   position: absolute;
-  bottom: 0;
+  bottom: -180px;
   border-radius: 0px 0px 7px 7px;
   .develop_text {
     color: white;
-    width: 55%;
-
+    width: 80%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -62,31 +59,28 @@
     margin: auto;
     font-family: "Oswald", Helvetica, sans-serif;
 
-    h3{
-font-size: 23px;
-font-weight: 300;
-text-align: left;
+    h3 {
+      font-size: 23px;
+      font-weight: 300;
+      text-align: left;
     }
 
-
-    p{
+    p {
       font-size: 18px;
       font-weight: 300;
       opacity: 0.6;
-   text-align: left;
+      text-align: left;
     }
   }
 }
 
-
-@media screen and (max-width:1200px) {
+@media screen and (max-width: 1200px) {
   .banner {
     width: 100%;
     height: 1000px;
     position: relative;
 
-
-    .banner_container{
+    .banner_container {
       width: 100%;
       height: 100%;
       background-repeat: no-repeat;
@@ -101,21 +95,23 @@ text-align: left;
     width: 90%;
     height: 250px;
     position: absolute;
-    bottom: 165px;
+    bottom: 70px;
     right: 5%;
-
+  }
+  .down-banner-container {
+    margin-top: 0;
   }
 
   .develop {
     background-color: #000124;
     width: 100%;
-    height: 400px;
+    height: 300px;
     clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
     position: absolute;
     bottom: 0;
     .develop_text {
       color: white;
-      width: 55%;
+      width: 80%;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -123,26 +119,23 @@ text-align: left;
       margin: auto;
       font-family: "Oswald", Helvetica, sans-serif;
 
-      h3{
-  font-size: 23px;
-  font-weight: 300;
-  text-align: center;
+      h3 {
+        font-size: 23px;
+        font-weight: 300;
+        text-align: center;
       }
 
-
-      p{
+      p {
         font-size: 18px;
         font-weight: 300;
         opacity: 0.6;
-     text-align: center;
+        text-align: center;
       }
     }
   }
-
 }
 
-
-@media screen and (max-width:767px){
+@media screen and (max-width: 767px) {
   .banner {
     width: 100%;
     height: 500px;
@@ -150,18 +143,14 @@ text-align: left;
     padding-top: 160px;
     margin-bottom: 450px;
 
-
-
-    .banner_container{
+    .banner_container {
       width: 100%;
       height: 100%;
       background-repeat: no-repeat;
       background-size: cover;
       position: absolute;
-
     }
   }
-
   .shadow {
     background: rgba(5, 7, 12, 0.3);
     clip-path: polygon(100% 8%, 100% 50%, 64% 50%, 0 15%);
@@ -170,7 +159,9 @@ text-align: left;
     position: absolute;
     top: 550px;
     right: 5%;
-
+  }
+  .down-banner-container {
+    margin-top: 0;
   }
 
   .develop {
@@ -190,47 +181,41 @@ text-align: left;
       margin: auto;
       font-family: "Oswald", Helvetica, sans-serif;
 
-      h3{
-  font-size: 23px;
-  font-weight: 300;
-  text-align: center;
+      h3 {
+        font-size: 23px;
+        font-weight: 300;
+        text-align: center;
       }
 
-
-      p{
+      p {
         font-size: 18px;
         font-weight: 300;
         opacity: 0.6;
-     text-align: center;
+        text-align: center;
       }
     }
   }
-
-
-
-
 }
 
-@include mobile{
+@include mobile {
   .banner {
     width: 100%;
     height: 500px;
     position: relative;
     padding-top: 160px;
-    margin-bottom: 700px;
-    background-repeat:no-repeat;
-    background-attachment:scroll;
-  background-position: 50%;
-    background-size:contain;
+    margin-bottom: 590px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 50%;
+    background-size: contain;
 
-
-    .banner_container{
+    .banner_container {
       width: 100%;
       height: 100%;
       background-repeat: no-repeat;
       background-size: cover;
       position: absolute;
-      img{
+      img {
         width: 100%;
         height: 100%;
       }
@@ -245,13 +230,15 @@ text-align: left;
     position: absolute;
     top: 550px;
     right: 5%;
-
+  }
+  .down-banner-container {
+    margin-top: 0;
   }
 
   .develop {
     background-color: #000124;
     width: 100%;
-    height: 600px;
+    height: 490px;
     clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 100%);
     position: absolute;
     top: 600px;
@@ -266,46 +253,36 @@ text-align: left;
       margin: auto;
       font-family: "Oswald", Helvetica, sans-serif;
 
-      h3{
-  font-size: 23px;
-  font-weight: 300;
-  text-align: center;
+      h3 {
+        font-size: 23px;
+        font-weight: 300;
+        text-align: center;
       }
 
-
-      p{
+      p {
         font-size: 18px;
         font-weight: 300;
         opacity: 0.6;
-     text-align: center;
+        text-align: center;
       }
     }
   }
-
-
 }
 
-
-@media screen and (max-width:480px){
-
-
+@media screen and (max-width: 480px) {
   .banner {
-
     position: relative;
     padding-top: 190px;
-
+    margin-bottom: 619px;
+  }
+  .develop {
+    height: 520px;
+  }
 }
-}
 
-
-@media screen and (max-width:450px){
-
-
+@media screen and (max-width: 450px) {
   .banner {
-
     position: relative;
     padding-top: 230px;
-
+  }
 }
-}
-
