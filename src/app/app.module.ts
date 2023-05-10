@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { BannerComponent } from './shared/banner/banner.component';
 import { NavbarComponent } from './shared/header/navbar/navbar.component';
 import { ServicesBannerComponent } from './shared/services-banner/services-banner.component';
 import { BannerContentRectangleComponent } from './shared/banner-content-rectangle/banner-content-rectangle.component';
@@ -23,7 +22,8 @@ import { SoftwareDevelopmentComponent } from './services-page/software-developme
 import { SoftwareTestingComponent } from './services-page/software-testing/software-testing.component';
 import { ConsultingComponent } from './services-page/consulting/consulting.component';
 import { TalentComponent } from './services-page/talent/talent.component';
-import { ServicesPageModule } from './services-page/services-page.module';
+import { ServicesMainComponent } from './services-page/services-main/services-main.component';
+import { BannerServiceComponent } from './services-page/components/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,6 @@ import { ServicesPageModule } from './services-page/services-page.module';
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
-    BannerComponent,
     ServicesBannerComponent,
     BannerContentRectangleComponent,
     SocialsComponent,
@@ -43,14 +42,20 @@ import { ServicesPageModule } from './services-page/services-page.module';
     CustomersPageComponent,
     BlogPageComponent,
     ContactPageComponent,
+    ServicesPageComponent,
+    SoftwareDevelopmentComponent,
+    SoftwareTestingComponent,
+    ConsultingComponent,
+    TalentComponent,
+    ServicesMainComponent,
+    BannerServiceComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ServicesPageModule,
   ],
-
   providers: [],
   bootstrap: [AppComponent],
 })
