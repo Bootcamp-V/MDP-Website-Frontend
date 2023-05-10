@@ -8,47 +8,53 @@ import { IPage } from './models/page.interface';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  pages !:IPage;
+  pages !: IPage;
   isOpen = false;
-  iconName : string = "hamburger";
-  menuClass : string = "menuppal";
+  iconName: string = "hamburger";
+  menuClass: string = "menuppal";
 
-  submenuClass : string = "sub-menupal";
+  submenuClass: string = "sub-menupal";
 
-  openSubmenuServices : boolean = false;
-  openSubmenuAbout : boolean = false;
-  openSubmenuContact : boolean = false;
+  openSubmenuServices: boolean = false;
+  openSubmenuAbout: boolean = false;
+  openSubmenuContact: boolean = false;
   constructor(private navService: NavbarService) {
 
   }
   ngOnInit() {
     this.navService.getPages().subscribe((res) => {
-        this.pages = res;
+      this.pages = res;
     });
   }
 
   toogle() {
     this.isOpen = !this.isOpen;
-    this.iconName = ( this.isOpen ? 'hamburger is-active' : 'hamburger');
+    this.iconName = (this.isOpen ? 'hamburger is-active' : 'hamburger');
     this.menuClass = (this.isOpen ? 'menuppal is-active' : 'menuppal');
 
+    if (this.isOpen === false) {
+      this.openSubmenuServices = false;
+      this.openSubmenuContact = false;
+      this.openSubmenuAbout = false;
+    }
+
   }
 
-  toogleSubMenuServices(){
+  toogleSubMenuServices() {
     this.isOpen = true;
     this.openSubmenuServices = !this.openSubmenuServices;
-    this.submenuClass= (this.openSubmenuServices ? 'sub-menupal is-active' : 'sub-menupal')
+    this.submenuClass = (this.openSubmenuServices ? 'sub-menupal is-active' : 'sub-menupal')
 
   }
-  toogleSubMenuAbout(){
+  toogleSubMenuAbout() {
     this.isOpen = true;
     this.openSubmenuAbout = !this.openSubmenuAbout;
-    this.submenuClass= (this.openSubmenuAbout ? 'sub-menupal is-active' : 'sub-menupal')
+    this.submenuClass = (this.openSubmenuAbout ? 'sub-menupal is-active' : 'sub-menupal')
   }
-  toogleSubMenuContact(){
+  toogleSubMenuContact() {
     this.isOpen = true;
     this.openSubmenuContact = !this.openSubmenuContact;
-    this.submenuClass= (this.openSubmenuContact ? 'sub-menupal is-active' : 'sub-menupal')
+    this.submenuClass = (this.openSubmenuContact ? 'sub-menupal is-active' : 'sub-menupal')
   }
 
 }
