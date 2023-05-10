@@ -11,6 +11,7 @@ import { SoftwareTestingComponent } from './services-page/software-testing/softw
 import { ConsultingComponent } from './services-page/consulting/consulting.component';
 import { TalentComponent } from './services-page/talent/talent.component';
 import { CertificationsComponent } from './about-us-page/certifications/certifications.component';
+import { ServicesMainComponent } from './services-page/services-main/services-main.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +19,10 @@ const routes: Routes = [
     path: 'servicios',
     component: ServicesPageComponent,
     children: [
+      {
+        path: '',
+        component: ServicesMainComponent,
+      },
       {
         path: 'desarrollo-de-software',
         component: SoftwareDevelopmentComponent,

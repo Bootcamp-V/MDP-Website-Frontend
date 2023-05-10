@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { BannerComponent } from './shared/banner/banner.component';
 import { NavbarComponent } from './shared/header/navbar/navbar.component';
 import { ServicesBannerComponent } from './shared/services-banner/services-banner.component';
 import { BannerContentRectangleComponent } from './shared/banner-content-rectangle/banner-content-rectangle.component';
@@ -23,8 +22,16 @@ import { SoftwareDevelopmentComponent } from './services-page/software-developme
 import { SoftwareTestingComponent } from './services-page/software-testing/software-testing.component';
 import { ConsultingComponent } from './services-page/consulting/consulting.component';
 import { TalentComponent } from './services-page/talent/talent.component';
-import { ServicesPageModule } from './services-page/services-page.module';
+//import { ServicesPageModule } from './services-page/services-page.module';
 import { CertificationsComponent } from './about-us-page/certifications/certifications.component';
+import { ServicesMainComponent } from './services-page/services-main/services-main.component';
+import { BannerServiceComponent } from './services-page/components/banner/banner.component';
+import { StepsComponent } from './services-page/components/steps/steps.component';
+import { WeOfferComponent } from './services-page/components/we-offer/we-offer.component';
+import { ContactInfoServicesComponent } from './services-page/components/contact-info-services/contact-info-services.component';
+import { ContactservicesComponent } from './services-page/components/contactservices/contactservices.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BannerAboutComponent } from './about-us-page/components/banner-about/banner-about.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +40,6 @@ import { CertificationsComponent } from './about-us-page/certifications/certific
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
-    BannerComponent,
     ServicesBannerComponent,
     BannerContentRectangleComponent,
     SocialsComponent,
@@ -45,14 +51,27 @@ import { CertificationsComponent } from './about-us-page/certifications/certific
     BlogPageComponent,
     ContactPageComponent,
     CertificationsComponent,
+    ServicesPageComponent,
+    SoftwareDevelopmentComponent,
+    SoftwareTestingComponent,
+    ConsultingComponent,
+    TalentComponent,
+    ServicesMainComponent,
+    BannerServiceComponent,
+    StepsComponent,
+    WeOfferComponent,
+    ContactInfoServicesComponent,
+    ContactservicesComponent,
+    BannerAboutComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ServicesPageModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-
   providers: [],
   bootstrap: [AppComponent],
 })

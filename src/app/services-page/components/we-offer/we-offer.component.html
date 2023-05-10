@@ -1,0 +1,52 @@
+<div class="container-offer">
+  <div class="list-offer">
+    <h2 class="title-offer">{{offer.title}}</h2>
+    <ul>
+      <li *ngFor="let i of offer.listOffer">{{i}}</li>
+
+    </ul>
+  </div>
+
+  <div class="list-figures">
+    <ng-container *ngFor="let i of offer.listInfoOffer ;let index = index">
+    <div *ngIf="((index+1)%2!==0)" class="figure-element-impar">
+      <div class="icon-figure-impar">
+        <i class="fa-sharp fa-solid {{i.icon}}"></i>
+      </div>
+      <div class="line-figure"></div>
+      <div class="info-figure-impar">
+        <div class="points">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <h3>{{i.cantidad}}</h3>
+
+        <span>{{i.descripcion}}</span>
+      </div>
+    </div>
+
+    <div *ngIf="((index+1)%2==0)" class="figure-element-par">
+      <div class="info-figure-par">
+
+        <div class="points">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <h3>{{i.cantidad}}</h3>
+        <span>{{i.descripcion}}</span>
+      </div>
+      <div class="line-figure"></div>
+      <div class="icon-figure-par">
+      <i class="fa-sharp fa-solid {{i.icon}}"></i>
+      </div>
+    </div>
+</ng-container>
+
+  </div>
+</div>
+
