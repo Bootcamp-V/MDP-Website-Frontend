@@ -30,6 +30,9 @@ import { Grid2Component } from './about-us-page/about-us/components/grid2/grid2.
 import { TimelineComponent } from './about-us-page/about-us/components/timeline/timeline.component';
 import { ContainerComponent } from './about-us-page/about-us/components/container/container.component';
 import { ImageFigureAboutUsComponent } from './about-us-page/about-us/components/image-figure-about-us/image-figure-about-us.component';
+import { OrganizationComponent } from './about-us-page/organization/organization.component';
+import { ImageOrganizationComponent } from './about-us-page/organization/components/image-organization/image-organization.component';
+import { ContainerTextOrganizationMapComponent } from './about-us-page/organization/components/container-text-organization-map/container-text-organization-map.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +58,9 @@ import { ImageFigureAboutUsComponent } from './about-us-page/about-us/components
     TimelineComponent,
     ContainerComponent,
     ImageFigureAboutUsComponent,
+    OrganizationComponent,
+    ImageOrganizationComponent,
+    ContainerTextOrganizationMapComponent,
   ],
   imports: [
     BrowserModule,
