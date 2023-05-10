@@ -3,14 +3,31 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches: [ "main" ]
+
 jobs:
+  sonarcloud:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        # Disabling shallow clone is recommended for improving relevancy of reporting
+        fetch-depth: 0
+    - name: SonarCloud Scan
+      uses: sonarsource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+
   build:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
-    - name: All things angular
+    - name: Deploy Angular App to GitHub Pages
       uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0 ## replace by latest version without it you will see Expected format {org}/{repo}[/path]@ref. Actual 'AhsanAyaz/angular-deploy-gh-pages-actions',Input string was not in a correct format.
       with:
         github_access_token: ${{ secrets.GITHUB_TOKEN }} # see the Configuration section for how you can create secrets
