@@ -1,0 +1,11 @@
+<div class="sectors-main-container">
+  <div class="sectors-container grid grid-cols-1 md:grid-cols-2">
+    <div class="sector-card" *ngFor="let object of arr">
+      <span class="sector-title-span"
+        ><p class="sector-title">{{ object.name }}</p></span
+      >
+
+      <img [src]="object.image" [alt]="object.name" />
+    </div>
+  </div>
+</div>
