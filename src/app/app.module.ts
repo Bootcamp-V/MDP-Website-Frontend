@@ -24,7 +24,7 @@ import { ConsultingComponent } from './services-page/consulting/consulting.compo
 import { TalentComponent } from './services-page/talent/talent.component';
 import { CertificationsComponent } from './about-us-page/certifications/certifications.component';
 import { ServicesMainComponent } from './services-page/services-main/services-main.component';
-import { BannerComponent } from './services-page/components/banner/banner.component';
+import { BannerServiceComponent } from './services-page/components/banner/banner.component';
 import { BusinessModelComponent } from './about-us-page/business-model/business-model.component';
 import { StepsComponent } from './services-page/components/steps/steps.component';
 import { WeOfferComponent } from './services-page/components/we-offer/we-offer.component';
@@ -66,7 +66,7 @@ import { SectorsComponent } from './about-us-page/sectors/sectors.component';
     ConsultingComponent,
     TalentComponent,
     ServicesMainComponent,
-    BannerComponent,
+    BannerServiceComponent,
     BusinessModelComponent,
     StepsComponent,
     WeOfferComponent,

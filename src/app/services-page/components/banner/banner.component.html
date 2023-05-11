@@ -1,14 +1,16 @@
-<div class="banner">
-  <div
-    class="banner_container"
-    style="background-image:url({{banner.url}})"
-  ></div>
-  <div class="shadow"></div>
-  <div class="develop">
-    <div class="develop_text">
-      <h3 *ngFor="let i of banner.titulos">{{ i }}</h3>
-      <p>{{ banner.descripcion }}</p>
+<ng-container *ngIf="bannerOb$ | async as banner">
+  <div class="banner">
+    <div
+      class="banner_container"
+      style="background-image:url({{banner.url}})"
+    ></div>
+    <div class="shadow"></div>
+    <div class="develop">
+      <div class="develop_text">
+        <h3 *ngFor="let i of banner.titulos">{{i}}</h3>
+        <p>{{ banner.descripcion }}</p>
+      </div>
     </div>
   </div>
-</div>
-<div class="down-banner-container"></div>
+  <div class="down-banner-container"></div>
+  </ng-container>

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { BannerModel } from 'src/app/services-page/models/banner.model';
-import { IBannerPages } from 'src/app/services-page/models/bannerPages.interface';
-import { AboutPageService } from '../services/about-page.service';
+import { IDescriptionBannerPages, ITitleBannerPages } from 'src/app/services-page/models/bannerPages.interface';
+import { ServicesPageService } from 'src/app/services-page/services/services-page.service';
 
 @Component({
   selector: 'app-certifications',
@@ -10,18 +9,24 @@ import { AboutPageService } from '../services/about-page.service';
   styleUrls: ['./certifications.component.scss']
 })
 export class CertificationsComponent implements OnInit {
+  titles!: ITitleBannerPages;
+  description!: IDescriptionBannerPages;
   banner!: BannerModel;
-  
-  bp$!:Observable<IBannerPages>;
 
-  constructor(private serv:AboutPageService ) {
+
+  constructor(private serv: ServicesPageService) {
 
   }
-  ngOnInit(): void {
-    
-    this.bp$= this.serv.getBannerPage();
-    console.log(this.bp$);
-    
-    
+
+
+  ngOnInit() {
+    this.serv.getBannerPage().subscribe((res) => {
+
+      this.titles = res.data[8].attributes.title_banner_pages;
+      this.description = res.data[8].attributes.description_banner_pages;
+      this.banner = new BannerModel(res.data[8].attributes.img.data[0].attributes.formats.large.url, [this.titles.data[0].attributes.title, this.titles.data[1].attributes.title], []);
+      this.serv.bannerPages$.next(this.banner);
+
+    });
   }
 }
