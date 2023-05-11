@@ -370,7 +370,8 @@ ul.sub-menu {
     //-webkit-transform: translate(-400px,0); 
     //-o-transform: translate(-400px,0);
 	  //-moz-transform: translate(-400px,0); 
-    transition: transform 0.8s linear 0.2s;
+    //transition: transform 0.8s linear 0.2s;
+    transform: translateZ(0);
   }
 
   .menuppal {
@@ -383,6 +384,7 @@ ul.sub-menu {
     line-height: 1.7;
     background: #fff;
 
+    transition: transform .5s ease,-webkit-transform .5s ease;
 
     z-index: 10000;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
@@ -461,11 +463,12 @@ ul.sub-menu {
 
 
   .sub-menupal .is-active {
-    transform: translate(0,0);
+    //transform: translate(0,0);
     //-webkit-transform: translate(-400px,0); 
     //-o-transform: translate(-400px,0);
 	  //-moz-transform: translate(-400px,0); 
     //transition: transform 0.8s linear 0.2s;
+    transform: translateZ(0);
   }
 
   .sub-menupal {
@@ -476,11 +479,12 @@ ul.sub-menu {
     position: absolute;
     line-height: 22.1px;
     background: #fff;
+    transition: transform .5s ease,-webkit-transform .5s ease;
 
 
     z-index: 10000;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
-    //transform-style: preserve-3d;
+    transform-style: preserve-3d;
     padding: 0;
     margin: 0;
     list-style: none;
