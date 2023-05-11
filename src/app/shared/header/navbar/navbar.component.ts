@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarService } from './services/navbar.service';
 import { IPage } from './models/page.interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,9 @@ import { IPage } from './models/page.interface';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  pages !: IPage;
+
+  pages$!:Observable<IPage>;
+
   isOpen = false;
   iconName: string = "hamburger";
   menuClass: string = "menuppal";
@@ -18,13 +21,13 @@ export class NavbarComponent implements OnInit {
   openSubmenuServices: boolean = false;
   openSubmenuAbout: boolean = false;
   openSubmenuContact: boolean = false;
+
   constructor(private navService: NavbarService) {
 
   }
-  ngOnInit() {
-    this.navService.getPages().subscribe((res) => {
-      this.pages = res;
-    });
+ 
+  ngOnInit(): void {
+  this.pages$= this.navService.getPages()
   }
 
   toogle() {
