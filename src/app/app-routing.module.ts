@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ServicesPageComponent } from './services-page/services-page.component';
 import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
+import { OrganizationComponent } from './about-us-page/organization/organization.component';
+import { AboutUsComponent } from './about-us-page/about-us/about-us.component';
 import { CustomersPageComponent } from './customers-page/customers-page.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
