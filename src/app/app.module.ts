@@ -22,6 +22,7 @@ import { SoftwareDevelopmentComponent } from './services-page/software-developme
 import { SoftwareTestingComponent } from './services-page/software-testing/software-testing.component';
 import { ConsultingComponent } from './services-page/consulting/consulting.component';
 import { TalentComponent } from './services-page/talent/talent.component';
+
 import { CertificationsComponent } from './about-us-page/certifications/certifications.component';
 import { ServicesMainComponent } from './services-page/services-main/services-main.component';
 import { BannerServiceComponent } from './services-page/components/banner/banner.component';
@@ -41,6 +42,7 @@ import { ImageFigureAboutUsComponent } from './about-us-page/about-us/components
 import { OrganizationComponent } from './about-us-page/organization/organization.component';
 import { ImageOrganizationComponent } from './about-us-page/organization/components/image-organization/image-organization.component';
 import { ContainerTextOrganizationMapComponent } from './about-us-page/organization/components/container-text-organization-map/container-text-organization-map.component';
+import { SectorsComponent } from './about-us-page/sectors/sectors.component';
 
 @NgModule({
   declarations: [
@@ -82,13 +84,14 @@ import { ContainerTextOrganizationMapComponent } from './about-us-page/organizat
     OrganizationComponent,
     ImageOrganizationComponent,
     ContainerTextOrganizationMapComponent,
+    SectorsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
