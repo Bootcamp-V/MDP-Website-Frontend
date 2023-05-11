@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { BannerModel } from '../../models/banner.model';
 
 @Component({
   selector: 'app-banner-new',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./banner.component.scss']
 })
 export class BannerServiceComponent {
+
+  @Input() banner!:BannerModel;
+
+
 
 }

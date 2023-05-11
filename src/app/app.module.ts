@@ -22,9 +22,15 @@ import { SoftwareDevelopmentComponent } from './services-page/software-developme
 import { SoftwareTestingComponent } from './services-page/software-testing/software-testing.component';
 import { ConsultingComponent } from './services-page/consulting/consulting.component';
 import { TalentComponent } from './services-page/talent/talent.component';
+import { CertificationsComponent } from './about-us-page/certifications/certifications.component';
 import { ServicesMainComponent } from './services-page/services-main/services-main.component';
 import { BannerServiceComponent } from './services-page/components/banner/banner.component';
 import { BusinessModelComponent } from './about-us-page/business-model/business-model.component';
+import { StepsComponent } from './services-page/components/steps/steps.component';
+import { WeOfferComponent } from './services-page/components/we-offer/we-offer.component';
+import { ContactInfoServicesComponent } from './services-page/components/contact-info-services/contact-info-services.component';
+import { ContactservicesComponent } from './services-page/components/contactservices/contactservices.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BannerAboutComponent } from './about-us-page/components/banner-about/banner-about.component';
 
 @NgModule({
@@ -44,6 +50,7 @@ import { BannerAboutComponent } from './about-us-page/components/banner-about/ba
     CustomersPageComponent,
     BlogPageComponent,
     ContactPageComponent,
+    CertificationsComponent,
     ServicesPageComponent,
     SoftwareDevelopmentComponent,
     SoftwareTestingComponent,
@@ -52,6 +59,10 @@ import { BannerAboutComponent } from './about-us-page/components/banner-about/ba
     ServicesMainComponent,
     BannerServiceComponent,
     BusinessModelComponent,
+    StepsComponent,
+    WeOfferComponent,
+    ContactInfoServicesComponent,
+    ContactservicesComponent,
     BannerAboutComponent
 
   ],
@@ -59,6 +70,8 @@ import { BannerAboutComponent } from './about-us-page/components/banner-about/ba
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
