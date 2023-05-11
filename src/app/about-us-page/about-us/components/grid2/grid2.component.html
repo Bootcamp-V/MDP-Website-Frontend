@@ -1,0 +1,8 @@
+<div class="grid-container">
+    <div class="grid-item" *ngFor="let box of boxes">
+      <h2>{{ box.title }}</h2>
+      <p [innerHTML]="box.subtitle"></p>
+      <div class="bar"></div>
+   
+    </div>
+  </div>  
