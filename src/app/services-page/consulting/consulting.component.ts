@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { BannerModel } from '../models/banner.model';
+import { IDescriptionBannerPages, ITitleBannerPages } from '../models/bannerPages.interface';
+import { ServicesPageService } from '../services/services-page.service';
 
 @Component({
   selector: 'app-consulting',
@@ -7,6 +9,23 @@ import { BannerModel } from '../models/banner.model';
   styleUrls: ['./consulting.component.scss']
 })
 export class ConsultingComponent {
-  banner:BannerModel= new BannerModel ('https://www.mdp.com.pe/wp-content/uploads/2017/05/consultoria-1.jpg',["Consultoría","Nuestra promesa: Ayudamos a su organización a dar el siguiente paso. Ser una empresa Bi Modal nos permite investigar nuevas tendencias en el mundo y desarrollar estrategias para implementarlas en nuestro mercado, con la finalidad de generar nuevas capacidades y una ventaja competitiva a nuestros clientes."],
-  "");
+
+  titles!:ITitleBannerPages;
+  description!:IDescriptionBannerPages;
+  banner!:BannerModel;
+
+  constructor(private serv:ServicesPageService){
+
+  }
+
+
+  ngOnInit() {
+    this.serv.getBannerPage().subscribe((res) => {
+        this.titles=res.data[3].attributes.title_banner_pages;
+        this.description=res.data[3].attributes.description_banner_pages;
+this.banner= new BannerModel(res.data[3].attributes.img.data[0].attributes.formats.large.url,[this.titles.data[0].attributes.title,this.titles.data[1].attributes.title],[]);
+    });
+  }
+
+
 }

@@ -1,20 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BannerModel } from '../models/banner.model';
 import { stepsModel } from '../models/steps.model';
 import { InfoOffer, WeOffer } from '../models/we-offer-model';
 import { ContactService } from '../models/contactService.model';
+import { IDescriptionBannerPages, ITitleBannerPages } from '../models/bannerPages.interface';
+import { ServicesPageService } from '../services/services-page.service';
 
 @Component({
   selector: 'app-talent',
   templateUrl: './talent.component.html',
   styleUrls: ['./talent.component.scss'],
 })
-export class TalentComponent {
-  banner: BannerModel = new BannerModel(
-    'https://www.mdp.com.pe/wp-content/uploads/2017/05/talento.jpg',
-    ['Talento', 'La persona correcta para el puesto correcto!'],
-    'Nuestra promesa es simple, seleccionamos a los mejores perfiles en TI según sus requerimientos específicos, ofreciéndole liberarse de los procesos administrativos (selección, contratación y control) para enfocarse en lo más importante, incrementar la productividad de su empresa.'
-  );
+export class TalentComponent implements OnInit{
+
+  titles!:ITitleBannerPages;
+  description!:IDescriptionBannerPages;
+  banner!:BannerModel;
+
+  constructor(private serv:ServicesPageService){
+
+  }
+
+
+  ngOnInit() {
+    this.serv.getBannerPage().subscribe((res) => {
+
+        this.titles=res.data[4].attributes.title_banner_pages;
+        this.description=res.data[4].attributes.description_banner_pages;
+
+this.banner= new BannerModel(res.data[4].attributes.img.data[0].attributes.formats.large.url,[this.titles.data[0].attributes.title,this.titles.data[1].attributes.title],
+  [this.description.data[0].attributes.text]);
+    });
+  }
+
+
+
+
 
   steps: stepsModel = new stepsModel(
     ['https://cdn-icons-png.flaticon.com/512/45/45180.png'],

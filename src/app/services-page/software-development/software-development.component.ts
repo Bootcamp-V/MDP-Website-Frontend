@@ -3,6 +3,8 @@ import { BannerModel } from '../models/banner.model';
 import { stepsModel } from '../models/steps.model';
 import { InfoOffer, WeOffer } from '../models/we-offer-model';
 import { ContactService } from '../models/contactService.model';
+import { IDescriptionBannerPages, ITitleBannerPages } from '../models/bannerPages.interface';
+import { ServicesPageService } from '../services/services-page.service';
 
 @Component({
   selector: 'app-software-development',
@@ -10,14 +12,34 @@ import { ContactService } from '../models/contactService.model';
   styleUrls: ['./software-development.component.scss'],
 })
 export class SoftwareDevelopmentComponent {
-  banner: BannerModel = new BannerModel(
-    'https://www.mdp.com.pe/wp-content/uploads/2017/05/desarrollo_software.jpg',
-    [
-      'Desarrollo de Software',
-      'Nuestra promesa: Soluciones tecnológicas disruptivas que generan un valor real a su negocio.',
-    ],
-    'Nuestra promesa es entregar soluciones de software con un enfoque diferente, aplicando las mejores prácticas e integrando distintas técnicas que nos permitan superar las expectativas de nuestros clientes y que generen un valor real en las organizaciones y sus clientes en el menor tiempo posible.'
-  );
+
+
+
+  titles!:ITitleBannerPages;
+  description!:IDescriptionBannerPages;
+  banner!:BannerModel;
+
+  constructor(private serv:ServicesPageService){
+
+  }
+
+
+  ngOnInit() {
+    this.serv.getBannerPage().subscribe((res) => {
+       /// console.log(res);
+        //console.log(res.data[0].attributes.img.data[0].attributes.formats.large.url);
+        //console.log(res.data[0].attributes.title_banner_pages.data);
+        //console.log(res.data[0].attributes.description_banner_pages);
+        this.titles=res.data[1].attributes.title_banner_pages;
+        this.description=res.data[1].attributes.description_banner_pages;
+
+this.banner= new BannerModel(res.data[1].attributes.img.data[0].attributes.formats.large.url,[this.titles.data[0].attributes.title,this.titles.data[1].attributes.title],
+  [this.description.data[0].attributes.text]);
+    });
+  }
+
+
+
 
   steps: stepsModel = new stepsModel(
     ['https://cdn-icons-png.flaticon.com/512/45/45180.png'],

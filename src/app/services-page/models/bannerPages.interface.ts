@@ -147,7 +147,19 @@ export interface IAttributesTitle {
 }
 
 export interface IDescriptionBannerPages {
-  data: any[]
+  data: IDataDescription[]
+}
+
+export interface IDataDescription {
+  id: number
+  attributes: IAttributesDescription
+}
+
+export interface IAttributesDescription {
+  text: string
+  createdAt: string
+  updatedAt: string
+  publishedAt: string
 }
 
 export interface IMetaBP {

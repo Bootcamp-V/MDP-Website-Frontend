@@ -21,21 +21,13 @@ export class ServicesMainComponent implements OnInit{
 
   ngOnInit() {
     this.serv.getBannerPage().subscribe((res) => {
-       /// console.log(res);
-        //console.log(res.data[0].attributes.img.data[0].attributes.formats.large.url);
-        //console.log(res.data[0].attributes.title_banner_pages.data);
-        //console.log(res.data[0].attributes.description_banner_pages);
+
         this.titles=res.data[0].attributes.title_banner_pages;
         this.description=res.data[0].attributes.description_banner_pages;
-this.banner= new BannerModel(res.data[0].attributes.img.data[0].attributes.formats.large.url,[this.titles.data[0].attributes.title,this.titles.data[1].attributes.title],"");
+this.banner= new BannerModel(res.data[0].attributes.img.data[0].attributes.formats.large.url,[this.titles.data[0].attributes.title,this.titles.data[1].attributes.title],[]);
     });
   }
 
-
-getInfoBannerPage(){
-
-
-}
 
 
 

@@ -1,23 +1,46 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BannerModel } from '../models/banner.model';
 import { stepsModel } from '../models/steps.model';
 import { InfoOffer, WeOffer } from '../models/we-offer-model';
 import { ContactService } from '../models/contactService.model';
+import { IDescriptionBannerPages, ITitleBannerPages } from '../models/bannerPages.interface';
+import { ServicesPageService } from '../services/services-page.service';
 
 @Component({
   selector: 'app-software-testing',
   templateUrl: './software-testing.component.html',
   styleUrls: ['./software-testing.component.scss'],
 })
-export class SoftwareTestingComponent {
-  banner: BannerModel = new BannerModel(
-    'https://www.mdp.com.pe/wp-content/uploads/2017/05/Prueba-de-Software.jpg',
-    [
-      'Pruebas de Software',
-      'Nuestra promesa: La calidad es una consecuencia de un gran trabajo y atención por los detalles.',
-    ],
-    'Hoy, la calidad es uno de los requisitos indispensables para el éxito de un producto, generar una experiencia de uso positiva en los usuarios facilita el incremento de la frecuencia de uso, por lo que cada detalle debe ser analizado cuidadosamente. '
-  );
+export class SoftwareTestingComponent implements OnInit{
+
+
+
+
+  titles!:ITitleBannerPages;
+  description!:IDescriptionBannerPages;
+  banner!:BannerModel;
+
+  constructor(private serv:ServicesPageService){
+
+  }
+
+
+  ngOnInit() {
+    this.serv.getBannerPage().subscribe((res) => {
+
+        this.titles=res.data[2].attributes.title_banner_pages;
+        this.description=res.data[2].attributes.description_banner_pages;
+
+this.banner= new BannerModel(res.data[2].attributes.img.data[0].attributes.formats.large.url,[this.titles.data[0].attributes.title,this.titles.data[1].attributes.title],
+  [this.description.data[0].attributes.text]);
+    });
+  }
+
+
+
+
+
+
 
   steps: stepsModel = new stepsModel(
     ['https://cdn-icons-png.flaticon.com/512/45/45180.png'],
