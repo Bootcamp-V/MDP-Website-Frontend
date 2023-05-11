@@ -10,7 +10,6 @@ import { DataOffer } from '../../models/weOfferServices.model.interface';
   styleUrls: ['./we-offer.component.scss']
 })
 export class WeOfferComponent {
-  @Input() offer!:WeOffer;
   weOfb$!:Observable<DataOffer>;
 
   constructor( private serv:ServicesPageService){

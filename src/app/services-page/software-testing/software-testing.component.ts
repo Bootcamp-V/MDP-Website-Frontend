@@ -7,6 +7,7 @@ import { ContactService } from '../models/contactService.model';
 import { IDescriptionBannerPages, ITitleBannerPages } from '../models/bannerPages.interface';
 import { ServicesPageService } from '../services/services-page.service';
 import { DataOffer } from '../models/weOfferServices.model.interface';
+import { DataInfoService } from '../models/infoContactService.interfrace';
 
 @Component({
   selector: 'app-software-testing',
@@ -23,6 +24,7 @@ export class SoftwareTestingComponent implements OnInit{
   banner!:BannerModel;
   listoffer!:string[];
   dataOffer!:DataOffer;
+  dataInfoServ!:DataInfoService;
 
   constructor(private serv:ServicesPageService){
 
@@ -40,7 +42,8 @@ this.banner= new BannerModel(res.data[2].attributes.img.data[0].attributes.forma
   this.serv.bannerPages$.next(this.banner);
     });
 
-    this.getoffers()
+    this.getoffers();
+    this.getInfoContactService();
   }
 
 
@@ -66,6 +69,30 @@ this.banner= new BannerModel(res.data[2].attributes.img.data[0].attributes.forma
       }
 
 
+      getInfoContactService(){
+
+        this.serv.getInfoContactServices().pipe(
+          map((res)=>{
+            for(let i of res.data){
+
+              if(i.attributes.page=="Software Testing"){
+                this.dataInfoServ=i;
+              }
+
+            }
+          })
+
+        ).subscribe(
+          res=>{
+            this.serv.infoContactService$.next(this.dataInfoServ);
+          }
+
+
+        );
+
+          }
+
+
 
 
 
@@ -87,7 +114,7 @@ this.banner= new BannerModel(res.data[2].attributes.img.data[0].attributes.forma
 
 
 
-  lista:ContactService= new ContactService('Software más solicitado por nuestros clientes para ejecutar pruebas',['Selenium','SpiraTeam','Cucumber','Appium','SoapUI']);
+
 
 
 }

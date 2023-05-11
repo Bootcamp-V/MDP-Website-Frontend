@@ -1,3 +1,4 @@
+<ng-container *ngIf="infoCS$ | async as infoCS">
 <div class="section-information-services">
 
   <div class="container-information">
@@ -43,15 +44,15 @@
 
     <div class="programming-lang-services">
 
-      <h1>{{lista.titulo}}</h1>
-<ng-container *ngFor="let i of lista.data;let index = index">
-    <div class="item-programming-languaje" *ngIf="(index+1)<lista.data.length">
-      <h2><span>{{index+1}}</span> {{i}}</h2>
+      <h1>{{infoCS.attributes.title}}</h1>
+<ng-container *ngFor="let i of infoCS.attributes.list_info_contact_services.data;let index = index">
+    <div class="item-programming-languaje" *ngIf="(index+1)<infoCS.attributes.list_info_contact_services.data.length">
+      <h2><span>{{index+1}}</span> {{i.attributes.item}}</h2>
       <hr>
     </div>
 
-    <div *ngIf="(index+1) ==lista.data.length" class="item-programming-languaje">
-      <h2><span>{{index+1}}</span> {{i}}</h2>
+    <div *ngIf="(index+1) ==infoCS.attributes.list_info_contact_services.data.length" class="item-programming-languaje">
+      <h2><span>{{index+1}}</span> {{i.attributes.item}}</h2>
     </div>
 
 </ng-container>
@@ -62,3 +63,4 @@
   </div>
 
   </div>
+</ng-container>

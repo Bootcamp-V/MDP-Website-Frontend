@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from '../../models/contactService.model';
 import { ServicesPageService } from '../../services/services-page.service';
+import { Observable } from 'rxjs';
+import { DataInfoService } from '../../models/infoContactService.interfrace';
 
 @Component({
   selector: 'app-contactservices',
@@ -9,11 +11,13 @@ import { ServicesPageService } from '../../services/services-page.service';
   styleUrls: ['./contactservices.component.scss']
 })
 export class ContactservicesComponent {
+  infoCS$!:Observable<DataInfoService>;
   @Input() lista!:ContactService;
   form!:FormGroup;
 
   constructor(private fb:FormBuilder, private serv:ServicesPageService){
 this.createForm();
+this.infoCS$=this.serv.infoContactService$;
   }
 
 

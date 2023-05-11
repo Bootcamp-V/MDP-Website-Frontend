@@ -7,6 +7,7 @@ import { IDescriptionBannerPages, ITitleBannerPages } from '../models/bannerPage
 import { ServicesPageService } from '../services/services-page.service';
 import { map } from 'rxjs';
 import { DataOffer } from '../models/weOfferServices.model.interface';
+import { DataInfoService } from '../models/infoContactService.interfrace';
 
 @Component({
   selector: 'app-talent',
@@ -20,6 +21,7 @@ export class TalentComponent implements OnInit{
   banner!:BannerModel;
   listoffer!:string[];
   dataOffer!:DataOffer;
+  dataInfoServ!:DataInfoService;
 
   constructor(private serv:ServicesPageService){
 
@@ -36,7 +38,8 @@ this.banner= new BannerModel(res.data[4].attributes.img.data[0].attributes.forma
   [this.description.data[0].attributes.text]);
   this.serv.bannerPages$.next(this.banner);
     });
-    this.getoffers()
+    this.getoffers();
+    this.getInfoContactService();
   }
 
 
@@ -61,6 +64,30 @@ this.banner= new BannerModel(res.data[4].attributes.img.data[0].attributes.forma
       }
 
 
+      getInfoContactService(){
+
+        this.serv.getInfoContactServices().pipe(
+          map((res)=>{
+            for(let i of res.data){
+
+              if(i.attributes.page=="Talent"){
+                this.dataInfoServ=i;
+              }
+
+            }
+          })
+
+        ).subscribe(
+          res=>{
+            this.serv.infoContactService$.next(this.dataInfoServ);
+          }
+
+
+        );
+
+          }
+
+
 
 
 
@@ -82,8 +109,5 @@ this.banner= new BannerModel(res.data[4].attributes.img.data[0].attributes.forma
 
 
 
-
-
-  lista:ContactService= new ContactService('Perfiles más solicitados en los últimos 30 días',['Analista Programador .NET','Analista Programador COBOL','Consultor SAP','Analista QA','Analista Programador Móviles']);
 
 }

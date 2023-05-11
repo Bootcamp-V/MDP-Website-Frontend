@@ -7,6 +7,7 @@ import { IDescriptionBannerPages, ITitleBannerPages } from '../models/bannerPage
 import { ServicesPageService } from '../services/services-page.service';
 import { map } from 'rxjs';
 import { DataOffer } from '../models/weOfferServices.model.interface';
+import { DataInfoService } from '../models/infoContactService.interfrace';
 
 @Component({
   selector: 'app-software-development',
@@ -23,6 +24,7 @@ export class SoftwareDevelopmentComponent {
   weOffer!:WeOffer;
   listoffer!:string[];
   dataOffer!:DataOffer;
+  dataInfoServ!:DataInfoService;
 
   constructor(private serv:ServicesPageService){
 
@@ -39,7 +41,8 @@ this.banner= new BannerModel(res.data[1].attributes.img.data[0].attributes.forma
   this.serv.bannerPages$.next(this.banner);
     });
 
-    this.getoffers()
+    this.getoffers();
+    this.getInfoContactService();
   }
 
 
@@ -70,6 +73,32 @@ this.serv.getWeOfferServices().pipe(
   }
 
 
+
+
+  getInfoContactService(){
+
+    this.serv.getInfoContactServices().pipe(
+      map((res)=>{
+        for(let i of res.data){
+
+          if(i.attributes.page=="Software Development"){
+            this.dataInfoServ=i;
+          }
+
+        }
+      })
+
+    ).subscribe(
+      res=>{
+        this.serv.infoContactService$.next(this.dataInfoServ);
+      }
+
+
+    );
+
+      }
+
+
   steps: stepsModel = new stepsModel(
     ['https://cdn-icons-png.flaticon.com/512/45/45180.png'],
     '¿Cómo funciona?',
@@ -88,7 +117,6 @@ this.serv.getWeOfferServices().pipe(
 
 
 
-lista:ContactService= new ContactService('Lenguajes de programación con los que más trabajamos',['Java','.NET','COBOL','SAP','Android/ IOS']);
 
 
 }

@@ -7,6 +7,7 @@ import { Subject, Observable } from 'rxjs';
 import { BannerModel } from '../models/banner.model';
 import { DataOffer, IWeOffer } from '../models/weOfferServices.model.interface';
 import { WeOffer } from '../models/we-offer-model';
+import { DataInfoService, DataListInfoService, IInfoContactService } from '../models/infoContactService.interfrace';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,7 @@ bannerPages$!:Subject<BannerModel>;
 
 weOffer$!:Subject<IWeOffer>;
 weOff$!:Subject<DataOffer>;
+infoContactService$!:Subject<DataInfoService>;
 
 
 
@@ -26,6 +28,7 @@ this.banner$= new Subject();
 this.bannerPages$= new Subject();
 this.weOffer$= new Subject();
 this.weOff$= new Subject();
+this.infoContactService$= new Subject();
 
 }
 
@@ -39,6 +42,10 @@ this.weOff$= new Subject();
 
   getWeOfferServices():Observable<IWeOffer>{
     return this.http.get<IWeOffer>(environment.baseUrl+'/api/we-offer-services?populate=*');
+  }
+
+  getInfoContactServices():Observable<IInfoContactService>{
+    return this.http.get<IInfoContactService>(environment.baseUrl+'/api/info-contact-services?populate=*');
   }
 
 
