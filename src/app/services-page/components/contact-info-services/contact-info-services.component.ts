@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ServicesPageService } from '../../services/services-page.service';
 
 @Component({
   selector: 'app-contact-info-services',
@@ -10,7 +11,7 @@ export class ContactInfoServicesComponent {
 
   formInfo!:FormGroup;
 
-  constructor(private fb:FormBuilder){
+  constructor(private fb:FormBuilder, private serv:ServicesPageService){
     this.createForm();
       }
 
@@ -19,7 +20,7 @@ export class ContactInfoServicesComponent {
     this.formInfo=this.fb.group({
   nombre: ['',[Validators.required,Validators.minLength(5)]],
   email:['',[Validators.required,Validators.email]],
-  telefono:['',[Validators.required]],
+  telefono:['',[Validators.required,Validators.pattern('[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')]],
   empresa:['',[Validators.required]],
   mensaje:['',[Validators.required]],
     })
@@ -39,9 +40,21 @@ export class ContactInfoServicesComponent {
     sendForm(){
 
       if(this.validarForm()){
-        console.log(this.formInfo);
+        console.log(this.formInfo.value);
+
+        let objeto ={
+          "data":{
+            "nombre":this.formInfo.get('nombre')?.value,
+             "email":this.formInfo.get('email')?.value,
+             "telefono":this.formInfo.get('telefono')?.value,
+             "empresa":this.formInfo.get('empresa')?.value,
+              "mensaje":this.formInfo.get('mensaje')?.value,
+          }
+        }
+    this.serv.postContactServicesConsulting(objeto);
+
       }else{
-        console.log('revice los campos ');
+        console.log('Informacion no correcta');
       }
 
     }
