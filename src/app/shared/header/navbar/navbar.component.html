@@ -23,46 +23,22 @@
       <div class="menu-container-items hide-menu">
         <ul class="menu-class">
           <li class="main-list-item">
-<<<<<<< HEAD
-            <a [routerLink]="['/']" routerLinkActive="router-link-active"  class="fx-hover" aria-current="page"><span>{{ pages.data[0].attributes.name }} </span></a>
-          </li>
-          <li class="main-list-item">
-            <a [routerLink]="['/servicios']" class="fx-hover has-children"><span>{{ pages.data[1].attributes.name }}</span></a>
-            <ul class="sub-menu">
-              <li id="" class="menu-lista">
-                <a [routerLink]="['/servicios']" class="menu-item fx-hover-items">
-                  <span> {{ pages.data[1].attributes.sub_pages.data[0].attributes.name}} </span>
-                </a>
-              </li>
-              <li id="" class="menu-lista">
-                <a [routerLink]="['/servicios/desarrollo-de-software']"
-                  class="menu-item fx-hover-items"><span> {{
-                    pages.data[1].attributes.sub_pages.data[1].attributes.name}} </span></a>
-              </li>
-              <li id="" class="menu-lista">
-                <a [routerLink]="['/servicios/pruebas-de-software']" class="menu-item fx-hover-items"><span>
-                    {{ pages.data[1].attributes.sub_pages.data[2].attributes.name}} </span></a>
-              </li>
-              <li id="" class="menu-lista">
-                <a [routerLink]="['/servicios/consultoria']" class="menu-item fx-hover-items"><span> {{
-                    pages.data[1].attributes.sub_pages.data[3].attributes.name}} </span></a>
-              </li>
-              <li id="" class="menu-lista">
-                <a [routerLink]="['/servicios/talento']" class="menu-item fx-hover-items"><span> {{
-                    pages.data[1].attributes.sub_pages.data[4].attributes.name}} </span></a>
-=======
-            <a href="#" class="fx-hover" aria-current="page"
+            <a
+              [routerLink]="['/']"
+              routerLinkActive="router-link-active"
+              class="fx-hover"
+              aria-current="page"
               ><span>{{ pages.data[0].attributes.name }} </span></a
             >
           </li>
           <li class="main-list-item">
-            <a href="#" class="fx-hover has-children"
+            <a [routerLink]="['/servicios']" class="fx-hover has-children"
               ><span>{{ pages.data[1].attributes.name }}</span></a
             >
             <ul class="sub-menu">
               <li id="" class="menu-lista">
                 <a
-                  href="https://www.mdp.com.pe/servicios/"
+                  [routerLink]="['/servicios']"
                   class="menu-item fx-hover-items"
                 >
                   <span>
@@ -74,7 +50,7 @@
               </li>
               <li id="" class="menu-lista">
                 <a
-                  href="https://www.mdp.com.pe/servicios/desarrollo-de-software/"
+                  [routerLink]="['/servicios/desarrollo-de-software']"
                   class="menu-item fx-hover-items"
                   ><span>
                     {{
@@ -85,7 +61,7 @@
               </li>
               <li id="" class="menu-lista">
                 <a
-                  href="https://www.mdp.com.pe/servicios/pruebas-de-software/"
+                  [routerLink]="['/servicios/pruebas-de-software']"
                   class="menu-item fx-hover-items"
                   ><span>
                     {{
@@ -96,7 +72,7 @@
               </li>
               <li id="" class="menu-lista">
                 <a
-                  href="https://www.mdp.com.pe/servicios/consultoria/"
+                  [routerLink]="['/servicios/consultoria']"
                   class="menu-item fx-hover-items"
                   ><span>
                     {{
@@ -107,7 +83,7 @@
               </li>
               <li id="" class="menu-lista">
                 <a
-                  href="https://www.mdp.com.pe/servicios/talento/"
+                  [routerLink]="['/servicios/talento']"
                   class="menu-item fx-hover-items"
                   ><span>
                     {{
@@ -115,50 +91,16 @@
                     }}
                   </span></a
                 >
->>>>>>> c3c6d162243fa3a0d838b340c27669ef8fac1bc8
               </li>
             </ul>
           </li>
           <li class="main-list-item">
-<<<<<<< HEAD
-            <a [routerLink]="['/nosotros']" class="fx-hover has-children"><span>{{ pages.data[2].attributes.name }}</span></a>
-            <ul class="sub-menu">
-              <li id="" class="menu-lista">
-                <a [routerLink]="['/nosotros']"
-                  class="menu-item fx-hover-items"><span>{{pages.data[2].attributes.sub_pages.data[0].attributes.name}}</span></a>
-              </li>
-              <li id="" class="menu-lista">
-                <a [routerLink]="['/nosotros/vision-y-proposito']"
-                  class="menu-item fx-hover-items"><span>{{pages.data[2].attributes.sub_pages.data[1].attributes.name}}</span></a>
-              </li>
-              <li id="" class="menu-lista">
-                <a [routerLink]="['/nosotros/historia']"
-                  class="menu-item fx-hover-items"><span>{{pages.data[2].attributes.sub_pages.data[2].attributes.name}}</span></a>
-              </li>
-              <li id="" class="menu-lista">
-                <a [routerLink]="['/nosotros/organizacion']"
-                  class="menu-item fx-hover-items"><span>{{pages.data[2].attributes.sub_pages.data[3].attributes.name}}</span></a>
-              </li>
-              <li id="" class="menu-lista">
-                <a [routerLink]="['/nosotros/modelo-de-negocio']"
-                  class="menu-item fx-hover-items"><span>{{pages.data[2].attributes.sub_pages.data[4].attributes.name}}</span></a>
-              </li>
-              <li id="" class="menu-lista">
-                <a [routerLink]="['/nosotros/certificaciones']"
-                  class="menu-item fx-hover-items"><span>{{pages.data[2].attributes.sub_pages.data[5].attributes.name}}</span></a>
-              </li>
-              <li id="" class="menu-lista">
-                <a [routerLink]="['/nosotros/sectores']"
-                  class="menu-item fx-hover-items"><span>{{pages.data[2].attributes.sub_pages.data[6].attributes.name}}</span></a>
-=======
-            <a href="#" class="fx-hover has-children"
+            <a [routerLink]="['/nosotros']" class="fx-hover has-children"
               ><span>{{ pages.data[2].attributes.name }}</span></a
             >
             <ul class="sub-menu">
               <li id="" class="menu-lista">
-                <a
-                  href="https://www.mdp.com.pe/nosotros/"
-                  class="menu-item fx-hover-items"
+                <a [routerLink]="['/nosotros']" class="menu-item fx-hover-items"
                   ><span>{{
                     pages.data[2].attributes.sub_pages.data[0].attributes.name
                   }}</span></a
@@ -166,7 +108,7 @@
               </li>
               <li id="" class="menu-lista">
                 <a
-                  href="https://www.mdp.com.pe/nosotros/vision-y-proposito/"
+                  [routerLink]="['/nosotros/vision-y-proposito']"
                   class="menu-item fx-hover-items"
                   ><span>{{
                     pages.data[2].attributes.sub_pages.data[1].attributes.name
@@ -175,7 +117,7 @@
               </li>
               <li id="" class="menu-lista">
                 <a
-                  href="https://www.mdp.com.pe/nosotros/historia/"
+                  [routerLink]="['/nosotros/historia']"
                   class="menu-item fx-hover-items"
                   ><span>{{
                     pages.data[2].attributes.sub_pages.data[2].attributes.name
@@ -184,7 +126,7 @@
               </li>
               <li id="" class="menu-lista">
                 <a
-                  href="https://www.mdp.com.pe/nosotros/organizacion/"
+                  [routerLink]="['/nosotros/organizacion']"
                   class="menu-item fx-hover-items"
                   ><span>{{
                     pages.data[2].attributes.sub_pages.data[3].attributes.name
@@ -193,7 +135,7 @@
               </li>
               <li id="" class="menu-lista">
                 <a
-                  href="https://www.mdp.com.pe/nosotros/modelo-de-negocio/"
+                  [routerLink]="['/nosotros/modelo-de-negocio']"
                   class="menu-item fx-hover-items"
                   ><span>{{
                     pages.data[2].attributes.sub_pages.data[4].attributes.name
@@ -202,7 +144,7 @@
               </li>
               <li id="" class="menu-lista">
                 <a
-                  href="https://www.mdp.com.pe/nosotros/certificaciones/"
+                  [routerLink]="['/nosotros/certificaciones']"
                   class="menu-item fx-hover-items"
                   ><span>{{
                     pages.data[2].attributes.sub_pages.data[5].attributes.name
@@ -211,13 +153,12 @@
               </li>
               <li id="" class="menu-lista">
                 <a
-                  routerLink="/nosotros/sectores"
+                  [routerLink]="['/nosotros/sectores']"
                   class="menu-item fx-hover-items"
                   ><span>{{
                     pages.data[2].attributes.sub_pages.data[6].attributes.name
                   }}</span></a
                 >
->>>>>>> c3c6d162243fa3a0d838b340c27669ef8fac1bc8
               </li>
               <li id="" class="menu-lista">
                 <a
@@ -290,17 +231,7 @@
     </li>
 
     <li class="menuppal-li">
-<<<<<<< HEAD
       <a class="fx-link" aria-current="page" [routerLink]="['/']">
-        <span>{{ pages.data[0].attributes.name }} </span></a>
-    </li>
-
-    <li class="menuppal-li">
-      <span class="submenu-trigger" (click)="toogleSubMenuServices()"><i
-          class="fa-solid fa-angle-right fa-sm"></i></span>
-      <a [routerLink]="['/servicios']" class="fx-link has-children"> <span>{{ pages.data[1].attributes.name }}</span></a>
-=======
-      <a class="fx-link" aria-current="page">
         <span>{{ pages.data[0].attributes.name }} </span></a
       >
     </li>
@@ -309,10 +240,9 @@
       <span class="submenu-trigger" (click)="toogleSubMenuServices()"
         ><i class="fa-solid fa-angle-right fa-sm"></i
       ></span>
-      <a class="fx-link has-children">
+      <a [routerLink]="['/servicios']" class="fx-link has-children">
         <span>{{ pages.data[1].attributes.name }}</span></a
       >
->>>>>>> c3c6d162243fa3a0d838b340c27669ef8fac1bc8
 
       <ul [ngClass]="submenuClass" [hidden]="!openSubmenuServices">
         <li class="menu-back">
@@ -323,29 +253,7 @@
         </li>
 
         <li class="menupal-item">
-<<<<<<< HEAD
           <a [routerLink]="['/servicios']" class="fx-link-items">
-            <span> {{ pages.data[1].attributes.sub_pages.data[0].attributes.name}} </span></a>
-        </li>
-        <li class="menupal-item">
-          <a [routerLink]="['/servicios/desarrollo-de-software']"
-           class="fx-link-items"><span>
-              {{ pages.data[1].attributes.sub_pages.data[1].attributes.name}} </span></a>
-        </li>
-        <li class="menupal-item">
-          <a [routerLink]="['/servicios/pruebas-de-software']" 
-          class="fx-link-items"><span> {{
-              pages.data[1].attributes.sub_pages.data[2].attributes.name}} </span></a>
-        </li>
-        <li class="menupal-item">
-          <a [routerLink]="['/servicios/consultoria']"  class="fx-link-items"><span> {{
-              pages.data[1].attributes.sub_pages.data[3].attributes.name}} </span></a>
-        </li>
-        <li class="menupal-item">
-          <a [routerLink]="['/servicios/talento']"  class="fx-link-items"><span> {{
-              pages.data[1].attributes.sub_pages.data[4].attributes.name}} </span></a>
-=======
-          <a href="https://www.mdp.com.pe/servicios/" class="fx-link-items">
             <span>
               {{ pages.data[1].attributes.sub_pages.data[0].attributes.name }}
             </span></a
@@ -353,7 +261,7 @@
         </li>
         <li class="menupal-item">
           <a
-            href="https://www.mdp.com.pe/servicios/desarrollo-de-software/"
+            [routerLink]="['/servicios/desarrollo-de-software']"
             class="fx-link-items"
             ><span>
               {{ pages.data[1].attributes.sub_pages.data[1].attributes.name }}
@@ -362,7 +270,7 @@
         </li>
         <li class="menupal-item">
           <a
-            href="https://www.mdp.com.pe/servicios/pruebas-de-software/"
+            [routerLink]="['/servicios/pruebas-de-software']"
             class="fx-link-items"
             ><span>
               {{ pages.data[1].attributes.sub_pages.data[2].attributes.name }}
@@ -370,38 +278,28 @@
           >
         </li>
         <li class="menupal-item">
-          <a
-            href="https://www.mdp.com.pe/servicios/consultoria/"
-            class="fx-link-items"
+          <a [routerLink]="['/servicios/consultoria']" class="fx-link-items"
             ><span>
               {{ pages.data[1].attributes.sub_pages.data[3].attributes.name }}
             </span></a
           >
         </li>
         <li class="menupal-item">
-          <a
-            href="https://www.mdp.com.pe/servicios/talento/"
-            class="fx-link-items"
+          <a [routerLink]="['/servicios/talento']" class="fx-link-items"
             ><span>
               {{ pages.data[1].attributes.sub_pages.data[4].attributes.name }}
             </span></a
           >
->>>>>>> c3c6d162243fa3a0d838b340c27669ef8fac1bc8
         </li>
       </ul>
     </li>
     <li class="menuppal-li">
-<<<<<<< HEAD
-      <span class="submenu-trigger" (click)="toogleSubMenuAbout()"><i class="fa-solid fa-angle-right fa-sm"></i></span>
-      <a [routerLink]="['/nosotros']" class="fx-link has-children"><span>{{ pages.data[2].attributes.name }}</span></a>
-=======
       <span class="submenu-trigger" (click)="toogleSubMenuAbout()"
         ><i class="fa-solid fa-angle-right fa-sm"></i
       ></span>
-      <a class="fx-link has-children"
+      <a [routerLink]="['/nosotros']" class="fx-link has-children"
         ><span>{{ pages.data[2].attributes.name }}</span></a
       >
->>>>>>> c3c6d162243fa3a0d838b340c27669ef8fac1bc8
 
       <ul [ngClass]="submenuClass" [hidden]="!openSubmenuAbout">
         <li class="menu-back">
@@ -411,35 +309,7 @@
           <a class="back-link" (click)="toogleSubMenuAbout()"> Back</a>
         </li>
         <li class="menupal-item">
-<<<<<<< HEAD
-          <a [routerLink]="['/nosotros']"
-            class="fx-link-items"><span>{{pages.data[2].attributes.sub_pages.data[0].attributes.name}}</span></a>
-        </li>
-        <li class="menupal-item">
-          <a [routerLink]="['/nosotros/vision-y-proposito']"
-            class="fx-link-items"><span>{{pages.data[2].attributes.sub_pages.data[1].attributes.name}}</span></a>
-        </li>
-        <li class="menupal-item">
-          <a [routerLink]="['/nosotros/historia']"
-            class="fx-link-items"><span>{{pages.data[2].attributes.sub_pages.data[2].attributes.name}}</span></a>
-        </li>
-        <li class="menupal-item">
-          <a [routerLink]="['/nosotros/organizacion']"
-            class="fx-link-items"><span>{{pages.data[2].attributes.sub_pages.data[3].attributes.name}}</span></a>
-        </li>
-        <li class="menupal-item">
-          <a [routerLink]="['/nosotros/modelo-de-negocio']"
-            class="fx-link-items"><span>{{pages.data[2].attributes.sub_pages.data[4].attributes.name}}</span></a>
-        </li>
-        <li class="menupal-item">
-          <a [routerLink]="['/nosotros/certificaciones']"
-            class="fx-link-items"><span>{{pages.data[2].attributes.sub_pages.data[5].attributes.name}}</span></a>
-        </li>
-        <li class="menupal-item">
-          <a [routerLink]="['/nosotros/sectores']"
-            class="fx-link-items"><span>{{pages.data[2].attributes.sub_pages.data[6].attributes.name}}</span></a>
-=======
-          <a href="https://www.mdp.com.pe/nosotros/" class="fx-link-items"
+          <a [routerLink]="['/nosotros']" class="fx-link-items"
             ><span>{{
               pages.data[2].attributes.sub_pages.data[0].attributes.name
             }}</span></a
@@ -447,7 +317,7 @@
         </li>
         <li class="menupal-item">
           <a
-            href="https://www.mdp.com.pe/nosotros/vision-y-proposito/"
+            [routerLink]="['/nosotros/vision-y-proposito']"
             class="fx-link-items"
             ><span>{{
               pages.data[2].attributes.sub_pages.data[1].attributes.name
@@ -455,18 +325,14 @@
           >
         </li>
         <li class="menupal-item">
-          <a
-            href="https://www.mdp.com.pe/nosotros/historia/"
-            class="fx-link-items"
+          <a [routerLink]="['/nosotros/historia']" class="fx-link-items"
             ><span>{{
               pages.data[2].attributes.sub_pages.data[2].attributes.name
             }}</span></a
           >
         </li>
         <li class="menupal-item">
-          <a
-            href="https://www.mdp.com.pe/nosotros/organizacion/"
-            class="fx-link-items"
+          <a [routerLink]="['/nosotros/organizacion']" class="fx-link-items"
             ><span>{{
               pages.data[2].attributes.sub_pages.data[3].attributes.name
             }}</span></a
@@ -474,7 +340,7 @@
         </li>
         <li class="menupal-item">
           <a
-            href="https://www.mdp.com.pe/nosotros/modelo-de-negocio/"
+            [routerLink]="['/nosotros/modelo-de-negocio']"
             class="fx-link-items"
             ><span>{{
               pages.data[2].attributes.sub_pages.data[4].attributes.name
@@ -482,21 +348,18 @@
           >
         </li>
         <li class="menupal-item">
-          <a
-            href="https://www.mdp.com.pe/nosotros/certificaciones/"
-            class="fx-link-items"
+          <a [routerLink]="['/nosotros/certificaciones']" class="fx-link-items"
             ><span>{{
               pages.data[2].attributes.sub_pages.data[5].attributes.name
             }}</span></a
           >
         </li>
         <li class="menupal-item">
-          <a routerLink="/nosotros/sectores" class="fx-link-items"
+          <a [routerLink]="['/nosotros/sectores']" class="fx-link-items"
             ><span>{{
               pages.data[2].attributes.sub_pages.data[6].attributes.name
             }}</span></a
           >
->>>>>>> c3c6d162243fa3a0d838b340c27669ef8fac1bc8
         </li>
         <li class="menupal-item">
           <a
