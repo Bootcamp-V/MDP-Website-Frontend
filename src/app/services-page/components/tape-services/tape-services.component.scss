@@ -1,0 +1,107 @@
+@import "../../../../styles/abstracts/variables";
+@import "../../../../styles/abstracts/mixins";
+
+.different {
+  width: 100%;
+  height: 100px;
+  position: relative;
+}
+
+
+.develop {
+  align-items: center;
+  background-color: $background-blue-color;
+  padding: 1.3em;
+  text-align: center;
+  position: relative;
+}
+.develop::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: $background-blue-color transparent transparent transparent;
+}
+.text_2 {
+  font-size: 24px;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+}
+.text_1{
+  font-size: 18px;
+  color:$header-text-color;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+}
+
+.btn_ourServices {
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin-top: 4%;
+  text-align: center;
+}
+.triangle {
+  width: 25px;
+  height: 20px;
+  background-color: #000124;
+  position: absolute;
+  clip-path: polygon(0 0, 100% 100%, 100% 0);
+  bottom: -15px;
+  left: 20%;
+}
+@media screen and (max-width: 1080px) {
+  .shadow {
+    height: 17px;
+  }
+  .develop {
+    display: grid;
+    place-content: center;
+    height: 175px;
+    row-gap: 6px;
+    .text_2 {
+      text-align: center;
+      font-size: 18px;
+    }
+  }
+  .btn_ourServices {
+    width: 200px;
+    height: 40px;
+    margin: auto;
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .shadow {
+    height: 55px;
+    bottom: 50px;
+  }
+  .develop {
+    top: -35px;
+    display: grid;
+    place-content: center;
+    height: 170px;
+    row-gap: 15px;
+    padding: 5px;
+    .text_1 {
+      text-align: center;
+      font-size: 10px;
+    }
+  }
+  .btn_ourServices {
+    width: 100px;
+    height: 28.5px;
+    margin: auto;
+    font-size: 10px;
+  }
+  .triangle {
+    bottom: 24px;
+  }
+}

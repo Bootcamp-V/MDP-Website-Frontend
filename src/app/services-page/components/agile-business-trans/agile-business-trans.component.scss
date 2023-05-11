@@ -1,0 +1,58 @@
+@import "../../../../styles/abstracts/variables";
+@import "../../../../styles/abstracts/mixins";
+.fondazo{
+  background-color: $background-blue-color;
+}
+.contenedor {
+  background-color: $background-blue-color;
+  width: min(90%, 120rem);
+  margin: 0 auto;
+  padding: 5em;
+}
+
+.centrar-texto {
+  text-align: center;
+  margin-bottom: 45px;
+  font-size: 24px;
+  font-family: "Oswald", sans-serif;
+  color: $background-white-color;
+  font-weight: 300;
+}
+
+li::marker{
+    color: $grey-form-text-color;
+}
+
+@media (min-width: 768px) {
+  .modelo-servicio {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    justify-content: center;
+  align-items: center;
+  }
+}
+
+.primera-imagen {
+  color: $background-white-color;
+}
+
+.segunda-imagen {
+  color: $background-white-color;
+
+}
+
+.tercera-imagen {
+  color: $background-white-color;
+}
+
+.cuarta-imagen {
+  color: $background-white-color;
+}
+
+.letras {
+  text-align: center;
+}
+.colorpunto{
+   color:  $grey-form-text-color;
+}

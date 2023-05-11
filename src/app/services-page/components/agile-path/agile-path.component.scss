@@ -1,0 +1,52 @@
+@import "../../../../styles/abstracts/variables";
+@import "../../../../styles/abstracts/mixins";
+.fondazo{
+  background-color: $background-white-color;
+}
+.contenedor {
+  background-color: $background-white-color;
+  width: min(90%, 110rem);
+  margin: 0 auto;
+  padding: 5em;
+}
+
+.centrar-texto {
+  text-align: center;
+  margin-bottom: 45px;
+  font-size: 24px;
+  font-family: "Oswald", sans-serif;
+  color: $grey-form-text-color;
+  font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  .modelo-servicio {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    justify-content: center;
+  align-items: center;
+  }
+}
+
+
+.primera-imagen {
+  color: $grey-form-text-color;
+}
+
+.segunda-imagen {
+  color: $grey-form-text-color;
+
+}
+
+.tercera-imagen {
+  color: $background-white-color;
+}
+
+.cuarta-imagen {
+  color: $background-white-color;
+}
+
+.letras {
+  text-align: center;
+}
