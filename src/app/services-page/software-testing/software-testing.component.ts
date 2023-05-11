@@ -33,6 +33,7 @@ export class SoftwareTestingComponent implements OnInit{
 
 this.banner= new BannerModel(res.data[2].attributes.img.data[0].attributes.formats.large.url,[this.titles.data[0].attributes.title,this.titles.data[1].attributes.title],
   [this.description.data[0].attributes.text]);
+  this.serv.bannerPages$.next(this.banner);
     });
   }
 

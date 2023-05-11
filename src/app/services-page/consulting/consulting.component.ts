@@ -24,7 +24,8 @@ export class ConsultingComponent {
         this.titles=res.data[3].attributes.title_banner_pages;
         this.description=res.data[3].attributes.description_banner_pages;
 this.banner= new BannerModel(res.data[3].attributes.img.data[0].attributes.formats.large.url,[this.titles.data[0].attributes.title,this.titles.data[1].attributes.title],[]);
-    });
+this.serv.bannerPages$.next(this.banner);
+});
   }
 
 

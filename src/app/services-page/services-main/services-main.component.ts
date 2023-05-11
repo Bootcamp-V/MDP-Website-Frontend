@@ -14,6 +14,7 @@ export class ServicesMainComponent implements OnInit{
   description!:IDescriptionBannerPages;
   banner!:BannerModel;
 
+
   constructor(private serv:ServicesPageService){
 
   }
@@ -25,8 +26,12 @@ export class ServicesMainComponent implements OnInit{
         this.titles=res.data[0].attributes.title_banner_pages;
         this.description=res.data[0].attributes.description_banner_pages;
 this.banner= new BannerModel(res.data[0].attributes.img.data[0].attributes.formats.large.url,[this.titles.data[0].attributes.title,this.titles.data[1].attributes.title],[]);
+this.serv.bannerPages$.next(this.banner);
+
     });
   }
+
+
 
 
 
