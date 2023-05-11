@@ -22,17 +22,15 @@ import { SoftwareDevelopmentComponent } from './services-page/software-developme
 import { SoftwareTestingComponent } from './services-page/software-testing/software-testing.component';
 import { ConsultingComponent } from './services-page/consulting/consulting.component';
 import { TalentComponent } from './services-page/talent/talent.component';
-
 import { CertificationsComponent } from './about-us-page/certifications/certifications.component';
 import { ServicesMainComponent } from './services-page/services-main/services-main.component';
-import { BannerServiceComponent } from './services-page/components/banner/banner.component';
+import { BannerComponent } from './services-page/components/banner/banner.component';
 import { BusinessModelComponent } from './about-us-page/business-model/business-model.component';
 import { StepsComponent } from './services-page/components/steps/steps.component';
 import { WeOfferComponent } from './services-page/components/we-offer/we-offer.component';
 import { ContactInfoServicesComponent } from './services-page/components/contact-info-services/contact-info-services.component';
 import { ContactservicesComponent } from './services-page/components/contactservices/contactservices.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BannerInfoComponent } from './about-us-page/components/banner-info/banner-info.component';
 import { AboutUsComponent } from './about-us-page/about-us/about-us.component';
 import { GridComponent } from './about-us-page/about-us/components/grid/grid.component';
 import { Grid2Component } from './about-us-page/about-us/components/grid2/grid2.component';
@@ -68,13 +66,12 @@ import { SectorsComponent } from './about-us-page/sectors/sectors.component';
     ConsultingComponent,
     TalentComponent,
     ServicesMainComponent,
-    BannerServiceComponent,
+    BannerComponent,
     BusinessModelComponent,
     StepsComponent,
     WeOfferComponent,
     ContactInfoServicesComponent,
     ContactservicesComponent,
-    BannerInfoComponent,
     AboutUsComponent,
     GridComponent,
     Grid2Component,
@@ -84,7 +81,7 @@ import { SectorsComponent } from './about-us-page/sectors/sectors.component';
     OrganizationComponent,
     ImageOrganizationComponent,
     ContainerTextOrganizationMapComponent,
-    SectorsComponent,
+    SectorsComponent
   ],
   imports: [
     BrowserModule,

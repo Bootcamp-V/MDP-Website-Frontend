@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { BannerInfo } from '../models/banner-info.model';
-import { BannerInfoService } from '../services/banner-info.service';
+import { AboutPageService } from '../services/about-page.service';
+import { BannerModel } from 'src/app/services-page/models/banner.model';
+import { IBannerPages } from 'src/app/services-page/models/bannerPages.interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-about-us',
@@ -8,17 +10,19 @@ import { BannerInfoService } from '../services/banner-info.service';
   styleUrls: ['./about-us.component.scss']
 })
 export class AboutUsComponent implements OnInit {
-  banner!: BannerInfo;
-  constructor(private serv: BannerInfoService) {
+  banner!: BannerModel;
+  
+  bp$!:Observable<IBannerPages>;
+
+  constructor(private serv:AboutPageService ) {
 
   }
-
-  ngOnInit() {
-    this.serv.getBannersInfo().subscribe((res) => {
-
-      console.log(res.data[3].attributes.title1);
-      this.banner = new BannerInfo(res.data[3].attributes.img.data.attributes.formats.large.url, res.data[3].attributes.title1, res.data[3].attributes.title2, res.data[3].attributes.description);
-    });
-
+  ngOnInit(): void {
+    
+    this.bp$= this.serv.getBannerPage();
+    console.log(this.bp$);
+    
+    
   }
+
 }
