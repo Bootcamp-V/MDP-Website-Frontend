@@ -4,11 +4,11 @@ import { ITitleBannerPages, IDescriptionBannerPages } from 'src/app/services-pag
 import { ServicesPageService } from 'src/app/services-page/services/services-page.service';
 
 @Component({
-  selector: 'app-purpose-vision',
-  templateUrl: './purpose-vision.component.html',
-  styleUrls: ['./purpose-vision.component.scss']
+  selector: 'app-history',
+  templateUrl: './history.component.html',
+  styleUrls: ['./history.component.scss']
 })
-export class PurposeVisionComponent {
+export class HistoryComponent {
   titles!: ITitleBannerPages;
   description!: IDescriptionBannerPages;
   banner!: BannerModel;
@@ -22,9 +22,9 @@ export class PurposeVisionComponent {
   ngOnInit() {
     this.serv.getBannerPage().subscribe((res) => {
 
-      this.titles = res.data[10].attributes.title_banner_pages;
-      this.description = res.data[10].attributes.description_banner_pages;
-      this.banner = new BannerModel(res.data[10].attributes.img.data[0].attributes.formats.large.url, [this.titles.data[0].attributes.title], [this.description.data[0].attributes.text]);
+      this.titles = res.data[11].attributes.title_banner_pages;
+      this.description = res.data[11].attributes.description_banner_pages;
+      this.banner = new BannerModel(res.data[11].attributes.img.data[0].attributes.formats.large.url, [this.titles.data[0].attributes.title, this.titles.data[1].attributes.title], []);
       this.serv.bannerPages$.next(this.banner);
 
     });

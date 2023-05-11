@@ -19,6 +19,7 @@ import { BusinessModelComponent } from './about-us-page/business-model/business-
 import { PurposeVisionComponent } from './about-us-page/purpose-vision/purpose-vision.component';
 
 import { SectorsComponent } from './about-us-page/sectors/sectors.component';
+import { HistoryComponent } from './about-us-page/history/history.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -47,7 +48,7 @@ const routes: Routes = [
       path: '', component: AboutUsComponent,
     },
     { path: 'vision-y-proposito', component: PurposeVisionComponent },
-    { path: 'historia', component: AboutUsPageComponent },
+    { path: 'historia', component: HistoryComponent },
     { path: 'organizacion', component: OrganizationComponent },
     { path: 'modelo-de-negocio', component: BusinessModelComponent },
     { path: 'certificaciones', component: CertificationsComponent },

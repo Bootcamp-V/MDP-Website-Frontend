@@ -1,10 +1,20 @@
-.content-ourValues section{
-    margin-bottom: 23%;
+h2 {
+    font-family: "Oswald", Helvetica, Arial, sans-serif;
+}
+
+p {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.content-ourValues section {
+    margin-bottom: 20%;
     padding: 0 60px;
 }
-.h2-ourValues{
+
+.h2-ourValues {
     margin-bottom: 2.5rem;
 }
+
 .content-ourValues_image {
     display: grid;
     grid-auto-rows: 12.5rem;
@@ -15,12 +25,15 @@
     margin: 0 auto;
     box-sizing: border-box;
 }
+
 .two-images {
-    grid-template-columns: repeat(2, 1fr);   
+    grid-template-columns: repeat(2, 1fr);
 }
+
 .one-image {
-    grid-template-columns: repeat(1, 1fr);   
+    grid-template-columns: repeat(1, 1fr);
 }
+
 .content-ourValues h2 {
     text-align: center;
     font-family: "Oswald", Helvetica, Arial, sans-serif;
@@ -30,13 +43,15 @@
     font-style: normal;
     color: #535353;
 }
+
 .content-ourValues_image div h2 {
     text-align: left;
-    font-size: 2.5rem;
+    font-size: 30px;
     margin: 40px 0 25px 0;
 }
+
 .content-ourValues_image div p {
-    font-size: 1.1rem;
+    font-size: 15px;
     line-height: 30px;
     font-weight: 400;
     font-style: normal;
@@ -45,11 +60,12 @@
 
 @media (max-width: 65em) {
     .two-images {
-      grid-template-columns: repeat(1, 1fr);
-      gap: 22rem;  
+        grid-template-columns: repeat(1, 1fr);
+        gap: 22rem;
     }
-    .content-ourValues section{
+
+    .content-ourValues section {
         margin-bottom: 45%;
         padding: 0 100px;
-    } 
-  }
+    }
+}

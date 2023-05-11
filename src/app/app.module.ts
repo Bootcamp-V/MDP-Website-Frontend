@@ -45,6 +45,7 @@ import { ContentVideoComponent } from './about-us-page/purpose-vision/components
 import { ImagePurposeVisionComponent } from './about-us-page/purpose-vision/components/image-purpose-vision/image-purpose-vision/image-purpose-vision.component';
 import { OurValuesComponent } from './about-us-page/purpose-vision/components/our-values/our-values/our-values.component';
 import { SectorsComponent } from './about-us-page/sectors/sectors.component';
+import { HistoryComponent } from './about-us-page/history/history.component';
 
 @NgModule({
   declarations: [
@@ -89,6 +90,8 @@ import { SectorsComponent } from './about-us-page/sectors/sectors.component';
     ContentVideoComponent,
     ImagePurposeVisionComponent,
     OurValuesComponent,
+    SectorsComponent,
+    HistoryComponent,
   ],
   imports: [
     BrowserModule,
