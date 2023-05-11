@@ -40,11 +40,11 @@ const routes: Routes = [
     component: AboutUsPageComponent,
     children: [
     {
-      path: '', component: AboutUsPageComponent,
+      path: '', component: AboutUsComponent,
     },
     { path: 'vision-y-proposito', component: AboutUsPageComponent },
     { path: 'historia', component: AboutUsPageComponent },
-    { path: 'organizacion', component: AboutUsPageComponent },
+    { path: 'organizacion', component: OrganizationComponent },
     { path: 'modelo-de-negocio', component: BusinessModelComponent },
     { path: 'certificaciones', component: CertificationsComponent },
     { path: 'sectores', component: AboutUsPageComponent },
