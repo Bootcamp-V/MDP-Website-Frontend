@@ -1,3 +1,4 @@
+import { map } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { BannerModel } from '../models/banner.model';
 import { stepsModel } from '../models/steps.model';
@@ -5,6 +6,7 @@ import { InfoOffer, WeOffer } from '../models/we-offer-model';
 import { ContactService } from '../models/contactService.model';
 import { IDescriptionBannerPages, ITitleBannerPages } from '../models/bannerPages.interface';
 import { ServicesPageService } from '../services/services-page.service';
+import { DataOffer } from '../models/weOfferServices.model.interface';
 
 @Component({
   selector: 'app-software-testing',
@@ -19,6 +21,8 @@ export class SoftwareTestingComponent implements OnInit{
   titles!:ITitleBannerPages;
   description!:IDescriptionBannerPages;
   banner!:BannerModel;
+  listoffer!:string[];
+  dataOffer!:DataOffer;
 
   constructor(private serv:ServicesPageService){
 
@@ -35,9 +39,31 @@ this.banner= new BannerModel(res.data[2].attributes.img.data[0].attributes.forma
   [this.description.data[0].attributes.text]);
   this.serv.bannerPages$.next(this.banner);
     });
+
+    this.getoffers()
   }
 
 
+  getoffers(){
+
+    this.serv.getWeOfferServices().pipe(
+      map((res)=>{
+        for(let i of res.data){
+
+          if(i.attributes.page=="Software Testing"){
+            this.dataOffer=i;
+          }
+        }
+      })
+
+    ).subscribe(
+      res=>{
+        this.serv.weOff$.next(this.dataOffer);
+      }
+
+    );
+
+      }
 
 
 
@@ -58,15 +84,6 @@ this.banner= new BannerModel(res.data[2].attributes.img.data[0].attributes.forma
       'Dependiendo de la solución, modelo y marco de trabajo seleccionado se realiza una presentación de nuestra propuesta o estimación para profundizar más sobre la alternativa seleccionada (alcance, tiempos y equipo necesario) para lograr acuerdos que nos lleven al inicio del servicio.',
     ]
   );
-
-
-  offer:WeOffer = new WeOffer('¿Qué ofrecemos?',['Diferentes niveles de pruebas entre las cuales se encuentran Pruebas de aceptación, usuario, certificación, funcionales y no funcionales, integración, sistemas, diseño y usabilidad, regresión, unitarias, sistemas, diseño usabilidad y análisis de código.',
-  'Trabajamos bajo dos modelos Fábricas de Testing y Proyectos.',
-  'Preferimos realizar pruebas marcos ágiles, pero también las realizamos bajo un marco tradicional o cascada.',
-  'Mapa de conocimiento, administramos el conocimiento a través de nuestra plataforma DOM, con el objetivo de poder mejorar el servicio en el tiempo.',
-  'Completa visibilidad de nuestros procesos a través de nuestra plataforma DOM, finalista del concurso creatividad empresarial 2016',
-  'Capacitaciones constantes, nos esforzamos por incrementar el conocimiento de nuestros colaboradores.'],[new InfoOffer('fa-magnifying-glass','+5','Fábricas de Pruebas de Software Activas'),
-  new InfoOffer('fa-star','80%','de colaboradores certificados en ISTQB'),new InfoOffer('fa-user-large','+50','Especialistas en pruebas')]);
 
 
 

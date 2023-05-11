@@ -5,7 +5,8 @@ import { environment } from 'src/environments/environment';
 import { ContactPageComponent } from 'src/app/contact-page/contact-page.component';
 import { Subject, Observable } from 'rxjs';
 import { BannerModel } from '../models/banner.model';
-import { IWeOffer } from '../models/weOfferServices.model.interface';
+import { DataOffer, IWeOffer } from '../models/weOfferServices.model.interface';
+import { WeOffer } from '../models/we-offer-model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,12 +17,16 @@ banner$!:Subject<IBannerPages>;
 bannerPages$!:Subject<BannerModel>;
 
 weOffer$!:Subject<IWeOffer>;
+weOff$!:Subject<DataOffer>;
 
 
 
   constructor(private http:HttpClient) {
 this.banner$= new Subject();
 this.bannerPages$= new Subject();
+this.weOffer$= new Subject();
+this.weOff$= new Subject();
+
 }
 
 

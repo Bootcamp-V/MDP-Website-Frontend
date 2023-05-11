@@ -5,6 +5,8 @@ import { InfoOffer, WeOffer } from '../models/we-offer-model';
 import { ContactService } from '../models/contactService.model';
 import { IDescriptionBannerPages, ITitleBannerPages } from '../models/bannerPages.interface';
 import { ServicesPageService } from '../services/services-page.service';
+import { map } from 'rxjs';
+import { DataOffer } from '../models/weOfferServices.model.interface';
 
 @Component({
   selector: 'app-software-development',
@@ -18,6 +20,9 @@ export class SoftwareDevelopmentComponent {
   titles!:ITitleBannerPages;
   description!:IDescriptionBannerPages;
   banner!:BannerModel;
+  weOffer!:WeOffer;
+  listoffer!:string[];
+  dataOffer!:DataOffer;
 
   constructor(private serv:ServicesPageService){
 
@@ -34,10 +39,35 @@ this.banner= new BannerModel(res.data[1].attributes.img.data[0].attributes.forma
   this.serv.bannerPages$.next(this.banner);
     });
 
-
+    this.getoffers()
   }
 
 
+
+
+  getoffers(){
+
+this.serv.getWeOfferServices().pipe(
+  map((res)=>{
+    for(let i of res.data){
+
+      if(i.attributes.page=="Software Development"){
+        this.dataOffer=i;
+      }
+
+    }
+  })
+
+).subscribe(
+  res=>{
+    this.serv.weOff$.next(this.dataOffer);
+  }
+
+
+
+);
+
+  }
 
 
   steps: stepsModel = new stepsModel(
@@ -56,14 +86,6 @@ this.banner= new BannerModel(res.data[1].attributes.img.data[0].attributes.forma
     ]
   );
 
-
-
-offer:WeOffer = new WeOffer('¿Qué ofrecemos?',['Desarrollo a medida de soluciones de software.','Trabajamos bajo dos modelos: Fábricas de Software y Proyectos.',
-'Preferimos desarrollar soluciones sobre marcos ágiles, pero también podemos realizarlos bajo un marco tradicional o cascada.',
-'Mapa de conocimiento, administramos el conocimiento a través de nuestra plataforma DOM, con el objetivo de poder mejorar el servicio en el tiempo.',
-'Completa visibilidad de nuestros procesos a través de nuestra plataforma DOM, finalista del concurso creatividad empresarial 2016',
-'Capacitaciones constantes, nos esforzamos por incrementar el conocimiento de nuestros colaboradores.'],[new InfoOffer('fa-folder-open','+10','Fábricas activas'),
-new InfoOffer('fa-gear','+50','Proyectos al año'),new InfoOffer('fa-user-large','+280','Desarrolladores')]);
 
 
 lista:ContactService= new ContactService('Lenguajes de programación con los que más trabajamos',['Java','.NET','COBOL','SAP','Android/ IOS']);

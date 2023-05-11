@@ -5,6 +5,8 @@ import { InfoOffer, WeOffer } from '../models/we-offer-model';
 import { ContactService } from '../models/contactService.model';
 import { IDescriptionBannerPages, ITitleBannerPages } from '../models/bannerPages.interface';
 import { ServicesPageService } from '../services/services-page.service';
+import { map } from 'rxjs';
+import { DataOffer } from '../models/weOfferServices.model.interface';
 
 @Component({
   selector: 'app-talent',
@@ -16,6 +18,8 @@ export class TalentComponent implements OnInit{
   titles!:ITitleBannerPages;
   description!:IDescriptionBannerPages;
   banner!:BannerModel;
+  listoffer!:string[];
+  dataOffer!:DataOffer;
 
   constructor(private serv:ServicesPageService){
 
@@ -32,7 +36,29 @@ this.banner= new BannerModel(res.data[4].attributes.img.data[0].attributes.forma
   [this.description.data[0].attributes.text]);
   this.serv.bannerPages$.next(this.banner);
     });
+    this.getoffers()
   }
+
+
+  getoffers(){
+
+    this.serv.getWeOfferServices().pipe(
+      map((res)=>{
+        for(let i of res.data){
+
+          if(i.attributes.page=="Talent"){
+            this.dataOffer=i;
+          }
+        }
+      })
+
+    ).subscribe(
+      res=>{
+        this.serv.weOff$.next(this.dataOffer);
+      }
+
+    );
+      }
 
 
 
@@ -55,13 +81,8 @@ this.banner= new BannerModel(res.data[4].attributes.img.data[0].attributes.forma
   );
 
 
-  offer:WeOffer = new WeOffer('¿Qué ofrecemos?',['Búsqueda, selección y contratación personal de acuerdo a sus requerimientos.',
-  'Encuestas de Satisfacción realizadas periódicamente para medir la efectividad de nuestro servicio y talento.',
-  'Mapa de conocimiento, administramos el conocimiento de gestión a través de nuestra plataforma DOM, con el objetivo de poder mantener una continuidad en el servicio si se da el cambio de personal.',
-  'Seguimiento y gestión administrativa (control de asistencia, seguimiento y control de actividades, reportes de gestión) a través de nuestro aplicativo AppDOM',
-  'Capacitaciones constantes, nos esforzamos por incrementar el conocimiento de nuestros colaboradores.',
-  'Flexibilidad para poder cambiar el perfil de acuerdos a las necesidades del negocio.'],[new InfoOffer('fa-lock','+30','Empresas confían en nosotros'),
-  new InfoOffer('fa-clock','+26,000','de horas mensuales'),new InfoOffer('fa-user-large','+160','Colaboradores en el puesto correcto')]);
+
+
 
   lista:ContactService= new ContactService('Perfiles más solicitados en los últimos 30 días',['Analista Programador .NET','Analista Programador COBOL','Consultor SAP','Analista QA','Analista Programador Móviles']);
 

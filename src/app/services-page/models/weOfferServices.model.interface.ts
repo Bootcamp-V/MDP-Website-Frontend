@@ -1,9 +1,9 @@
 export interface IWeOffer {
-  data: Data[]
+  data: DataOffer[]
   meta: Meta
 }
 
-export interface Data {
+export interface DataOffer {
   id: number
   attributes: Attributes
 }
