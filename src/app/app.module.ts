@@ -31,7 +31,7 @@ import { WeOfferComponent } from './services-page/components/we-offer/we-offer.c
 import { ContactInfoServicesComponent } from './services-page/components/contact-info-services/contact-info-services.component';
 import { ContactservicesComponent } from './services-page/components/contactservices/contactservices.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BannerAboutComponent } from './about-us-page/components/banner-about/banner-about.component';
+import { BannerInfoComponent } from './about-us-page/components/banner-info/banner-info.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +63,7 @@ import { BannerAboutComponent } from './about-us-page/components/banner-about/ba
     WeOfferComponent,
     ContactInfoServicesComponent,
     ContactservicesComponent,
-    BannerAboutComponent
+    BannerInfoComponent
 
   ],
   imports: [

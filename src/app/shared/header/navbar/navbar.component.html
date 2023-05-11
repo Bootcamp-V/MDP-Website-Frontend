@@ -23,7 +23,7 @@
 
         <ul class="menu-class ">
           <li class="main-list-item">
-            <a [routerLink]="['']" routerLinkActive="router-link-active"  class="fx-hover" aria-current="page"><span>{{ pages.data[0].attributes.name }} </span></a>
+            <a [routerLink]="['/']" routerLinkActive="router-link-active"  class="fx-hover" aria-current="page"><span>{{ pages.data[0].attributes.name }} </span></a>
           </li>
           <li class="main-list-item">
             <a [routerLink]="['/servicios']" class="fx-hover has-children"><span>{{ pages.data[1].attributes.name }}</span></a>
@@ -135,7 +135,7 @@
 
 
     <li class="menuppal-li">
-      <a class="fx-link" aria-current="page">
+      <a class="fx-link" aria-current="page" [routerLink]="['/']">
         <span>{{ pages.data[0].attributes.name }} </span></a>
     </li>
 

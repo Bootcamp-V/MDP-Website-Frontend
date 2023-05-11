@@ -44,7 +44,7 @@ const routes: Routes = [
     { path: 'historia', component: AboutUsPageComponent },
     { path: 'organizacion', component: AboutUsPageComponent },
     { path: 'modelo-de-negocio', component: BusinessModelComponent },
-    { path: 'certificaciones', component: AboutUsPageComponent },
+    { path: 'certificaciones', component: CertificationsComponent },
     { path: 'sectores', component: AboutUsPageComponent },
 
     ],
