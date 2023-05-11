@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BannerModel } from '../models/banner.model';
 import { ServicesPageService } from '../services/services-page.service';
+import { IDescriptionBannerPages, ITitleBannerPages } from '../models/bannerPages.interface';
 
 @Component({
   selector: 'app-services-main',
@@ -9,6 +10,10 @@ import { ServicesPageService } from '../services/services-page.service';
 })
 export class ServicesMainComponent implements OnInit{
 
+  titles!:ITitleBannerPages;
+  description!:IDescriptionBannerPages;
+  banner!:BannerModel;
+
   constructor(private serv:ServicesPageService){
 
   }
@@ -16,13 +21,15 @@ export class ServicesMainComponent implements OnInit{
 
   ngOnInit() {
     this.serv.getBannerPage().subscribe((res) => {
-
-        console.log(res);
+       /// console.log(res);
+        //console.log(res.data[0].attributes.img.data[0].attributes.formats.large.url);
+        //console.log(res.data[0].attributes.title_banner_pages.data);
+        //console.log(res.data[0].attributes.description_banner_pages);
+        this.titles=res.data[0].attributes.title_banner_pages;
+        this.description=res.data[0].attributes.description_banner_pages;
+this.banner= new BannerModel(res.data[0].attributes.img.data[0].attributes.formats.large.url,[this.titles.data[0].attributes.title,this.titles.data[1].attributes.title],"");
     });
   }
-
-banner:BannerModel= new BannerModel ('https://www.mdp.com.pe/wp-content/uploads/2017/05/servicios.jpg',["Nuestros Servicios","Nuestra oferta de servicios está orientada a la innovación lineal, desarrollando constantemente mejoras en el servicio e incrementar la calidad de los entregables, eso es pensar diferente."],
-"");
 
 
 getInfoBannerPage(){
