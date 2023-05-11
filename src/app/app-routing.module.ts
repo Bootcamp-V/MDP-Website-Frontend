@@ -16,6 +16,7 @@ import { TalentComponent } from './services-page/talent/talent.component';
 import { CertificationsComponent } from './about-us-page/certifications/certifications.component';
 import { ServicesMainComponent } from './services-page/services-main/services-main.component';
 import { BusinessModelComponent } from './about-us-page/business-model/business-model.component';
+import { PurposeVisionComponent } from './about-us-page/purpose-vision/purpose-vision.component';
 
 import { SectorsComponent } from './about-us-page/sectors/sectors.component';
 
@@ -41,19 +42,17 @@ const routes: Routes = [
   {
     path: 'nosotros',
     component: AboutUsPageComponent,
-
     children: [
-      {
-        path: '',
-        component: AboutUsComponent,
-      },
-      { path: 'vision-y-proposito', component: AboutUsPageComponent },
-      { path: 'historia', component: AboutUsPageComponent },
-      { path: 'organizacion', component: OrganizationComponent },
-      { path: 'modelo-de-negocio', component: BusinessModelComponent },
-      { path: 'certificaciones', component: CertificationsComponent },
-      { path: 'sectores', component: SectorsComponent },
-    ],
+    {
+      path: '', component: AboutUsComponent,
+    },
+    { path: 'vision-y-proposito', component: PurposeVisionComponent },
+    { path: 'historia', component: AboutUsPageComponent },
+    { path: 'organizacion', component: OrganizationComponent },
+    { path: 'modelo-de-negocio', component: BusinessModelComponent },
+    { path: 'certificaciones', component: CertificationsComponent },
+    { path: 'sectores', component: SectorsComponent }
+  ]
   },
   { path: 'clientes', component: CustomersPageComponent },
   { path: 'blog', component: BlogPageComponent },

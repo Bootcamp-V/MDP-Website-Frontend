@@ -40,6 +40,10 @@ import { ImageFigureAboutUsComponent } from './about-us-page/about-us/components
 import { OrganizationComponent } from './about-us-page/organization/organization.component';
 import { ImageOrganizationComponent } from './about-us-page/organization/components/image-organization/image-organization.component';
 import { ContainerTextOrganizationMapComponent } from './about-us-page/organization/components/container-text-organization-map/container-text-organization-map.component';
+import { PurposeVisionComponent } from './about-us-page/purpose-vision/purpose-vision.component';
+import { ContentVideoComponent } from './about-us-page/purpose-vision/components/content-video/content-video/content-video.component';
+import { ImagePurposeVisionComponent } from './about-us-page/purpose-vision/components/image-purpose-vision/image-purpose-vision/image-purpose-vision.component';
+import { OurValuesComponent } from './about-us-page/purpose-vision/components/our-values/our-values/our-values.component';
 import { SectorsComponent } from './about-us-page/sectors/sectors.component';
 
 @NgModule({
@@ -81,7 +85,10 @@ import { SectorsComponent } from './about-us-page/sectors/sectors.component';
     OrganizationComponent,
     ImageOrganizationComponent,
     ContainerTextOrganizationMapComponent,
-    SectorsComponent
+    PurposeVisionComponent,
+    ContentVideoComponent,
+    ImagePurposeVisionComponent,
+    OurValuesComponent,
   ],
   imports: [
     BrowserModule,
