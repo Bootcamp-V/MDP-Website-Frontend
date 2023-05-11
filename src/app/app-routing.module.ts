@@ -15,6 +15,7 @@ import { TalentComponent } from './services-page/talent/talent.component';
 import { CertificationsComponent } from './about-us-page/certifications/certifications.component';
 import { ServicesMainComponent } from './services-page/services-main/services-main.component';
 import { BusinessModelComponent } from './about-us-page/business-model/business-model.component';
+import { PurposeVisionComponent } from './about-us-page/purpose-vision/purpose-vision.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -42,7 +43,7 @@ const routes: Routes = [
     {
       path: '', component: AboutUsComponent,
     },
-    { path: 'vision-y-proposito', component: AboutUsPageComponent },
+    { path: 'vision-y-proposito', component: PurposeVisionComponent },
     { path: 'historia', component: AboutUsPageComponent },
     { path: 'organizacion', component: OrganizationComponent },
     { path: 'modelo-de-negocio', component: BusinessModelComponent },
