@@ -31,6 +31,10 @@ import { ContactservicesComponent } from './services-page/components/contactserv
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServicesBussinesComponent } from './services-page/components/services-bussines/services-bussines.component';
 import { ConsultingPlanComponent } from './services-page/components/consulting-plan/consulting-plan.component';
+import { ServicesModelComponent } from './services-page/components/services-model/services-model.component';
+import { AgileBusinessTransComponent } from './services-page/components/agile-business-trans/agile-business-trans.component';
+import { AgilePathComponent } from './services-page/components/agile-path/agile-path.component';
+import { TapeServicesComponent } from './services-page/components/tape-services/tape-services.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +65,11 @@ import { ConsultingPlanComponent } from './services-page/components/consulting-p
     ContactInfoServicesComponent,
     ContactservicesComponent,
     ServicesBussinesComponent,
-    ConsultingPlanComponent
+    ConsultingPlanComponent,
+    ServicesModelComponent,
+    AgileBusinessTransComponent,
+    AgilePathComponent,
+    TapeServicesComponent
 
   ],
   imports: [
