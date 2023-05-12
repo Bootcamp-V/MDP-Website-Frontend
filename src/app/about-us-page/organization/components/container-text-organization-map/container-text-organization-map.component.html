@@ -1,22 +1,30 @@
-<ng-container *ngIf="subpage$ | async as sup">
-  <div class="container">
+<ng-container *ngIf="{sup: subpage$ | async, url: urls$ | async} as page" >
+  <div class="container" *ngIf="page.sup && page.url; else loading">
       <div class="left-container">
         <!-- Contenido del contenedor izquierdo -->
         <div class="text-box">
-          <h2>{{sup.data[0].attributes.tittle_about_pages.data[0].attributes.tittle}}</h2>
-          <p
-            *ngFor="let item of sup.data[0].attributes.description_about_pages.data">{{ item.attributes.description}}
-          ></p>
 
-          <img src="https://www.mdp.com.pe/wp-content/uploads/2017/08/Web-MDP-BANNER_-Gartner.png" >
-          <br>
-          <p>Nuestro modelo de negocio está refrendado por Gartner</p>
+          <h2>{{page.sup.data[0].attributes.tittle_about_pages.data[0].attributes.tittle}}</h2>
+          <p class="mb-[20px]"
+            *ngFor="let item of page.sup.data[0].attributes.description_about_pages.data; let indice = index">
+            <span *ngIf="indice<4">{{ item.attributes.description}}</span>
+          </p>
+
+          <img class= "mb-[30px] mt-[30px]" src="{{page.url.data[0].attributes.imagen.data.attributes.formats.small.url }}" alt="{{page.url.data[0].attributes.imagen.data.attributes.alternativeText}}">
+
+          <p class="mb-[20px]"><span>
+            {{ page.sup.data[0].attributes.description_about_pages.data[4].attributes.description }}
+          </span></p>
       </div>
         
 
       </div>
       <div class="right-container">
-        <img src="https://www.mdp.com.pe/wp-content/uploads/2017/07/mdp_organigrama2017.png" alt="Imagen" class="imagen">
+        <img src="{{page.url.data[1].attributes.imagen.data.attributes.formats.small.url }}" alt="{{page.url.data[1].attributes.imagen.data.attributes.alternativeText}}" class="imagen">
       </div>
+
     </div>
 </ng-container>
+<ng-template #loading>
+  <p>loading.......</p>
+</ng-template>

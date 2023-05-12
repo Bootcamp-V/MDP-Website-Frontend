@@ -12,7 +12,7 @@ export interface IImageSubpage {
     createdAt: string
     updatedAt: string
     publishedAt: string
-    image: Image
+    imagen: Image
     about_sub_page: AboutSubPage
   }
   
