@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { BannerModel } from 'src/app/services-page/models/banner.model';
 import { ITitleBannerPages, IDescriptionBannerPages } from 'src/app/services-page/models/bannerPages.interface';
 import { ServicesPageService } from 'src/app/services-page/services/services-page.service';
-
 @Component({
   selector: 'app-organization',
   templateUrl: './organization.component.html',
@@ -12,6 +11,7 @@ export class OrganizationComponent implements OnInit {
   titles!: ITitleBannerPages;
   description!: IDescriptionBannerPages;
   banner!: BannerModel;
+
 
 
   constructor(private serv: ServicesPageService) {
@@ -28,5 +28,7 @@ export class OrganizationComponent implements OnInit {
       this.serv.bannerPages$.next(this.banner);
 
     });
+
+   
   }
 }

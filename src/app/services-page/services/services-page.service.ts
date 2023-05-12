@@ -19,7 +19,7 @@ export class ServicesPageService {
   }
 
   getBannerPage(): Observable<IBannerPages> {
-    return this.http.get<IBannerPages>('http://localhost:1337/api/banner-pages?populate=*');
+    return this.http.get<IBannerPages>(environment.devUrl+'/api/banner-pages?populate=*');
   }
 
 }
