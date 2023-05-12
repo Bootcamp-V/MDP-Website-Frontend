@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-import { BannerModel } from '../models/banner.model';
-import { stepsModel } from '../models/steps.model';
-import { InfoOffer, WeOffer } from '../models/we-offer-model';
-import { ContactService } from '../models/contactService.model';
-import { IDescriptionBannerPages, ITitleBannerPages } from '../models/bannerPages.interface';
+import { WeOffer } from '../models/we-offer-model';
+import { IDataBP } from '../models/bannerPages.interface';
 import { ServicesPageService } from '../services/services-page.service';
 import { map } from 'rxjs';
 import { DataOffer } from '../models/weOfferServices.model.interface';
@@ -16,35 +13,26 @@ import { DataStepsServices } from '../models/stepsService.interface';
   templateUrl: './software-development.component.html',
   styleUrls: ['./software-development.component.scss'],
 })
+
 export class SoftwareDevelopmentComponent {
+  page: string = "Software Development";
 
+  banner!: IDataBP;
+  weOffer!: WeOffer;
+  listoffer!: string[];
+  dataOffer!: DataOffer;
+  dataInfoServ!: DataInfoService;
+  dataModelServ!: IDataMSD;
+  dataSteps!: DataStepsServices;
 
-
-  titles!:ITitleBannerPages;
-  description!:IDescriptionBannerPages;
-  banner!:BannerModel;
-  weOffer!:WeOffer;
-  listoffer!:string[];
-  dataOffer!:DataOffer;
-  dataInfoServ!:DataInfoService;
-  dataModelServ!:IDataMSD;
-  dataSteps!:DataStepsServices;
-
-  constructor(private serv:ServicesPageService){
+  constructor(private serv: ServicesPageService) {
 
   }
 
 
   ngOnInit() {
-    this.serv.getBannerPage().subscribe((res) => {
-        this.titles=res.data[1].attributes.title_banner_pages;
-        this.description=res.data[1].attributes.description_banner_pages;
 
-this.banner= new BannerModel(res.data[1].attributes.img.data[0].attributes.formats.large.url,[this.titles.data[0].attributes.title,this.titles.data[1].attributes.title],
-  [this.description.data[0].attributes.text]);
-  this.serv.bannerPages$.next(this.banner);
-    });
-
+    this.getBannerPage();
     this.getoffers();
     this.getInfoContactService();
     this.getmodelsServices();
@@ -53,103 +41,112 @@ this.banner= new BannerModel(res.data[1].attributes.img.data[0].attributes.forma
 
 
 
+  getBannerPage() {
+    this.serv.getBannerPage().pipe(
+      map((res) => {
+        for (let i of res.data) {
 
-  getoffers(){
+          if (i.attributes.page == this.page) {
+            this.banner = i;
+          }
 
-this.serv.getWeOfferServices().pipe(
-  map((res)=>{
-    for(let i of res.data){
+        }
+      })
 
-      if(i.attributes.page=="Software Development"){
-        this.dataOffer=i;
-      }
-
-    }
-  })
-
-).subscribe(
-  res=>{
-    this.serv.weOff$.next(this.dataOffer);
+    ).subscribe((res) => {
+      this.serv.bannerPages$.next(this.banner);
+    });
   }
 
-);
+  getoffers() {
 
-  }
+    this.serv.getWeOfferServices().pipe(
+      map((res) => {
+        for (let i of res.data) {
 
-
-
-
-  getInfoContactService(){
-
-    this.serv.getInfoContactServices().pipe(
-      map((res)=>{
-        for(let i of res.data){
-
-          if(i.attributes.page=="Software Development"){
-            this.dataInfoServ=i;
+          if (i.attributes.page == this.page) {
+            this.dataOffer = i;
           }
 
         }
       })
 
     ).subscribe(
-      res=>{
+      res => {
+        this.serv.weOff$.next(this.dataOffer);
+      }
+
+    );
+
+  }
+
+
+  getInfoContactService() {
+
+    this.serv.getInfoContactServices().pipe(
+      map((res) => {
+        for (let i of res.data) {
+
+          if (i.attributes.page == this.page) {
+            this.dataInfoServ = i;
+          }
+
+        }
+      })
+
+    ).subscribe(
+      res => {
         this.serv.infoContactService$.next(this.dataInfoServ);
       }
 
 
     );
 
-      }
+  }
 
 
-
-
-
-
-  getmodelsServices(){
+  getmodelsServices() {
 
     this.serv.getModelServices().pipe(
-      map((res)=>{
-        for(let i of res.data){
+      map((res) => {
+        for (let i of res.data) {
 
-          if(i.attributes.page=="Software Development"){
-            this.dataModelServ=i;
+          if (i.attributes.page == this.page) {
+            this.dataModelServ = i;
           }
 
         }
       })
     ).subscribe(
-      res=>{
+      res => {
         this.serv.modelServ$.next(this.dataModelServ);
       }
     );
+  }
+
+
+  getStepsService() {
+
+    this.serv.getSteepsServices().pipe(
+      map((res) => {
+        for (let i of res.data) {
+
+          if (i.attributes.page == this.page) {
+            this.dataSteps = i;
+          }
+
+        }
+      })
+
+    ).subscribe(
+      res => {
+        this.serv.steepsServ$.next(this.dataSteps);
       }
 
 
+    );
 
-      getStepsService(){
-
-        this.serv.getSteepsServices().pipe(
-          map((res)=>{
-            for(let i of res.data){
-
-              if(i.attributes.page=="Software Development"){
-                this. dataSteps=i;
-              }
-
-            }
-          })
-
-        ).subscribe(
-          res=>{
-            this.serv.steepsServ$.next(this.dataSteps);
-          }
-
-
-        );
-
-          }
+  }
 
 
 

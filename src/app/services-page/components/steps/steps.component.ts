@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { stepsModel } from '../../models/steps.model';
+import { Component} from '@angular/core';
 import { DataStepsServices } from '../../models/stepsService.interface';
 import { Observable } from 'rxjs';
 import { ServicesPageService } from '../../services/services-page.service';

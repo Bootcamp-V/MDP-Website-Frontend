@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { WeOffer } from '../../models/we-offer-model';
+import { Component} from '@angular/core';
 import { Observable } from 'rxjs';
 import { ServicesPageService } from '../../services/services-page.service';
 import { DataOffer } from '../../models/weOfferServices.model.interface';

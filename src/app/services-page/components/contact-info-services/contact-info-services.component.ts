@@ -12,82 +12,82 @@ import Swal from 'sweetalert2';
 })
 export class ContactInfoServicesComponent {
 
-  formInfo!:FormGroup;
+  formInfo!: FormGroup;
 
-  dataConsultin$!:Observable<DataIC>;
+  dataConsultin$!: Observable<DataIC>;
 
-  constructor(private fb:FormBuilder, private serv:ServicesPageService){
+  constructor(private fb: FormBuilder, private serv: ServicesPageService) {
     this.createForm();
-    this.dataConsultin$=this.serv.infoConsultingServ$;
-      }
+    this.dataConsultin$ = this.serv.infoConsultingServ$;
+  }
 
 
-  createForm(){
-    this.formInfo=this.fb.group({
-  nombre: ['',[Validators.required,Validators.minLength(5)]],
-  email:['',[Validators.required,Validators.email]],
-  telefono:['',[Validators.required,Validators.pattern('[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')]],
-  empresa:['',[Validators.required]],
-  mensaje:['',[Validators.required]],
+  createForm() {
+    this.formInfo = this.fb.group({
+      nombre: ['', [Validators.required, Validators.minLength(5)]],
+      email: ['', [Validators.required, Validators.email]],
+      telefono: ['', [Validators.required, Validators.pattern('[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')]],
+      empresa: ['', [Validators.required]],
+      mensaje: ['', [Validators.required]],
     })
   }
 
 
-  validarForm(){
+  validarForm() {
 
-    if(this.formInfo.get('nombre')?.valid && this.formInfo.get('email')?.valid && this.formInfo.get('telefono')?.valid && this.formInfo.get('empresa')?.valid && this.formInfo.get('mensaje')?.valid){
+    if (this.formInfo.get('nombre')?.valid && this.formInfo.get('email')?.valid && this.formInfo.get('telefono')?.valid && this.formInfo.get('empresa')?.valid && this.formInfo.get('mensaje')?.valid) {
       return true;
     }
-     return false;
+    return false;
 
-    }
+  }
 
 
-    sendForm(){
+  sendForm() {
 
-      if(this.validarForm()){
-        console.log(this.formInfo.value);
+    if (this.validarForm()) {
+      console.log(this.formInfo.value);
 
-        let objeto ={
-          "data":{
-            "nombre":this.formInfo.get('nombre')?.value,
-             "email":this.formInfo.get('email')?.value,
-             "telefono":this.formInfo.get('telefono')?.value,
-             "empresa":this.formInfo.get('empresa')?.value,
-              "mensaje":this.formInfo.get('mensaje')?.value,
-          }
+      let objeto = {
+        "data": {
+          "nombre": this.formInfo.get('nombre')?.value,
+          "email": this.formInfo.get('email')?.value,
+          "telefono": this.formInfo.get('telefono')?.value,
+          "empresa": this.formInfo.get('empresa')?.value,
+          "mensaje": this.formInfo.get('mensaje')?.value,
         }
-    this.serv.postContactServicesConsulting(objeto);
-    this.showAlertSuccess();
-
-      }else{
-        console.log('Informacion no correcta');
-        this.showAlertError()
       }
+      this.serv.postContactServicesConsulting(objeto);
+      this.showAlertSuccess();
 
+    } else {
+      console.log('Informacion no correcta');
+      this.showAlertError()
     }
 
-
-    showAlertSuccess(){
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Enviado!',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    }
+  }
 
 
-    showAlertError(){
-      Swal.fire({
-        position: 'top-end',
-        icon: 'error',
-        title: 'Datos Incorrectos!',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    }
+  showAlertSuccess() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Enviado!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
+
+  showAlertError() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: 'Datos Incorrectos!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
 
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -6,11 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './services-page.component.html',
   styleUrls: ['./services-page.component.scss']
 })
-export class ServicesPageComponent implements OnInit{
-  ngOnInit(): void {
-
-  }
-
+export class ServicesPageComponent {
 
 
 }

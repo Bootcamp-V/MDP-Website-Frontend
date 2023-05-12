@@ -1,13 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
-import { IBannerPages } from '../models/bannerPages.interface';
+import { IBannerPages, IDataBP } from '../models/bannerPages.interface';
 import { environment } from 'src/environments/environment';
-import { ContactPageComponent } from 'src/app/contact-page/contact-page.component';
 import { Subject, Observable } from 'rxjs';
-import { BannerModel } from '../models/banner.model';
 import { DataOffer, IWeOffer } from '../models/weOfferServices.model.interface';
-import { WeOffer } from '../models/we-offer-model';
-import { DataInfoService, DataListInfoService, IInfoContactService } from '../models/infoContactService.interfrace';
+import { DataInfoService, IInfoContactService } from '../models/infoContactService.interfrace';
 import { DataIC, IIContactInfoConsulting } from '../models/infoContactConsulting.interface';
 import { IDataMSD, IModelServicesC } from '../models/modeServices.interface';
 import { DataStepsServices, IStepsServices } from '../models/stepsService.interface';
@@ -22,10 +19,8 @@ import { ITapeServicesConsulting } from '../models/tapeServicesConsulting.interf
 })
 export class ServicesPageService implements OnInit{
 
-banner$!:Subject<IBannerPages>;
-bannerPages$!:Subject<BannerModel>;
+bannerPages$!:Subject<IDataBP>;
 
-weOffer$!:Subject<IWeOffer>;
 weOff$!:Subject<DataOffer>;
 infoContactService$!:Subject<DataInfoService>;
 infoConsultingServ$!:Subject<DataIC>;
@@ -39,9 +34,8 @@ tapeConsuServ$!:Subject<ITapeServicesConsulting>;
 
 
   constructor(private http:HttpClient) {
-this.banner$= new Subject();
+
 this.bannerPages$= new Subject();
-this.weOffer$= new Subject();
 this.weOff$= new Subject();
 this.infoContactService$= new Subject();
 this.infoConsultingServ$= new Subject();
