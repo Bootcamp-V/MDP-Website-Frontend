@@ -9,6 +9,7 @@ import { ServicesPageService } from '../services/services-page.service';
 import { DataOffer } from '../models/weOfferServices.model.interface';
 import { DataInfoService } from '../models/infoContactService.interfrace';
 import { IDataMSD } from '../models/modeServices.interface';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-software-testing',
@@ -47,6 +48,7 @@ this.banner= new BannerModel(res.data[2].attributes.img.data[0].attributes.forma
     this.getoffers();
     this.getInfoContactService();
     this.getmodelsServices();
+   
   }
 
 

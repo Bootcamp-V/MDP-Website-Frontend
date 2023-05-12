@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ServicesPageService } from '../../services/services-page.service';
 import { Observable } from 'rxjs';
 import { DataIC } from '../../models/infoContactConsulting.interface';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact-info-services',
@@ -57,11 +58,35 @@ export class ContactInfoServicesComponent {
           }
         }
     this.serv.postContactServicesConsulting(objeto);
+    this.showAlertSuccess();
 
       }else{
         console.log('Informacion no correcta');
+        this.showAlertError()
       }
 
+    }
+
+
+    showAlertSuccess(){
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Enviado!',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    }
+
+
+    showAlertError(){
+      Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: 'Datos Incorrectos!',
+        showConfirmButton: false,
+        timer: 1500
+      })
     }
 
 

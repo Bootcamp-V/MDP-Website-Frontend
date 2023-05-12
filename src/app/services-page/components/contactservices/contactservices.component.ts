@@ -4,6 +4,7 @@ import { ContactService } from '../../models/contactService.model';
 import { ServicesPageService } from '../../services/services-page.service';
 import { Observable } from 'rxjs';
 import { DataInfoService } from '../../models/infoContactService.interfrace';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contactservices',
@@ -35,11 +36,6 @@ this.infoCS$=this.serv.infoContactService$;
 
 
 
-
-
-
-
-
 createForm(){
   this.form=this.fb.group({
 
@@ -65,11 +61,36 @@ sendForm(){
       }
     }
 this.serv.postContactServices(objeto);
+this.showAlertSuccess();
+
 
   }else{
     console.log('Informacion no correcta');
+    this.showAlertError();
   }
 
+}
+
+
+showAlertSuccess(){
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Enviado!',
+    showConfirmButton: false,
+    timer: 1500
+  })
+}
+
+
+showAlertError(){
+  Swal.fire({
+    position: 'top-end',
+    icon: 'error',
+    title: 'Datos Incorrectos!',
+    showConfirmButton: false,
+    timer: 1500
+  })
 }
 
 

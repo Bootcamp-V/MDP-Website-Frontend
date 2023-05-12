@@ -9,6 +9,12 @@ input:focus {
   border: solid 1px red;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 label{
   color: #969696;
   font-family: "Open Sans", Helvetica, sans-serif;
