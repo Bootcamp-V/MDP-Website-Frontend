@@ -8,6 +8,7 @@ import { ServicesPageService } from '../services/services-page.service';
 import { map } from 'rxjs';
 import { DataOffer } from '../models/weOfferServices.model.interface';
 import { DataInfoService } from '../models/infoContactService.interfrace';
+import { IDataMSD } from '../models/modeServices.interface';
 
 @Component({
   selector: 'app-software-development',
@@ -25,6 +26,7 @@ export class SoftwareDevelopmentComponent {
   listoffer!:string[];
   dataOffer!:DataOffer;
   dataInfoServ!:DataInfoService;
+  dataModelServ!:IDataMSD;
 
   constructor(private serv:ServicesPageService){
 
@@ -43,6 +45,7 @@ this.banner= new BannerModel(res.data[1].attributes.img.data[0].attributes.forma
 
     this.getoffers();
     this.getInfoContactService();
+    this.getmodelsServices();
   }
 
 
@@ -97,6 +100,31 @@ this.serv.getWeOfferServices().pipe(
     );
 
       }
+
+
+
+
+
+
+  getmodelsServices(){
+
+    this.serv.getModelServices().pipe(
+      map((res)=>{
+        for(let i of res.data){
+
+          if(i.attributes.page=="Software Development"){
+            this.dataModelServ=i;
+          }
+
+        }
+      })
+    ).subscribe(
+      res=>{
+        this.serv.modelServ$.next(this.dataModelServ);
+      }
+    );
+      }
+
 
 
   steps: stepsModel = new stepsModel(

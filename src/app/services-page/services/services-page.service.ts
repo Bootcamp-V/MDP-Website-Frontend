@@ -9,6 +9,7 @@ import { DataOffer, IWeOffer } from '../models/weOfferServices.model.interface';
 import { WeOffer } from '../models/we-offer-model';
 import { DataInfoService, DataListInfoService, IInfoContactService } from '../models/infoContactService.interfrace';
 import { DataIC, IIContactInfoConsulting } from '../models/infoContactConsulting.interface';
+import { IDataMSD, IModelServicesC } from '../models/modeServices.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,7 @@ weOffer$!:Subject<IWeOffer>;
 weOff$!:Subject<DataOffer>;
 infoContactService$!:Subject<DataInfoService>;
 infoConsultingServ$!:Subject<DataIC>;
+modelServ$!:Subject<IDataMSD>;
 
 
 
@@ -32,6 +34,7 @@ this.weOffer$= new Subject();
 this.weOff$= new Subject();
 this.infoContactService$= new Subject();
 this.infoConsultingServ$= new Subject();
+this.modelServ$= new Subject();
 
 }
 
@@ -53,6 +56,10 @@ this.infoConsultingServ$= new Subject();
 
   getInfoContactConsultingServ():Observable<IIContactInfoConsulting>{
     return this.http.get<IIContactInfoConsulting>(environment.baseUrl+'/api/contact-info-consultings?populate=*');
+  }
+
+  getModelServices():Observable<IModelServicesC>{
+    return this.http.get<IModelServicesC>(environment.baseUrl+'/api/model-services?populate=*');
   }
 
 

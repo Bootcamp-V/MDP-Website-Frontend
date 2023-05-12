@@ -8,6 +8,7 @@ import { IDescriptionBannerPages, ITitleBannerPages } from '../models/bannerPage
 import { ServicesPageService } from '../services/services-page.service';
 import { DataOffer } from '../models/weOfferServices.model.interface';
 import { DataInfoService } from '../models/infoContactService.interfrace';
+import { IDataMSD } from '../models/modeServices.interface';
 
 @Component({
   selector: 'app-software-testing',
@@ -25,6 +26,7 @@ export class SoftwareTestingComponent implements OnInit{
   listoffer!:string[];
   dataOffer!:DataOffer;
   dataInfoServ!:DataInfoService;
+  dataModelServ!:IDataMSD;
 
   constructor(private serv:ServicesPageService){
 
@@ -44,6 +46,7 @@ this.banner= new BannerModel(res.data[2].attributes.img.data[0].attributes.forma
 
     this.getoffers();
     this.getInfoContactService();
+    this.getmodelsServices();
   }
 
 
@@ -92,6 +95,26 @@ this.banner= new BannerModel(res.data[2].attributes.img.data[0].attributes.forma
 
           }
 
+
+
+          getmodelsServices(){
+
+            this.serv.getModelServices().pipe(
+              map((res)=>{
+                for(let i of res.data){
+
+                  if(i.attributes.page=="Software Testing"){
+                    this.dataModelServ=i;
+                  }
+
+                }
+              })
+            ).subscribe(
+              res=>{
+                this.serv.modelServ$.next(this.dataModelServ);
+              }
+            );
+              }
 
 
 
