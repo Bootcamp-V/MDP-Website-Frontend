@@ -14,6 +14,8 @@ import { DataStepsServices, IStepsServices } from '../models/stepsService.interf
 import { DataBussinesService, IBussinessService } from '../models/bussinesService.interface';
 import { IDataPlanC, IPlanConsulting } from '../models/PlanConsulting.interface';
 import { DataIagilTr, IAgilTransCons } from '../models/AgilTransformationConsulting';
+import { DataAgilPC, IAgilePathConsulting } from '../models/agilePathConsulting.interface';
+import { ITapeServicesConsulting } from '../models/tapeServicesConsulting.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +34,8 @@ steepsServ$!:Subject<DataStepsServices>;
 bussinesServ$!:Subject<DataBussinesService>;
 planConsulServ$!:Subject<IDataPlanC>;
 agilTransConsServ$!:Subject<DataIagilTr>;
-
+agilPathConsServ$!:Subject<DataAgilPC>;
+tapeConsuServ$!:Subject<ITapeServicesConsulting>;
 
 
   constructor(private http:HttpClient) {
@@ -47,6 +50,10 @@ this.steepsServ$= new Subject();
 this.bussinesServ$= new Subject();
 this.planConsulServ$= new Subject();
 this.agilTransConsServ$= new Subject();
+this.agilPathConsServ$= new Subject();
+this.tapeConsuServ$= new Subject();
+
+
 
 }
 
@@ -90,6 +97,15 @@ this.agilTransConsServ$= new Subject();
     return this.http.get<IAgilTransCons>(environment.baseUrl+'/api/agil-transformation-consultings?populate=*');
   }
 
+  getAgilPathConsul():Observable<IAgilePathConsulting>{
+    return this.http.get<IAgilePathConsulting>(environment.baseUrl+'/api/agile-path-consultings?populate=*');
+  }
+
+
+  getTapeServConsul():Observable<ITapeServicesConsulting>{
+    return this.http.get<ITapeServicesConsulting>(environment.baseUrl+'/api/tape-services-consultings');
+  }
+
 
 
   postContactServices( data:Object){
@@ -100,5 +116,8 @@ this.agilTransConsServ$= new Subject();
   postContactServicesConsulting( data:Object){
     return this.http.post(environment.baseUrl+'/api/contact-service-consulting-forms',data).subscribe( res=> console.log(res));
   }
+
+
+
 
 }

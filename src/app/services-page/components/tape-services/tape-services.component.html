@@ -1,15 +1,16 @@
+<ng-container *ngIf="tapeCons$ | async as tc">
 <div class="different">
     <div class="shadow"></div>
     <div class="develop">
       <div class="text">
-        <h1 class="text_2">¿Está listo para dar sus primeros pasos hacia la agilidad?</h1>
+        <h1 class="text_2">{{tc.data[0].attributes.title}}</h1>
         <br>
         <p class="text_1">
-          Si está familiarizado con alguna de estas preguntas, tenemos paquetes de inicio para equipos ágiles que están
-          listos para comenzar a tomar sus primero pasos hacia la agilidad.
+          {{tc.data[0].attributes.description}}
         </p>
       </div>
       <br><br>
-      <a class="btn_ourServices" href="*">Escribenos </a>
+      <a class="btn_ourServices" href="*">{{tc.data[0].attributes.textButton}} </a>
     </div>
   </div>
+</ng-container>

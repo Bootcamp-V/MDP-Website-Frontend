@@ -7,6 +7,8 @@ import { DataIC } from '../models/infoContactConsulting.interface';
 import { DataBussinesService } from '../models/bussinesService.interface';
 import { IDataPlanC } from '../models/PlanConsulting.interface';
 import { DataIagilTr } from '../models/AgilTransformationConsulting';
+import { DataAgilPC, IAgilePathConsulting } from '../models/agilePathConsulting.interface';
+import { ITapeServicesConsulting } from '../models/tapeServicesConsulting.interface';
 
 @Component({
   selector: 'app-consulting',
@@ -22,6 +24,8 @@ export class ConsultingComponent {
   dataBussinesS!:DataBussinesService;
   dataPlanConsulting!:IDataPlanC;
   dataAgilTransCons!:DataIagilTr;
+  dataAgilPathCons!:DataAgilPC;
+  dataTapeConsulting!:ITapeServicesConsulting;
 
   constructor(private serv:ServicesPageService){
 
@@ -41,6 +45,8 @@ this.getInfoContactConsultingService();
 this.getBussinesService();
 this.getPlanConsulting();
 this.getAgilTransCons();
+this.getAgilPathCons();
+this.getTapeConsul();
 
   }
 
@@ -128,6 +134,50 @@ this.getAgilTransCons();
         );
 
           }
+
+
+
+
+
+          getAgilPathCons(){
+
+            this.serv.getAgilPathConsul().pipe(
+              map((res)=>{
+                this.dataAgilPathCons=res.data[0];
+               return res;
+              })
+
+            ).subscribe(
+              res=>{
+
+                this.serv.agilPathConsServ$.next(this.dataAgilPathCons);
+              }
+
+
+            );
+
+              }
+
+
+
+              getTapeConsul(){
+
+                this.serv.getTapeServConsul().pipe(
+                  map((res)=>{
+                    this.dataTapeConsulting=res;
+                   return res;
+                  })
+
+                ).subscribe(
+                  res=>{
+
+                    this.serv.tapeConsuServ$.next(this.dataTapeConsulting);
+                  }
+
+
+                );
+
+                  }
 
 
 
