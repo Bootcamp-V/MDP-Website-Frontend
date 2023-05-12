@@ -8,6 +8,7 @@ import { BannerModel } from '../models/banner.model';
 import { DataOffer, IWeOffer } from '../models/weOfferServices.model.interface';
 import { WeOffer } from '../models/we-offer-model';
 import { DataInfoService, DataListInfoService, IInfoContactService } from '../models/infoContactService.interfrace';
+import { DataIC, IIContactInfoConsulting } from '../models/infoContactConsulting.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,7 @@ bannerPages$!:Subject<BannerModel>;
 weOffer$!:Subject<IWeOffer>;
 weOff$!:Subject<DataOffer>;
 infoContactService$!:Subject<DataInfoService>;
+infoConsultingServ$!:Subject<DataIC>;
 
 
 
@@ -29,6 +31,7 @@ this.bannerPages$= new Subject();
 this.weOffer$= new Subject();
 this.weOff$= new Subject();
 this.infoContactService$= new Subject();
+this.infoConsultingServ$= new Subject();
 
 }
 
@@ -46,6 +49,10 @@ this.infoContactService$= new Subject();
 
   getInfoContactServices():Observable<IInfoContactService>{
     return this.http.get<IInfoContactService>(environment.baseUrl+'/api/info-contact-services?populate=*');
+  }
+
+  getInfoContactConsultingServ():Observable<IIContactInfoConsulting>{
+    return this.http.get<IIContactInfoConsulting>(environment.baseUrl+'/api/contact-info-consultings?populate=*');
   }
 
 

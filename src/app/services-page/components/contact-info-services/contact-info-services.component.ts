@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ServicesPageService } from '../../services/services-page.service';
+import { Observable } from 'rxjs';
+import { DataIC } from '../../models/infoContactConsulting.interface';
 
 @Component({
   selector: 'app-contact-info-services',
@@ -11,8 +13,11 @@ export class ContactInfoServicesComponent {
 
   formInfo!:FormGroup;
 
+  dataConsultin$!:Observable<DataIC>;
+
   constructor(private fb:FormBuilder, private serv:ServicesPageService){
     this.createForm();
+    this.dataConsultin$=this.serv.infoConsultingServ$;
       }
 
 

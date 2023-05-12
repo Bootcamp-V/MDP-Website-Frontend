@@ -1,3 +1,4 @@
+<ng-container *ngIf="dataConsultin$ | async as dataSC">
 <div class="section-information-services">
   <div class="container-information">
     <div class="form-info-services">
@@ -75,16 +76,14 @@
     </div>
 
     <div class="framework-work">
-      <h1>Marco de Trabajo</h1>
+      <h1>{{dataSC.attributes.title}}</h1>
 
       <img
-        src="https://www.mdp.com.pe/wp-content/uploads/2017/05/SAFe_framework.jpg"
+        src="{{dataSC.attributes.img.data[0].attributes.formats.small.url}}"
         alt=""
       />
-      <p>
-        Trabajamos sobre SAFe (Scaled Agile Framework), un marco de trabajo que
-        permite a las organizaciones escalar el agilismo a nivel empresarial.
-      </p>
+      <p>{{dataSC.attributes.description}}</p>
     </div>
   </div>
 </div>
+</ng-container>
