@@ -1,42 +1,44 @@
+<ng-container *ngIf="planConsulting$ | async as pc">
 <div class="container_consulting_2">
-  <h1 class="title">Plan de Transformacion</h1>
+  <h1 class="title">{{pc.attributes.title}}</h1>
   <div class="part_1 part">
-    <h3 class="title_1">Simulacion Ágil</h3>
+    <h3 class="title_1">{{pc.attributes.plan_child_consultings.data[0].attributes.title}}</h3>
     <hr />
     <div class="circle"></div>
-    <p class="number">01</p>
-    <p class="descripcion">1/2 dia</p>
+    <p class="number">{{pc.attributes.plan_child_consultings.data[0].attributes.paso}}</p>
+    <p class="descripcion">{{pc.attributes.plan_child_consultings.data[0].attributes.tiempo}}</p>
   </div>
   <div class="part_2 part">
-    <h3 class="title_1">Evaluacion Ágil</h3>
+    <h3 class="title_1">{{pc.attributes.plan_child_consultings.data[1].attributes.title}}</h3>
     <hr />
     <div class="circle"></div>
-    <p class="number">02</p>
-    <p class="descripcion">5 días(de preparacion organizacional)</p>
+    <p class="number">{{pc.attributes.plan_child_consultings.data[1].attributes.paso}}</p>
+    <p class="descripcion">{{pc.attributes.plan_child_consultings.data[1].attributes.tiempo}}</p>
   </div>
   <div class="part_3 part">
-    <h3 class="title_1">Acelerador Ágil</h3>
+    <h3 class="title_1">{{pc.attributes.plan_child_consultings.data[2].attributes.title}}</h3>
     <hr />
     <div class="circle"></div>
-    <p class="number">03</p>
-    <p class="descripcion">5 dias</p>
+    <p class="number">{{pc.attributes.plan_child_consultings.data[2].attributes.paso}}</p>
+    <p class="descripcion">{{pc.attributes.plan_child_consultings.data[2].attributes.tiempo}}</p>
   </div>
   <div class="part_4 part">
-    <h3 class="title_2">Alineación de Negocio y TI</h3>
+    <h3 class="title_2">{{pc.attributes.plan_child_consultings.data[3].attributes.title}}</h3>
     <hr />
     <div class="circle"></div>
-    <p class="number">04</p>
+    <p class="number">{{pc.attributes.plan_child_consultings.data[3].attributes.paso}}</p>
   </div>
   <div class="part_5 part">
-    <h3 class="title_2">Equipos de alto rendimiento</h3>
+    <h3 class="title_2">{{pc.attributes.plan_child_consultings.data[4].attributes.title}}</h3>
     <hr />
     <div class="circle"></div>
-    <p class="number">05</p>
+    <p class="number">{{pc.attributes.plan_child_consultings.data[4].attributes.paso}}</p>
   </div>
   <div class="part_6 part">
-    <h3 class="title_2">Proyectos que entregan valor</h3>
+    <h3 class="title_2">{{pc.attributes.plan_child_consultings.data[5].attributes.title}}</h3>
     <hr />
     <div class="circle"></div>
-    <p class="number">06</p>
+    <p class="number">{{pc.attributes.plan_child_consultings.data[5].attributes.paso}}</p>
   </div>
 </div>
+</ng-container>

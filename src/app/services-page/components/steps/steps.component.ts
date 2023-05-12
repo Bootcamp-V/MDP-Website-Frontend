@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { stepsModel } from '../../models/steps.model';
+import { DataStepsServices } from '../../models/stepsService.interface';
+import { Observable } from 'rxjs';
+import { ServicesPageService } from '../../services/services-page.service';
 
 @Component({
   selector: 'app-steps',
@@ -7,5 +10,10 @@ import { stepsModel } from '../../models/steps.model';
   styleUrls: ['./steps.component.scss'],
 })
 export class StepsComponent {
-  @Input() steps!: stepsModel;
+  steeps$!:Observable<DataStepsServices>;
+
+  constructor( private serv:ServicesPageService){
+this.steeps$=this.serv.steepsServ$;
+  }
+
 }

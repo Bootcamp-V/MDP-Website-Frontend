@@ -10,6 +10,10 @@ import { WeOffer } from '../models/we-offer-model';
 import { DataInfoService, DataListInfoService, IInfoContactService } from '../models/infoContactService.interfrace';
 import { DataIC, IIContactInfoConsulting } from '../models/infoContactConsulting.interface';
 import { IDataMSD, IModelServicesC } from '../models/modeServices.interface';
+import { DataStepsServices, IStepsServices } from '../models/stepsService.interface';
+import { DataBussinesService, IBussinessService } from '../models/bussinesService.interface';
+import { IDataPlanC, IPlanConsulting } from '../models/PlanConsulting.interface';
+import { DataIagilTr, IAgilTransCons } from '../models/AgilTransformationConsulting';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +28,10 @@ weOff$!:Subject<DataOffer>;
 infoContactService$!:Subject<DataInfoService>;
 infoConsultingServ$!:Subject<DataIC>;
 modelServ$!:Subject<IDataMSD>;
+steepsServ$!:Subject<DataStepsServices>;
+bussinesServ$!:Subject<DataBussinesService>;
+planConsulServ$!:Subject<IDataPlanC>;
+agilTransConsServ$!:Subject<DataIagilTr>;
 
 
 
@@ -35,6 +43,10 @@ this.weOff$= new Subject();
 this.infoContactService$= new Subject();
 this.infoConsultingServ$= new Subject();
 this.modelServ$= new Subject();
+this.steepsServ$= new Subject();
+this.bussinesServ$= new Subject();
+this.planConsulServ$= new Subject();
+this.agilTransConsServ$= new Subject();
 
 }
 
@@ -61,6 +73,23 @@ this.modelServ$= new Subject();
   getModelServices():Observable<IModelServicesC>{
     return this.http.get<IModelServicesC>(environment.baseUrl+'/api/model-services?populate=*');
   }
+
+  getSteepsServices():Observable<IStepsServices>{
+    return this.http.get<IStepsServices>(environment.baseUrl+'/api/steps-services?populate=*');
+  }
+
+  getBussinesServices():Observable<IBussinessService>{
+    return this.http.get<IBussinessService>(environment.baseUrl+'/api/bussines-services?populate=*');
+  }
+
+  getPlanConsulting():Observable<IPlanConsulting>{
+    return this.http.get<IPlanConsulting>(environment.baseUrl+'/api/plan-consultings?populate=*');
+  }
+
+  getAgilTransConsul():Observable<IAgilTransCons>{
+    return this.http.get<IAgilTransCons>(environment.baseUrl+'/api/agil-transformation-consultings?populate=*');
+  }
+
 
 
   postContactServices( data:Object){

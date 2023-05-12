@@ -10,6 +10,7 @@ import { DataOffer } from '../models/weOfferServices.model.interface';
 import { DataInfoService } from '../models/infoContactService.interfrace';
 import { IDataMSD } from '../models/modeServices.interface';
 import Swal from 'sweetalert2';
+import { DataStepsServices } from '../models/stepsService.interface';
 
 @Component({
   selector: 'app-software-testing',
@@ -28,6 +29,7 @@ export class SoftwareTestingComponent implements OnInit{
   dataOffer!:DataOffer;
   dataInfoServ!:DataInfoService;
   dataModelServ!:IDataMSD;
+  dataSteps!:DataStepsServices;
 
   constructor(private serv:ServicesPageService){
 
@@ -48,7 +50,8 @@ this.banner= new BannerModel(res.data[2].attributes.img.data[0].attributes.forma
     this.getoffers();
     this.getInfoContactService();
     this.getmodelsServices();
-   
+    this.getStepsService();
+
   }
 
 
@@ -119,23 +122,28 @@ this.banner= new BannerModel(res.data[2].attributes.img.data[0].attributes.forma
               }
 
 
+              getStepsService(){
+
+                this.serv.getSteepsServices().pipe(
+                  map((res)=>{
+                    for(let i of res.data){
+
+                      if(i.attributes.page=="Software Testing"){
+                        this. dataSteps=i;
+                      }
+
+                    }
+                  })
+
+                ).subscribe(
+                  res=>{
+                    this.serv.steepsServ$.next(this.dataSteps);
+                  }
 
 
-  steps: stepsModel = new stepsModel(
-    ['https://cdn-icons-png.flaticon.com/512/45/45180.png'],
-    '¿Cómo funciona?',
-    'No existe una ruta estricta al desarrollar soluciones para las organizaciones, esto es una de las características que nos hace diferentes, la flexibilidad, sin embargo, si seguimos patrones que nos permiten identificar qué modelo de servicio se adapta más a su necesidad específica, sea una solución puntual o un área específica (TI).',
-    [
-      'Reunion Inicial',
-      'Analisis de las necesidades',
-      'Presentacion al cliente',
-    ],
-    [
-      'Todo empieza con una conversación, sea física o virtual en la que podamos conocerlos y entender el negocio y sus necesidades iniciales, los puntos de dolor que podemos ayudar a solucionar, lo que necesitan implementar o la gestión de la demanda.',
-      'Nuestro equipo comercial junto a un equipo de especialistas analizan la información brindada en la reunión realizando investigaciones complementarias para definir la solución y bajo qué modelo (fábrica / proyecto) y sobre que marco (ágil / tradicional) se podría ejecutar para elaborar una estimación.',
-      'Dependiendo de la solución, modelo y marco de trabajo seleccionado se realiza una presentación de nuestra propuesta o estimación para profundizar más sobre la alternativa seleccionada (alcance, tiempos y equipo necesario) para lograr acuerdos que nos lleven al inicio del servicio.',
-    ]
-  );
+                );
+
+                  }
 
 
 

@@ -1,37 +1,27 @@
+<ng-container *ngIf="dataAgilConsulting$ | async as dac">
 <div class="fondazo">
     <main class="contenedor">
-        <h3 class="centrar-texto">Tranformacion Ágil Empresarial</h3>
+        <h3 class="centrar-texto">{{dac.attributes.title}}</h3>
         <div class="modelo-servicio">
             <div class="primera-imagen">
                 <p>
-                    <span style="font-family: Oswald; font-size: 22px; color: #00ccff;">¿Cómo nace este servicio?</span>
+                    <span style="font-family: Oswald; font-size: 22px; color: #00ccff;">{{dac.attributes.subtitle}}</span>
                 </p>
                 <br>
                 <li>
-                    <p>
-                        MDP Consulting establece una alianza “Agile” con la empresa americana Thei4Group, abriendo así
-                        una línea de
-                        servicio en consultoría de “Transformación Ágil Empresarial”, servicio que permitirá habilitar a
-                        nuestros
-                        clientes a entregar productos/servicios de valor de manera consistente con un mejor time to
-                        market a nivel
-                        corporativo.
-                    </p>
+
+                      {{dac.attributes.agile_child_descrip_transf_consultings.data[0].attributes.description}}
+
                 </li>
                 <br>
                 <li>
-                    <p>
-                        Está alianza beneficiará a nuestros clientes con nuestra amplia experiencia, en Perú y EEUU, en
-                        la
-                        organización, planificación y ejecución de métodos Lean / Agile y sus mejores prácticas. Nuestro
-                        modelo de
-                        ejecución es práctico; trabajando hombro con hombro con los equipos ejecutivos y técnicos.
-                    </p>
+                      {{dac.attributes.agile_child_descrip_transf_consultings.data[1].attributes.description}}
                 </li>
             </div>
             <div class="segunda-imagen">
-                <img src="https://www.mdp.com.pe/wp-content/uploads/2017/05/06.jpg" alt="">
+                <img src="{{dac.attributes.urlImage}}" alt="">
             </div>
         </div>
     </main>
 </div>
+</ng-container>
