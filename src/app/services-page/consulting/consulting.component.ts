@@ -29,8 +29,6 @@ export class ConsultingComponent {
 
   }
 
-
-
   ngOnInit() {
 
     this.getBannerPage();
