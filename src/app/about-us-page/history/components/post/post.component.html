@@ -1,0 +1,29 @@
+<ng-container *ngIf="{pos: posts$ | async} as page" >
+    <div class="container" *ngIf="page.pos ; else loading">
+        <div class="container">
+            <div class="left-column">
+            <div class="rectangle">
+                <h1 >{{page.pos.data[0].attributes.date}}</h1>
+            </div>
+            </div>
+            <div class="centered-icon">
+                <i class="fas fa-cloud " style="color: #f70505;font-size: 50px"></i>
+            </div>
+            <div class="right-column">
+                <div class="post">
+                    <h2 class="mb-[10px] "><span>{{page.pos.data[0].attributes.tittle}}</span></h2>
+                    <img class="mb-[10px]" src="{{page.pos.data[0].attributes.picture.data[0].attributes.url}}" ><span></span>
+                    <p class="mt-[10px]"><span>{{page.pos.data[0].attributes.description}}</span></p>
+                </div>
+
+            </div>
+            
+        </div>
+
+    </div>
+</ng-container>
+
+<ng-template #loading>
+    <p>loading.......</p>
+</ng-template>
+  

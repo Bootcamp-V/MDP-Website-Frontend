@@ -1,0 +1,147 @@
+.container {
+  display: flex;
+  width: 100%;
+  background-color: #000124;
+  max-width: 100%;
+  align-items: center; /* Centra los elementos verticalmente */
+  margin-top: 20px;
+  margin-bottom: 20px;
+    
+
+}
+
+
+
+.left-column {
+  background-color: transparent; /* Color de fondo de la columna izquierda */
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  
+  
+  
+ 
+}
+
+.rectangle {
+    width: 8vw; /* Ancho inicial del rectángulo */
+    height:auto; /* Toma la altura completa de la columna izquierda */
+    background-color: rgb(255, 255, 255); /* Color del rectángulo */
+    border-radius: 5px;
+    margin-left: auto;
+    padding :20px;
+    
+    
+    
+  }
+
+  h1 {
+    line-height: 13px;
+    font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+    color: #535353;
+    text-align: center;
+    font-size: 16px;
+    
+    
+  }
+
+
+.right-column {
+  background-color: transparent; 
+  flex: 1;
+  padding: 10px;
+  
+}
+
+
+
+
+.post {
+
+    width: 80%; /* Ancho inicial del rectángulo */
+    height: auto; /* Toma la altura completa de la columna izquierda */
+    background-color: white; /* Color del rectángulo */
+    padding: 20px;
+
+
+   }
+
+   .post img {
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+  }
+
+  
+  .centered-icon {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+  } 
+  
+
+  h2 {
+    font-size: 14px;
+    color: #535353;
+    font-family: 'Oswald', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 0;
+    text-align: left;
+    margin-left: 3vw;
+  }
+  
+  p {
+    font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+    color: #535353;
+    text-align: left;
+    font-size: 16px;
+    margin-left: 3vw;
+    line-height: 1.4;
+    margin-right: 3vw;
+    
+    
+  }
+
+
+    @media (max-width: 768px) {
+      /* Estilos para pantallas más pequeñas */
+      .container {
+        flex-direction: column;
+      }
+
+      .centered-icon {
+        display: none;
+      }
+    
+      .left-column,
+      .right-column {
+        padding: 10px;
+        background-color: green;
+        width: 80vw;
+        display: flex;
+        justify-content: center;
+        
+      }
+    
+      .rectangle {
+        width: auto;
+        margin: 0;
+        border-radius: 0;
+        
+        
+      }
+    
+      h1 {
+        font-size: 14px;
+      }
+    
+      .post {
+        padding: 20px;
+        width: auto;
+        max-width: 100%;
+
+
+        .img {
+          margin: 0 auto; 
+        }
+      }
+
+      
+    }

@@ -43,6 +43,7 @@ import { ContentVideoComponent } from './about-us-page/purpose-vision/components
 import { OurValuesComponent } from './about-us-page/purpose-vision/components/our-values/our-values/our-values.component';
 import { SectorsComponent } from './about-us-page/sectors/sectors.component';
 import { HistoryComponent } from './about-us-page/history/history.component';
+import { PostComponent } from './about-us-page/history/components/post/post.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { HistoryComponent } from './about-us-page/history/history.component';
     OurValuesComponent,
     SectorsComponent,
     HistoryComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
