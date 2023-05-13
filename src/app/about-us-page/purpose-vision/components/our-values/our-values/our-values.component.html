@@ -1,22 +1,45 @@
-<div class="content-ourValues">
-    <h2 class="h2-ourValues">Nuestros Valores</h2>
-   <section class="content-ourValues_image two-images">
-        <div>
-            <img src="https://www.mdp.com.pe/wp-content/uploads/2018/03/valor_transparencia.jpg" alt="transparency image"/>
-            <h2>Transparencia</h2>
-            <p>Somos francos y directos para generar lealtad y relaciones de largo plazo</p>
+<ng-container *ngIf=" values$ | async as val">
+    <div *ngIf="val ; else loading">
+
+       <!-- <img src="{{page.val.data[0].attributes.image.data[0].attributes.url}}">-->
+        <div class="container">
+
+            <div *ngIf="(val.data.length)%2==0">
+                <div class="values">
+                    <div *ngFor="let item of val.data; let indice = index">
+                        <div class="item">
+                            <img src="{{item.attributes.image.data[0].attributes.url}}">
+                            <h2>{{item.attributes.tittle}}</h2>
+                            <p>{{item.attributes.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="val.data.length%2!=0">
+                <div class="values">
+                    <div *ngFor="let item of val.data; let indice = index">
+
+                        <div *ngIf="indice<val.data.length-1" class="item">
+                            <img src="{{item.attributes.image.data[0].attributes.url}}">
+                            <h2>{{ item.attributes.tittle }}</h2>
+                            <p>{{ item.attributes.description }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item1">
+                    <img src="{{val.data[val.data.length-1].attributes.image.data[0].attributes.url}}">
+                    <h2>{{ val.data[val.data.length - 1].attributes.tittle }}</h2>
+                    <p>{{ val.data[val.data.length - 1].attributes.description }}</p>
+                </div>
+
+            </div>
         </div>
-        <div>
-            <img src="https://www.mdp.com.pe/wp-content/uploads/2018/03/valor_Sensibilidad.jpg" alt="sensibility image">
-        <h2>Sensibilidad</h2>
-        <p>Sensibilidad con el cliente interno y externo</p>
-        </div>
-   </section>
-   <section class="content-ourValues_image one-image">
-        <div>
-            <img src="https://www.mdp.com.pe/wp-content/uploads/2018/03/valor-Innovacion.jpg" alt="innovation image">
-            <h2>Innovación</h2>
-            <p>Apostamos por la innovación para generar nuevas capacidades</p>
-        </div>
-   </section>
-</div>
+
+
+
+    </div>
+    <ng-template #loading>
+        <p>loading.......</p>
+    </ng-template>
