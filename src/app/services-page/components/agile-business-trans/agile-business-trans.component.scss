@@ -1,16 +1,16 @@
 @import "../../../../styles/abstracts/variables";
 @import "../../../../styles/abstracts/mixins";
-.fondazo{
+.fund{
   background-color: $background-blue-color;
 }
-.contenedor {
+.container {
   background-color: $background-blue-color;
   width: min(90%, 120rem);
   margin: 0 auto;
   padding: 5em;
 }
 
-.centrar-texto {
+.center-text {
   text-align: center;
   margin-bottom: 45px;
   font-size: 24px;
@@ -24,7 +24,7 @@ li::marker{
 }
 
 @media (min-width: 768px) {
-  .modelo-servicio {
+  .service-model {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
@@ -33,21 +33,13 @@ li::marker{
   }
 }
 
-.primera-imagen {
+.first-image {
   color: $background-white-color;
 }
 
-.segunda-imagen {
+.second-image{
   color: $background-white-color;
 
-}
-
-.tercera-imagen {
-  color: $background-white-color;
-}
-
-.cuarta-imagen {
-  color: $background-white-color;
 }
 
 .letras {

@@ -1,9 +1,9 @@
 <ng-container *ngIf="dataAgilConsulting$ | async as dac">
-<div class="fondazo">
-    <main class="contenedor">
-        <h3 class="centrar-texto">{{dac.attributes.title}}</h3>
-        <div class="modelo-servicio">
-            <div class="primera-imagen">
+<div class="fund">
+    <main class="container">
+        <h3 class="center-text">{{dac.attributes.title}}</h3>
+        <div class="service-model">
+            <div class="first-image">
                 <p>
                     <span style="font-family: Oswald; font-size: 22px; color: #00ccff;">{{dac.attributes.subtitle}}</span>
                 </p>
@@ -18,7 +18,7 @@
                       {{dac.attributes.agile_child_descrip_transf_consultings.data[1].attributes.description}}
                 </li>
             </div>
-            <div class="segunda-imagen">
+            <div class="second-image">
                 <img src="{{dac.attributes.urlImage}}" alt="">
             </div>
         </div>

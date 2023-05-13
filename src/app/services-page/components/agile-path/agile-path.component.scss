@@ -1,9 +1,9 @@
 @import "../../../../styles/abstracts/variables";
 @import "../../../../styles/abstracts/mixins";
-.fondazo{
+.fund{
   background-color: $background-white-color;
 }
-.contenedor {
+.container {
   background-color: $background-white-color;
   width: min(90%, 110rem);
   margin: 0 auto;
@@ -20,7 +20,7 @@
 }
 
 @media (min-width: 768px) {
-  .modelo-servicio {
+  .service-model {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
@@ -30,7 +30,7 @@
 }
 
 
-.primera-imagen {
+.first-image {
   color: $grey-form-text-color;
   .title-agile{
     font-family: "Oswald", sans-serif;
@@ -52,19 +52,10 @@
   }
 }
 
-.segunda-imagen {
+.second-image {
   color: $grey-form-text-color;
 
 }
-
-.tercera-imagen {
-  color: $background-white-color;
-}
-
-.cuarta-imagen {
-  color: $background-white-color;
-}
-
 .letras {
   text-align: center;
 }
