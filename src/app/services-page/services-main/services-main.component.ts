@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicesPageService } from '../services/services-page.service';
 import { IDataBP } from '../models/bannerPages.interface';
 import { map } from 'rxjs';
+import { BannerPagesService } from 'src/app/shared/banner-pages/banner-pages.service';
 
 @Component({
   selector: 'app-services-main',
@@ -12,16 +13,17 @@ export class ServicesMainComponent implements OnInit {
   banner!: IDataBP;
 
 
-  constructor(private serv: ServicesPageService) {
+  constructor(private serv: ServicesPageService,private servicio:BannerPagesService) {
 
   }
+
 
   ngOnInit() {
     this.getBannerPage();
   }
 
   getBannerPage() {
-    this.serv.getBannerPage().pipe(
+    this.servicio.getBannerPage().pipe(
       map((res) => {
         for (let i of res.data) {
 
@@ -33,11 +35,8 @@ export class ServicesMainComponent implements OnInit {
       })
 
     ).subscribe((res) => {
-      this.serv.bannerPages$.next(this.banner);
+      this.servicio.bannerPages$.next(this.banner);
     });
   }
-
-
-
 
 }

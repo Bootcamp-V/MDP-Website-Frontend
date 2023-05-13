@@ -6,6 +6,7 @@ import { DataOffer } from '../models/weOfferServices.model.interface';
 import { DataInfoService } from '../models/infoContactService.interfrace';
 import { IDataMSD } from '../models/modeServices.interface';
 import { DataStepsServices } from '../models/stepsService.interface';
+import { BannerPagesService } from 'src/app/shared/banner-pages/banner-pages.service';
 
 @Component({
   selector: 'app-software-testing',
@@ -24,9 +25,10 @@ export class SoftwareTestingComponent implements OnInit {
   dataModelServ!: IDataMSD;
   dataSteps!: DataStepsServices;
 
-  constructor(private serv: ServicesPageService) {
+  constructor(private serv: ServicesPageService,private servicio:BannerPagesService) {
 
   }
+
 
 
   ngOnInit() {
@@ -42,7 +44,7 @@ export class SoftwareTestingComponent implements OnInit {
 
 
   getBannerPage() {
-    this.serv.getBannerPage().pipe(
+    this.servicio.getBannerPage().pipe(
       map((res) => {
         for (let i of res.data) {
 
@@ -54,7 +56,7 @@ export class SoftwareTestingComponent implements OnInit {
       })
 
     ).subscribe((res) => {
-      this.serv.bannerPages$.next(this.banner);
+      this.servicio.bannerPages$.next(this.banner);
     });
   }
 

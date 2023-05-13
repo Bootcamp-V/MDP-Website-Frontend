@@ -5,6 +5,7 @@ import { map } from 'rxjs';
 import { DataOffer } from '../models/weOfferServices.model.interface';
 import { DataInfoService } from '../models/infoContactService.interfrace';
 import { DataStepsServices } from '../models/stepsService.interface';
+import { BannerPagesService } from 'src/app/shared/banner-pages/banner-pages.service';
 
 @Component({
   selector: 'app-talent',
@@ -19,7 +20,7 @@ export class TalentComponent implements OnInit {
   dataInfoServ!: DataInfoService;
   dataSteps!: DataStepsServices;
 
-  constructor(private serv: ServicesPageService) {
+  constructor(private serv: ServicesPageService,private servicio:BannerPagesService) {
 
   }
 
@@ -33,7 +34,7 @@ export class TalentComponent implements OnInit {
 
 
   getBannerPage() {
-    this.serv.getBannerPage().pipe(
+    this.servicio.getBannerPage().pipe(
       map((res) => {
         for (let i of res.data) {
 
@@ -45,7 +46,7 @@ export class TalentComponent implements OnInit {
       })
 
     ).subscribe((res) => {
-      this.serv.bannerPages$.next(this.banner);
+      this.servicio.bannerPages$.next(this.banner);
     });
   }
 

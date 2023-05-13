@@ -8,6 +8,7 @@ import { IDataPlanC } from '../models/PlanConsulting.interface';
 import { DataIagilTr } from '../models/AgilTransformationConsulting';
 import { DataAgilPC } from '../models/agilePathConsulting.interface';
 import { ITapeServicesConsulting } from '../models/tapeServicesConsulting.interface';
+import { BannerPagesService } from 'src/app/shared/banner-pages/banner-pages.service';
 
 @Component({
   selector: 'app-consulting',
@@ -24,9 +25,10 @@ export class ConsultingComponent {
   dataAgilPathCons!: DataAgilPC;
   dataTapeConsulting!: ITapeServicesConsulting;
 
-  constructor(private serv: ServicesPageService) {
+  constructor(private serv: ServicesPageService,private servicio:BannerPagesService) {
 
   }
+
 
 
   ngOnInit() {
@@ -43,7 +45,7 @@ export class ConsultingComponent {
 
 
   getBannerPage() {
-    this.serv.getBannerPage().pipe(
+    this.servicio.getBannerPage().pipe(
       map((res) => {
         for (let i of res.data) {
 
@@ -55,7 +57,7 @@ export class ConsultingComponent {
       })
 
     ).subscribe((res) => {
-      this.serv.bannerPages$.next(this.banner);
+      this.servicio.bannerPages$.next(this.banner);
     });
   }
 

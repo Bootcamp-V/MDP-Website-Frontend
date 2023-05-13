@@ -23,7 +23,6 @@ import { SoftwareTestingComponent } from './services-page/software-testing/softw
 import { ConsultingComponent } from './services-page/consulting/consulting.component';
 import { TalentComponent } from './services-page/talent/talent.component';
 import { ServicesMainComponent } from './services-page/services-main/services-main.component';
-import { BannerServiceComponent } from './services-page/components/banner/banner.component';
 import { StepsComponent } from './services-page/components/steps/steps.component';
 import { WeOfferComponent } from './services-page/components/we-offer/we-offer.component';
 import { ContactInfoServicesComponent } from './services-page/components/contact-info-services/contact-info-services.component';
@@ -35,6 +34,7 @@ import { ServicesModelComponent } from './services-page/components/services-mode
 import { AgileBusinessTransComponent } from './services-page/components/agile-business-trans/agile-business-trans.component';
 import { AgilePathComponent } from './services-page/components/agile-path/agile-path.component';
 import { TapeServicesComponent } from './services-page/components/tape-services/tape-services.component';
+import { BannerPagesComponent } from './shared/banner-pages/banner-pages.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +59,6 @@ import { TapeServicesComponent } from './services-page/components/tape-services/
     ConsultingComponent,
     TalentComponent,
     ServicesMainComponent,
-    BannerServiceComponent,
     StepsComponent,
     WeOfferComponent,
     ContactInfoServicesComponent,
@@ -69,8 +68,8 @@ import { TapeServicesComponent } from './services-page/components/tape-services/
     ServicesModelComponent,
     AgileBusinessTransComponent,
     AgilePathComponent,
-    TapeServicesComponent
-
+    TapeServicesComponent,
+    BannerPagesComponent
   ],
   imports: [
     BrowserModule,

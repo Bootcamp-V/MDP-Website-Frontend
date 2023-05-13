@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, OnInit } from '@angular/core';
-import { IBannerPages, IDataBP } from '../models/bannerPages.interface';
+import { Injectable} from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Subject, Observable } from 'rxjs';
 import { DataOffer, IWeOffer } from '../models/weOfferServices.model.interface';
@@ -17,9 +16,7 @@ import { ITapeServicesConsulting } from '../models/tapeServicesConsulting.interf
 @Injectable({
   providedIn: 'root'
 })
-export class ServicesPageService implements OnInit{
-
-bannerPages$!:Subject<IDataBP>;
+export class ServicesPageService {
 
 weOff$!:Subject<DataOffer>;
 infoContactService$!:Subject<DataInfoService>;
@@ -35,7 +32,6 @@ tapeConsuServ$!:Subject<ITapeServicesConsulting>;
 
   constructor(private http:HttpClient) {
 
-this.bannerPages$= new Subject();
 this.weOff$= new Subject();
 this.infoContactService$= new Subject();
 this.infoConsultingServ$= new Subject();
@@ -47,17 +43,7 @@ this.agilTransConsServ$= new Subject();
 this.agilPathConsServ$= new Subject();
 this.tapeConsuServ$= new Subject();
 
-
-
 }
-
-
-  ngOnInit(): void {
-  }
-
-  getBannerPage():Observable<IBannerPages>{
-    return this.http.get<IBannerPages>(environment.baseUrl+'/api/banner-pages?populate=*');
-  }
 
   getWeOfferServices():Observable<IWeOffer>{
     return this.http.get<IWeOffer>(environment.baseUrl+'/api/we-offer-services?populate=*');
@@ -110,8 +96,5 @@ this.tapeConsuServ$= new Subject();
   postContactServicesConsulting( data:Object){
     return this.http.post(environment.baseUrl+'/api/contact-service-consulting-forms',data,{responseType: 'text'});
   }
-
-
-
 
 }

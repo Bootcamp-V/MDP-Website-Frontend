@@ -7,6 +7,7 @@ import { DataOffer } from '../models/weOfferServices.model.interface';
 import { DataInfoService } from '../models/infoContactService.interfrace';
 import { IDataMSD } from '../models/modeServices.interface';
 import { DataStepsServices } from '../models/stepsService.interface';
+import { BannerPagesService } from 'src/app/shared/banner-pages/banner-pages.service';
 
 @Component({
   selector: 'app-software-development',
@@ -25,7 +26,7 @@ export class SoftwareDevelopmentComponent {
   dataModelServ!: IDataMSD;
   dataSteps!: DataStepsServices;
 
-  constructor(private serv: ServicesPageService) {
+  constructor(private serv: ServicesPageService,private servicio:BannerPagesService) {
 
   }
 
@@ -42,7 +43,7 @@ export class SoftwareDevelopmentComponent {
 
 
   getBannerPage() {
-    this.serv.getBannerPage().pipe(
+    this.servicio.getBannerPage().pipe(
       map((res) => {
         for (let i of res.data) {
 
@@ -54,7 +55,7 @@ export class SoftwareDevelopmentComponent {
       })
 
     ).subscribe((res) => {
-      this.serv.bannerPages$.next(this.banner);
+      this.servicio.bannerPages$.next(this.banner);
     });
   }
 
