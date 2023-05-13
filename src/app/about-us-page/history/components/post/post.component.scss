@@ -10,6 +10,28 @@
 
 }
 
+.container1 {
+  width: auto;
+  height: auto;
+  background-color: #000124;
+
+    
+
+}
+
+
+.container2 {
+  display: flex;
+  width: 100%;
+  background-color: #000124;
+  max-width: 100%;
+  align-items: center; /* Centra los elementos verticalmente */
+  margin-top: 20px;
+  margin-bottom: 20px;
+    
+
+}
+
 
 
 .left-column {
@@ -30,9 +52,18 @@
     border-radius: 5px;
     margin-left: auto;
     padding :20px;
+  
     
-    
-    
+  }
+  
+  .rectangle1 {
+    width: 8vw; /* Ancho inicial del rectángulo */
+    height:auto; /* Toma la altura completa de la columna izquierda */
+    background-color: rgb(255, 255, 255); /* Color del rectángulo */
+    border-radius: 5px;
+    margin-left: 0;
+    padding :20px;
+  
   }
 
   h1 {
@@ -70,6 +101,22 @@
     margin: 0 auto; /* Centra la imagen horizontalmente */
   }
 
+
+  .post1 {
+
+    width: 80%; /* Ancho inicial del rectángulo */
+    height: auto; /* Toma la altura completa de la columna izquierda */
+    background-color: white; /* Color del rectángulo */
+    padding: 20px;
+    margin-left:auto;
+
+
+   }
+
+   .post1 img {
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+  }
+
   
   .centered-icon {
     display: flex;
@@ -104,23 +151,61 @@
       /* Estilos para pantallas más pequeñas */
       .container {
         flex-direction: column;
-      }
 
-      .centered-icon {
-        display: none;
-      }
-    
+
       .left-column,
       .right-column {
         padding: 10px;
-        background-color: green;
+        background-color: transparent;
         width: 80vw;
         display: flex;
         justify-content: center;
         
       }
+      }
+
+
+      .container2 {
+        flex-direction: column;
+
+
+      .left-column{
+        padding: 10px;
+        background-color: transparent;
+        width: 80vw;
+        display: flex;
+        justify-content: center;
+        order:1;
+
+      }
+      .right-column {
+        padding: 10px;
+        background-color: transparent;
+        width: 80vw;
+        display: flex;
+        justify-content: center;
+        order:2;
+        
+      }
+      }
+
+
+
+      .centered-icon {
+        display: none;
+      }
+    
+      
     
       .rectangle {
+        width: auto;
+        margin: 0;
+        border-radius: 0;
+        
+        
+      }
+
+      .rectangle1 {
         width: auto;
         margin: 0;
         border-radius: 0;
@@ -133,6 +218,17 @@
       }
     
       .post {
+        padding: 20px;
+        width: auto;
+        max-width: 100%;
+
+
+        .img {
+          margin: 0 auto; 
+        }
+      }
+
+      .post1 {
         padding: 20px;
         width: auto;
         max-width: 100%;
