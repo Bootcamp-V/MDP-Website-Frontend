@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { BannerModel } from 'src/app/services-page/models/banner.model';
 import { IDescriptionBannerPages, ITitleBannerPages } from 'src/app/services-page/models/bannerPages.interface';
 import { ServicesPageService } from 'src/app/services-page/services/services-page.service';
 import { IAboutSubPage } from '../models/about-sub-page.interface';
 import { IImageSubpage } from '../models/image-sub-page.interface';
 import { AboutSubPageService } from '../services/about-sub-page.service';
+import { AboutSubPageModel } from '../models/about-sub-page.model';
 
 @Component({
   selector: 'app-business-model',
@@ -33,7 +34,7 @@ export class BusinessModelComponent implements OnInit {
     });
 
     this.subpage$= this.servicepage.getAboutSubPages();
-    this.urls$ =this.servicepage.getImagesSubPages();
-  
+    this.urls$ =this.servicepage.getImagesSubPages('BusinessModel');
+    
   }
 }
