@@ -1,102 +1,66 @@
 <app-banner-new></app-banner-new>
+<ng-container *ngIf="{ org:certOrganizations$ | async, col:certColaborators$| async} as cert">
+  <div *ngIf="cert.org && cert.col; else loading" >
+  <div class="space"></div>
 
-<div class="space"></div>
+  <div id="titulo" class="div-container text-center">
+    <h3 class="title">Certificaciones</h3>
+    <h4 class="title">Organización</h4>
+  </div>
 
-<div id="titulo" class="div-container text-center">
-
-  <h3 class="title">Certificaciones</h3>
-  <h4 class="title">Organización</h4>
-
-</div>
-
-<section id="seccionPrimera" class="div-container">
-
-  <div id="contenedorSeccionPrimera" class="div-container">
-
-    <div class="grid grid-cols-3 gap-4">
-
-      <div class="margin-box">
-        <div>
-          <div class="image-boxes-holder">
-            <img class="image-boxes-img " src="https://www.mdp.com.pe/wp-content/uploads/2017/05/CMMI-@2x.png" alt="" title="">
+  <section id="seccionPrimera" class="div-container">
+    <div id="contenedorSeccionPrimera" class="div-container">
+      <div class="grid grid-cols-3 gap-4">
+        <div class="margin-box" *ngFor="let object of cert.org.data">
+          <div>
+            <div class="image-boxes-holder">
+              <img
+                src="{{object.attributes.img.data.attributes.formats.small.url}}"
+                alt="{{object.attributes.img.data.attributes.alternativeText}}"
+              />
+            </div>
+            <h5 class="title">{{ object.attributes.title }}</h5>
+            <p>
+              {{ object.attributes.description }}
+            </p>
           </div>
-          <h5 class="title">CMMI Nivel 3</h5>
-          <p>MDP Consulting SAC ha sido evaluada exitosamente y ha sido reconocida con la valoración CMMI for Development - Nivel 3 (Capability Maturity Model Integration), estándar internacional reconocido en la industria del software otorgado por el European Software Institute (ESI).
-            Esta certificación fue acreditada por el CMMI Institute el pasado 23 de febrero del 2016.</p>
         </div>
       </div>
-
-      <div class="margin-box">
-        <div>
-          <div class="image-boxes-holder">
-            <img class="image-boxes-img " src="https://www.mdp.com.pe/wp-content/uploads/2017/05/TMMI@2x.png" alt="" title="">
-          </div>
-          <h5 class="title">TMMI Nivel 3</h5>
-          <p>MDP Consulting SAC ha sido evaluada exitosamente y ha sido reconocida con la valoración TMMI - Nivel 3 (Defined), estándar internacional reconocido en la industria del software otorgado por la TMMI Foundation.
-            Esta certificación fue acreditada por Métodos y tecnología de Sistemas y Procesos de España el 01 de Abril del 2017.</p>
-        </div>
-      </div>
-
-      <div>
-          <!-- div vacio -->
-      </div>
-
     </div>
+  </section>
+
+  <div id="titulo" class="div-container text-center">
+    <h3 class="title">Certificaciones</h3>
+    <h4 class="title">Colaboradores</h4>
   </div>
 
-</section>
+  <section id="seccionSegunda" class="div-container">
+    <div id="contenedorSeccionPrimera" class="div-container">
+      <div>
+      <div class="grid grid-cols-4 gap-4">
 
-<div id="titulo" class="div-container text-center">
+        <div class="margin-box" *ngFor="let object of cert.col.data">
+          <div>
+            <div class="image-boxes-holder">
+              <img
+                class="image-boxes-img"
+                src="{{object.attributes.img.data.attributes.formats.small.url}}"
+                alt="{{object.attributes.img.data.attributes.alternativeText}}"
+                title=""
+              />
+            </div>
+            <h5 class="title">{{ object.attributes.title }}</h5>
+          </div>
+        </div>
+      </div>
 
-  <h3 class="title">Certificaciones</h3>
-  <h4 class="title">Colaboradores</h4>
-
+      </div>
+    </div>
+  </section>
 </div>
-
-
-<section id="seccionSegunda" class="div-container">
-
-  <div id="contenedorSeccionPrimera" class="div-container">
-
-    <div class="grid grid-cols-4 gap-4">
-
-      <div class="margin-box">
-        <div>
-          <div class="image-boxes-holder">
-            <img class="image-boxes-img " src="https://www.mdp.com.pe/wp-content/uploads/2017/05/Scrum-Alliance@2x.png" alt="" title="">
-          </div>
-          <h5 class="title">Scrum Alliance</h5>
-        </div>
-      </div>
-
-      <div class="margin-box">
-        <div>
-          <div class="image-boxes-holder">
-            <img class="image-boxes-img " src="https://www.mdp.com.pe/wp-content/uploads/2017/05/ISTQB@2x.png" alt="" title="">
-          </div>
-          <h5 class="title">ISTQB</h5>
-        </div>
-      </div>
-
-        <div class="margin-box">
-          <div>
-            <div class="image-boxes-holder">
-              <img class="image-boxes-img " src="https://www.mdp.com.pe/wp-content/uploads/2017/05/SAFE@2x.png" alt="" title="">
-            </div>
-            <h5 class="title">Scaled Agile SAFe</h5>
-          </div>
-        </div>
-
-        <div class="margin-box">
-          <div>
-            <div class="image-boxes-holder">
-              <img class="image-boxes-img " src="https://www.mdp.com.pe/wp-content/uploads/2017/05/PMI@2x.png" alt="" title="">
-            </div>
-            <h5 class="title">PMI</h5>
-          </div>
-        </div>
-  </div>
-
-  </div>
-</section>
-
+</ng-container>
+<ng-template #loading>
+  <div class="justify-center content-center text-[20px] w-[70%] mx-auto mt-[40px]"> 
+      <p>Loading.......</p>
+     </div>
+</ng-template>
