@@ -10,6 +10,6 @@ export class CertificationsService {
   constructor(private http: HttpClient) {}
 
   getInfoCertification(tipo:string) {
-    return this.http.get<ICertifications>(environment.baseUrl + '/api/certifications?populate=*filters[type][$eq]=' + tipo);
+    return this.http.get<ICertifications>(environment.devUrl + '/api/certifications?populate=*&filters[type][$eq]=' + tipo);
   }
 }
