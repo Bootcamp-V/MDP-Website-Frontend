@@ -1,16 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ICardsAboutUs } from 'src/app/about-us-page/models/cards-about-us.interface';
+import { CardsAboutUsService } from 'src/app/about-us-page/services/cards-about-us.service';
 
 @Component({
   selector: 'app-grid2',
   templateUrl: './grid2.component.html',
   styleUrls: ['./grid2.component.scss']
 })
-export class Grid2Component {
-  boxes = [
-    { title: 'Nuestra Historia' ,subtitle: 'Hemos recorrido un <br> largo camino, te invitamo <br>  a recorrerlo' },
-    { title: 'Nuestro Modelo de Negocio', subtitle: 'Descubre porque decidimos <br> ser una empresa Bi Modal <br> y que implica este modelo' },
-    { title: 'Nuestra Organización',  subtitle: 'Somos una empresa <br> BiModal <br> con un fuerte enfoque en <br> nuestros clientes'  },
+export class Grid2Component implements OnInit  {
 
-  ];
+  cards$!: Observable<ICardsAboutUs>
+
+  constructor( private servicepage: CardsAboutUsService) {
+    
+  }
+
+  ngOnInit():void{
+
+    this.cards$= this.servicepage.getCardsAboutUs();
+  }
+
 
 }
+

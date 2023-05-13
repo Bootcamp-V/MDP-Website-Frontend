@@ -36,12 +36,10 @@ import { GridComponent } from './about-us-page/about-us/components/grid/grid.com
 import { Grid2Component } from './about-us-page/about-us/components/grid2/grid2.component';
 import { TimelineComponent } from './about-us-page/about-us/components/timeline/timeline.component';
 import { ContainerComponent } from './about-us-page/about-us/components/container/container.component';
-import { ImageFigureAboutUsComponent } from './about-us-page/about-us/components/image-figure-about-us/image-figure-about-us.component';
 import { OrganizationComponent } from './about-us-page/organization/organization.component';
 import { ContainerTextOrganizationMapComponent } from './about-us-page/organization/components/container-text-organization-map/container-text-organization-map.component';
 import { PurposeVisionComponent } from './about-us-page/purpose-vision/purpose-vision.component';
 import { ContentVideoComponent } from './about-us-page/purpose-vision/components/content-video/content-video/content-video.component';
-import { ImagePurposeVisionComponent } from './about-us-page/purpose-vision/components/image-purpose-vision/image-purpose-vision/image-purpose-vision.component';
 import { OurValuesComponent } from './about-us-page/purpose-vision/components/our-values/our-values/our-values.component';
 import { SectorsComponent } from './about-us-page/sectors/sectors.component';
 import { HistoryComponent } from './about-us-page/history/history.component';
@@ -81,12 +79,10 @@ import { HistoryComponent } from './about-us-page/history/history.component';
     Grid2Component,
     TimelineComponent,
     ContainerComponent,
-    ImageFigureAboutUsComponent,
     OrganizationComponent,
     ContainerTextOrganizationMapComponent,
     PurposeVisionComponent,
     ContentVideoComponent,
-    ImagePurposeVisionComponent,
     OurValuesComponent,
     SectorsComponent,
     HistoryComponent,
