@@ -1,30 +1,53 @@
-/********************************************************/
+
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  height: 350px;
+  height: auto;
   margin: auto;
-  width: 78%;
+  width: 80%;
   margin-bottom: 40px;
+  row-gap: 10px;
+
+
 }
 .box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
+  padding: 40px 0;
+  padding: 20px 20px;
+
 }
 
 .box_1 {
   background-color: #000124;
+
 }
 .box_2 {
   background-color: #00b7e1;
+  i{
+    padding-top: 15px;
+    font-size: 45px;
+    padding-bottom: 15px;
+  }
 }
 .box_3 {
   background-color: #33c5e7;
+  i{
+    padding-top: 15px;
+    font-size: 45px;
+    padding-bottom: 15px;
+  }
+
 }
 .box_4 {
   background-color: #66d4ed;
+  i{
+    padding-top: 15px;
+    font-size: 45px;
+    padding-bottom: 15px;
+  }
 }
 
 .triangle {
@@ -47,26 +70,25 @@
 
 .titleFather {
   color: white;
-  font-size: 25px;
+  font-size: 21px;
   font-family: "Oswald", sans-serif;
   font-weight: 300;
-  margin-left: 12px;
-  margin-right: 12px;
+
 }
 .textFather {
   color: white;
-  font-size: 13px;
-  margin-left: 12px;
-  margin-right: 12px;
+  font-size: 12px;
+
 }
 .titleChild {
   color: white;
-  font-size: 25px;
+  font-size: 21px;
   font-family: "Oswald", sans-serif;
   text-align: center;
   font-weight: 300;
   margin-left: 12px;
   margin-right: 12px;
+  padding-bottom: 5px;
 }
 
 .textChild {
@@ -118,48 +140,27 @@ i {
   }
 }
 i:hover {
-  animation: temblor 0.5s 1;
+  animation: temblor 0.8s 1;
 }
 @media screen and (max-width: 1200px) {
   .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 30% 70%;
-    height: 600px;
+    height: auto;
   }
   .triangle {
     display: none;
   }
 
-  .box_1 {
-    grid-column: 1/4;
-  }
 
-  .box_2 .box_3 .box_4 {
-    height: 400px;
-  }
 }
 @media screen and (max-width: 960px) {
   .container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 15% 27% 27% 27%;
-    overflow: visible;
-    height: 1200px;
+    height: auto;
+    row-gap: 0;
   }
-  .box {
-    grid-column: 1;
-  }
-}
-@media screen and (max-width: 600px) {
-  .container {
-    grid-template-rows: 25% 25% 25% 25%;
-    height: 1400px;
-  }
+
 }
 
-@media screen and (max-width: 480px) {
-  .container {
-    height: 1700px;
-  }
-}

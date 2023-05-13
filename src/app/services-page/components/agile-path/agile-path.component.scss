@@ -32,6 +32,24 @@
 
 .primera-imagen {
   color: $grey-form-text-color;
+  .title-agile{
+    font-family: "Oswald", sans-serif;
+     font-size: 22px;
+  }
+
+
+  ul {
+    padding-left: 40px;
+    padding-bottom: 10px;
+
+    li {
+      font-family: "Open Sans", Helvetica, sans-serif;
+      font-size: 13px;
+      color: #535353;
+      list-style: disc;
+    }
+
+  }
 }
 
 .segunda-imagen {

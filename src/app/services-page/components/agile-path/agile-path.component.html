@@ -7,34 +7,16 @@
                 <img src="{{apc.attributes.urlImage}}" alt="">
             </div>
             <div class="primera-imagen">
-                <span style="font-family: Oswald; font-size: 22px;">{{apc.attributes.title}}</span>
+                <span  class="title-agile" >{{apc.attributes.title}}</span>
                 <br><br>
                 <p>
                   {{apc.attributes.description}}
-
                 </p>
                 <br>
-                <li>
-                    <p>
-                      {{apc.attributes.agile_path_child_consultings.data[0].attributes.item}}
-                    </p>
-                </li>
 
-                <li>
-                    <p>
-                      {{apc.attributes.agile_path_child_consultings.data[1].attributes.item}}
-                    </p>
-                </li>
-                <li>
-                    <p>
-                      {{apc.attributes.agile_path_child_consultings.data[2].attributes.item}}
-                    </p>
-                </li>
-                <li>
-                    <p>
-                      {{apc.attributes.agile_path_child_consultings.data[3].attributes.item}}
-                    </p>
-                </li>
+                <ul>
+                  <li *ngFor="let i of apc.attributes.agile_path_child_consultings.data">{{i.attributes.item}}</li>
+                </ul>
             </div>
         </div>
     </main>

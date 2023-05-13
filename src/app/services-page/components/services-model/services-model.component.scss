@@ -1,54 +1,67 @@
 @import "../../../../styles/abstracts/variables";
 @import "../../../../styles/abstracts/mixins";
 
-// @import "../../../styles/abstracts/variables";
-// @import "../../../styles/styles.scss";
-.fondazo{
+
+.model-service{
   background-color: $background-blue-color;
 }
-.contenedor {
+.container-modelService {
   background-color: $background-blue-color;
   width: min(90%, 120rem);
   margin: 0 auto;
   padding: 5em;
-}
 
-.centrar-texto {
-  text-align: center;
-  margin-bottom: 45px;
-  font-size: 24px;
-  font-family: "Oswald", sans-serif;
-  color: $background-white-color;
-  font-weight: 300;
-}
 
-@media (min-width: 768px) {
-  .modelo-servicio {
+  h3{
+    text-align: center;
+    margin-bottom: 45px;
+    font-size: 22px;
+    font-family: "Oswald", Helvetica, sans-serif;
+    color: $background-white-color;
+    font-weight: 300;
+  }
+
+  .item-service {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 2rem;
     justify-content: center;
   align-items: center;
+
+  .description{
+
+      text-align: center;
+      color: white;
+
   }
-}
 
-.primera-imagen {
-  color: $background-white-color;
-}
-
-.segunda-imagen {
-  color: $background-white-color;
 
 }
 
-.tercera-imagen {
-  color: $background-white-color;
 }
 
-.cuarta-imagen {
-  color: $background-white-color;
-}
+@media (max-width: 768px) {
+  .container-modelService {
 
-.letras {
-  text-align: center;
-}
+    h3{
+      text-align: center;
+      margin-bottom: 45px;
+      font-size: 22px;
+      font-family: "Oswald", Helvetica, sans-serif;
+      color: $background-white-color;
+      font-weight: 300;
+    }
+
+    .item-service {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      column-gap: 2rem;
+
+  }
+
+  }
+  }
+
+
+
+

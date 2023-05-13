@@ -1,15 +1,13 @@
 <ng-container *ngIf="servModelData$ | async as dataSM">
-<div class="fondazo">
-    <main class="contenedor">
-      <h3 class="centrar-texto">{{dataSM.attributes.title}}</h3>
-      <div class="modelo-servicio">
+<div class="model-service">
+    <main class="container-modelService">
+      <h3 >{{dataSM.attributes.title}}</h3>
+      <div class="item-service">
 
         <div *ngFor="let i of dataSM.attributes.model_service_children.data" class="primera-imagen">
-          <img src="{{i.attributes.urlImage}}">
-          <h2 class="letras">{{i.attributes.description}}</h2>
+          <img src="{{i.attributes.urlImage}}" alt="{{dataSM.attributes.title}}">
+          <h2 class="description">{{i.attributes.description}}</h2>
         </div>
-
-
 
       </div>
     </main>

@@ -14,5 +14,11 @@ export class StepsComponent {
   constructor( private serv:ServicesPageService){
 this.steeps$=this.serv.steepsServ$;
   }
+//#000124
 
+//#00b7e1
+
+//#33c5e7
+
+//#66d4ed
 }
