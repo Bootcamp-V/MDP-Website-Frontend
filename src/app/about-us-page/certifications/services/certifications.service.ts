@@ -1,15 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IServices } from '../models/service.interface';
+import { ICertifications } from '../models/certifications.interface';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ServiciosService {
+export class CertificationsService {
   constructor(private http: HttpClient) {}
 
-  getInfoService() {
-    return this.http.get<IServices>(environment.baseUrl + '/api/servicios');
+  getInfoCertification() {
+    return this.http.get<ICertifications>(
+      environment.baseUrl + '/api/servicios'
+    );
   }
 }
