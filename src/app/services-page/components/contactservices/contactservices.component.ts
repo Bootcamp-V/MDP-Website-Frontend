@@ -41,7 +41,7 @@ export class ContactservicesComponent {
 
       nombre: ['', [Validators.required, Validators.minLength(5)]],
       email: ['', [Validators.required, Validators.email]],
-      telefono: ['', [Validators.required, Validators.pattern('[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')]],
+      telefono: ['', [Validators.required, Validators.pattern('^[0-9]{9}$')]],
       mensaje: ['', [Validators.required]],
 
     })
@@ -50,7 +50,6 @@ export class ContactservicesComponent {
   sendForm() {
 
     if (this.validarForm()) {
-      console.log(this.form.value);
 
       let objeto = {
         "data": {
@@ -60,13 +59,20 @@ export class ContactservicesComponent {
           "mensaje": this.form.get('mensaje')?.value,
         }
       }
-      this.serv.postContactServices(objeto);
-      this.showAlertSuccess();
+      this.serv.postContactServices(objeto).subscribe({
+        next: (response) => {
+          this.showAlertSuccess();
+          this.form.reset();
+        },
+        error: () => {
+          this.showAlertError('Ocurrio un error al hacer la peticion!');
+        }
 
+      });
 
     } else {
-      console.log('Informacion no correcta');
-      this.showAlertError();
+
+      this.showAlertError('Datos Incorrectos!');
     }
 
   }
@@ -83,11 +89,11 @@ export class ContactservicesComponent {
   }
 
 
-  showAlertError() {
+  showAlertError(title: string) {
     Swal.fire({
       position: 'top-end',
       icon: 'error',
-      title: 'Datos Incorrectos!',
+      title: title,
       showConfirmButton: false,
       timer: 1500
     })

@@ -26,7 +26,7 @@ export class ContactInfoServicesComponent {
     this.formInfo = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(5)]],
       email: ['', [Validators.required, Validators.email]],
-      telefono: ['', [Validators.required, Validators.pattern('[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')]],
+      telefono: ['', [Validators.required, Validators.pattern('^[0-9]{9}$')]],
       empresa: ['', [Validators.required]],
       mensaje: ['', [Validators.required]],
     })
@@ -46,7 +46,6 @@ export class ContactInfoServicesComponent {
   sendForm() {
 
     if (this.validarForm()) {
-      console.log(this.formInfo.value);
 
       let objeto = {
         "data": {
@@ -57,12 +56,19 @@ export class ContactInfoServicesComponent {
           "mensaje": this.formInfo.get('mensaje')?.value,
         }
       }
-      this.serv.postContactServicesConsulting(objeto);
-      this.showAlertSuccess();
+      this.serv.postContactServicesConsulting(objeto).subscribe({
+        next: (response) => {
+          this.showAlertSuccess();
+          this.formInfo.reset();
+        },
+        error: (error) => {
+          this.showAlertError('Ocurrio un error al hacer la peticion!');
+        }
+
+      });
 
     } else {
-      console.log('Informacion no correcta');
-      this.showAlertError()
+      this.showAlertError('Datos Incorrectos!');
     }
 
   }
@@ -79,15 +85,14 @@ export class ContactInfoServicesComponent {
   }
 
 
-  showAlertError() {
+  showAlertError(title: string) {
     Swal.fire({
       position: 'top-end',
       icon: 'error',
-      title: 'Datos Incorrectos!',
+      title: title,
       showConfirmButton: false,
       timer: 1500
     })
   }
-
 
 }

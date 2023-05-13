@@ -103,12 +103,12 @@ this.tapeConsuServ$= new Subject();
 
 
   postContactServices( data:Object){
-    return this.http.post(environment.baseUrl+'/api/contact-service-forms',data).subscribe( res=> console.log(res));
+    return this.http.post(environment.baseUrl+'/api/contact-service-forms',data,{responseType: 'text'});
   }
 
 
   postContactServicesConsulting( data:Object){
-    return this.http.post(environment.baseUrl+'/api/contact-service-consulting-forms',data).subscribe( res=> console.log(res));
+    return this.http.post(environment.baseUrl+'/api/contact-service-consulting-forms',data,{responseType: 'text'});
   }
 
 
