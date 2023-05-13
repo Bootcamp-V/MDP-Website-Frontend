@@ -10,7 +10,7 @@
             <span *ngIf="indice<4">{{ item.attributes.description}}</span>
           </p>
 
-          <img class= "mb-[30px] mt-[30px]" src="{{page.url.data[0].attributes.imagen.data.attributes.formats.small.url }}" alt="{{page.url.data[0].attributes.imagen.data.attributes.alternativeText}}">
+          <img class= "mb-[30px] mt-[30px]" src="{{page.url.data[0].attributes.imagen.data.attributes.formats.small.url}}" alt="{{page.url.data[0].attributes.imagen.data.attributes.alternativeText}}">
 
           <p class="mb-[20px]"><span>
             {{ page.sup.data[0].attributes.description_about_pages.data[4].attributes.description }}
@@ -20,7 +20,11 @@
 
       </div>
       <div class="right-container">
-        <img src="{{page.url.data[1].attributes.imagen.data.attributes.formats.small.url }}" alt="{{page.url.data[1].attributes.imagen.data.attributes.alternativeText}}" class="imagen">
+        <div *ngFor="let img of page.url.data; let indice=index">
+          <div *ngIf="indice>0">
+        <img src="{{img.attributes.imagen.data.attributes.formats.small.url}}" alt="{{img.attributes.imagen.data.attributes.alternativeText}}" class="imagen">
+      </div>
+      </div>
       </div>
 
     </div>

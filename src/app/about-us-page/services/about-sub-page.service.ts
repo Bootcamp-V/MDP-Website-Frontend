@@ -16,9 +16,8 @@ export class AboutSubPageService {
     return this.http.get<IAboutSubPage>(environment.devUrl+'/api/about-sub-pages?populate=*');
   }
   
-  getImagesSubPages(){
-    return this.http.get<IImageSubpage>(environment.devUrl+'/api/image-about-pages?populate=*');
-
+  getImagesSubPages(subpage_name: string){
+    return this.http.get<IImageSubpage>(environment.devUrl+'/api/image-about-pages?populate=*&filters[about_sub_page][name][$eq]='+subpage_name);
   }
 
 

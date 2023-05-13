@@ -43,9 +43,15 @@
                         <div class="znColumnElement-innerContent w-[100%]">
                             <div class="box image-boxes">
                                 <div class="image-boxes-holder relative">
-                                    <div class="image-boxes-img-wrapper block content-center">
-                                        <img  class="image-boxes-img img-responsive "
-                                            src="{{page.url.data[2].attributes.imagen.data.attributes.formats.large?.url }}" alt="{{page.url.data[2].attributes.imagen.data.attributes.alternativeText}}" title="" /></div>
+                                    <div class="image-boxes-img-wrapper block content-center"
+                                    
+                                    *ngFor="let img of page.url.data;
+                                      let indice = index;"
+                                      >
+                                        <img class="image-boxes-img img-responsive "
+                                            src="{{img.attributes.imagen.data.attributes.url}}" 
+                                            alt="{{img.attributes.imagen.data.attributes.alternativeText }}" 
+                                            title="" /></div>
                                 </div>
                             </div>
                         </div>
