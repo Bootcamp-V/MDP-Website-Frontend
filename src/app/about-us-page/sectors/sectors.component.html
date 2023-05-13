@@ -1,12 +1,17 @@
 <app-banner-new></app-banner-new>
-<div class="sectors-main-container">
-  <div class="sectors-container grid grid-cols-1 md:grid-cols-2">
-    <div class="sector-card" *ngFor="let object of arr">
-      <span class="sector-title-span"
-        ><p class="sector-title">{{ object.name }}</p></span
-      >
+<ng-container *ngIf="dataSectors$ | async as dataSectors">
+  <div class="sectors-main-container">
+    <div class="sectors-container grid grid-cols-1 md:grid-cols-2">
+      <div class="sector-card" *ngFor="let object of dataSectors.data">
+        <span class="sector-title-span"
+          ><p class="sector-title">{{ object.attributes.title }}</p></span
+        >
 
-      <img [src]="object.image" [alt]="object.name" />
+        <img
+          [src]="object.attributes.img.data.attributes.formats.small.url"
+          [alt]="object.attributes.title"
+        />
+      </div>
     </div>
   </div>
-</div>
+</ng-container>
