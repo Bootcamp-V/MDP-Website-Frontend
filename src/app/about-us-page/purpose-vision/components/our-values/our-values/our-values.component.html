@@ -1,27 +1,31 @@
-<ng-container *ngIf=" values$ | async as val">
-    <div *ngIf="val ; else loading">
-
-       <!-- <img src="{{page.val.data[0].attributes.image.data[0].attributes.url}}">-->
+<ng-container *ngIf="{sup: subpage$ | async, val: values$| async} as page">
+    <div *ngIf="page.sup && page.val; else loading">
         <div class="container">
-
-            <div *ngIf="(val.data.length)%2==0">
+            <div class="flex my-[30px] justify-center items-center">
+                <h2 class="justify-center">{{ page.sup.data[2].attributes.tittle }}</h2>
+            </div>
+            <div *ngIf="(page.val.data.length)%2==0">
                 <div class="values">
-                    <div *ngFor="let item of val.data; let indice = index">
+                    <div *ngFor="let item of page.val.data; let indice = index">
                         <div class="item">
-                            <img src="{{item.attributes.image.data[0].attributes.url}}">
-                            <h2>{{item.attributes.tittle}}</h2>
-                            <p>{{item.attributes.description}}</p>
+                            <img src="{{item.attributes.image.data[0].attributes.url}}"
+                                alt="{{item.attributes.image.data[0].attributes.alternativeText}}">
+                            <div class="flex justify-start">
+                                <h2>{{item.attributes.tittle}}</h2>
+                                <p>{{item.attributes.description}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div *ngIf="val.data.length%2!=0">
+            <div *ngIf="page.val.data.length%2!=0">
                 <div class="values">
-                    <div *ngFor="let item of val.data; let indice = index">
+                    <div *ngFor="let item of page.val.data; let indice = index">
 
-                        <div *ngIf="indice<val.data.length-1" class="item">
-                            <img src="{{item.attributes.image.data[0].attributes.url}}">
+                        <div *ngIf="indice<page.val.data.length-1" class="item">
+                            <img src="{{item.attributes.image.data[0].attributes.url}}"
+                                alt="{{item.attributes.image.data[0].attributes.alternativeText}}">
                             <h2>{{ item.attributes.tittle }}</h2>
                             <p>{{ item.attributes.description }}</p>
                         </div>
@@ -29,17 +33,20 @@
                 </div>
 
                 <div class="item1">
-                    <img src="{{val.data[val.data.length-1].attributes.image.data[0].attributes.url}}">
-                    <h2>{{ val.data[val.data.length - 1].attributes.tittle }}</h2>
-                    <p>{{ val.data[val.data.length - 1].attributes.description }}</p>
+                    <img src="{{page.val.data[page.val.data.length-1].attributes.image.data[0].attributes.url}}"
+                        alt="{{page.val.data[page.val.data.length-1].attributes.image.data[0].attributes.alternativeText}}">
+                    <h2>{{ page.val.data[page.val.data.length - 1].attributes.tittle }}</h2>
+                    <p>{{ page.val.data[page.val.data.length - 1].attributes.description }}</p>
                 </div>
 
             </div>
         </div>
 
-
+        <div class="th-spacer clearfix h-[50px]"></div>
 
     </div>
     <ng-template #loading>
-        <p>loading.......</p>
+        <div class="justify-center content-center text-[20px] w-[70%] mx-auto mt-[40px]">
+            <p>Loading.......</p>
+        </div>
     </ng-template>

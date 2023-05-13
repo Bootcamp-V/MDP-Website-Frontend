@@ -21,7 +21,7 @@ export class ContentVideoComponent implements OnInit {
 
   ngOnInit():void{
 
-    this.subpage$= this.servicepage.getAboutSubPages();
+    this.subpage$= this.servicepage.getAboutSubPages('VisionAndPurpose');
     this.urls$ =this.servicepage.getImagesSubPages('Vision&Purpose');
   
 

@@ -19,7 +19,7 @@ export class ContainerTextOrganizationMapComponent implements OnInit {
 
   ngOnInit():void{
 
-    this.subpage$= this.servicepage.getAboutSubPages();
+    this.subpage$= this.servicepage.getAboutSubPages('Organization');
     this.urls$ =this.servicepage.getImagesSubPages('Organization');
   }
 }

@@ -14,19 +14,18 @@
                         <div class="znColumnElement-innerContent w-[100%] block">
                             <div class="zn_text_box pt-0 pb-[2px]">
                                 <h3 class="intro-title pt-0 mt-0 mb-[10px]">
-                                    {{page.sup.data[1].attributes.tittle_about_pages.data[0].attributes.tittle}}</h3>
+                                    {{page.sup.data[0].attributes.tittle}}</h3>
 
                                 <p class="intro-desc">
-                                    {{page.sup.data[1].attributes.description_about_pages.data[0].attributes.description}}
+                                    {{page.sup.data[0].attributes.description_about_pages.data[0].attributes.description}}
                                 </p>
 
-                                <div *ngFor="let titl of page.sup.data[1].attributes.tittle_about_pages.data; 
-                                      let indice = index;">
+                                <div *ngFor="let titl of page.sup.data; let indice = index;">
                                     <div *ngIf="indice>0">
                                         <h3 class="step-title"> {{titl.attributes.tittle }}</h3>
-                                        <p class="step-desc"> {{
-                                            page.sup.data[1].attributes.description_about_pages.data[indice].attributes.description
-                                            }} </p>
+                                        <div *ngFor="let desc of titl.attributes.description_about_pages.data">
+                                        <p class="step-desc"> {{ desc.attributes.description }} </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -68,5 +67,7 @@
 </ng-container>
 
 <ng-template #loading>
-    <p>loading.......</p>
+    <div class="justify-center content-center text-[20px] w-[70%] mx-auto mt-[40px]"> 
+        <p>Loading.......</p>
+       </div>
 </ng-template>

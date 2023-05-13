@@ -12,8 +12,8 @@ export class AboutSubPageService {
   constructor(private http: HttpClient) { 
   }
 
-  getAboutSubPages(){
-    return this.http.get<IAboutSubPage>(environment.devUrl+'/api/about-sub-pages?populate=*');
+  getAboutSubPages(subpage_name: string){
+    return this.http.get<IAboutSubPage>(environment.devUrl+'/api/tittle-about-pages?populate=*&filters[about_sub_page][name][$eq]='+subpage_name);
   }
   
   getImagesSubPages(subpage_name: string){

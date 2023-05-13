@@ -18,7 +18,7 @@
                     <div class="right-column">
                         <div class="post">
                             <h2 class="mb-[10px] "><span>{{item.attributes.tittle}}</span></h2>
-                            <img class="mb-[10px]" src="{{item.attributes.picture.data[0].attributes.url}}" ><span></span>
+                            <img class="mb-[10px]" src="{{item.attributes.picture.data[0].attributes.url}}" alt="{{item.attributes.picture.data[0].attributes.alternativeText}}" ><span></span>
                             <p class="mt-[10px]"><span>{{item.attributes.description}}</span></p>
                         </div>
                     </div>
@@ -36,7 +36,8 @@
            
             <div class="post1">
                 <h2 class="mb-[10px] "><span>{{item.attributes.tittle}}</span></h2>
-                <img class="mb-[10px]" src="{{item.attributes.picture.data[0].attributes.url}}" ><span></span>
+                <img class="mb-[10px]" src="{{item.attributes.picture.data[0].attributes.url}}"
+                alt="{{item.attributes.picture.data[0].attributes.alternativeText}}" ><span></span>
                 <p class="mt-[10px]"><span>{{item.attributes.description}}</span></p>
             </div>
             </div>
@@ -58,6 +59,8 @@
 </ng-container>
 
 <ng-template #loading>
-    <p>loading.......</p>
+    <div class="justify-center content-center text-[20px] w-[70%] mx-auto mt-[40px]"> 
+        <p>Loading.......</p>
+       </div>
 </ng-template>
   
