@@ -19,34 +19,34 @@
 
     <div class="menu-container flex-basis-items">
 
-      <div class="menu-container-items hide-menu">
+      <div class="menu-container-items hide-menu" >
 
-        <ul class="menu-class ">
-          <li class="main-list-item">
-            <a [routerLink]="['']" routerLinkActive="router-link-active"  class="fx-hover" aria-current="page"><span>{{ pages.data[0].attributes.name }} </span></a>
+        <ul class="menu-class " >
+          <li class="main-list-item" routerLinkActive="router-link-active"  [routerLinkActiveOptions]="{exact: true}">
+            <a [routerLink]="['']"    class="fx-hover" aria-current="page"><span>{{ pages.data[0].attributes.name }} </span></a>
           </li>
-          <li class="main-list-item">
+          <li class="main-list-item" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{exact: true}">
             <a [routerLink]="['/servicios']" class="fx-hover has-children"><span>{{ pages.data[1].attributes.name }}</span></a>
             <ul class="sub-menu">
-              <li id="" class="menu-lista">
+              <li id="" class="menu-lista" routerLinkActive="activo">
                 <a [routerLink]="['/servicios']" class="menu-item fx-hover-items">
                   <span> {{ pages.data[1].attributes.sub_pages.data[0].attributes.name}} </span>
                 </a>
               </li>
-              <li id="" class="menu-lista">
+              <li id="" class="menu-lista" routerLinkActive="activo">
                 <a [routerLink]="['/servicios/desarrollo-de-software']"
                   class="menu-item fx-hover-items"><span> {{
                     pages.data[1].attributes.sub_pages.data[1].attributes.name}} </span></a>
               </li>
-              <li id="" class="menu-lista">
+              <li id="" class="menu-lista" routerLinkActive="activo">
                 <a [routerLink]="['/servicios/pruebas-de-software']" class="menu-item fx-hover-items"><span>
                     {{ pages.data[1].attributes.sub_pages.data[2].attributes.name}} </span></a>
               </li>
-              <li id="" class="menu-lista">
+              <li id="" class="menu-lista" routerLinkActive="activo">
                 <a [routerLink]="['/servicios/consultoria']" class="menu-item fx-hover-items"><span> {{
                     pages.data[1].attributes.sub_pages.data[3].attributes.name}} </span></a>
               </li>
-              <li id="" class="menu-lista">
+              <li id="" class="menu-lista" routerLinkActive="activo">
                 <a [routerLink]="['/servicios/talento']" class="menu-item fx-hover-items"><span> {{
                     pages.data[1].attributes.sub_pages.data[4].attributes.name}} </span></a>
               </li>
