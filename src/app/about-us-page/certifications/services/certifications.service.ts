@@ -9,9 +9,7 @@ import { environment } from 'src/environments/environment';
 export class CertificationsService {
   constructor(private http: HttpClient) {}
 
-  getInfoCertification() {
-    return this.http.get<ICertifications>(
-      environment.baseUrl + '/api/servicios'
-    );
+  getInfoCertification(tipo:string) {
+    return this.http.get<ICertifications>(environment.baseUrl + '/api/certifications?populate=*filters[type][$eq]=' + tipo);
   }
 }

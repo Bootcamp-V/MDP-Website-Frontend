@@ -1,5 +1,6 @@
 <app-banner-new></app-banner-new>
-<ng-container *ngIf="dataCertifications$ | async as dataCertifications">
+<ng-container *ngIf="{ org:certOrganizations$ | async, col:certColaborators$| async} as cert">
+  <div *ngIf="cert.org && cert.col; else loading" >
   <div class="space"></div>
 
   <div id="titulo" class="div-container text-center">
@@ -10,12 +11,12 @@
   <section id="seccionPrimera" class="div-container">
     <div id="contenedorSeccionPrimera" class="div-container">
       <div class="grid grid-cols-3 gap-4">
-        <div class="margin-box" *ngFor="let object of dataCertifications.data">
+        <div class="margin-box" *ngFor="let object of cert.org.data">
           <div>
             <div class="image-boxes-holder">
               <img
-                [src]="object.attributes.img.data.attributes.formats.small.url"
-                [alt]="object.attributes.title"
+                src="{{object.attributes.img.data.attributes.formats.small.url}}"
+                alt="{{object.attributes.img.data.attributes.alternativeText}}"
               />
             </div>
             <h5 class="title">{{ object.attributes.title }}</h5>
@@ -35,63 +36,31 @@
 
   <section id="seccionSegunda" class="div-container">
     <div id="contenedorSeccionPrimera" class="div-container">
+      <div>
       <div class="grid grid-cols-4 gap-4">
-        <div class="margin-box">
-          <div>
-            <div class="image-boxes-holder">
-              <img
-                class="image-boxes-img"
-                src="https://www.mdp.com.pe/wp-content/uploads/2017/05/Scrum-Alliance@2x.png"
-                alt=""
-                title=""
-              />
-            </div>
-            <h5 class="title">Scrum Alliance</h5>
-          </div>
-        </div>
 
-        <div class="margin-box">
+        <div class="margin-box" *ngFor="let object of cert.col.data">
           <div>
             <div class="image-boxes-holder">
               <img
                 class="image-boxes-img"
-                src="https://www.mdp.com.pe/wp-content/uploads/2017/05/ISTQB@2x.png"
-                alt=""
+                src="{{object.attributes.img.data.attributes.formats.small.url}}"
+                alt="{{object.attributes.img.data.attributes.alternativeText}}"
                 title=""
               />
             </div>
-            <h5 class="title">ISTQB</h5>
-          </div>
-        </div>
-
-        <div class="margin-box">
-          <div>
-            <div class="image-boxes-holder">
-              <img
-                class="image-boxes-img"
-                src="https://www.mdp.com.pe/wp-content/uploads/2017/05/SAFE@2x.png"
-                alt=""
-                title=""
-              />
-            </div>
-            <h5 class="title">Scaled Agile SAFe</h5>
-          </div>
-        </div>
-
-        <div class="margin-box">
-          <div>
-            <div class="image-boxes-holder">
-              <img
-                class="image-boxes-img"
-                src="https://www.mdp.com.pe/wp-content/uploads/2017/05/PMI@2x.png"
-                alt=""
-                title=""
-              />
-            </div>
-            <h5 class="title">PMI</h5>
+            <h5 class="title">{{ object.attributes.title }}</h5>
           </div>
         </div>
       </div>
+
+      </div>
     </div>
   </section>
+</div>
 </ng-container>
+<ng-template #loading>
+  <div class="justify-center content-center text-[20px] w-[70%] mx-auto mt-[40px]"> 
+      <p>Loading.......</p>
+     </div>
+</ng-template>
