@@ -21,5 +21,5 @@ export class ContainerTextOrganizationMapComponent implements OnInit {
 
     this.subpage$= this.servicepage.getAboutSubPages();
     this.urls$ =this.servicepage.getImagesSubPages('Organization');
-  
+  }
 }
