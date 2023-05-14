@@ -1,13 +1,14 @@
+<ng-container *ngIf="datahome$ | async as dh">
 <div class="supraSlider">
   <div class="slider">
     <div>
       <div (click)="goToPrevious()" class="leftArrow">❰</div>
       <div (click)="goToNext()" class="rightArrow">❱</div>
     </div>
-    <div class="slide" [ngStyle]="{ 'background-image': getCurrentSlideUrl() }">
+    <div class="slide" style="background-image:url({{dh.data[this.currentIndex].attributes.url}})">
       <div class="dotsContainer">
         <div
-          *ngFor="let slide of slides; let slideIndex = index"
+          *ngFor="let slide of dh.data; let slideIndex = index"
           class="dot"
           (click)="goToSlide(slideIndex)"
         >
@@ -20,7 +21,7 @@
 
       <div class="button" *ngIf="currentIndex === 0">
         <p class="line0" style="font-size: 1.5vw; color: white">
-          <span>MDP lo hacemos diferente</span>
+          <span>{{ dh.data[0].attributes.second_description }}</span>
         </p>
 
         <button class="arrow-button"></button>
@@ -29,36 +30,26 @@
       <!--    ------------------------------------------------------------------------------------>
 
       <div class="message">
-        <p class="line1" *ngIf="currentIndex === 1">
-          <span>Nuestro propósito</span>
+        <div *ngFor="let item of dh.data; let indice = index">
+        <p class="line1" *ngIf="currentIndex === indice">
+          <span>{{item.attributes.title }}</span>
         </p>
-        <p class="line2" *ngIf="currentIndex === 1">
-          <span>Creamos un mundo digital</span>
-          <br />
-          <span>para hacer tu vida más simple</span>
+        <p class="line2" *ngIf="currentIndex === indice">
+          <span>{{item.attributes.first_description}}</span>
         </p>
         <p
           class="line3"
-          *ngIf="currentIndex === 1"
+          *ngIf="currentIndex === indice"
           style="font-size: 2vw; color: white; font-weight: 300"
         >
-          <span>Desarrollamos soluciones diferentes</span>
-          <br />
-          <span>para crear experiencias únicas</span>
+          <span>{{item.attributes.second_description }}</span>
 
-          <!--    ------------------------------------------------------------------------------------>
+
         </p>
 
-        <p class="line1" *ngIf="currentIndex === 2">
-          <span>Creamos soluciones que aportan valor</span>
-        </p>
-        <p class="line2" *ngIf="currentIndex === 2">
-          <span>En el menor tiempo posible</span>
-        </p>
-        <p class="line4" *ngIf="currentIndex === 2">
-          <span>Somos especialistas en marcos ágiles</span>
-        </p>
+      </div>
       </div>
     </div>
   </div>
 </div>
+</ng-container>

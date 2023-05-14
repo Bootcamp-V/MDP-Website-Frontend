@@ -2,10 +2,10 @@
 <nav>
   <div class="nav-container">
     <div id="logo-container" class="logo-container">
-      <a href="https://www.mdp.com.pe/" class="site-logo-anch">
+      <a [routerLink]="['/']"  class="site-logo-anch">
         <img
           class=""
-          src="https://www.mdp.com.pe/wp-content/uploads/2017/05/logo_top_header_shadow.png"
+          src="https://res.cloudinary.com/dg80o93to/image/upload/v1684018064/logo_top_header_shadow_26d2400867.png"
           alt="MDP"
           title="Lo hacemos diferente"
         />
@@ -160,8 +160,9 @@
               <li id="" class="menu-lista">
                 <a
                   target="_blank"
-                  href="http://www.mdp.com.pe/wp-content/uploads/2021/02/Política-del-Sistema-integrado-de-Gestión-SIG.png"
-                  class="menu-item fx-hover-items"
+                  [href]='["https://res.cloudinary.com/dg80o93to/image/upload/v1684018066/Politica_del_Sistema_integrado_de_Gestion_SIG_ff6d857000.png"]'
+                  alt="Política-del-Sistema-integrado-de-Gestión-SIG"
+                  class="menu-item fx-hover-items cursor-pointer"
                   ><span>Política del Sistema Integrado de Gestión MDP</span></a
                 >
               </li>
@@ -363,7 +364,8 @@
         <li class="menupal-item">
           <a
             target="_blank"
-            href="http://www.mdp.com.pe/wp-content/uploads/2021/02/Política-del-Sistema-integrado-de-Gestión-SIG.png"
+            [href]='["https://res.cloudinary.com/dg80o93to/image/upload/v1684018066/Politica_del_Sistema_integrado_de_Gestion_SIG_ff6d857000.png"]'
+            alt="Política-del-Sistema-integrado-de-Gestión-SIG"
             class="fx-link-items"
             ><span>Política del Sistema Integrado de Gestión MDP</span></a
           >

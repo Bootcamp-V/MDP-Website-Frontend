@@ -1,4 +1,6 @@
-
+.grid-container{
+  height: auto;
+  }
   .grid-item {
     margin-bottom: 20px;
     padding: 10px;
@@ -14,8 +16,8 @@
   
     h2 {
       font-size: 2em;
-      margin-bottom: 1em;
-      margin-top: 1em;
+      margin-bottom: 0.5em;
+      margin-top: 0.5em;
       margin-left: 15px;
       color: white;
       text-align: left;
@@ -30,6 +32,7 @@
       color: #ffffff;
       text-align: left;
       font-family: 'Open Sans', sans-serif;
+      margin-right: 10px;
     }
 
     .bar {

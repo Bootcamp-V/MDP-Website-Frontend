@@ -27,6 +27,7 @@ export class SectorsComponent implements OnInit {
 
   ngOnInit() {
     this.dataSectors$ = this.serviceSectors.getSectorsInfo();
+
     this.serv.getBannerPage().subscribe((res) => {
       this.titles = res.data[9].attributes.title_banner_pages;
       this.description = res.data[9].attributes.description_banner_pages;
@@ -41,26 +42,5 @@ export class SectorsComponent implements OnInit {
       this.serv.bannerPages$.next(this.banner);
     });
   }
-  arr = [
-    {
-      name: 'Banca',
-      image:
-        'https://www.mdp.com.pe/wp-content/uploads/2017/05/sector_banca.jpg',
-    },
-    {
-      name: 'Aseguradoras AFPs',
-      image:
-        'https://www.mdp.com.pe/wp-content/uploads/2017/05/sector_aseguradoras.jpg',
-    },
-    {
-      name: 'Telecomunicaciones',
-      image:
-        'https://www.mdp.com.pe/wp-content/uploads/2017/05/sector_telecomunicaciones.jpg',
-    },
-    {
-      name: 'Retail',
-      image:
-        'https://www.mdp.com.pe/wp-content/uploads/2017/05/sector_retail.jpg',
-    },
-  ];
+ 
 }
