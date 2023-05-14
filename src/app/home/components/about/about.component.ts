@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IAbout } from './models/about.model';
 import { Observable } from 'rxjs';
-import { AboutService } from './services/about.service';
+import { ContentHomeService } from '../../services/content-home.service';
+import { IContentHome } from '../../models/content-home.interface';
 
 @Component({
   selector: 'app-about',
@@ -9,9 +9,9 @@ import { AboutService } from './services/about.service';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
-  dataAbout$!: Observable<IAbout>;
-  constructor(private serviceAbout: AboutService) {}
+  dataHome$!: Observable<IContentHome>;
+  constructor(private serv: ContentHomeService) {}
   ngOnInit() {
-    this.dataAbout$ = this.serviceAbout.getAboutInfo();
+    this.dataHome$ = this.serv.getContentHomeByLocate('somos-mdp');
   }
 }

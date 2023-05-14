@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { SlideInterface } from './model/slide.interface';
+import { Observable } from 'rxjs';
+import { IContentHome } from '../../models/content-home.interface';
+import { ContentHomeService } from '../../services/content-home.service';
 declare const window: Window;
 @Component({
   selector: 'app-slider-home',
@@ -7,22 +9,20 @@ declare const window: Window;
   styleUrls: ['./slider-home.component.scss'],
 })
 export class SliderHomeComponent implements OnInit, OnDestroy {
-  slides: SlideInterface[] = [
-    { url: 'https://www.mdp.com.pe/wp-content/uploads/2018/08/Portada.png' },
-    {
-      url: 'https://www.mdp.com.pe/wp-content/uploads/2017/05/Portada_MDP.jpg',
-    },
-    {
-      url: 'https://www.mdp.com.pe/wp-content/uploads/2017/05/nosotros_MDPAgil.jpg',
-    },
-  ];
-
+ 
+  slides!: IContentHome;
   currentIndex: number = 0;
   timeoutId?: number;
 
+  datahome$!: Observable<IContentHome>;
+
+  constructor(private serv: ContentHomeService) { }
   ngOnInit(): void {
+    this.datahome$ = this.serv.getContentHomeByLocate('slider');
+    this.datahome$.subscribe(res => this.slides = res);
     this.resetTimer();
   }
+
   ngOnDestroy() {
     window.clearTimeout(this.timeoutId);
   }
@@ -36,7 +36,7 @@ export class SliderHomeComponent implements OnInit, OnDestroy {
   goToPrevious(): void {
     const isFirstSlide = this.currentIndex === 0;
     const newIndex = isFirstSlide
-      ? this.slides.length - 1
+      ? this.slides.data.length - 1
       : this.currentIndex - 1;
 
     this.resetTimer();
@@ -53,7 +53,7 @@ export class SliderHomeComponent implements OnInit, OnDestroy {
   }
 
   goToNext(): void {
-    const isLastSlide = this.currentIndex === this.slides.length - 1;
+    const isLastSlide = this.currentIndex === this.slides.data.length - 1;
     const newIndex = isLastSlide ? 0 : this.currentIndex + 1;
 
     this.resetTimer();
@@ -81,10 +81,6 @@ export class SliderHomeComponent implements OnInit, OnDestroy {
         bar.classList.remove('active');
       }
     });
-  }
-
-  getCurrentSlideUrl() {
-    return `url('${this.slides[this.currentIndex].url}')`;
   }
 
   scrollDown() {

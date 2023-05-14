@@ -380,24 +380,27 @@ ul.sub-menu {
   }
 
   .menuppal .is-active {
+    //transform: translate(-400px,0);
+    //-webkit-transform: translate(-400px,0); 
+    //-o-transform: translate(-400px,0);
+	  //-moz-transform: translate(-400px,0); 
+    //transition: transform 0.8s linear 0.2s;
     transform: translateZ(0);
-    transition: transform .5s ease, -webkit-transform .5s ease;
   }
 
   .menuppal {
     display: block;
     max-width: 400px;
-    height: 1007px;
+    height: 100vH;
     right: 0;
-    top: 1007px;
+    top: 0;
     position: absolute;
-    width: 400px;
-    line-height: 22.1px;
+    line-height: 1.7;
     background: #fff;
 
+    transition: transform .5s ease,-webkit-transform .5s ease;
+
     z-index: 10000;
-    transform: translate3d(0px, -100%, 0px);
-    transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
     transform-style: preserve-3d;
     padding: 0;
@@ -408,9 +411,6 @@ ul.sub-menu {
     border-width: 0;
     border-style: solid;
     border-color: #e5e7eb;
-    color: #535353;
-    font-family: "Open Sans", Helvetica, Arial, sans-serif;
-    font-size: 13px;
 
   }
 
@@ -465,7 +465,7 @@ ul.sub-menu {
     backface-visibility: hidden;
     border-color: rgba(0, 0, 0, .15);
     background-color: transparent;
-    width: 400px;
+    width: 393px;
     list-style-position: outside;
   }
 
@@ -477,23 +477,26 @@ ul.sub-menu {
 
 
   .sub-menupal .is-active {
+    //transform: translate(0,0);
+    //-webkit-transform: translate(-400px,0); 
+    //-o-transform: translate(-400px,0);
+	  //-moz-transform: translate(-400px,0); 
+    //transition: transform 0.8s linear 0.2s;
     transform: translateZ(0);
-    transition: transform .5s ease, -webkit-transform .5s ease;
   }
 
   .sub-menupal {
     max-width: 400px;
-    height: 1007px;
-    right: 0;
+    height: 100vH;
+    right:0px;
     top: 0;
     position: absolute;
-    width: 400px;
     line-height: 22.1px;
     background: #fff;
+    transition: transform .5s ease,-webkit-transform .5s ease;
+
 
     z-index: 10000;
-    transform: translate3d(0px, -100%, 0px);
-    transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
     transform-style: preserve-3d;
     padding: 0;
@@ -504,9 +507,7 @@ ul.sub-menu {
     border-width: 0;
     border-style: solid;
     border-color: #e5e7eb;
-    color: #535353;
-    font-family: "Open Sans", Helvetica, Arial, sans-serif;
-    font-size: 13px;
+
   }
 
   .submenu-trigger {
@@ -590,7 +591,7 @@ ul.sub-menu {
     line-height: 23.8px;
   }
 
-  .fx-link:hover {
+  .fx-link:hover, .fx-link-items:hover {
     color: #000;
   }
 
