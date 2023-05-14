@@ -1,0 +1,16 @@
+<ng-container *ngIf="servModelData$ | async as dataSM">
+<div class="model-service">
+    <main class="container-modelService">
+      <h3 >{{dataSM.attributes.title}}</h3>
+      <div class="item-service">
+
+        <div *ngFor="let i of dataSM.attributes.model_service_children.data" class="primera-imagen">
+          <img src="{{i.attributes.urlImage}}" alt="{{dataSM.attributes.title}}">
+          <h2 class="description">{{i.attributes.description}}</h2>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+</ng-container>

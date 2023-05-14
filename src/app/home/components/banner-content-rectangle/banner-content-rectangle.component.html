@@ -1,0 +1,14 @@
+<ng-container *ngIf="dataHome$ | async as home">
+<div class="different">
+  <div class="shadow"></div>
+  <div class="develop">
+    <div class="text">
+      <h1 class="text_2">{{ home.data[0].attributes.title }}</h1>
+      <h1 class="text_2">{{ home.data[0].attributes.first_description}}
+      </h1>
+    </div>
+    <a class="btn_ourServices" href="*">{{ home.data[0].attributes.second_description }}</a>
+  </div>
+  <div class="triangle"></div>
+</div>
+</ng-container>

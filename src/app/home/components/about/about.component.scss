@@ -1,97 +1,153 @@
 @import "../../../../styles/abstracts/mixins";
-
+.section-space {
+  height: 48px;
+}
 .main_container_WeAreMDP {
-  margin-top: 6rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  .container_info {
-    max-width: 50%;
-    padding: 0 15px;
-    .title_WeAre {
-      @include main_title;
-    }
-    p {
-      @include paragraph;
-    }
-  }
-  .container_video_WeAre {
-    max-width: 50%;
-    overflow: hidden;
-    position: relative;
-    .container-iframe {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: flex-start;
-    }
-  }
-}
+  padding-top: 35px;
+  padding-bottom: 35px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
 
-@include tablet {
-  .main_container_WeAreMDP {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    grid-template-columns: repeat(1, 1fr);
+  .container_WeAreMDP {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 
-    .container_info {
-      width: 80%;
-      margin: 20px auto;
-    }
-    .container_video_WeAre {
-      width: 100%;
-      max-width: 100%;
-      .container-iframe {
-        max-width: none;
-        width: 425px;
-        margin: auto;
+    .container_info_WeAre {
+      padding-left: 15px;
+      padding-right: 15px;
+      .title_span_WeAre {
+        .title_WeAre {
+          text-align: left;
+          margin-bottom: 20px;
+          font-family: $font-title;
+          font-size: 22px;
+          color: #535353;
+          font-weight: 300;
+        }
+      }
+      .container_description_WeAre {
+        @include paragraph;
+
+        .first-title-description {
+          margin-bottom: 20px;
+        }
       }
     }
-  }
-}
-
-@include mobile {
-  .main_container_WeAreMDP {
-    margin-top: 1rem;
-
     .container_video_WeAre {
+      padding-left: 15px;
+      padding-right: 15px;
+      overflow: hidden;
+      position: relative;
       .container-iframe {
+        width: 100%;
+        height: 100%;
+        display: flex;
         justify-content: center;
+        align-items: flex-start;
       }
     }
   }
 }
+// .main_container_WeAreMDP {
+//   margin-top: 6rem;
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+//   .container_info {
+//     max-width: 50%;
+//     padding: 0 15px;
+//     .title_WeAre {
+//       @include main_title;
+//     }
+//     p {
+//       @include paragraph;
+//     }
+//   }
+//   .container_video_WeAre {
+//     max-width: 50%;
+//     overflow: hidden;
+//     position: relative;
+//     .container-iframe {
+//       width: 100%;
+//       height: 100%;
+//       display: flex;
+//       justify-content: flex-start;
+//     }
+//   }
+// }
 
-@media only screen and (min-width: 800px) {
-  .main_container_WeAreMDP {
-    display: flex;
-    justify-content: center;
-    padding-left: 15%;
-    padding-right: 15%;
-    gap: 2rem;
-    .container_info {
-      width: 50%;
-    }
-    .container_video_WeAre {
-      display: flex;
-      justify-content: center;
-      width: 50%;
-    }
-  }
-}
-@media only screen and (min-width: 1500px) {
-  .main_container_WeAreMDP {
-    display: flex;
-    justify-content: center;
-    padding-left: 15%;
-    padding-right: 15%;
-    gap: 4rem;
-    .container_info {
-      width: 35%;
-    }
-    .container_video_WeAre {
-      display: flex;
-      justify-content: center;
-      width: 35%;
-    }
-  }
-}
+// @include tablet {
+//   .main_container_WeAreMDP {
+//     margin-top: 1rem;
+//     margin-bottom: 2rem;
+//     grid-template-columns: repeat(1, 1fr);
+
+//     .container_info {
+//       width: 80%;
+//       margin: 20px auto;
+//     }
+//     .container_video_WeAre {
+//       width: 100%;
+//       max-width: 100%;
+//       .container-iframe {
+//         max-width: none;
+//         width: 425px;
+//         margin: auto;
+//       }
+//     }
+//   }
+// }
+
+// @include mobile {
+//   .main_container_WeAreMDP {
+//     margin-top: 1rem;
+//     .container_info {
+//       max-width: 100vw;
+//     }
+//     .container_video_WeAre {
+//       .container-iframe {
+//         justify-content: center;
+//         padding-left: 15px;
+//         padding-right: 15px;
+//       }
+//     }
+//   }
+// }
+
+// @media only screen and (min-width: 800px) {
+//   .main_container_WeAreMDP {
+//     display: flex;
+//     justify-content: center;
+//     padding-left: 15%;
+//     padding-right: 15%;
+//     gap: 2rem;
+//     .container_info {
+//       width: 50%;
+//     }
+//     .container_video_WeAre {
+//       display: flex;
+//       justify-content: center;
+//       width: 50%;
+//     }
+//   }
+// }
+// @media only screen and (min-width: 1500px) {
+//   .main_container_WeAreMDP {
+//     display: flex;
+//     justify-content: center;
+//     padding-left: 15%;
+//     padding-right: 15%;
+//     gap: 4rem;
+//     .container_info {
+//       width: 35%;
+//     }
+//     .container_video_WeAre {
+//       display: flex;
+//       justify-content: center;
+//       width: 35%;
+//     }
+//   }
+// }

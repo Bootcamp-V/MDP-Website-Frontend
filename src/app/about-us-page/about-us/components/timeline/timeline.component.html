@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="left-column">
+        <div class="left-container"  *ngFor="let box of boxes">
+        <!-- contenido de la columna izquierda -->
+            <h2>{{ box.title }}</h2>
+            <p [innerHTML]="box.subtitle"></p>
+        </div>
+      </div>
+    <div class="right-column">
+        <!-- contenido de la columna derecha -->
+        
+        <div class="right-container" >
+            <!-- contenido de la columna izquierda -->
+              
+              <div class="wrapper">
+                <div class="tablero">
+                    <div class="linea-punteada"></div>
+                    <div class="linea-vertical" style="height: 8%; top: 50%; left:10%"></div>
+                    <div class="linea-vertical" style="height: 8%; top: 43%; left:30%;"></div>
+                    <div class="linea-vertical" style="height: 8%; top: 50%; left:50%;"></div>
+                    <div class="linea-vertical" style="height: 8%; top: 43%; left:70%;"></div>
+                    <div class="linea-vertical" style="height: 8%; top: 50%; left:90.5%;"></div>
+
+                </div>
+                <!-- PRIMERO -->
+                <div class="icono" >
+                    <i class="fa-solid fa-user" style="color: #ffffff; font-size: 50px;"></i>
+                </div>
+                <!-- SEGUNDO -->    
+                <div>
+                    <h1>+100</h1>
+                    <h3>Clientes a nivel nacional</h3>
+                </div>
+                <!-- TERCERO -->
+                <div class="icono" >
+                    <i class="fa-solid fa-paper-plane" style="color: #ebeef5;font-size: 50px;"></i>
+                </div>
+                <!-- CUARTO -->
+                <div>
+                    <h1>3</h1>
+                    <h3>Reconocimientos</h3>
+                </div>
+                <!-- QUINTO -->
+                <div class="icono" >
+                    <i class="fa-sharp fa-solid fa-star" style="color: #ebeef5;font-size: 50px;"></i>
+                </div>
+                <!-- SEXTO -->
+                <div>
+                    <h1>+500</h1>
+                    <h3>Colaboradores</h3>
+                </div>
+                <!-- SEPTIMO -->
+                <div class="icono" >
+                    <i class="fa-sharp fa-solid fa-lock" style="color: #eaecf1;font-size: 50px;"></i>
+                </div>
+                <!-- OCTAVO -->
+                <div>
+                    <h1>+2,500</h1>
+                    <h3>Proyectos</h3>
+                </div>
+                <!-- NOVENO -->
+                <div class="icono" >
+                    <i class="fa-sharp fa-solid fa-chess-king" style="color: #e8eaee;font-size: 50px;"></i>
+                </div>
+                <!-- DECIMO -->
+                <div>
+                    <h1>2000</h1>
+                    <h3>Top Empresas Sunat</h3>
+                </div>
+              
+        </div>
+              
+        </div>
+        
+        
+        
+</div>  

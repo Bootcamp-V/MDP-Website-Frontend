@@ -1,0 +1,44 @@
+<ng-container *ngIf="planConsulting$ | async as pc">
+<div class="container_consulting_2">
+  <h1 class="title">{{pc.attributes.title}}</h1>
+  <div class="part_1 part">
+    <h3 class="title_1">{{pc.attributes.plan_child_consultings.data[0].attributes.title}}</h3>
+    <hr />
+    <div class="circle"></div>
+    <p class="number">{{pc.attributes.plan_child_consultings.data[0].attributes.paso}}</p>
+    <p class="descripcion">{{pc.attributes.plan_child_consultings.data[0].attributes.tiempo}}</p>
+  </div>
+  <div class="part_2 part">
+    <h3 class="title_1">{{pc.attributes.plan_child_consultings.data[1].attributes.title}}</h3>
+    <hr />
+    <div class="circle"></div>
+    <p class="number">{{pc.attributes.plan_child_consultings.data[1].attributes.paso}}</p>
+    <p class="descripcion">{{pc.attributes.plan_child_consultings.data[1].attributes.tiempo}}</p>
+  </div>
+  <div class="part_3 part">
+    <h3 class="title_1">{{pc.attributes.plan_child_consultings.data[2].attributes.title}}</h3>
+    <hr />
+    <div class="circle"></div>
+    <p class="number">{{pc.attributes.plan_child_consultings.data[2].attributes.paso}}</p>
+    <p class="descripcion">{{pc.attributes.plan_child_consultings.data[2].attributes.tiempo}}</p>
+  </div>
+  <div class="part_4 part">
+    <h3 class="title_2">{{pc.attributes.plan_child_consultings.data[3].attributes.title}}</h3>
+    <hr />
+    <div class="circle"></div>
+    <p class="number">{{pc.attributes.plan_child_consultings.data[3].attributes.paso}}</p>
+  </div>
+  <div class="part_5 part">
+    <h3 class="title_2">{{pc.attributes.plan_child_consultings.data[4].attributes.title}}</h3>
+    <hr />
+    <div class="circle"></div>
+    <p class="number">{{pc.attributes.plan_child_consultings.data[4].attributes.paso}}</p>
+  </div>
+  <div class="part_6 part">
+    <h3 class="title_2">{{pc.attributes.plan_child_consultings.data[5].attributes.title}}</h3>
+    <hr />
+    <div class="circle"></div>
+    <p class="number">{{pc.attributes.plan_child_consultings.data[5].attributes.paso}}</p>
+  </div>
+</div>
+</ng-container>

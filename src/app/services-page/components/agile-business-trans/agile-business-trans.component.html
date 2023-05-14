@@ -1,0 +1,27 @@
+<ng-container *ngIf="dataAgilConsulting$ | async as dac">
+<div class="fund">
+    <main class="container">
+        <h3 class="center-text">{{dac.attributes.title}}</h3>
+        <div class="service-model">
+            <div class="first-image">
+                <p>
+                    <span style="font-size: 22px; color: #00ccff;"> {{dac.attributes.subtitle}}</span>
+                </p>
+                <br>
+                <li>
+
+                      {{dac.attributes.agile_child_descrip_transf_consultings.data[0].attributes.description}}
+
+                </li>
+                <br>
+                <li>
+                      {{dac.attributes.agile_child_descrip_transf_consultings.data[1].attributes.description}}
+                </li>
+            </div>
+            <div class="second-image">
+                <img src="{{dac.attributes.urlImage}}" alt="">
+            </div>
+        </div>
+    </main>
+</div>
+</ng-container>

@@ -1,0 +1,38 @@
+<ng-container *ngIf="steeps$ | async as steep">
+<div class="container">
+  <div class="box_1 box">
+    <h1 class="titleFather">{{ steep.attributes.title }}</h1>
+    <br />
+    <p class="textFather">{{  steep.attributes.description }}</p>
+  </div>
+
+  <div class="box_2 box">
+    <div class="triangle_1 triangle"></div>
+    <i class="fa-sharp fa-solid {{ steep.attributes.steps_child_services.data[0].attributes.icon}}"></i>
+
+    <p class="titleChild">{{ steep.attributes.steps_child_services.data[0].attributes.title }}</p>
+    <p class="textChild">{{ steep.attributes.steps_child_services.data[0].attributes.description}}</p>
+  </div>
+
+  <div class="box_3 box">
+    <div class="triangle_2 triangle"></div>
+    <i class="fa-sharp fa-solid {{ steep.attributes.steps_child_services.data[1].attributes.icon}}"></i>
+
+
+    <p class="titleChild">{{ steep.attributes.steps_child_services.data[1].attributes.title }}</p>
+    <p class="textChild">{{ steep.attributes.steps_child_services.data[1].attributes.description}}</p>
+  </div>
+
+  <div class="box_4 box">
+    <div class="triangle_3 triangle"></div>
+    <i class="fa-sharp fa-solid {{ steep.attributes.steps_child_services.data[2].attributes.icon}}"></i>
+
+
+    <p class="titleChild">{{ steep.attributes.steps_child_services.data[2].attributes.title }}</p>
+    <p class="textChild">{{ steep.attributes.steps_child_services.data[2].attributes.description}}</p>
+  </div>
+
+  
+
+</div>
+</ng-container>

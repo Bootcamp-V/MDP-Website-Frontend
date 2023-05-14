@@ -1,0 +1,69 @@
+@import "../../../../styles/abstracts/variables";
+@import "../../../../styles/abstracts/mixins";
+
+.different {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+
+.develop {
+  align-items: center;
+  background-color: $background-blue-color;
+  padding: 1.3em;
+  text-align: center;
+  position: relative;
+}
+.develop::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: $background-blue-color transparent transparent transparent;
+}
+.text_2 {
+  font-size: 23px;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+}
+.text_1{
+  font-size: 17px;
+  color:$header-text-color;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+}
+
+.btn_ourServices {
+  display: inline-block;
+  width: auto;
+  font-weight: bold;
+  font-size: 13px;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 7px 20px;
+}
+
+@media screen and (max-width: 1080px) {
+
+  .develop {
+
+    place-content: center;
+    height: auto;
+
+    .text_2 {
+      text-align: center;
+      font-size: 18px;
+    }
+  }
+ 
+}
+
+

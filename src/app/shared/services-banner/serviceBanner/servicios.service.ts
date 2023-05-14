@@ -4,17 +4,12 @@ import { IServices } from '../models/service.interface';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ServiciosService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-
-
-
-getInfoService(){
-  return this.http.get<IServices>(environment.baseUrl+"/api/servicios");
-}
-
-
+  getInfoService() {
+    return this.http.get<IServices>(environment.baseUrl + '/api/servicios');
+  }
 }

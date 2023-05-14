@@ -1,0 +1,66 @@
+<ng-container *ngIf="{pos: posts$ | async} as page" >
+        <div class="container1" *ngIf="page.pos ; else loading">
+            <div *ngFor="let item of page.pos.data; let indice = index">
+                <div  *ngIf="indice%2 == 0" >
+
+                
+                <!----------------- ----->
+
+                <div class="container">
+                    <div class="left-column">
+                    <div class="rectangle">
+                        <h1 >{{item.attributes.date}}</h1>
+                    </div>
+                    </div>
+                    <div class="centered-icon">
+                        <i class="fa-solid fa-calendar-days " style="color: #ffffff;font-size: 25px"></i>
+                    </div>
+                    <div class="right-column">
+                        <div class="post">
+                            <h2 class="mb-[10px] "><span>{{item.attributes.tittle}}</span></h2>
+                            <img class="mb-[10px]" src="{{item.attributes.picture.data[0].attributes.url}}" alt="{{item.attributes.picture.data[0].attributes.alternativeText}}" ><span></span>
+                            <p class="mt-[10px]"><span>{{item.attributes.description}}</span></p>
+                        </div>
+                    </div>
+                </div>
+                <!---------------------->
+
+            
+            </div>
+        
+
+
+        <div  *ngIf="indice%2 !=0 ">
+        <div class="container2">
+            <div class="right-column">
+           
+            <div class="post1">
+                <h2 class="mb-[10px] "><span>{{item.attributes.tittle}}</span></h2>
+                <img class="mb-[10px]" src="{{item.attributes.picture.data[0].attributes.url}}"
+                alt="{{item.attributes.picture.data[0].attributes.alternativeText}}" ><span></span>
+                <p class="mt-[10px]"><span>{{item.attributes.description}}</span></p>
+            </div>
+            </div>
+
+            <div class="centered-icon">
+                <i class="fa-solid fa-calendar-days " style="color: #ffffff;font-size: 25px"></i>
+            </div>
+            <div class="left-column">
+
+                <div class="rectangle1">
+                    <h1 >{{item.attributes.date}}</h1>
+                </div>
+                
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</ng-container>
+
+<ng-template #loading>
+    <div class="justify-center content-center text-[20px] w-[70%] mx-auto mt-[40px]"> 
+        <p>Loading.......</p>
+       </div>
+</ng-template>
+  
