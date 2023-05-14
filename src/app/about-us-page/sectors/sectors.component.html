@@ -1,0 +1,17 @@
+<app-banner-pages></app-banner-pages>
+<ng-container *ngIf="dataSectors$ | async as dataSectors">
+  <div class="sectors-main-container">
+    <div class="sectors-container grid grid-cols-1 md:grid-cols-2">
+      <div class="sector-card" *ngFor="let object of dataSectors.data">
+        <span class="sector-title-span"
+          ><p class="sector-title">{{ object.attributes.title }}</p></span
+        >
+
+        <img
+          [src]="object.attributes.img.data.attributes.formats.small.url"
+          [alt]="object.attributes.title"
+        />
+      </div>
+    </div>
+  </div>
+</ng-container>

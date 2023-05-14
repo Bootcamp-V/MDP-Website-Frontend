@@ -1,0 +1,73 @@
+<app-banner-pages></app-banner-pages>
+<ng-container *ngIf="{sup: subpage$ | async, url: urls$ | async} as page">
+    <div class="th-spacer clearfix h-[50px]"></div>
+    <section class="zn_section bg-[#fff] py-[35px] relative block " *ngIf="page.sup && page.url; else loading">
+
+        <div class="section-container w-[80%] px-[15px]">
+
+            <div class="row mx-[-15px]">
+
+                <div class="col-md-6 col-sm-6">
+
+                    <div class="znColumnElement-innerWrapper w-[100%] block">
+
+                        <div class="znColumnElement-innerContent w-[100%] block">
+                            <div class="zn_text_box pt-0 pb-[2px]">
+                                <h3 class="intro-title pt-0 mt-0 mb-[10px]">
+                                    {{page.sup.data[0].attributes.tittle}}</h3>
+
+                                <p class="intro-desc">
+                                    {{page.sup.data[0].attributes.description_about_pages.data[0].attributes.description}}
+                                </p>
+
+                                <div *ngFor="let titl of page.sup.data; let indice = index;">
+                                    <div *ngIf="indice>0">
+                                        <h3 class="step-title"> {{titl.attributes.tittle }}</h3>
+                                        <div *ngFor="let desc of titl.attributes.description_about_pages.data">
+                                        <p class="step-desc"> {{ desc.attributes.description }} </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+
+                    <div class="znColumnElement-innerWrapper w-[100%]">
+
+                        <div class="znColumnElement-innerContent w-[100%]">
+                            <div class="box image-boxes">
+                                <div class="image-boxes-holder relative">
+                                    <div class="image-boxes-img-wrapper block content-center"
+                                    
+                                    *ngFor="let img of page.url.data;
+                                      let indice = index;"
+                                      >
+                                        <img class="image-boxes-img img-responsive "
+                                            src="{{img.attributes.imagen.data.attributes.url}}" 
+                                            alt="{{img.attributes.imagen.data.attributes.alternativeText }}" 
+                                            title="" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+</ng-container>
+
+<ng-template #loading>
+    <div class="justify-center content-center text-[20px] w-[70%] mx-auto mt-[40px]"> 
+        <p>Loading.......</p>
+       </div>
+</ng-template>

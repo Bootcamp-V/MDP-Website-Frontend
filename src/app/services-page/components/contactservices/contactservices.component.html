@@ -1,0 +1,66 @@
+<ng-container *ngIf="infoCS$ | async as infoCS">
+<div class="section-information-services">
+
+  <div class="container-information">
+
+    <div class="form-info-services">
+  <h1 class="title-info-services">Necesita más información, escríbanos</h1>
+
+  <form [formGroup]="form" (ngSubmit)="sendForm()" >
+
+    <div class="row-1">
+      <div class="input-1" [ngClass]="{'warning': this.form.get('nombre')?.invalid && this.form.get('nombre')?.touched}">
+      <label>Nombre</label>
+      <input type="text"
+      formControlName="nombre">
+
+      </div>
+
+      <div class="input-2" [ngClass]="{'warning': this.form.get('email')?.invalid && this.form.get('email')?.touched}">
+        <label >Email</label>
+        <input type="email"
+        formControlName="email">
+      </div>
+
+    </div>
+    <div class="row-2">
+      <div class="input-3" [ngClass]="{'warning': this.form.get('telefono')?.invalid && this.form.get('telefono')?.touched}">
+        <label >Telefono</label>
+        <input type="number"
+        formControlName="telefono">
+      </div>
+
+    </div>
+    <div class="row-3" [ngClass]="{'warning': this.form.get('mensaje')?.invalid && this.form.get('mensaje')?.touched}">
+      <label >mensaje</label>
+    <textarea name="" id="" cols="40" rows="6"
+    formControlName="mensaje"></textarea>
+    </div>
+    <button type="submit">Enviar</button>
+
+  </form>
+
+    </div>
+
+    <div class="programming-lang-services">
+
+      <h1>{{infoCS.attributes.title}}</h1>
+<ng-container *ngFor="let i of infoCS.attributes.list_info_contact_services.data;let index = index">
+    <div class="item-programming-languaje" *ngIf="(index+1)<infoCS.attributes.list_info_contact_services.data.length">
+      <h2><span>{{index+1}}</span> {{i.attributes.item}}</h2>
+      <hr>
+    </div>
+
+    <div *ngIf="(index+1) ==infoCS.attributes.list_info_contact_services.data.length" class="item-programming-languaje">
+      <h2><span>{{index+1}}</span> {{i.attributes.item}}</h2>
+    </div>
+
+</ng-container>
+
+
+    </div>
+
+  </div>
+
+  </div>
+</ng-container>

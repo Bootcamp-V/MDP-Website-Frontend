@@ -1,0 +1,47 @@
+<ng-container *ngIf="{sup: subpage$ | async, url: urls$ | async} as page">
+  <div class="container" *ngIf="page.sup && page.url; else loading">
+    <div class="left-container">
+      <!-- Contenido del contenedor izquierdo -->
+      <div class="text-box" *ngFor="let item of page.sup.data">
+
+        <h2>{{ item.attributes.tittle }}</h2>
+
+        <div *ngFor="let desc of item.attributes.description_about_pages.data; let indice = index">
+          <p class="mb-[20px]">
+            <span *ngIf="indice< item.attributes.description_about_pages.data.length-1">
+              {{ desc.attributes.description }}</span>
+          </p>
+        </div>
+
+        <img class="mb-[30px] mt-[30px]" src="{{page.url.data[0].attributes.imagen.data.attributes.formats.small.url}}"
+          alt="{{page.url.data[0].attributes.imagen.data.attributes.alternativeText}}">
+        
+          <div>
+          <p class="mb-[20px]">
+            <span>
+              {{
+              page.sup.data[0].attributes.description_about_pages.data[page.sup.data[0].attributes.description_about_pages.data.length-1].attributes.description
+              }}
+            </span>
+          </p>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="right-container">
+      <div *ngFor="let img of page.url.data; let indice=index">
+        <div *ngIf="indice>0">
+          <img src="{{img.attributes.imagen.data.attributes.formats.small.url}}"
+            alt="{{img.attributes.imagen.data.attributes.alternativeText}}" class="imagen">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ng-container>
+<ng-template #loading>
+  <div class="justify-center content-center text-[20px] w-[70%] mx-auto mt-[40px]"> 
+    <p>Loading.......</p>
+   </div>
+</ng-template>

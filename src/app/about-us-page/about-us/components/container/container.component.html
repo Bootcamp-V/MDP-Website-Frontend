@@ -1,0 +1,38 @@
+<ng-container *ngIf="{con: container$ | async} as page" >
+    <div class="container" *ngIf="page.con ; else loading">
+
+            <div class="column">
+                <div class="first">
+                <h2>{{page.con.data[0].attributes.tittle}}</h2>
+                <p >{{page.con.data[0].attributes.description}}</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="second">
+                    <i class="fa-solid {{page.con.data[1].attributes.icon}}" style="color: #ffffff;font-size: 50px"></i>         
+                    <h2>{{page.con.data[1].attributes.tittle}}</h2>
+                    <p >{{page.con.data[1].attributes.description}}</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="third">
+                    <i class="fas {{page.con.data[2].attributes.icon}} " style="color: #ffffff;font-size: 50px"></i>            
+                    <h2>{{page.con.data[2].attributes.tittle}}</h2>
+                    <p >{{page.con.data[2].attributes.description}}</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="fourth">
+                    <i class="fa-solid {{page.con.data[3].attributes.icon}} " style="color: #ebeef5;font-size: 50px;"></i>
+                    <h2>{{page.con.data[3].attributes.tittle}}</h2>
+                    <p >{{page.con.data[3].attributes.description}}</p>
+
+                </div>
+            </div>
+    </div>
+</ng-container>
+
+<ng-template #loading>
+    <p>loading.......</p>
+</ng-template>
+  

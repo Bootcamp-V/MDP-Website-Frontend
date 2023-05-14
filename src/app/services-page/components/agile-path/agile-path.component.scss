@@ -1,0 +1,61 @@
+@import "../../../../styles/abstracts/variables";
+@import "../../../../styles/abstracts/mixins";
+.fund{
+  background-color: $background-white-color;
+}
+.container {
+  background-color: $background-white-color;
+  width: min(90%, 110rem);
+  margin: 0 auto;
+  padding: 5em;
+}
+
+.centrar-texto {
+  text-align: center;
+  margin-bottom: 45px;
+  font-size: 24px;
+  font-family: "Oswald", sans-serif;
+  color: $grey-form-text-color;
+  font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  .service-model {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    justify-content: center;
+  align-items: center;
+  }
+}
+
+
+.first-image {
+  color: $grey-form-text-color;
+  .title-agile{
+    font-family: "Oswald", sans-serif;
+     font-size: 22px;
+  }
+
+
+  ul {
+    padding-left: 40px;
+    padding-bottom: 10px;
+
+    li {
+      font-family: "Open Sans", Helvetica, sans-serif;
+      font-size: 13px;
+      color: #535353;
+      list-style: disc;
+    }
+
+  }
+}
+
+.second-image {
+  color: $grey-form-text-color;
+
+}
+.letras {
+  text-align: center;
+}

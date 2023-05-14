@@ -1,0 +1,24 @@
+<ng-container *ngIf="dataPathConsulting$ | async as apc">
+
+<div class="fund">
+    <main class="container">
+        <div class="service-model">
+            <div class="second-image">
+                <img src="{{apc.attributes.urlImage}}" alt="">
+            </div>
+            <div class="first-image">
+                <span  class="title-agile" >{{apc.attributes.title}}</span>
+                <br><br>
+                <p>
+                  {{apc.attributes.description}}
+                </p>
+                <br>
+
+                <ul>
+                  <li *ngFor="let i of apc.attributes.agile_path_child_consultings.data">{{i.attributes.item}}</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</div>
+</ng-container>
