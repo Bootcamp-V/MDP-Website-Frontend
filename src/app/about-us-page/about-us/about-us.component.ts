@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BannerModel } from 'src/app/services-page/models/banner.model';
-import { IDescriptionBannerPages, ITitleBannerPages } from 'src/app/services-page/models/bannerPages.interface';
-import { ServicesPageService } from 'src/app/services-page/services/services-page.service';
+import { map } from 'rxjs';
+import { IDataBP} from 'src/app/services-page/models/bannerPages.interface';
+import { BannerPagesService } from 'src/app/shared/banner-pages/banner-pages.service';
 
 @Component({
   selector: 'app-about-us',
@@ -9,25 +9,32 @@ import { ServicesPageService } from 'src/app/services-page/services/services-pag
   styleUrls: ['./about-us.component.scss']
 })
 export class AboutUsComponent implements OnInit {
-  titles!: ITitleBannerPages;
-  description!: IDescriptionBannerPages;
-  banner!: BannerModel;
 
+  page: string = "about-us";
+  banner!: IDataBP;
 
-  constructor(private serv: ServicesPageService) {
+  constructor(private servicio:BannerPagesService) {
 
   }
 
 
   ngOnInit() {
-    this.serv.getBannerPage().subscribe((res) => {
+    this.getBannerPage();
+  }
+  getBannerPage() {
+    this.servicio.getBannerPage().pipe(
+      map((res) => {
+        for (let i of res.data) {
 
-      this.titles = res.data[5].attributes.title_banner_pages;
-      this.description = res.data[5].attributes.description_banner_pages;
-      this.banner = new BannerModel(res.data[5].attributes.img.data[0].attributes.formats.large.url, [this.titles.data[0].attributes.title, this.titles.data[1].attributes.title], []);
-      this.serv.bannerPages$.next(this.banner);
+          if (i.attributes.page == this.page) {
+            this.banner = i;
+          }
 
+        }
+      })
+
+    ).subscribe((res) => {
+      this.servicio.bannerPages$.next(this.banner);
     });
   }
-
 }

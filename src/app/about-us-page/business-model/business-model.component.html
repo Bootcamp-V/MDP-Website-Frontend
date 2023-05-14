@@ -1,4 +1,4 @@
-<app-banner-new></app-banner-new>
+<app-banner-pages></app-banner-pages>
 <ng-container *ngIf="{sup: subpage$ | async, url: urls$ | async} as page">
     <div class="th-spacer clearfix h-[50px]"></div>
     <section class="zn_section bg-[#fff] py-[35px] relative block " *ngIf="page.sup && page.url; else loading">

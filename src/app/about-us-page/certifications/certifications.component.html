@@ -1,4 +1,4 @@
-<app-banner-new></app-banner-new>
+<app-banner-pages></app-banner-pages>
 <ng-container *ngIf="{ org:certOrganizations$ | async, col:certColaborators$| async} as cert">
   <div *ngIf="cert.org && cert.col; else loading" >
   <div class="space"></div>

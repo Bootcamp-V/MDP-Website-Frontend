@@ -8,7 +8,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent } from './shared/header/navbar/navbar.component';
 import { ServicesBannerComponent } from './shared/services-banner/services-banner.component';
-import { BannerContentRectangleComponent } from './shared/banner-content-rectangle/banner-content-rectangle.component';
+import { BannerContentRectangleComponent } from './home/components/banner-content-rectangle/banner-content-rectangle.component';
 import { SocialsComponent } from './shared/header/socials/socials.component';
 import { SearchComponent } from './shared/header/search/search.component';
 import { AboutComponent } from './home/components/about/about.component';
@@ -24,7 +24,6 @@ import { ConsultingComponent } from './services-page/consulting/consulting.compo
 import { TalentComponent } from './services-page/talent/talent.component';
 import { CertificationsComponent } from './about-us-page/certifications/certifications.component';
 import { ServicesMainComponent } from './services-page/services-main/services-main.component';
-import { BannerServiceComponent } from './services-page/components/banner/banner.component';
 import { BusinessModelComponent } from './about-us-page/business-model/business-model.component';
 import { StepsComponent } from './services-page/components/steps/steps.component';
 import { WeOfferComponent } from './services-page/components/we-offer/we-offer.component';

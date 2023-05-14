@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { BannerModel } from 'src/app/services-page/models/banner.model';
-import { IDescriptionBannerPages, ITitleBannerPages } from 'src/app/services-page/models/bannerPages.interface';
-import { ServicesPageService } from 'src/app/services-page/services/services-page.service';
+import { IDataBP } from 'src/app/services-page/models/bannerPages.interface';
 import { ICertifications } from './models/certifications.interface';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { CertificationsService } from './services/certifications.service';
+import { BannerPagesService } from 'src/app/shared/banner-pages/banner-pages.service';
 @Component({
   selector: 'app-certifications',
   templateUrl: './certifications.component.html',
@@ -12,34 +11,39 @@ import { CertificationsService } from './services/certifications.service';
 })
 export class CertificationsComponent implements OnInit {
  
-  titles!: ITitleBannerPages;
-  description!: IDescriptionBannerPages;
-  banner!: BannerModel;
+
+ page: string = "certifications";
+  banner!: IDataBP;
 
   certColaborators$!: Observable<ICertifications>;
   certOrganizations$!: Observable<ICertifications>;
 
   constructor(
-    private serv: ServicesPageService,
+    private servicio:BannerPagesService,
     private serviceCertifications: CertificationsService
   ) {}
 
   ngOnInit() {
 
-    this.serv.getBannerPage().subscribe((res) => {
-      this.titles = res.data[8].attributes.title_banner_pages;
-      this.description = res.data[8].attributes.description_banner_pages;
-      this.banner = new BannerModel(res.data[8].attributes.img.data[0].attributes.formats.large.url,
-        [
-          this.titles.data[0].attributes.title,
-          this.titles.data[1].attributes.title,
-        ],
-        []
-      );
-      this.serv.bannerPages$.next(this.banner);
-    });
+ this.getBannerPage();
 
     this.certOrganizations$ = this.serviceCertifications.getInfoCertification('Organization');
     this.certColaborators$ = this.serviceCertifications.getInfoCertification('Colaborators');
+  }
+    getBannerPage() {
+    this.servicio.getBannerPage().pipe(
+      map((res) => {
+        for (let i of res.data) {
+
+          if (i.attributes.page == this.page) {
+            this.banner = i;
+          }
+
+        }
+      })
+
+    ).subscribe((res) => {
+      this.servicio.bannerPages$.next(this.banner);
+    });
   }
 }
