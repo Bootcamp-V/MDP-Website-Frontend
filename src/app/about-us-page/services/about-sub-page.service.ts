@@ -13,7 +13,7 @@ export class AboutSubPageService {
   }
 
   getAboutSubPages(subpage_name: string){
-    return this.http.get<IAboutSubPage>(environment.devUrl+'/api/tittle-about-pages?populate=*&filters[about_sub_page][name][$eq]='+subpage_name);
+    return this.http.get<IAboutSubPage>(environment.devUrl+'/api/title-about-pages?populate=*&filters[about_sub_page][name][$eq]='+subpage_name);
   }
   
   getImagesSubPages(subpage_name: string){
