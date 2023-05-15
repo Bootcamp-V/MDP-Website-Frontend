@@ -99,8 +99,7 @@
       @media (max-width: 1600px) {
         
         .grid-item{
-          width: 100%;
-          max-width: 300px;
+          width: 80%;
           height: auto;
 
           margin-left: 0px;
@@ -109,7 +108,7 @@
 
         .container{
           justify-content: center;
-          background-color: red;
+          background-color: rgb(255, 255, 255);
         }
         
        
@@ -128,3 +127,39 @@
   
        
       }
+      
+      @media (max-width: 960px) {
+        
+        .grid-item{
+          width: 70%;
+          height: auto;
+
+          display: block;
+         
+        }
+
+        .container{
+          justify-content: center;
+          background-color: rgb(255, 255, 255);
+          display: block;
+          left: 20%;
+        }
+        
+       
+        h2 {
+          font-size: 1.2em;
+          margin-bottom: 0.5em;
+          margin-top: 0.5em;
+        }
+    
+        p {
+          font-size: 0.8em;
+          margin-bottom: 1em;
+        }
+  
+       
+  
+       
+      }
+      
+    

@@ -9,7 +9,7 @@ export class SectorsService {
   constructor(private http: HttpClient) {}
   getSectorsInfo() {
     return this.http.get<ISectors>(
-      environment.devUrl+'/api/sectors?populate=*'
+      environment.baseUrl+'/api/sectors?populate=*'
     );
   }
 }
