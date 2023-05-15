@@ -46,55 +46,55 @@ this.tapeConsuServ$= new Subject();
 }
 
   getWeOfferServices():Observable<IWeOffer>{
-    return this.http.get<IWeOffer>(environment.devUrl+'/api/we-offer-services?populate=*');
+    return this.http.get<IWeOffer>(environment.baseUrl+'/api/we-offer-services?populate=*');
   }
 
   getInfoContactServices():Observable<IInfoContactService>{
-    return this.http.get<IInfoContactService>(environment.devUrl+'/api/info-contact-services?populate=*');
+    return this.http.get<IInfoContactService>(environment.baseUrl+'/api/info-contact-services?populate=*');
   }
 
   getInfoContactConsultingServ():Observable<IIContactInfoConsulting>{
-    return this.http.get<IIContactInfoConsulting>(environment.devUrl+'/api/contact-info-consultings?populate=*');
+    return this.http.get<IIContactInfoConsulting>(environment.baseUrl+'/api/contact-info-consultings?populate=*');
   }
 
   getModelServices():Observable<IModelServicesC>{
-    return this.http.get<IModelServicesC>(environment.devUrl+'/api/model-services?populate=*');
+    return this.http.get<IModelServicesC>(environment.baseUrl+'/api/model-services?populate=*');
   }
 
   getSteepsServices():Observable<IStepsServices>{
-    return this.http.get<IStepsServices>(environment.devUrl+'/api/steps-services?populate=*');
+    return this.http.get<IStepsServices>(environment.baseUrl+'/api/steps-services?populate=*');
   }
 
   getBussinesServices():Observable<IBussinessService>{
-    return this.http.get<IBussinessService>(environment.devUrl+'/api/bussines-services?populate=*');
+    return this.http.get<IBussinessService>(environment.baseUrl+'/api/bussines-services?populate=*');
   }
 
   getPlanConsulting():Observable<IPlanConsulting>{
-    return this.http.get<IPlanConsulting>(environment.devUrl+'/api/plan-consultings?populate=*');
+    return this.http.get<IPlanConsulting>(environment.baseUrl+'/api/plan-consultings?populate=*');
   }
 
   getAgilTransConsul():Observable<IAgilTransCons>{
-    return this.http.get<IAgilTransCons>(environment.devUrl+'/api/agil-transformation-consultings?populate=*');
+    return this.http.get<IAgilTransCons>(environment.baseUrl+'/api/agil-transformation-consultings?populate=*');
   }
 
   getAgilPathConsul():Observable<IAgilePathConsulting>{
-    return this.http.get<IAgilePathConsulting>(environment.devUrl+'/api/agile-path-consultings?populate=*');
+    return this.http.get<IAgilePathConsulting>(environment.baseUrl+'/api/agile-path-consultings?populate=*');
   }
 
 
   getTapeServConsul():Observable<ITapeServicesConsulting>{
-    return this.http.get<ITapeServicesConsulting>(environment.devUrl+'/api/tape-services-consultings');
+    return this.http.get<ITapeServicesConsulting>(environment.baseUrl+'/api/tape-services-consultings');
   }
 
 
 
   postContactServices( data:Object){
-    return this.http.post(environment.devUrl+'/api/contact-service-forms',data,{responseType: 'text'});
+    return this.http.post(environment.baseUrl+'/api/contact-service-forms',data,{responseType: 'text'});
   }
 
 
   postContactServicesConsulting( data:Object){
-    return this.http.post(environment.devUrl+'/api/contact-service-consulting-forms',data,{responseType: 'text'});
+    return this.http.post(environment.baseUrl+'/api/contact-service-consulting-forms',data,{responseType: 'text'});
   }
 
 }

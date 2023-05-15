@@ -13,11 +13,11 @@ export class AboutSubPageService {
   }
 
   getAboutSubPages(subpage_name: string){
-    return this.http.get<IAboutSubPage>(environment.devUrl+'/api/title-about-pages?populate=*&filters[about_sub_page][name][$eq]='+subpage_name);
+    return this.http.get<IAboutSubPage>(environment.baseUrl+'/api/title-about-pages?populate=*&filters[about_sub_page][name][$eq]='+subpage_name);
   }
   
   getImagesSubPages(subpage_name: string){
-    return this.http.get<IImageSubpage>(environment.devUrl+'/api/image-about-pages?populate=*&filters[about_sub_page][name][$eq]='+subpage_name);
+    return this.http.get<IImageSubpage>(environment.baseUrl+'/api/image-about-pages?populate=*&filters[about_sub_page][name][$eq]='+subpage_name);
   }
 
 

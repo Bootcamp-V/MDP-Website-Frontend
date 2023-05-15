@@ -12,6 +12,6 @@ export class PostsAboutService {
 
 
   getPostAbout(){
-    return this.http.get<IPostAbout>(environment.devUrl+'/api/post-abouts?populate=*');
+    return this.http.get<IPostAbout>(environment.baseUrl+'/api/post-abouts?populate=*');
   }
 }

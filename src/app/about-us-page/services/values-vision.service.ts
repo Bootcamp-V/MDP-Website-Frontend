@@ -12,6 +12,6 @@ export class ValuesVisionService {
 
 
   getValuesVision(){
-    return this.http.get<IValuesVision>(environment.devUrl+'/api/values-visions?populate=*');
+    return this.http.get<IValuesVision>(environment.baseUrl+'/api/values-visions?populate=*');
   }
 }
