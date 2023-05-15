@@ -20,6 +20,7 @@ import { PurposeVisionComponent } from './about-us-page/purpose-vision/purpose-v
 
 import { SectorsComponent } from './about-us-page/sectors/sectors.component';
 import { HistoryComponent } from './about-us-page/history/history.component';
+import { ContactUsComponent } from './contact-page/contact-us/contact-us.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -57,7 +58,10 @@ const routes: Routes = [
   },
   { path: 'clientes', component: CustomersPageComponent },
   { path: 'blog', component: BlogPageComponent },
-  { path: 'contacto', component: ContactPageComponent },
+  { path: 'contacto', component: ContactPageComponent, children:[
+    { path: '', component: ContactUsComponent },
+
+  ] },
 ];
 
 @NgModule({
