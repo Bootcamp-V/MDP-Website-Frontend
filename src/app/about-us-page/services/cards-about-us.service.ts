@@ -11,7 +11,7 @@ export class CardsAboutUsService {
   constructor(private http: HttpClient) { }
 
   getCardsAboutUs(){
-    return this.http.get<ICardsAboutUs>(environment.devUrl+'/api/cards-abouts?populate=*');
+    return this.http.get<ICardsAboutUs>(environment.baseUrl+'/api/cards-abouts?populate=*');
   }
   
 }

@@ -10,6 +10,6 @@ export class ContentHomeService {
 
   constructor(private http: HttpClient) { }
   getContentHomeByLocate(locate:string){
-    return this.http.get<IContentHome>(environment.devUrl+'/api/content-homes?populate=*&filters[locate][$eq]='+ locate);
+    return this.http.get<IContentHome>(environment.baseUrl+'/api/content-homes?populate=*&filters[locate][$eq]='+ locate);
   }
 }

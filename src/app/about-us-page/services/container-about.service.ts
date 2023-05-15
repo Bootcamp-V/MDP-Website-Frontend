@@ -12,7 +12,7 @@ export class ContainerAboutService {
 
 
   getContainerAbout(){
-    return this.http.get<IContainerAbout>(environment.devUrl+'/api/container-abouts?populate=*');
+    return this.http.get<IContainerAbout>(environment.baseUrl+'/api/container-abouts?populate=*');
   }
   
 
