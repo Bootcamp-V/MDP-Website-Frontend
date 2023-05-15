@@ -1,0 +1,20 @@
+.supraSlider {
+    background-image: url(https://www.mdp.com.pe/wp-content/uploads/2017/05/00_libroReclamaciones.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 95vh;
+    position: relative;
+    bottom: 27%;
+    overflow: hidden;
+}
+   
+@media screen and (max-width: 768px) {
+    .supraSlider {
+     position: relative;
+     top: 178px;
+     margin-bottom: 300px;
+     height: 70vh;
+    }
+}

@@ -1,0 +1,450 @@
+@import "../../../../../styles/abstracts/mixins";
+@import "../../../../../styles/abstracts/variables";
+
+.content-box-form {
+    display: flex;
+    margin-top: -7%;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #535353;
+}
+
+.box-left {
+    width: 35%;
+    height: 100%;
+    padding: 0 0 2rem 10rem;
+}
+.content-form {
+    width: 65%;   
+    height: 100%;
+    padding: 0 9rem 2rem 4rem;
+}
+
+.content-box-form .box-left h3, .content-box-form .content-form h3 {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+    line-height: 40px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -2px;
+    color: #000;
+}
+.content-box-form .box-left p, .content-box-form .content-form p {
+    font-size: 1.1rem;
+    line-height: 2rem;
+}
+
+
+// form style -------------------------
+
+input:focus {
+    outline: unset;
+  }
+  
+  .warning{
+    border: solid 1px red;
+  }
+  
+  label{
+    color: #969696;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    display: block;
+    font-weight:600;
+    width: auto;
+   }
+  
+   input,textarea{
+  padding: 0;
+  margin: 0;
+  border:none;
+  outline: 0;
+  color: #555;
+  font-size: 13px;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  width: auto;
+   }
+  
+  
+  .section-information-services{
+    width: 100%;
+    color: $background-white-color;
+  .container-information{
+    max-width: 100%;
+    display: flex;
+  
+    .form-info-services{
+      width: 100%;
+      .title-info-services{
+        margin-bottom: 45px;
+        margin-top: 30px;
+        font-size: 20px;
+        font-family: "Oswald", Helvetica, sans-serif;
+        font-weight: 300;
+        text-align: center;
+              }
+  
+      form{
+        .input-1,.input-2,.input-3, .row-3{
+          box-shadow: 2px 3px 2px 2px rgba(0,0,0,0.11) inset;
+          -webkit-box-shadow: 2px 3px 2px 2px rgba(0,0,0,0.11) inset;
+          -moz-box-shadow: 2px 3px 2px 2px rgba(0,0,0,0.11) inset;
+        }
+  
+        .row-1{
+          display: grid;
+          grid-template-columns: repeat(2,1fr);
+          width: 100%;
+          gap: 30px;
+          .input-1{
+            display: flex;
+            flex-direction: column;
+            background-color: $background-white-color;
+            margin-right:15px;
+            padding: 15px 10px;
+            border-radius: 4px;
+            overflow: hidden;
+          label{
+            padding-bottom: 5px;
+          }
+          }
+  
+          .input-2{
+  
+             display: flex;
+            flex-direction: column;
+            margin-left:15px;
+            background-color: $background-white-color;
+            padding: 7px 10px;
+            border-radius: 4px;
+            overflow: hidden;
+            label{
+              padding-bottom: 5px;
+            }
+          }
+  
+        }
+  
+        .row-2{
+          margin-top: 15px;
+         // border: solid 1px red;
+          display: grid;
+          grid-template-columns: repeat(1,1fr);
+  
+  
+          .input-3{
+            display: flex;
+            flex-direction: column;
+            margin-right:15px;
+            background-color: $background-white-color;
+            padding: 7px 10px 0 10px;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            label{
+              padding-left: 17px;
+              position: absolute;
+              top: 15%;
+              left: 0;
+              z-index: 55;
+            }
+            select, input{
+              position: relative;
+              top:5%;
+              left: 0;
+              height: 50px;
+              color: #333;
+              appearance:none;
+              padding-left: 8px;
+              padding-top: 8px;
+            }
+            .input-date {
+              
+              color: transparent;
+            
+            }
+          }
+          .arrow-up-down::after {
+            content: "";
+            position: relative;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 8px solid #333;
+            bottom: 50%;
+            left: 96%;
+          }
+          .arrow-up-down::before {
+            content: "";
+            position: relative;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 8px solid #333;
+            top: 55%;
+            left: 96%;
+            transform: rotate(180deg);
+            z-index: 50;
+          }
+  
+        }
+  
+  
+          .row-3{
+           // border: solid 1px red;
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            background-color:$background-white-color ;
+            margin: 15px 0 15px 0;
+            border-radius: 4px;
+            padding: 7px 10px;
+            label{
+              padding-bottom: 5px;
+            }
+  
+          }
+          .only-input {
+            grid-template-columns: repeat(1,1fr);
+          }
+          .only-checkbox {
+            display: flex;
+            align-items: initial;
+            label {
+              margin-left: 10px;
+            }
+          }
+
+          button{
+            background-color: $background-blue-color;
+            color: #fff;
+            font-size: 13px;
+            font-family: "Open Sans", Helvetica, sans-serif;
+            padding: 10px 20px;
+            font-weight: 600;
+            border-radius: 3px;
+            margin-top: 20px;
+          }
+          @media screen and (max-width: 1100px){
+            .row-1 {
+              grid-template-columns: repeat(1,1fr);
+            }
+          }
+      }
+    }
+  
+    .programming-lang-services{
+  
+      width: 35%;
+      padding: 0 15px;
+  
+      h1{
+        margin-bottom: 45px;
+        margin-top: 30px;
+        font-size: 20px;
+        font-family: "Oswald", Helvetica, sans-serif;
+        font-weight: 300;
+        text-align: center;
+      }
+      .item-programming-languaje{
+      h2{
+        font-family: "Open Sans", Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        span{
+        font-family: "Oswald", Helvetica, sans-serif;
+        font-size: 30px;
+        font-weight: 300;
+        color: #00ccff;
+        }
+        margin-bottom: 20px;
+      }
+  
+       hr{
+        margin: 20px 0;
+       }
+      }
+  
+    }
+  
+  }
+  }
+  @media screen and (max-width: 1100px) {
+    .content-box-form {
+      margin-top: -10%;
+      display: block;
+    }
+    .box-left {
+      width:  100%;  
+      padding: 0 5rem 2rem 5rem;
+    }
+    .content-form {
+      width: 100%;   
+      padding: 0 5rem 2rem 5rem;
+    }    
+  }
+  
+  @include tablet{
+
+    .section-information-services{
+      width: 100%;
+      padding: 35px 0;
+      color: $background-white-color;
+    .container-information{
+  
+      max-width: 100%;
+      margin: auto;
+    display: flex;
+    flex-direction: column;
+  
+      .form-info-services{
+        width: 100%;
+  
+        .title-info-services{
+          margin-bottom: 45px;
+          margin-top: 30px;
+          font-size: 20px;
+          font-family: "Oswald", Helvetica, sans-serif;
+          font-weight: 300;
+          text-align: center;
+                }
+  
+        form{
+          padding: 10px 15px 0 15px;
+  
+  
+          .row-1{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            width: 100%;
+  
+            .input-1{
+              display: flex;
+              flex-direction: column;
+              background-color: $background-white-color;
+              margin-right:0px;
+              padding: 7px 10px;
+              border-radius: 4px;
+              overflow: hidden;
+  
+            label{
+              padding-bottom: 5px;
+            }
+            }
+  
+            .input-2{
+              display: flex;
+              flex-direction: column;
+              margin-left:0px;
+              margin-top: 15px;
+              background-color: $background-white-color;
+              padding: 7px 10px;
+              border-radius: 4px;
+              overflow: hidden;
+              label{
+                padding-bottom: 5px;
+              }
+            }
+  
+  
+          }
+  
+          .row-2{
+            margin-top: 15px;
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+  
+  
+            .input-3{
+              display: flex;
+              flex-direction: column;
+              margin-right:0px;
+              background-color: $background-white-color;
+              padding: 7px 10px;
+              border-radius: 4px;
+              overflow: hidden;
+              label{
+                padding-bottom: 5px;
+              }
+            }
+  
+          }
+  
+  
+            .row-3{
+              display: grid;
+              grid-template-columns: repeat(1,1fr);
+              background-color:$background-white-color ;
+              margin: 15px 0 15px 0;
+              border-radius: 4px;
+              padding: 7px 10px;
+              label{
+                padding-bottom: 5px;
+              }
+  
+            }
+  
+            button{
+              background-color: $background-white-color;
+              color: #242424;
+              font-size: 13px;
+              font-family: "Open Sans", Helvetica, sans-serif;
+              padding: 10px 20px;
+              font-weight: 600;
+              border-radius: 3px;
+              margin-left: 0px;
+              margin-top: 20px;
+            }
+  
+        }
+  
+      }
+  
+      .programming-lang-services{
+  
+        width: 100%;
+        padding: 0 15px;
+  
+  
+  
+  
+  
+        h1{
+          margin-bottom: 45px;
+          margin-top: 30px;
+          font-size: 20px;
+          font-family: "Oswald", Helvetica, sans-serif;
+          font-weight: 300;
+          text-align: center;
+        }
+        .item-programming-languaje{
+        h2{
+          font-family: "Open Sans", Helvetica, sans-serif;
+          font-size: 16px;
+          font-weight: 300;
+          span{
+          font-family: "Oswald", Helvetica, sans-serif;
+          font-size: 30px;
+          font-weight: 300;
+          color: #00ccff;
+          }
+          margin-bottom: 20px;
+        }
+  
+         hr{
+          margin: 20px 0;
+         }
+        }
+  
+      }
+  
+    }
+    }
+  
+  }
+
+
+  
+  
