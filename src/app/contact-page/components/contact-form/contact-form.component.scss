@@ -1,0 +1,469 @@
+@import "../../../../styles/abstracts/variables";
+@import "../../../../styles/abstracts/mixins";
+
+
+
+label{
+  color: #969696;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 10px;
+  display: block;
+  font-weight:bold;
+  width: auto;
+ }
+
+
+ input[type=number]::-webkit-inner-spin-button,
+ input[type=number]::-webkit-outer-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+ }
+
+
+ input,textarea,select{
+padding: 0;
+margin: 0;
+border:none;
+outline: 0;
+color: #555;
+font-size: 13px;
+font-family: "Open Sans", Helvetica, sans-serif;
+width: auto;
+ }
+
+
+
+
+.section-information-services{
+  width: 100%;
+  padding: 35px 0;
+  color:#535353;
+  border: solid 1px red;
+.container-information{
+
+  max-width: 80%;
+  margin: auto;
+display: flex;
+border: solid 1px green;
+
+  .form-info-services{
+    width: 68%;
+    border: solid 1px red;
+
+    .title-info-services{
+      margin-bottom: 45px;
+      margin-top: 30px;
+      padding: 0 15px;
+      font-size: 24px;
+      font-family: "Oswald", Helvetica, sans-serif;
+      font-weight: 300;
+      text-align: left;
+            }
+
+    form{
+      padding: 10px 15px 0 15px;
+
+
+      .input-1,.input-2,.input-3,.input-4, .row-3{
+        box-shadow: 1px 3px 0px 0px rgba(0,0,0,0.11) inset;
+        -webkit-box-shadow: 1px 3px 0px 0px rgba(0,0,0,0.11) inset;
+        -moz-box-shadow: 1px 3px 0px 0px rgba(0,0,0,0.11) inset;
+        border: 1px solid #D9D9D9;
+      }
+
+
+      .row-1{
+       // border: solid 1px red;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        width: 100%;
+        .warning-form{
+          border: solid 1px red;
+        }
+
+        .input-1{
+          display: flex;
+          flex-direction: column;
+          background-color: $background-white-color;
+          margin-right:15px;
+          padding: 7px 10px;
+          border-radius: 4px;
+overflow: hidden;
+        label{
+          padding-bottom: 5px;
+        }
+        }
+
+        .input-2{
+
+           display: flex;
+          flex-direction: column;
+          margin-left:15px;
+          background-color: $background-white-color;
+          padding: 7px 10px;
+          border-radius: 4px;
+          overflow: hidden;
+          label{
+            padding-bottom: 5px;
+          }
+        }
+
+
+      }
+
+      .row-2{
+        margin-top: 15px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+
+        .warning-form{
+          border: solid 1px red;
+        }
+        .input-3{
+          display: flex;
+          flex-direction: column;
+          margin-right:15px;
+          background-color: $background-white-color;
+          padding: 7px 10px;
+          border-radius: 4px;
+          overflow: hidden;
+          label{
+            padding-bottom: 5px;
+          }
+        }
+
+        .input-4{
+          display: flex;
+          flex-direction: column;
+          align-items: last baseline;
+          margin-left:15px;
+          background-color: $background-white-color;
+
+          border-radius: 4px;
+          overflow: hidden;
+
+          label{
+            padding-bottom: 5px;
+            padding-left: 7px;
+            padding-top: 7px;
+          }
+
+          select{
+            height: 100%;
+            white-space: pre;
+            -webkit-rtl-ordering: logical;
+            appearance: none;
+            font-family: "Open Sans", Helvetica, sans-serif;
+            font-size: 13px;
+            background-image: url('https://www.mdp.com.pe/wp-content/themes/kallyas/images/select-arrow.svg');
+           width: 99.8%;
+           padding-left: 10px;
+          background-repeat: no-repeat;
+          background-size: 6px 12px;
+          background-position: calc(100% - 10px) 50%;
+          background-position-y: center;
+          background-position-x: calc(100% - 10px);
+          margin: auto;
+           }
+
+
+        }
+
+
+
+
+
+      }
+
+
+        .row-3{
+         // border: solid 1px red;
+          display: grid;
+          grid-template-columns: repeat(1,1fr);
+          background-color:$background-white-color ;
+          margin: 15px 0 15px 0;
+          border-radius: 4px;
+          padding: 7px 10px;
+          label{
+            padding-bottom: 5px;
+          }
+
+        }
+
+        .row-4{
+
+         // border: solid 1px red;
+          font-family: "Open Sans", Helvetica, sans-serif;
+          font-size: 12px;
+          display: flex;
+
+
+         input{
+          color:#535353;
+         }
+
+         label{
+          padding-left: 5px;
+
+          font-weight: bold;
+          color:#535353;
+          text-transform: none;
+          font-size: 12px;
+
+          a{
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            text-transform: none;
+            font-size: 12px;
+
+            color: #0000ff;
+          }
+         }
+
+        }
+
+        .warning-form{
+          border: solid 1px red;
+        }
+
+        button{
+          color: $background-white-color;
+          font-size: 13px;
+          font-family: "Open Sans", Helvetica, sans-serif;
+          padding: 10px 20px;
+          font-weight: 600;
+          border-radius: 3px;
+          margin-top: 20px;
+          background-color: $background-blue-color;
+        }
+    }
+
+  }
+
+  .contact-us{
+
+    width: 32%;
+    padding: 0 15px 0 0;
+    font-size: 12px;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    color: white;
+
+
+
+    h1{
+      margin-bottom: 10px;
+
+      font-size: 23px;
+      font-family: "Oswald", Helvetica, sans-serif;
+      font-weight: 300;
+      text-align: left;
+    }
+
+    .container-contact{
+      background-color: #3fa9f5;
+      padding: 10px 0px 10px 0px;
+      p{
+        text-align: justify;
+      }
+      .information{
+        display: block;
+        padding-top: 20px;
+        text-align: justify;
+      }
+
+      .contact-info{
+      padding: 0 30px;
+      }
+
+
+    }
+
+    .social-network-footer{
+margin-top: 20px;
+margin-right: 10px;
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(60px,1fr));
+row-gap: 10px;
+
+      a {
+        height: 60px;
+        cursor: pointer;
+        display: block;
+       text-align: center;
+      }
+
+    }
+
+  }
+}
+}
+
+
+@media screen and (max-width: 1200px) {
+  .section-information-services{
+    margin-top: 35px;
+  }
+}
+
+
+
+
+@include tablet{
+
+
+
+  .section-information-services{
+    margin-top: 0px;
+    width: 100%;
+    padding: 35px 0;
+  .container-information{
+
+    max-width: 80%;
+    margin: auto;
+  display: flex;
+  flex-direction: column;
+
+    .form-info-services{
+      width: 100%;
+
+      form{
+        padding: 10px 15px 0 15px;
+
+
+        .row-1{
+          display: grid;
+          grid-template-columns: repeat(1,1fr);
+          width: 100%;
+
+          .input-1{
+            display: flex;
+            flex-direction: column;
+            background-color: $background-white-color;
+            margin-right:0px;
+            padding: 7px 10px;
+            border-radius: 4px;
+             overflow: hidden;
+
+          label{
+            padding-bottom: 5px;
+          }
+          }
+
+          .input-2{
+            display: flex;
+            flex-direction: column;
+            margin-left:0px;
+            margin-top: 15px;
+            background-color: $background-white-color;
+            padding: 7px 10px;
+            border-radius: 4px;
+            overflow: hidden;
+            label{
+              padding-bottom: 5px;
+            }
+          }
+
+
+        }
+
+        .row-2{
+          margin-top: 15px;
+          display: grid;
+          grid-template-columns: repeat(1,1fr);
+
+
+          .input-3{
+            display: flex;
+            flex-direction: column;
+            margin-right:0px;
+            background-color: $background-white-color;
+            padding: 7px 10px;
+            border-radius: 4px;
+            overflow: hidden;
+            label{
+              padding-bottom: 5px;
+            }
+          }
+
+          .input-4{
+            margin-left:0px;
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: last baseline;
+            padding: 7px 0px;
+            background-color: $background-white-color;
+
+            border-radius: 4px;
+            overflow: hidden;
+
+            label{
+              padding-bottom: 5px;
+              padding-left: 7px;
+              padding-top: 0px;
+            }
+
+            select{
+              height: 100%;
+              white-space: pre;
+              -webkit-rtl-ordering: logical;
+              appearance: none;
+              font-family: "Open Sans", Helvetica, sans-serif;
+              font-size: 13px;
+              background-image: url('https://www.mdp.com.pe/wp-content/themes/kallyas/images/select-arrow.svg');
+             width: 99.8%;
+             padding-left: 10px;
+            background-repeat: no-repeat;
+            background-size: 6px 12px;
+            background-position: calc(100% - 10px) 50%;
+            background-position-y: center;
+            background-position-x: calc(100% - 10px);
+            margin: auto;
+             }
+
+
+          }
+
+        }
+
+
+          .row-3{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            background-color:$background-white-color ;
+            margin: 15px 0 15px 0;
+            border-radius: 4px;
+            padding: 7px 10px;
+            label{
+              padding-bottom: 5px;
+            }
+
+          }
+
+
+
+      }
+
+    }
+
+    .contact-us{
+
+      width: 100%;
+      padding: 0 15px;
+      p{
+        font-size: 13px;
+        font-family: "Open Sans", Helvetica, sans-serif;
+  margin-top: 30px;
+  line-height: 1.5;
+      }
+    }
+
+  }
+  }
+
+}
+
+
+

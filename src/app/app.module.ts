@@ -51,6 +51,7 @@ import { SectorsComponent } from './about-us-page/sectors/sectors.component';
 import { HistoryComponent } from './about-us-page/history/history.component';
 import { PostComponent } from './about-us-page/history/components/post/post.component';
 import { ContactUsComponent } from './contact-page/contact-us/contact-us.component';
+import { ContactFormComponent } from './contact-page/components/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -102,6 +103,7 @@ import { ContactUsComponent } from './contact-page/contact-us/contact-us.compone
     HistoryComponent,
     PostComponent,
     ContactUsComponent,
+    ContactFormComponent,
   ],
   imports: [
     BrowserModule,
