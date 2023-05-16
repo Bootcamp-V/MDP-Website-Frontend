@@ -77,12 +77,13 @@
 @media screen and (max-width: 1200px) {
   .banner {
     width: 100%;
-    height: 100vH;
+    height: 100vh;
     position: relative;
 
     .banner_container {
       width: 100%;
-      height: 63%;
+      height: 80%;
+      border: solid 2px;
       background-repeat: no-repeat;
       background-size: cover;
       position: absolute;
@@ -100,7 +101,8 @@
     right: 5%;
   }
   .down-banner-container {
-    margin-top: -53px;
+    margin-top: 80px;
+  
     
   }
 
@@ -148,7 +150,7 @@
 
     .banner_container {
       width: 100%;
-      height: 100%;
+      height: 500px;
       background-repeat: no-repeat;
       background-size: cover;
       position: absolute;
