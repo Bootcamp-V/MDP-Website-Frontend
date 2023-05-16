@@ -50,7 +50,7 @@ import { OurValuesComponent } from './about-us-page/purpose-vision/components/ou
 import { SectorsComponent } from './about-us-page/sectors/sectors.component';
 import { HistoryComponent } from './about-us-page/history/history.component';
 import { PostComponent } from './about-us-page/history/components/post/post.component';
-
+import { RightsArcoComponent } from './contact-page/rights-arco/rights-arco.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,6 +100,7 @@ import { PostComponent } from './about-us-page/history/components/post/post.comp
     SectorsComponent,
     HistoryComponent,
     PostComponent,
+    RightsArcoComponent
   ],
   imports: [
     BrowserModule,

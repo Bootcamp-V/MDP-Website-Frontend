@@ -1,12 +1,72 @@
 <ng-container *ngIf="sections$ | async as sec">
-    <div class="h-[100px] bg-[#000] absolute my-[300px]"></div>
-    <div *ngFor="let item of sec.data">
-        <div class="h-[100px] bg-red] absolute my-[500px]">
-            <div *ngIf="item.attributes.title !='content-up'">
-                {{item.attributes.title}}
-            </div>
-        </div>
 
+
+    <div class="header-arco h-[300px] w-full bg-[#000124]">
+        <div class="menu-arco">
+            <ul class="list-menu-arco">
+                <li class="li-arco">
+                    <a class="link-style" [routerLink]="['/']">inicio</a>
+                </li>
+
+                <li class="li-arco slash-arco">
+                    <a class="link-style" [routerLink]="['/contacto']">contacto</a>
+                </li>
+
+                <li class="li-arco slash-arco" style="color: #ffffff80">derechos arco</li>
+            </ul>
+        </div>
     </div>
 
+    <div class="main-container-arco pt-[35px] pb-[35px]">
+        <div class="container-arco">
+            <h3 class="main-title-arco">Derechos ARCO</h3>
+
+            <div *ngFor="let item of sec.data">
+                <div class="mb-[40px]">
+
+                    <h3 class="second-title-arco">
+                        <strong>{{item.attributes.title}}</strong>
+                        <hr />
+                    </h3>
+
+                    <div *ngFor="let par of item.attributes.title_rights_arcos.data">
+                        <div *ngIf="par.attributes.type == 'content-up'">
+                            <p class="info-arco"> {{ par.attributes.title }}</p>
+                        </div>
+                        <ul class="list-arco">
+                            <div *ngIf="par.attributes.type == 'right-arco'">
+                                <li><strong> <span>{{ par.attributes.title }}</span></strong>
+                                    <span *ngFor="let des of par.attributes.description_rights_arcos.data">
+                                        {{ des.attributes.description }}
+                                    </span>
+                                </li>
+                            </div>
+                            <div *ngIf="par.attributes.type == 'procedure'">
+                                <li> <span>{{ par.attributes.title }} </span>
+                                    <span *ngFor="let des of par.attributes.description_rights_arcos.data">
+
+                                        <a class="link-arco" href="{{des.attributes.url}}" rel="noopener noreferrer"
+                                            target="_blank">{{des.attributes.description}}</a>
+                                    </span>
+                                </li>
+                            </div>
+                        </ul>
+
+                        <span *ngIf="par.attributes.type == 'content-down'" class=" flex">
+                            <p class="send-info-arco">
+                                <span>{{ par.attributes.title }} </span>
+                                <span *ngFor="let des of par.attributes.description_rights_arcos.data">
+
+                                    <a *ngIf="des.attributes.url" class="link-arco" href="{{des.attributes.url}}"
+                                        target="_blank">{{des.attributes.description}}</a>
+                                    <span *ngIf="!des.attributes.url"> {{des.attributes.description}}</span>
+                                </span>
+                            </p>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </ng-container>
