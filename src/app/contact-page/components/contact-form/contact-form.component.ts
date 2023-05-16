@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subject } from 'rxjs';
 import Swal from 'sweetalert2';
+import { IdataContactUs } from '../../models/contactUs.interface.model';
+import { ContactPageService } from '../../services/contact-page.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -9,10 +12,12 @@ import Swal from 'sweetalert2';
 })
 export class ContactFormComponent {
   formInfo!: FormGroup;
+  contactUS$!:Subject<IdataContactUs>;
 
-  constructor(private fb: FormBuilder) {
+
+  constructor(private fb: FormBuilder, private serv:ContactPageService) {
     this.createForm();
-
+    this.contactUS$=this.serv.contactUs$;
   }
 
   createForm() {
@@ -89,6 +94,7 @@ export class ContactFormComponent {
       timer: 1500
     })
   }
+
 
 
 }
