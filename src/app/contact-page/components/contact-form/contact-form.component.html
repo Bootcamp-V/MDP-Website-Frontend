@@ -1,26 +1,24 @@
+<ng-container *ngIf="contactUS$| async as c">
+
 <div class="section-information-services">
   <div class="container-information">
 
     <div class="contact-us">
       <div class="container-contact">
         <div class="contact-info">
-          <h1>Contáctenos</h1>
+          <h1>{{c.attributes.title}}</h1>
 
-          <p>Si tienes un desafío para nosotros o quieres formar parte de nuestro equipo y te sientes identificado con
-            nuestro trabajo, escríbenos, queremos saber de ti.</p>
-          <span class="information"><span>Dirección:</span> Calle Amador Merino Reyna N° 465 interior 1002, San Isidro
-            Lima - Perú.</span>
-          <span class="information"><span>Teléfonos:</span> (511) 412 0570</span>
-          <span class="information"><span>Email:</span> servicios@mdp.com.pe</span>
-          <span class="information"><span>Web:</span> www.mdp.com.pe</span>
+          <p *ngFor="let i of c.attributes.description_contact_uses.data">{{i.attributes.text}}</p>
+          <span class="information"><span>Dirección:</span> {{c.attributes.contact_informations.data[0].attributes.direccion}}</span>
+          <span class="information"><span>Teléfonos:</span> {{c.attributes.contact_informations.data[0].attributes.telefono}}</span>
+          <span class="information"><span>Email:</span> {{c.attributes.contact_informations.data[0].attributes.email}}</span>
+          <span class="information"><span>Web:</span> {{c.attributes.contact_informations.data[0].attributes.web}}</span>
 
         </div>
         <div class="social-network-footer">
-          <a><i class="fa-solid fa-car"></i></a>
-          <a><i class="fa-solid fa-car"></i></a>
-          <a><i class="fa-solid fa-car"></i></a>
-          <a><i class="fa-solid fa-car"></i></a>
-          <a><i class="fa-solid fa-car"></i></a>
+          <a target="_blank" *ngFor="let i of c.attributes.social_networks.data"
+          href="{{i.attributes.url}}" ><i class="fa-brands {{i.attributes.icon}}"></i></a>
+
         </div>
       </div>
 
@@ -126,3 +124,4 @@
     </div>
   </div>
 </div>
+</ng-container>

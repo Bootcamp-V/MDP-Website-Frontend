@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment'
 })
 export class ContactPageService {
 
-  contactUs$!:Subject<IdataContactUs>
+contactUs$!:Subject<IdataContactUs>
 
   constructor( private http:HttpClient) {
 

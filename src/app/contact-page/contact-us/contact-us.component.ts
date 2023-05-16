@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { map } from 'rxjs';
 import { IDataBP } from 'src/app/services-page/models/bannerPages.interface';
 import { BannerPagesService } from 'src/app/shared/banner-pages/banner-pages.service';
+import { IdataContactUs } from '../models/contactUs.interface.model';
+import { ContactPageService } from '../services/contact-page.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -11,9 +13,10 @@ import { BannerPagesService } from 'src/app/shared/banner-pages/banner-pages.ser
 export class ContactUsComponent {
   page: string = "Contact Us";
   banner!: IDataBP;
+  dataCU!:IdataContactUs;
 
 
-  constructor(private servicio:BannerPagesService) {
+  constructor(private servicio:BannerPagesService,private serv:ContactPageService) {
 
   }
 
@@ -21,6 +24,18 @@ export class ContactUsComponent {
   ngOnInit() {
 
     this.getBannerPage();
+    this.getContactUs();
+
+  }
+
+  getContactUs(){
+
+this.serv.getContactUs().subscribe(
+  (res)=>{
+    this.serv.contactUs$.next(res.data[0]);
+});
+
+
 
   }
 
