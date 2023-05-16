@@ -1,134 +1,128 @@
+<div class="section-information-services">
+  <div class="container-information">
 
-  <div class="section-information-services">
-    <div class="container-information">
-
-      <div class="contact-us">
-        <div class="container-contact">
+    <div class="contact-us">
+      <div class="container-contact">
         <div class="contact-info">
-        <h1>Contáctenos</h1>
+          <h1>Contáctenos</h1>
 
-        <p>Si tienes un desafío para nosotros o quieres formar parte de nuestro equipo y te sientes identificado con nuestro trabajo, escríbenos, queremos saber de ti.</p>
-       <span class="information"><span>Dirección:</span> Calle Amador Merino Reyna N° 465 interior 1002, San Isidro Lima - Perú.</span>
-       <span class="information"><span>Teléfonos:</span> (511) 412 0570</span>
-       <span class="information"><span>Email:</span> servicios@mdp.com.pe</span>
-       <span class="information"><span>Web:</span> www.mdp.com.pe</span>
+          <p>Si tienes un desafío para nosotros o quieres formar parte de nuestro equipo y te sientes identificado con
+            nuestro trabajo, escríbenos, queremos saber de ti.</p>
+          <span class="information"><span>Dirección:</span> Calle Amador Merino Reyna N° 465 interior 1002, San Isidro
+            Lima - Perú.</span>
+          <span class="information"><span>Teléfonos:</span> (511) 412 0570</span>
+          <span class="information"><span>Email:</span> servicios@mdp.com.pe</span>
+          <span class="information"><span>Web:</span> www.mdp.com.pe</span>
 
+        </div>
+        <div class="social-network-footer">
+          <a><i class="fa-solid fa-car"></i></a>
+          <a><i class="fa-solid fa-car"></i></a>
+          <a><i class="fa-solid fa-car"></i></a>
+          <a><i class="fa-solid fa-car"></i></a>
+          <a><i class="fa-solid fa-car"></i></a>
+        </div>
       </div>
-       <div class="social-network-footer">
-        <a><i class="fa-solid fa-car"></i></a>
-        <a><i class="fa-solid fa-car"></i></a>
-        <a><i class="fa-solid fa-car"></i></a>
-        <a><i class="fa-solid fa-car"></i></a>
-        <a><i class="fa-solid fa-car"></i></a>
-      </div>
-       </div>
 
-      </div>
+    </div>
 
-      <div class="form-info-services">
-        <h1 class="title-info-services">Formulario de Contacto</h1>
+    <div class="form-info-services">
+      <h1 class="title-info-services">Formulario de Contacto</h1>
 
-        <form [formGroup]="formInfo" (ngSubmit)="sendForm()">
-          <div class="row-1">
-            <div
-              class="input-1"
-              [ngClass]="{
+      <form [formGroup]="formInfo" (ngSubmit)="sendForm()">
+        <div class="row-1">
+          <div class="input-1" [ngClass]="{
                 'warning-form':
                   this.formInfo.get('nombre')?.invalid &&
                   this.formInfo.get('nombre')?.touched
-              }"
-            >
-              <label>Nombre</label>
-              <input type="text" formControlName="nombre" />
-            </div>
+              }">
+            <label>Nombre</label>
+            <input type="text" formControlName="nombre" />
+          </div>
 
-            <div
-              class="input-2"
-              [ngClass]="{
+          <div class="input-2" [ngClass]="{
                 'warning-form':
                   this.formInfo.get('email')?.invalid &&
                   this.formInfo.get('email')?.touched
-              }"
-            >
-              <label>Email</label>
-              <input type="email" formControlName="email" />
-            </div>
+              }">
+            <label>Email</label>
+            <input type="email" formControlName="email" />
           </div>
+        </div>
 
 
 
-          <div class="row-2">
-            <div
-              class="input-3"
-              [ngClass]="{
+        <div class="row-2">
+          <div class="input-3" [ngClass]="{
                 'warning-form':
                   this.formInfo.get('telefono')?.invalid &&
                   this.formInfo.get('telefono')?.touched
-              }"
-            >
-              <label>Telefono</label>
-              <input type="number" formControlName="telefono" />
-            </div>
+              }">
+            <label>Telefono</label>
+            <input type="number" formControlName="telefono" />
+          </div>
 
 
 
-            <div
-              class="input-4"
-              [ngClass]="{
+          <div class="input-4" [ngClass]="{
                 'warning-form':
                   this.formInfo.get('aunto')?.invalid &&
                   this.formInfo.get('asunto')?.touched
-              }"
-            >
-              <label>Asunto</label>
-              <select formControlName="asunto">
-                <option value="dog" [selected]="true">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="hamster">Hamster</option>
-                <option value="parrot">Parrot</option>
-                <option value="spider">Spider</option>
-                <option value="goldfish">Goldfish</option>
+              }">
+            <label>Asunto</label>
+            <select formControlName="asunto">
+              <option value="dog" [selected]="true">Dog</option>
+              <option value="cat">Cat</option>
+              <option value="hamster">Hamster</option>
+              <option value="parrot">Parrot</option>
+              <option value="spider">Spider</option>
+              <option value="goldfish">Goldfish</option>
             </select>
 
 
-            </div>
           </div>
+        </div>
 
 
-          <div
-            class="row-3"
-            [ngClass]="{
+        <div class="row-3" [ngClass]="{
               'warning-form':
                 this.formInfo.get('mensaje')?.invalid &&
                 this.formInfo.get('mensaje')?.touched
-            }"
-          >
-            <label>mensaje</label>
-            <textarea
-              name=""
-              id=""
-              cols="40"
-              rows="6"
-              formControlName="mensaje"
-            ></textarea>
-          </div>
-          <div class="row-4" >
+            }">
+          <label>mensaje</label>
+          <textarea name="" id="" cols="40" rows="6" formControlName="mensaje"></textarea>
+        </div>
+        <div class="row-4">
           <input type="checkbox" formControlName="privacidad">
-          <label >Acepto la <a href="http://www.mdp.com.pe/wp-content/uploads/2022/12/Política-de-Privacidad-de-Tratamiento-de-Datos-Personales.pdf"> política de privacidad</a></label>
+          <label>Acepto la <a
+              href="http://www.mdp.com.pe/wp-content/uploads/2022/12/Política-de-Privacidad-de-Tratamiento-de-Datos-Personales.pdf">
+              política de privacidad</a></label>
+        </div>
+        <button class="send-info">Enviar</button>
+      </form>
+      <br>
+
+      <div class="complaints-book">
+        <div>
+          <div class="linea"></div>
+          <div class="letras">
+            <p class="libro-reclamaciones">
+              Libro de Reclamaciones
+            </p>
+            <p class="parrafo">
+              Conforme a lo establecido en el Código de Protección y Defensa del Consumidor
+              ponemos a su disposición nuestro Libro de Reclamaciones virtual.
+            </p>
           </div>
-          <button class="send-info">Enviar</button>
-        </form>
-
-
-<div class="complaints-book">
-
-</div>
-
-
+        </div>
+        <div class="contenedor-boton" >
+          <button class="button">
+            <span >Libro de Reclamaciones</span>
+            <img  src="https://www.mdp.com.pe/wp-content/uploads/2017/05/icon_book.png" alt="Imagen">
+        </button>
+        </div>
       </div>
-
 
     </div>
   </div>
-
-
+</div>
