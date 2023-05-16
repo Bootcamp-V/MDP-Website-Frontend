@@ -1,0 +1,12 @@
+<ng-container *ngIf="sections$ | async as sec">
+    <div class="h-[100px] bg-[#000] absolute my-[300px]"></div>
+    <div *ngFor="let item of sec.data">
+        <div class="h-[100px] bg-red] absolute my-[500px]">
+            <div *ngIf="item.attributes.title !='content-up'">
+                {{item.attributes.title}}
+            </div>
+        </div>
+
+    </div>
+
+</ng-container>
