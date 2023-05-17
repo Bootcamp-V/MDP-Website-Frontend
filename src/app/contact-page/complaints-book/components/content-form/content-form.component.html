@@ -24,9 +24,9 @@
                         <div class="row-1">
                             <div class="row-2">
                                 <div class="input-3 arrow-up-down"
-                                    [ngClass]="{'warning': this.form.get('solicitud')?.invalid && this.form.get('solicitud')?.touched}">
+                                    [ngClass]="{'warning': this.form.get('tiposol')?.invalid && this.form.get('tiposol')?.touched}">
                                     <label>Tipo de solicitud</label>
-                                    <select size="1">
+                                    <select size="1"  formControlName="tiposol" >
                                         <option value="queja">Queja</option>
                                         <option value="reclamo">Reclamo</option>
                                     </select>
@@ -48,9 +48,9 @@
 
                             <div class="row-2">
                                 <div class="input-3 arrow-up-down"
-                                    [ngClass]="{'warning': this.form.get('tipo')?.invalid && this.form.get('tipo')?.touched}">
+                                    [ngClass]="{'warning': this.form.get('tipodoc')?.invalid && this.form.get('tipodoc')?.touched}">
                                     <label>Tipo de documento</label>
-                                    <select>
+                                    <select  formControlName="tipodoc" >
                                         <option value="dni">DNI</option>
                                         <option value="carnet">Carnet de Extranjería</option>
                                         <option value="ruc">RUC</option>
@@ -61,7 +61,7 @@
                             <div class="row-2">
                                 <div class="input-3"
                                     [ngClass]="{'warning': this.form.get('numerodoc')?.invalid && this.form.get('numerodoc')?.touched}">
-                                    <label>Numero de documentou</label>
+                                    <label>Número de documento</label>
                                     <input type="number" formControlName="numerodoc">
                                 </div>
 
@@ -116,7 +116,7 @@
                             <div class="row-2">
                                 <div class="input-1"
                                     [ngClass]="{'warning': this.form.get('direccion')?.invalid && this.form.get('direccion')?.touched}">
-                                    <label>Direccion</label>
+                                    <label>Dirección</label>
                                     <input type="text" formControlName="direccion">
                                 </div>
                             </div>
@@ -129,7 +129,7 @@
 
                         <div class="row-3"
                             [ngClass]="{'warning': this.form.get('mensaje')?.invalid && this.form.get('mensaje')?.touched}">
-                            <label>mensaje</label>
+                            <label>¿QUÉ NOS SOLICITA COMO PARTE DE LA QUEJA O RECLAMO?</label>
                             <textarea name="" id="" cols="40" rows="6" formControlName="mensaje"></textarea>
                         </div>
                         <button type="submit">Enviar</button>
