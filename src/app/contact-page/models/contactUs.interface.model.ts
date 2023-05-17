@@ -19,6 +19,22 @@ export interface IcontacUs {
     contact_informations: ContactInformations
     social_networks: SocialNetworks
     claims_books: ClaimsBooks
+    affair_contact_uses: AffairContactUses
+  }
+  export interface AffairContactUses {
+    data: DataACU[]
+  }
+
+  export interface DataACU {
+    id: number
+    attributes: AttributesACU
+  }
+
+  export interface AttributesACU {
+    text: string
+    createdAt: string
+    updatedAt: string
+    publishedAt: string
   }
 
   export interface DescriptionContactUses {

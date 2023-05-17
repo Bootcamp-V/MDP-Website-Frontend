@@ -18,6 +18,26 @@ export interface IAttributesFooter {
   updatedAt: string
   publishedAt: string
   social_networks: ISocialNetworksFooter
+  contact_informations: ContactInformations
+}
+
+export interface ContactInformations {
+  data: DataFooterCI[]
+}
+
+export interface DataFooterCI{
+  id: number
+  attributes: AttributesDFCI
+}
+
+export interface AttributesDFCI {
+  direccion: string
+  telefono: string
+  email: string
+  web: string
+  createdAt: string
+  updatedAt: string
+  publishedAt: string
 }
 
 export interface ISocialNetworksFooter {

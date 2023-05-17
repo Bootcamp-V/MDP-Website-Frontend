@@ -43,20 +43,20 @@ export class ContactFormComponent {
 
 
   sendForm() {
-    console.log(this.formInfo.value);
 
-   /* if (this.validarForm()) {
+   if (this.validarForm()) {
 
-      let objeto = {
+      let object = {
         "data": {
           "nombre": this.formInfo.get('nombre')?.value,
           "email": this.formInfo.get('email')?.value,
           "telefono": this.formInfo.get('telefono')?.value,
-          "empresa": this.formInfo.get('empresa')?.value,
+          "asunto": this.formInfo.get('asunto')?.value,
           "mensaje": this.formInfo.get('mensaje')?.value,
+          "policy": this.formInfo.get('privacidad')?.value,
         }
       }
-      this.serv.postContactServicesConsulting(objeto).subscribe({
+      this.serv.postContactUsForm(object).subscribe({
         next: (response) => {
           this.showAlertSuccess();
           this.formInfo.reset();
@@ -70,9 +70,8 @@ export class ContactFormComponent {
     } else {
       this.showAlertError('Datos Incorrectos!');
     }
-*/
-  }
 
+  }
 
   showAlertSuccess() {
     Swal.fire({

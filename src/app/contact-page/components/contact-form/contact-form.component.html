@@ -64,17 +64,14 @@
 
           <div class="input-4" [ngClass]="{
                 'warning-form':
-                  this.formInfo.get('aunto')?.invalid &&
+                  this.formInfo.get('asunto')?.invalid &&
                   this.formInfo.get('asunto')?.touched
               }">
             <label>Asunto</label>
             <select formControlName="asunto">
-              <option value="dog" [selected]="true">Dog</option>
-              <option value="cat">Cat</option>
-              <option value="hamster">Hamster</option>
-              <option value="parrot">Parrot</option>
-              <option value="spider">Spider</option>
-              <option value="goldfish">Goldfish</option>
+              <ng-container  *ngFor="let o of c.attributes.affair_contact_uses.data;let index = index" >
+              <option value="{{o.attributes.text}}">{{o.attributes.text}}</option>
+            </ng-container>
             </select>
 
 

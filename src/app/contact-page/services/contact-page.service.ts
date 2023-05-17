@@ -20,4 +20,16 @@ contactUs$!:Subject<IdataContactUs>
   getContactUs():Observable<IcontacUs>{
     return this.http.get<IcontacUs>( environment.baseUrl+'/api/contact-uses?populate=*')
   }
+
+
+
+
+
+  postContactUsForm( data:Object){
+    return this.http.post(environment.baseUrl+'/api/contact-us-forms',data,{responseType: 'text'});
+  }
+
+
+
+
 }
