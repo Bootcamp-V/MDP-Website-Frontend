@@ -15,6 +15,7 @@ export interface IcontacUs {
     createdAt: string
     updatedAt: string
     publishedAt: string
+    policyFormUrl:string
     description_contact_uses: DescriptionContactUses
     contact_informations: ContactInformations
     social_networks: SocialNetworks

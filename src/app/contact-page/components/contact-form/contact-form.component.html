@@ -89,8 +89,8 @@
         </div>
         <div class="row-4">
           <input type="checkbox" formControlName="privacidad">
-          <label>Acepto la <a
-              href="http://www.mdp.com.pe/wp-content/uploads/2022/12/Política-de-Privacidad-de-Tratamiento-de-Datos-Personales.pdf">
+          <label>Acepto la <a target="_blank"
+              href="{{c.attributes.policyFormUrl}}">
               política de privacidad</a></label>
         </div>
         <button class="send-info">Enviar</button>
@@ -102,17 +102,16 @@
 
           <div class="text-claimsBook">
             <p class="title-claimsBook">
-              Libro de Reclamaciones
+              {{c.attributes.claims_books.data[0].attributes.title}}
             </p>
             <p class="description-claimsBook">
-              Conforme a lo establecido en el Código de Protección y Defensa del Consumidor
-              ponemos a su disposición nuestro Libro de Reclamaciones virtual.
+              {{c.attributes.claims_books.data[0].attributes.description}}
             </p>
           </div>
 
          <a class="button-claimsBook">
-            <span >Libro de Reclamaciones Virtual</span>
-            <img  src="https://www.mdp.com.pe/wp-content/uploads/2017/05/icon_book.png" alt="Imagen">
+            <span >{{c.attributes.claims_books.data[0].attributes.textButton}}</span>
+            <img  src="{{c.attributes.claims_books.data[0].attributes.icon}}" alt="Imagen">
           </a>
 
 
