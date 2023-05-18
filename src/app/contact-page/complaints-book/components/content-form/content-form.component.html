@@ -17,8 +17,6 @@
         <div class="section-information-services">
             <div class="container-information">
                 <div class="form-info-services">
-                    <h1 class="title-info-services">Necesita más información, escríbanos</h1>
-
                     <form [formGroup]="form" (ngSubmit)="sendForm()">
 
                         <div class="row-1">
@@ -62,33 +60,60 @@
                                 <div class="input-3"
                                     [ngClass]="{'warning': this.form.get('numerodoc')?.invalid && this.form.get('numerodoc')?.touched}">
                                     <label>Número de documento</label>
-                                    <input type="number" formControlName="numerodoc">
+                                    <input type="number"  formControlName="numerodoc" >
                                 </div>
 
                             </div>
 
                         </div>
 
-
-                        <div class="row-1 only-input">
-                            <div class="row-2">
-                                <div class="input-1"
-                                    [ngClass]="{'warning': this.form.get('persona')?.invalid && this.form.get('persona')?.touched}">
-                                    <label>Nombre persona natural o juridica</label>
-                                    <input type="text" formControlName="persona">
-
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="row-1 only-input">
                             <div class="row-2">
                                 <div class="input-1"
                                     [ngClass]="{'warning': this.form.get('nombre')?.invalid && this.form.get('nombre')?.touched}">
-                                    <label>Nombre de la persona que coloca el reclamo / queja</label>
+                                    <label>Nombre persona natural o juridica</label>
                                     <input type="text" formControlName="nombre">
+
                                 </div>
                             </div>
+                        </div>
+
+                        
+
+                        <div class="row-1 only-input">
+                            <div class="row-2">
+                                <div class="input-1"
+                                    [ngClass]="{'warning': this.form.get('persona')?.invalid && this.form.get('persona')?.touched}">
+                                    <label>Nombre de la persona que coloca el reclamo / queja</label>
+                                    <input type="text" formControlName="persona">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-1">
+
+                            <div class="row-2">
+                                <div class="input-3 arrow-up-down"
+                                    [ngClass]="{'warning': this.form.get('tipodocpersona')?.invalid && this.form.get('tipodocpersona')?.touched}">
+                                    <label>Tipo de documento</label>
+                                    <select  formControlName="tipodocpersona" >
+                                        <option value="dni">DNI</option>
+                                        <option value="carnet">Carnet de Extranjería</option>
+                                        <option value="ruc">RUC</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row-2">
+                                <div class="input-3"
+                                    [ngClass]="{'warning': this.form.get('numerodocpersona')?.invalid && this.form.get('numerodocpersona')?.touched}">
+                                    <label>Número de documento</label>
+                                    <input type="number"  formControlName="numerodocpersona" >
+                                </div>
+
+                            </div>
+
                         </div>
 
 
@@ -104,7 +129,7 @@
                             </div>
 
                             <div class="row-2">
-                                <div class="input-2"
+                                <div class="input-1"
                                     [ngClass]="{'warning': this.form.get('email')?.invalid && this.form.get('email')?.touched}">
                                     <label>Email</label>
                                     <input type="email" formControlName="email">
@@ -122,7 +147,7 @@
                             </div>
                         </div>
                         <div class="row-3"
-                            [ngClass]="{'warning': this.form.get('des')?.invalid && this.form.get('des')?.touched}">
+                            [ngClass]="{'warning': this.form.get('descripcion')?.invalid && this.form.get('descripcion')?.touched}">
                             <label>Descripción</label>
                             <textarea name="" id="" cols="40" rows="4" formControlName="descripcion"></textarea>
                         </div>

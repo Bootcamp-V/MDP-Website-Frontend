@@ -32,6 +32,9 @@ export class ContentFormComponent {
       this.form.get('tiposol')?.valid &&
       this.form.get('tipodoc')?.valid &&
 
+      this.form.get('numerodocpersona')?.valid &&
+      this.form.get('tipodocpersona')?.valid &&
+
       this.form.get('mensaje')?.valid) {
       return true;
     }
@@ -40,7 +43,7 @@ export class ContentFormComponent {
 
   createForm() {
     this.form = this.fb.group({
-      numerodoc : ['', Validators.pattern('^[0-9]{8}$')],
+      numerodoc :  ['', Validators.pattern('^[0-9]{8}$')],
       persona: ['', [Validators.required, Validators.minLength(5)]],    
       nombre: ['', [Validators.required, Validators.minLength(5)]],
       telefono: ['', Validators.pattern('^[0-9]{9}$')],
@@ -48,12 +51,33 @@ export class ContentFormComponent {
       direccion: ['', [Validators.required, Validators.minLength(5)]],
       descripcion: ['', [Validators.required]],
       mensaje: ['', [Validators.required]],
-      fecha: ['', [Validators.required]],
+      fecha: ['', [Validators.required, this.fechaMaximaValidator]],
       
       tiposol: ['', [Validators.required]],
-      tipodoc: ['', [Validators.required]]
+      tipodoc: ['', [Validators.required]],
+
+      numerodocpersona:['', Validators.pattern('^[0-9]{8}$')],
+      tipodocpersona:  ['', [Validators.required]],
+      
+
+
+
+
     })
   }
+
+  fechaMaximaValidator(control: FormControl) {
+    const fechaIngresada = new Date(control.value);
+    const fechaHoy = new Date();
+  
+    if (control.value && fechaIngresada > fechaHoy) {
+      return { fechaInvalida: true };
+    }
+  
+    return null;
+  }
+
+  
 
   sendForm() {
     
@@ -73,7 +97,10 @@ export class ContentFormComponent {
           'fecha':this.form.get('fecha')?.value,
 
           'tiposol':this.form.get('tiposol')?.value,
-          'tipodoc':this.form.get('tipodoc')?.value
+          'tipodoc':this.form.get('tipodoc')?.value,
+
+          'numerodocpersona':this.form.get('tiposol')?.value,
+          'tipodocpersona':this.form.get('tipodoc')?.value
 
         }
       }
