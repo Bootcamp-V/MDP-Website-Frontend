@@ -1,21 +1,34 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ComplaintsBookModel } from '../../../models/complaints-book.model'
 import { ComplaintsBookService } from '../../services/complaints-book.service';
 import Swal from 'sweetalert2';
+import { IInfoComplaintsBook } from 'src/app/contact-page/models/info-complaints-book.interface';
+import { Observable } from 'rxjs';
+import { InfoComplaintsBookService } from '../../services/info-complaints-book.service';
 @Component({
   selector: 'app-content-form',
   templateUrl: './content-form.component.html',
   styleUrls: ['./content-form.component.scss']
 })
-export class ContentFormComponent {
+export class ContentFormComponent implements OnInit  {
+
+  infocomplain$!:Observable<IInfoComplaintsBook>
+
   
   @Input() lista!: ComplaintsBookModel;
   form!: FormGroup;
   
 
-  constructor(private fb: FormBuilder, private serv: ComplaintsBookService) {
+  constructor(private fb: FormBuilder, private serv: ComplaintsBookService, private servicepage: InfoComplaintsBookService) {
     this.createForm();
+  }
+
+
+  ngOnInit():void{
+
+    this.infocomplain$= this.servicepage.getInfoComplaintsBook();
+
   }
 
   validarForm() {
