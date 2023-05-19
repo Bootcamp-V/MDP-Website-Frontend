@@ -3,7 +3,6 @@
         <div *ngFor="let item of page.pos.data; let indice = index">
 
             <ng-container *ngIf="item.attributes.date">
-                <!-- Obtener el año y el mes de la fecha -->
                 <ng-container
                     *ngIf="indice === 0 || (item.attributes.date | date: 'yyyy-MM') !== (page.pos.data[indice - 1].attributes.date | date: 'yyyy-MM')">
                     <div class="year-container"
@@ -45,9 +44,7 @@
                 </div>
                 <!---------------------->
 
-
             </div>
-
 
 
             <div *ngIf="indice%2 !=0 ">

@@ -4,10 +4,8 @@
   background-color: #000124;
   max-width: 100%;
   align-items: center;
-  /* Centra los elementos verticalmente */
   margin-top: 20px;
   margin-bottom: 20px;
-
 
 }
 
@@ -49,11 +47,8 @@
 .post1 {
 
   width: 80%;
-  /* Ancho inicial del rectángulo */
   height: auto;
-  /* Toma la altura completa de la columna izquierda */
   background-color: white;
-  /* Color del rectángulo */
   padding: 20px;
   margin-left: auto;
   position: relative;
@@ -66,11 +61,8 @@
 .post {
 
   width: 80%;
-  /* Ancho inicial del rectángulo */
   height: auto;
-  /* Toma la altura completa de la columna izquierda */
   background-color: white;
-  /* Color del rectángulo */
   padding: 20px;
   position: relative;
   left: 20px;
@@ -84,7 +76,6 @@
   background-color: #000124;
   max-width: 100%;
   align-items: center;
-  /* Centra los elementos verticalmente */
   margin-top: 20px;
   margin-bottom: 20px;
 
@@ -95,23 +86,16 @@
 
 .left-column {
   background-color: transparent;
-  /* Color de fondo de la columna izquierda */
   flex: 1;
   padding: 20px;
   display: flex;
-
-
-
 
 }
 
 .rectangle {
   width: auto;
-  /* Ancho inicial del rectángulo */
   height: auto;
-  /* Toma la altura completa de la columna izquierda */
   background-color: rgb(255, 255, 255);
-  /* Color del rectángulo */
   border-radius: 5px;
   margin-left: auto;
   padding: 20px;
@@ -121,11 +105,8 @@
 
 .rectangle1 {
   width: auto;
-  /* Ancho inicial del rectángulo */
   height: auto;
-  /* Toma la altura completa de la columna izquierda */
   background-color: rgb(255, 255, 255);
-  /* Color del rectángulo */
   border-radius: 5px;
   margin-left: 0;
   padding: 20px;
@@ -157,21 +138,14 @@ h1 {
 }
 
 
-
-
-
-
 .post img {
   margin: 0 auto;
-  /* Centra la imagen horizontalmente */
 }
-
 
 
 
 .post1 img {
   margin: 0 auto;
-  /* Centra la imagen horizontalmente */
 }
 
 
@@ -201,15 +175,13 @@ p {
 
 @media (max-width: 768px) {
 
-  /* Estilos para pantallas más pequeñas */
+  .container1 {
 
-  .container1{
-       
-  .centered-icon {
-    display: none;
+    .centered-icon {
+      display: none;
+    }
   }
-  }
- 
+
 
   .container {
     flex-direction: column;
@@ -224,8 +196,8 @@ p {
       justify-content: center;
 
     }
-       
- 
+
+
   }
 
 
@@ -324,7 +296,6 @@ p {
 
 .centered-icon:hover {
   background-color: transparent;
-  /* Cambia el color a tu preferencia */
 }
 
 @media (max-width: 1714px) {
@@ -332,13 +303,10 @@ p {
   .triangulo,
   .triangulo1 {
     display: none;
-    /* Oculta el triángulo en pantallas con un ancho máximo de 600px */
   }
 
 
-
 }
-
 
 .year-container,
 .month-container {
