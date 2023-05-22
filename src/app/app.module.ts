@@ -56,6 +56,7 @@ import { ImageComplaintsBookComponent } from './contact-page/complaints-book/com
 import { ContactUsComponent } from './contact-page/contact-us/contact-us.component';
 import { ContactFormComponent } from './contact-page/components/contact-form/contact-form.component';
 
+import { RightsArcoComponent } from './contact-page/rights-arco/rights-arco.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -110,6 +111,7 @@ import { ContactFormComponent } from './contact-page/components/contact-form/con
     ImageComplaintsBookComponent,
     ContactUsComponent,
     ContactFormComponent,
+    RightsArcoComponent
   ],
   imports: [
     BrowserModule,
