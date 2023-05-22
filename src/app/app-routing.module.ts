@@ -21,6 +21,7 @@ import { PurposeVisionComponent } from './about-us-page/purpose-vision/purpose-v
 import { SectorsComponent } from './about-us-page/sectors/sectors.component';
 import { HistoryComponent } from './about-us-page/history/history.component';
 import { ComplaintsBookComponent } from './contact-page/complaints-book/complaints-book.component';
+import { ContactUsComponent } from './contact-page/contact-us/contact-us.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -62,7 +63,7 @@ const routes: Routes = [
   
   children: [
     {
-      path: '', component: ContactPageComponent ,
+      path: '', component: ContactUsComponent ,
     },
     { path: 'derechos-arco', component: HistoryComponent },
     { path: 'libro-de-reclamaciones', component: ComplaintsBookComponent },

@@ -37,13 +37,13 @@
           <ul class="list-contact">
             <li>
               Dirección:
-              <span>{{ f.data[0].attributes.direccion }}</span>
+              <span>{{ f.data[0].attributes.contact_informations.data[0].attributes.direccion }}</span>
             </li>
             <li>
-              Teléfonos: <span>{{ f.data[0].attributes.telefono }}</span>
+              Teléfonos: <span>{{f.data[0].attributes.contact_informations.data[0].attributes.telefono}}</span>
             </li>
             <li>
-              Email: <a href="mailto:{{f.data[0].attributes.email}}">{{f.data[0].attributes.email}}</a>
+              Email: <a href="mailto:{{f.data[0].attributes.contact_informations.data[0].attributes.email}}">{{f.data[0].attributes.contact_informations.data[0].attributes.email}}</a>
             </li>
           </ul>
         </div>

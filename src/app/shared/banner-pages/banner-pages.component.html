@@ -5,14 +5,20 @@
       class="banner_container"
       style="background-image:url({{banner.attributes.img.data[0].attributes.formats.large.url}})"
     ></div>
-    <div class="shadow"></div>
+  </div>
     <div class="develop">
       <div class="develop_text">
         <h3 *ngFor="let i of banner.attributes.title_banner_pages.data">{{i.attributes.title}}</h3>
         <p *ngFor="let lista of banner.attributes.description_banner_pages.data">{{lista.attributes.text}}</p>
+        <div class="text-banner">
+          <h3 *ngFor="let i of banner.attributes.title_banner_pages.data">{{i.attributes.title}}</h3>
+          <p *ngFor="let lista of banner.attributes.description_banner_pages.data">{{lista.attributes.text}}</p>
+        </div>
       </div>
+
     </div>
+  <div class="down-banner-container">
   </div>
-  <div class="down-banner-container"></div>
+
   </ng-container>
 

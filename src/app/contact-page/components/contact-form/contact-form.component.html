@@ -1,0 +1,123 @@
+<ng-container *ngIf="contactUS$| async as c">
+
+<div class="section-information-services">
+  <div class="container-information">
+
+    <div class="contact-us">
+      <div class="container-contact">
+        <div class="contact-info">
+          <h1>{{c.attributes.title}}</h1>
+
+          <p *ngFor="let i of c.attributes.description_contact_uses.data">{{i.attributes.text}}</p>
+          <span class="information"><span>Dirección:</span> {{c.attributes.contact_informations.data[0].attributes.direccion}}</span>
+          <span class="information"><span>Teléfonos:</span> {{c.attributes.contact_informations.data[0].attributes.telefono}}</span>
+          <span class="information"><span>Email:</span> {{c.attributes.contact_informations.data[0].attributes.email}}</span>
+          <span class="information"><span>Web:</span> {{c.attributes.contact_informations.data[0].attributes.web}}</span>
+
+        </div>
+        <div class="social-network-footer">
+          <a target="_blank" *ngFor="let i of c.attributes.social_networks.data"
+          href="{{i.attributes.url}}" ><i class="fa-brands {{i.attributes.icon}}"></i></a>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="form-info-services">
+      <h1 class="title-info-services">Formulario de Contacto</h1>
+
+      <form [formGroup]="formInfo" (ngSubmit)="sendForm()">
+        <div class="row-1">
+          <div class="input-1" [ngClass]="{
+                'warning-form':
+                  this.formInfo.get('nombre')?.invalid &&
+                  this.formInfo.get('nombre')?.touched
+              }">
+            <label>Nombre</label>
+            <input type="text" formControlName="nombre" />
+          </div>
+
+          <div class="input-2" [ngClass]="{
+                'warning-form':
+                  this.formInfo.get('email')?.invalid &&
+                  this.formInfo.get('email')?.touched
+              }">
+            <label>Email</label>
+            <input type="email" formControlName="email" />
+          </div>
+        </div>
+
+
+
+        <div class="row-2">
+          <div class="input-3" [ngClass]="{
+                'warning-form':
+                  this.formInfo.get('telefono')?.invalid &&
+                  this.formInfo.get('telefono')?.touched
+              }">
+            <label>Telefono</label>
+            <input type="number" formControlName="telefono" />
+          </div>
+
+
+
+          <div class="input-4" [ngClass]="{
+                'warning-form':
+                  this.formInfo.get('asunto')?.invalid &&
+                  this.formInfo.get('asunto')?.touched
+              }">
+            <label>Asunto</label>
+            <select formControlName="asunto">
+              <ng-container  *ngFor="let o of c.attributes.affair_contact_uses.data;let index = index" >
+              <option value="{{o.attributes.text}}">{{o.attributes.text}}</option>
+            </ng-container>
+            </select>
+
+
+          </div>
+        </div>
+
+
+        <div class="row-3" [ngClass]="{
+              'warning-form':
+                this.formInfo.get('mensaje')?.invalid &&
+                this.formInfo.get('mensaje')?.touched
+            }">
+          <label>mensaje</label>
+          <textarea name="" id="" cols="40" rows="6" formControlName="mensaje"></textarea>
+        </div>
+        <div class="row-4">
+          <input type="checkbox" formControlName="privacidad">
+          <label>Acepto la <a target="_blank"
+              href="{{c.attributes.policyFormUrl}}">
+              política de privacidad</a></label>
+        </div>
+        <button class="send-info">Enviar</button>
+      </form>
+      <br>
+
+      <div class="complaints-book">
+
+
+          <div class="text-claimsBook">
+            <p class="title-claimsBook">
+              {{c.attributes.claims_books.data[0].attributes.title}}
+            </p>
+            <p class="description-claimsBook">
+              {{c.attributes.claims_books.data[0].attributes.description}}
+            </p>
+          </div>
+
+         <a class="button-claimsBook">
+            <span >{{c.attributes.claims_books.data[0].attributes.textButton}}</span>
+            <img  src="{{c.attributes.claims_books.data[0].attributes.icon}}" alt="Imagen">
+          </a>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+</ng-container>

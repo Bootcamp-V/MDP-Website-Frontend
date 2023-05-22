@@ -53,6 +53,8 @@ import { PostComponent } from './about-us-page/history/components/post/post.comp
 import { ComplaintsBookComponent } from './contact-page/complaints-book/complaints-book.component';
 import { ContentFormComponent } from './contact-page/complaints-book/components/content-form/content-form.component';
 import { ImageComplaintsBookComponent } from './contact-page/complaints-book/components/image-complaints-book/image-complaints-book.component';
+import { ContactUsComponent } from './contact-page/contact-us/contact-us.component';
+import { ContactFormComponent } from './contact-page/components/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -106,6 +108,8 @@ import { ImageComplaintsBookComponent } from './contact-page/complaints-book/com
     ComplaintsBookComponent,
     ContentFormComponent,
     ImageComplaintsBookComponent,
+    ContactUsComponent,
+    ContactFormComponent,
   ],
   imports: [
     BrowserModule,
