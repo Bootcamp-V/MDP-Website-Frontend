@@ -1,77 +1,65 @@
-<div class="container">
-    <div class="left-column">
-        <div class="left-container"  *ngFor="let box of boxes">
-        <!-- contenido de la columna izquierda -->
-            <h2>{{ box.title }}</h2>
-            <p [innerHTML]="box.subtitle"></p>
-        </div>
-      </div>
-    <div class="right-column">
-        <!-- contenido de la columna derecha -->
-        
-        <div class="right-container" >
-            <!-- contenido de la columna izquierda -->
-              
-              <div class="wrapper">
-                <div class="tablero">
-                    <div class="linea-punteada"></div>
-                    <div class="linea-vertical" style="height: 8%; top: 50%; left:10%"></div>
-                    <div class="linea-vertical" style="height: 8%; top: 43%; left:30%;"></div>
-                    <div class="linea-vertical" style="height: 8%; top: 50%; left:50%;"></div>
-                    <div class="linea-vertical" style="height: 8%; top: 43%; left:70%;"></div>
-                    <div class="linea-vertical" style="height: 8%; top: 50%; left:90.5%;"></div>
+<ng-container *ngIf="{sup: subpage$ | async, offer:weOfb$ | async} as page">
+  <div *ngIf="page.sup && page.offer as pageSup ; else loading">
 
+    <div class="container">
+      <div class="left-column">
+        <!-- contenido de la columna izquierda -->
+        <h2>{{page.sup.data[0].attributes.tittle}}</h2>
+        <p>{{page.sup.data[0].attributes.description_about_pages.data[0].attributes.description}}</p>
+      </div>
+      <div class="right-column">
+        <!-- contenido de la columna derecha -->
+
+        <div class="list-figures">
+          <ng-container *ngFor="let i of page.offer.data;let index = index">
+            <div *ngIf="((index+1)%2!==0)" class="figure-element-impar">
+              <div class="icon-figure-impar">
+                <i class="fa-sharp fa-solid {{i.attributes.icon}}"></i>
+              </div>
+              <div class="line-figure"></div>
+              <div class="info-figure-impar">
+                <div class="points">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
                 </div>
-                <!-- PRIMERO -->
-                <div class="icono" >
-                    <i class="fa-solid fa-user" style="color: #ffffff; font-size: 50px;"></i>
+                <h3>{{i.attributes.number}}</h3>
+
+                <span>{{i.attributes.description}}</span>
+              </div>
+            </div>
+
+            <div *ngIf="((index+1)%2==0)" class="figure-element-par">
+              <div class="info-figure-par">
+
+                <div class="points">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
                 </div>
-                <!-- SEGUNDO -->    
-                <div>
-                    <h1>+100</h1>
-                    <h3>Clientes a nivel nacional</h3>
-                </div>
-                <!-- TERCERO -->
-                <div class="icono" >
-                    <i class="fa-solid fa-paper-plane" style="color: #ebeef5;font-size: 50px;"></i>
-                </div>
-                <!-- CUARTO -->
-                <div>
-                    <h1>3</h1>
-                    <h3>Reconocimientos</h3>
-                </div>
-                <!-- QUINTO -->
-                <div class="icono" >
-                    <i class="fa-sharp fa-solid fa-star" style="color: #ebeef5;font-size: 50px;"></i>
-                </div>
-                <!-- SEXTO -->
-                <div>
-                    <h1>+500</h1>
-                    <h3>Colaboradores</h3>
-                </div>
-                <!-- SEPTIMO -->
-                <div class="icono" >
-                    <i class="fa-sharp fa-solid fa-lock" style="color: #eaecf1;font-size: 50px;"></i>
-                </div>
-                <!-- OCTAVO -->
-                <div>
-                    <h1>+2,500</h1>
-                    <h3>Proyectos</h3>
-                </div>
-                <!-- NOVENO -->
-                <div class="icono" >
-                    <i class="fa-sharp fa-solid fa-chess-king" style="color: #e8eaee;font-size: 50px;"></i>
-                </div>
-                <!-- DECIMO -->
-                <div>
-                    <h1>2000</h1>
-                    <h3>Top Empresas Sunat</h3>
-                </div>
-              
+
+                <h3>{{i.attributes.number}}</h3>
+                <span>{{i.attributes.description}}</span>
+              </div>
+              <div class="line-figure"></div>
+              <div class="icon-figure-par">
+                <i class="fa-sharp fa-solid {{i.attributes.icon}}"></i>
+              </div>
+            </div>
+          </ng-container>
+
         </div>
-              
-        </div>
-        
-        
-        
-</div>  
+
+
+      </div>
+    </div>
+
+  </div>
+</ng-container>
+<ng-template #loading>
+  <div class="justify-center content-center text-[20px] w-[70%] mx-auto mt-[40px]">
+    <p>Loading.......</p>
+  </div>
+</ng-template>
