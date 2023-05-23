@@ -1,6 +1,5 @@
 @import "../../../../styles/abstracts/mixins";
 .container-offer {
- // border: solid 1px red;
   max-width: 80%;
   margin: auto;
   display: flex;
@@ -8,7 +7,6 @@
 
 
   .list-offer {
-   // border: solid 1px green;
     padding: 0 15px;
     max-width: 50%;
     .title-offer {
@@ -35,17 +33,20 @@
   .list-figures {
     display: flex;
     padding: 0 15px;
-
-    max-width: 50%;
-
+    width: 50%;
+    max-height: 277px;
 
     .figure-element-impar {
-      width: 30%;
-      padding-top: 18px;
+      flex:auto;
+      display: flex;
+      flex-direction: column;
+
 
       .icon-figure-impar {
-        padding-bottom: 35px;
+
         text-align: center;
+        height: 50%;
+        padding-top: 18px;
 
         i {
           font-size: 40px;
@@ -72,9 +73,8 @@
       }
 
       .info-figure-impar {
-        padding-top: 35px;
         position: relative;
-
+        height: 50%;
         .points {
 
 
@@ -97,10 +97,11 @@
         }
 
         h3 {
+          margin-top: 15%;
           display: block;
           font-family: "Oswald", Helvetica, sans-serif;
           font-size: 38px;
-          margin-bottom: 1px;
+          margin-bottom: 1%;
           text-align: center;
           color: #121212;
           font-weight: 300;
@@ -121,20 +122,19 @@
 
 
 .list-figures {
-  width: 50%;
-  .figure-element-par{
-    width: 40%;
 
+  .figure-element-par{
+    flex:auto;
+
+    display: flex;
+    flex-direction: column;
 
     .info-figure-par{
-      padding-bottom: 35px;
       position: relative;
+      height: 50%;
 
       .points {
-
-        //border: solid 1px red;
         position: absolute;
-
         bottom: 0;
         left: 50.5%;
 
@@ -150,6 +150,7 @@
        height: 1px;
        margin-bottom: 4px;
        background-color: #121212;
+
         }
       }
 
@@ -197,7 +198,7 @@
 
 .icon-figure-par{
   padding-top: 35px;
-
+  height: 50%;
   text-align: center;
 
 i{
@@ -220,22 +221,19 @@ i{
 
 
 
-@media screen and (max-width: 1470px) {
-
-
+@media screen and (max-width: 1000px) {
 
   .container-offer {
 
      .list-figures {
-       //border: solid 1px black;
        display: grid;
        grid-template-columns: repeat(2,1fr);
        padding: 0 15px;
        width: 100%;
-       max-width: 50%;
+
+
        .figure-element-impar {
-         width: 50%;
-        // border: solid 1px orangered;
+         width: 100%;
          padding-top: 0;
          margin: 0 auto;
          .icon-figure-impar {
@@ -270,6 +268,11 @@ i{
              }
            }
 
+           h3 {
+            margin-top: 0;
+
+          }
+
          }
        }
      }
@@ -278,7 +281,7 @@ i{
 
    .list-figures {
      .figure-element-par{
-       width: 50%;
+       width: 100%;
         display: flex;
         flex-direction: column;
         margin: 0 auto;
@@ -308,14 +311,13 @@ i{
    }
 
    .icon-figure-par{
-     padding-top: 0;
+     padding-top: 18px;
      grid-column-start: 1;
      grid-column-end: 2;
      grid-row-start: 1;
      grid-row-end: 2;
      text-align: center;
 
-     height: 58px;
 
    }
 
@@ -330,18 +332,18 @@ i{
 
 @include tablet{
   .container-offer {
-display: flex;
+    display: flex;
     flex-direction: column;
 
     .list-offer {
-      // border: solid 1px green;
        padding: 0 15px;
        width: 100%;
        max-width: 100%;
      }
 
     .list-figures {
-      //border: solid 1px black;
+      max-height: none;
+      height:auto;
       display: grid;
       grid-template-columns: repeat(1,1fr);
       padding: 0 15px;
@@ -349,7 +351,6 @@ display: flex;
       max-width: 100%;
       .figure-element-impar {
         width: 50%;
-       // border: solid 1px orangered;
         padding-top: 0;
         padding-bottom: 30px;
         margin: 0 auto;
@@ -430,8 +431,6 @@ display: flex;
     grid-row-start: 1;
     grid-row-end: 2;
     text-align: center;
-
-    height: 58px;
 
   }
 
