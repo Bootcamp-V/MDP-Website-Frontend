@@ -56,22 +56,28 @@ position: relative;
       color: white;
        z-index: 1;
 
-      h3 {
+      .text-banner-title {
         font-size: 23px;
         font-weight: 300;
         text-align: left;
         color: white;
         opacity: 1;
+        font-family: "Oswald", Helvetica, sans-serif;
       }
 
-      p {
+      .text-banner-description {
         font-size: 18px;
         font-weight: 300;
         opacity: 0.6;
         text-align: left;
+        color: white;
+        font-family: "Oswald", Helvetica, sans-serif;
       }
 
     }
+
+
+
 
 
   }

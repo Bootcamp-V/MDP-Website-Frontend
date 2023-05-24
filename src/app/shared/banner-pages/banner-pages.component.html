@@ -11,8 +11,8 @@
         <h3 *ngFor="let i of banner.attributes.title_banner_pages.data">{{i.attributes.title}}</h3>
         <p *ngFor="let lista of banner.attributes.description_banner_pages.data">{{lista.attributes.text}}</p>
         <div class="text-banner">
-          <h3 *ngFor="let i of banner.attributes.title_banner_pages.data">{{i.attributes.title}}</h3>
-          <p *ngFor="let lista of banner.attributes.description_banner_pages.data">{{lista.attributes.text}}</p>
+          <h3 class="text-banner-title" *ngFor="let i of banner.attributes.title_banner_pages.data">{{i.attributes.title}}</h3>
+          <p class="text-banner-description" *ngFor="let lista of banner.attributes.description_banner_pages.data">{{lista.attributes.text}}</p>
         </div>
       </div>
 

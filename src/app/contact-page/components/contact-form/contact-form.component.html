@@ -6,9 +6,9 @@
     <div class="contact-us">
       <div class="container-contact">
         <div class="contact-info">
-          <h1>{{c.attributes.title}}</h1>
+          <h1 class="contact-info-title">{{c.attributes.title}}</h1>
 
-          <p *ngFor="let i of c.attributes.description_contact_uses.data">{{i.attributes.text}}</p>
+          <p class="contact-info-description" *ngFor="let i of c.attributes.description_contact_uses.data">{{i.attributes.text}}</p>
           <span class="information"><span>Dirección:</span> {{c.attributes.contact_informations.data[0].attributes.direccion}}</span>
           <span class="information"><span>Teléfonos:</span> {{c.attributes.contact_informations.data[0].attributes.telefono}}</span>
           <span class="information"><span>Email:</span> {{c.attributes.contact_informations.data[0].attributes.email}}</span>
