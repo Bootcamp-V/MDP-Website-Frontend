@@ -4,8 +4,6 @@ import { IAboutSubPage } from 'src/app/about-us-page/models/about-sub-page.inter
 import { ITimeline } from 'src/app/about-us-page/models/timeline.interface';
 import { AboutSubPageService } from 'src/app/about-us-page/services/about-sub-page.service';
 import { TimelineService } from 'src/app/about-us-page/services/timeline.service';
-import { IWeOffer } from 'src/app/services-page/models/weOfferServices.model.interface';
-import { ServicesPageService } from 'src/app/services-page/services/services-page.service';
 
 @Component({
   selector: 'app-timeline',

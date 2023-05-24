@@ -3,7 +3,7 @@
     class="main_container_WeAreMDP"
   >
     <div class="container_info">
-      <p class="title_WeAre">{{ home.data[0].attributes.title }}</p>
+      <h1>{{ home.data[0].attributes.title }}</h1>
 
       <p>
         {{ home.data[0].attributes.first_description }}
@@ -15,17 +15,9 @@
     </div>
     <div class="container_video_WeAre">
       <div class="container-iframe">
-        <iframe
-          itemprop="video"
-          itemtype="https://schema.org/VideoObject"
-          class="youtube-player"
-          src="//player.vimeo.com/video/258827665?autoplay=0&amp;loop=1&amp;controls=1&amp;title=1&amp;byline=1&amp;portrait=1"
-          alt=""
-          title=""
-          width="425"
-          height="240"
-          allowFullScreen
-        ></iframe>
+        <iframe class="responsive-iframe" 
+        src="//player.vimeo.com/video/258827665?autoplay=0&amp;loop=1&amp;controls=1&amp;title=1&amp;byline=1&amp;portrait=1"
+        title="" ></iframe>
 
       </div>
     </div>
