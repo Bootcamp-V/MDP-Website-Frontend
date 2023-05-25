@@ -56,6 +56,7 @@ export class ContactFormComponent {
           "policy": this.formInfo.get('privacidad')?.value,
         }
       }
+      console.log(object);
       this.serv.postContactUsForm(object).subscribe({
         next: (response) => {
           this.showAlertSuccess();
@@ -95,5 +96,5 @@ export class ContactFormComponent {
   }
 
 
-  
+
 }
