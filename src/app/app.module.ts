@@ -57,6 +57,8 @@ import { ContactUsComponent } from './contact-page/contact-us/contact-us.compone
 import { ContactFormComponent } from './contact-page/components/contact-form/contact-form.component';
 
 import { RightsArcoComponent } from './contact-page/rights-arco/rights-arco.component';
+import { ListBlogsComponent } from './blog-page/components/list-blogs/list-blogs.component';
+import { DetailBlogComponent } from './blog-page/components/detail-blog/detail-blog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -111,7 +113,9 @@ import { RightsArcoComponent } from './contact-page/rights-arco/rights-arco.comp
     ImageComplaintsBookComponent,
     ContactUsComponent,
     ContactFormComponent,
-    RightsArcoComponent
+    RightsArcoComponent,
+    ListBlogsComponent,
+    DetailBlogComponent
   ],
   imports: [
     BrowserModule,

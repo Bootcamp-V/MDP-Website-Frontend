@@ -1,3 +1,4 @@
+import { DetailBlogComponent } from './blog-page/components/detail-blog/detail-blog.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -23,6 +24,7 @@ import { HistoryComponent } from './about-us-page/history/history.component';
 import { RightsArcoComponent } from './contact-page/rights-arco/rights-arco.component';
 import { ComplaintsBookComponent } from './contact-page/complaints-book/complaints-book.component';
 import { ContactUsComponent } from './contact-page/contact-us/contact-us.component';
+import { ListBlogsComponent } from './blog-page/components/list-blogs/list-blogs.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -59,9 +61,17 @@ const routes: Routes = [
   ]
   },
   { path: 'clientes', component: CustomersPageComponent },
-  { path: 'blog', component: BlogPageComponent },
+  { path: 'blog', component: BlogPageComponent,children:[
+    {
+      path: '',
+      component: ListBlogsComponent,
+    },
+  { path:':id',component:DetailBlogComponent}
+
+
+  ] },
   { path: 'contacto', component: ContactPageComponent,
-  
+
   children: [
     {
       path: '', component: ContactUsComponent ,
