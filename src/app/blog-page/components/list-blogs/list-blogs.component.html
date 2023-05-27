@@ -1,4 +1,20 @@
 
+<div class="header-arco  w-full bg-[#000124]">
+  <div class="menu-arco">
+      <ul class="list-menu-arco">
+          <li class="li-arco">
+              <a class="link-style" [routerLink]="['/']">inicio</a>
+          </li>
+
+          <li class="li-arco-two slash-arco">
+              <a class="link-style">nuestro blog</a>
+          </li>
+      </ul>
+  </div>
+</div>
+
+
+<br>
 <div class="container-blog">
   <div  *ngFor="let i of aray; let index=index" (click)="getIndex(index)" class="item-blog">
 {{index}}

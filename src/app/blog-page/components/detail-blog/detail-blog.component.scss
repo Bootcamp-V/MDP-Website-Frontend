@@ -1,0 +1,52 @@
+@import "../../../../styles/abstracts/mixins";
+
+
+
+.header-arco {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  .menu-arco {
+    padding-left: 15px;
+    padding-right: 15px;
+    height: fit-content;
+    width: 80%;
+    position: absolute;
+    top: 60%;
+
+    .list-menu-arco {
+      background-color: #000124;
+      padding: 5px;
+      margin: 0 0 10px;
+      list-style: none;
+      float: left;
+      .li-arco {
+        font-size: 11px;
+        float: left;
+        position: relative;
+        text-transform: uppercase;
+        color: hsla(0, 0%, 100%, 0.85);
+        .link-style {
+          font-size: 11px;
+          padding: 0;
+        }
+      }
+
+      .slash-arco:before {
+        content: "/";
+        display: inline-block;
+        margin: 0 7px;
+        color: hsla(0, 0%, 100%, 0.85);
+      }
+    }
+  }
+}
+
+
+
+
+@include mobile{
+  .header-arco {
+    height: 450px;
+  }
+}
