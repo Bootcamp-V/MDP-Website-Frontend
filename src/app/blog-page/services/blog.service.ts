@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IBlog } from '../model/blog.interface';
+import { DataBlog, IBlog } from '../model/blog.interface';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment'
 
@@ -9,10 +9,10 @@ import { environment } from 'src/environments/environment'
 })
 export class BlogService {
 
-  blogs$!:Subject<IBlog>
+  dataBlogs$!:Subject<DataBlog>
 
   constructor(private http: HttpClient) {
-    this.blogs$=new Subject();
+    this.dataBlogs$=new Subject();
   }
 
 
@@ -22,5 +22,5 @@ export class BlogService {
     return this.http.get<IBlog>(environment.baseUrl+'/api/blogs?populate=*')
   }
 
-  
+
 }

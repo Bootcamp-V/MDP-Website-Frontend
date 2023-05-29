@@ -1,4 +1,4 @@
-
+<ng-container *ngIf="data$| async as d">
 <div class="header-arco h-[300px] w-full bg-[#000124]">
   <div class="menu-arco">
       <ul class="list-menu-arco">
@@ -11,32 +11,28 @@
           </li>
 
           <li class="li-arco slash-arco">
-            <a class="link-style" >categoria</a>
+            <a class="link-style" >{{d.attributes.Category}}</a>
         </li>
 
-          <li class="li-arco slash-arco" style="color: #ffffff80">titulo</li>
+          <li class="li-arco slash-arco" style="color: #ffffff80">{{d.attributes.Title}}</li>
       </ul>
   </div>
 </div>
 
 
-<p>detail-blog works!</p>
-<p>{{id}}</p>
-
 <div class="Container-detailBlog">
 <div class="header-detailBlog">
-<span>VIERNES, 13 JULIO 2018 / PUBLICADO EN SIN CATEGORIZAR</span>
+<span>{{d.attributes.Date}} / PUBLICADO EN SIN {{d.attributes.Category}}</span>
 <div class="like"></div>
 </div>
 
 
-<h1 class="title-detail">Blockchain e IoT en el mercado de Seguros</h1>
+<h1 class="title-detail">{{d.attributes.Title}}</h1>
 <p class="descriptionImg-detail"></p>
 
 <div>
 <h2 class="Subtitle-description-detail"></h2>
 
-<p class="description-detail">Con más de 800 millones de dólares anuales en pérdidas por fraude en el mercado asegurador, no suena ilógico pensar que ésta industria vea en Blockchain una solución real y cercana; gracias a que los principios de la “cadena de bloques” eliminan toda clase de intermediación, eliminando con ella el foco u origen de dicho fraude.</p>
 </div>
 
 
@@ -46,3 +42,4 @@
 </div>
 
 
+</ng-container>

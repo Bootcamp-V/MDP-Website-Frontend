@@ -18,6 +18,7 @@ export interface AttributesBlog {
   createdAt: string
   updatedAt: string
   publishedAt: string
+  preview:string
   blog_component_descriptions: BlogComponentDescriptions
   blog_component_definitions: BlogComponentDefinitions
   blog_component_images: BlogComponentImages

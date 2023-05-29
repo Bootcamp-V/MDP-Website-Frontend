@@ -27,7 +27,6 @@ ngOnInit() {
 getblogs(){
   this.servicio.getBlogs().subscribe(
     (res)=>{
-      this.servicio.blogs$.next(res);
       this.blog$.next(res);
 
   });
