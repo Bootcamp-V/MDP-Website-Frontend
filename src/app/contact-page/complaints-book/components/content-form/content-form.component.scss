@@ -490,3 +490,36 @@ textarea {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.row-4 {
+
+
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: 12px;
+  display: flex;
+
+
+  input {
+    color: #535353;
+  }
+
+  label {
+    padding-left: 5px;
+
+    font-weight: bold;
+    color: #535353;
+    text-transform: none;
+    font-size: 12px;
+
+    a {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      text-transform: none;
+      font-size: 12px;
+
+      color: #0000ff;
+    }
+  }
+
+}

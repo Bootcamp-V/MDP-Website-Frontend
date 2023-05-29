@@ -71,6 +71,7 @@ export class ContentFormComponent implements OnInit  {
 
       numerodocpersona:['', Validators.pattern('^[0-9]{8}$')],
       tipodocpersona:  ['', [Validators.required]],
+      copy: [false],
       
 
 
@@ -113,7 +114,9 @@ export class ContentFormComponent implements OnInit  {
           'tipodoc':this.form.get('tipodoc')?.value,
 
           'numerodocpersona':this.form.get('tiposol')?.value,
-          'tipodocpersona':this.form.get('tipodoc')?.value
+          'tipodocpersona':this.form.get('tipodoc')?.value,
+
+          'copy':this.form.get('copy')?.value,
 
         }
       }

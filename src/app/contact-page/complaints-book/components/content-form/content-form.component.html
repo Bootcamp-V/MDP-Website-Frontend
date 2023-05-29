@@ -1,4 +1,4 @@
-<ng-container *ngIf="{infc: infocomplain$ | async} as page" >
+<ng-container *ngIf="{infc: infocomplain$ | async} as page">
     <div *ngIf="page.infc ; else loading">
 
         <div class="content-box-form">
@@ -24,7 +24,7 @@
                                         <div class="input-3 arrow-up-down"
                                             [ngClass]="{'warning': this.form.get('tiposol')?.invalid && this.form.get('tiposol')?.touched}">
                                             <label>Tipo de solicitud</label>
-                                            <select size="1"  formControlName="tiposol" >
+                                            <select size="1" formControlName="tiposol">
                                                 <option value="queja">Queja</option>
                                                 <option value="reclamo">Reclamo</option>
                                             </select>
@@ -48,7 +48,7 @@
                                         <div class="input-3 arrow-up-down"
                                             [ngClass]="{'warning': this.form.get('tipodoc')?.invalid && this.form.get('tipodoc')?.touched}">
                                             <label>Tipo de documento</label>
-                                            <select  formControlName="tipodoc" >
+                                            <select formControlName="tipodoc">
                                                 <option value="dni">DNI</option>
                                                 <option value="carnet">Carnet de Extranjería</option>
                                                 <option value="ruc">RUC</option>
@@ -60,7 +60,7 @@
                                         <div class="input-3"
                                             [ngClass]="{'warning': this.form.get('numerodoc')?.invalid && this.form.get('numerodoc')?.touched}">
                                             <label>Número de documento</label>
-                                            <input type="number"  formControlName="numerodoc" >
+                                            <input type="number" formControlName="numerodoc">
                                         </div>
 
                                     </div>
@@ -79,7 +79,7 @@
                                     </div>
                                 </div>
 
-                                
+
 
                                 <div class="row-1 only-input">
                                     <div class="row-2">
@@ -97,7 +97,7 @@
                                         <div class="input-3 arrow-up-down"
                                             [ngClass]="{'warning': this.form.get('tipodocpersona')?.invalid && this.form.get('tipodocpersona')?.touched}">
                                             <label>Tipo de documento</label>
-                                            <select  formControlName="tipodocpersona" >
+                                            <select formControlName="tipodocpersona">
                                                 <option value="dni">DNI</option>
                                                 <option value="carnet">Carnet de Extranjería</option>
                                                 <option value="ruc">RUC</option>
@@ -109,7 +109,7 @@
                                         <div class="input-3"
                                             [ngClass]="{'warning': this.form.get('numerodocpersona')?.invalid && this.form.get('numerodocpersona')?.touched}">
                                             <label>Número de documento</label>
-                                            <input type="number"  formControlName="numerodocpersona" >
+                                            <input type="number" formControlName="numerodocpersona">
                                         </div>
 
                                     </div>
@@ -157,7 +157,16 @@
                                     <label>¿QUÉ NOS SOLICITA COMO PARTE DE LA QUEJA O RECLAMO?</label>
                                     <textarea name="" id="" cols="40" rows="6" formControlName="mensaje"></textarea>
                                 </div>
-                                <button type="submit">Enviar</button>
+
+
+                                <div class="row-4">
+                                    <input type="checkbox" formControlName="copy">
+                                    <label>Send me a copy</label>
+                                </div>
+
+                                <button class="send-info">Enviar</button>
+
+
 
                             </form>
 
@@ -173,4 +182,3 @@
 <ng-template #loading>
     <p>loading.......</p>
 </ng-template>
-  
