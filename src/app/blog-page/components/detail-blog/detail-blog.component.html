@@ -1,4 +1,4 @@
-<ng-container *ngIf="data$| async as d">
+<ng-container *ngIf="data">
 <div class="header-arco h-[300px] w-full bg-[#000124]">
   <div class="menu-arco">
       <ul class="list-menu-arco">
@@ -11,10 +11,10 @@
           </li>
 
           <li class="li-arco slash-arco">
-            <a class="link-style" >{{d.attributes.Category}}</a>
+            <a class="link-style" (click)="getcategory()">{{data.attributes.Category}}</a>
         </li>
 
-          <li class="li-arco slash-arco" style="color: #ffffff80">{{d.attributes.Title}}</li>
+          <li class="li-arco slash-arco" style="color: #ffffff80">{{data.attributes.Title}}</li>
       </ul>
   </div>
 </div>
@@ -22,12 +22,12 @@
 
 <div class="Container-detailBlog">
 <div class="header-detailBlog">
-<span>{{d.attributes.Date}} / PUBLICADO EN SIN {{d.attributes.Category}}</span>
+<span>{{data.attributes.Date}} / PUBLICADO EN {{data.attributes.Category}}</span>
 <div class="like"></div>
 </div>
 
 
-<h1 class="title-detail">{{d.attributes.Title}}</h1>
+<h1 class="title-detail">{{data.attributes.Title}}</h1>
 <p class="descriptionImg-detail"></p>
 
 <div>

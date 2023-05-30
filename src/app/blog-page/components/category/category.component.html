@@ -1,4 +1,4 @@
-<ng-container *ngIf="blog$| async as b">
+<ng-container *ngIf="arrayblogDetail">
 <div class="header-arco  w-full bg-[#000124]">
   <div class="menu-arco">
       <ul class="list-menu-arco">
@@ -6,17 +6,20 @@
               <a class="link-style" [routerLink]="['/']">inicio</a>
           </li>
 
-          <li class="li-arco-two slash-arco">
-              <a class="link-style">nuestro blog</a>
+          <li class="li-arco-first slash-arco-first">
+              <a class="link-style-first">{{arrayblogDetail[0].attributes.Category}}</a>
           </li>
+
+          <li class="li-arco-two slash-arco">
+            <a class="link-style">archivo de categoria "{{arrayblogDetail[0].attributes.Category}}"</a>
+        </li>
       </ul>
   </div>
 </div>
 
 
-<br>
 <div class="container">
-  <div *ngFor="let i of b; let index=index" class="container_1" (click)="getIndex(index)">
+  <div *ngFor="let i of arrayblogDetail; let index=index" class="container_1" (click)="getIndex(index)">
       <div class="container_2">
        <img class="img" src="{{i.attributes.UrlImage}}" alt="{{i.attributes.Title}}">
        <a class="btn_more_1"></a>
@@ -35,7 +38,10 @@
   </div>
 
 
+
+
   </div>
+
 
 
 </ng-container>

@@ -9,14 +9,13 @@ import { environment } from 'src/environments/environment'
 })
 export class BlogService {
 
-  dataBlogs$!:Subject<DataBlog>
+
+  dataBlogsGeneral$!:Subject<DataBlog[]>
+  arrayblogs:DataBlog[]=[];
 
   constructor(private http: HttpClient) {
-    this.dataBlogs$=new Subject();
+    this.dataBlogsGeneral$=new Subject();
   }
-
-
-
 
   getBlogs():Observable<IBlog>{
     return this.http.get<IBlog>(environment.baseUrl+'/api/blogs?populate=*')

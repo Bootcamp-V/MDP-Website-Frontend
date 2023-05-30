@@ -59,6 +59,7 @@ import { ContactFormComponent } from './contact-page/components/contact-form/con
 import { RightsArcoComponent } from './contact-page/rights-arco/rights-arco.component';
 import { ListBlogsComponent } from './blog-page/components/list-blogs/list-blogs.component';
 import { DetailBlogComponent } from './blog-page/components/detail-blog/detail-blog.component';
+import { CategoryComponent } from './blog-page/components/category/category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -115,7 +116,8 @@ import { DetailBlogComponent } from './blog-page/components/detail-blog/detail-b
     ContactFormComponent,
     RightsArcoComponent,
     ListBlogsComponent,
-    DetailBlogComponent
+    DetailBlogComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

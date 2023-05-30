@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { BlogService } from '../../services/blog.service';
 import { DataBlog } from '../../model/blog.interface';
-import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-detail-blog',
@@ -12,10 +11,10 @@ import { Subject } from 'rxjs';
 export class DetailBlogComponent implements OnInit{
 
 id!:number;
-data$!:Subject<DataBlog>
+data!:DataBlog;
 
-constructor(private rutaActiva: ActivatedRoute,private servicio:BlogService){
-this.data$=servicio.dataBlogs$;
+constructor(private rutaActiva: ActivatedRoute,private servicio:BlogService,private router:Router){
+
 }
 
 ngOnInit() {
@@ -23,17 +22,26 @@ ngOnInit() {
   this.rutaActiva.params.subscribe(
     (params: Params) => {
       this.id=+params['id'];
+      this.data=this.servicio.arrayblogs[this.id];
     }
   );
+   if(!this.data){
+    this.servicio.getBlogs().subscribe(
+      res=>{
+        this.data=res.data[this.id];
+      }
+    );
+   }
+}
 
-  this.servicio.getBlogs().subscribe(
-    (res)=>{
-   this.servicio.dataBlogs$.next(res.data[this.id]);
 
-    }
 
-  );
+getcategory(){
+this.router.navigate(['blog/category/'+this.data.attributes.Category]);
+}
+
 
 }
 
-}
+
+
