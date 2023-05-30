@@ -81,22 +81,12 @@
   <!------------------------------------------------------------------------------------------------->
   <!------------------------------------BLOG LIST--------------------------------------------->
   <!------------------------------------------------------------------------------------------------->
-                  <p class="description_3">Esta semana se inició el ciclo de capacitaciones sobre Frameworx de TM Forum (eTOM, TAM y SID) para los nuevos integrantes del equipo “Telecom de MDP” (para nuestros clientes Entel y Claro) quienes estarán preparados para alinear sus actividades diarias en los modelos de referencia y estándar definidos por TM Forum y de esta manera como compañía podremos:</p>
-
-  <!------------------------------------------------------------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
-
-
-  <!------------------------------------------------------------------------------------------------->
-  <!---------------------------------BLOG LIST CHILD------------------------------------------------>
-  <!------------------------------------------------------------------------------------------------->
+  <ng-container >
+                  <p class="description_3"></p>
                   <ul>
                       <li>Acompañar a nuestros clientes en su viaje de transformación digital a través del despliegue de operaciones sobre el único Modelo de Madurez Digital acordado por la industria y creado por los mismos miembros del TM Forum.</li>
-                      <li>Acompañar a nuestros clientes en su viaje de transformación digital a través del despliegue de operaciones sobre el único Modelo de Madurez Digital acordado por la industria y creado por los mismos miembros del TM Forum.</li>
-                      <li>Acompañar a nuestros clientes en su viaje de transformación digital a través del despliegue de operaciones sobre el único Modelo de Madurez Digital acordado por la industria y creado por los mismos miembros del TM Forum.</li>
-
                   </ul>
+  </ng-container>
   <!------------------------------------------------------------------------------------------------->
   <!------------------------------------------------------------------------------------------------->
   <!------------------------------------------------------------------------------------------------->
@@ -106,8 +96,8 @@
   <!---------------------------------------BLOG LIST IMAGE--------------------------------------------->
   <!------------------------------------------------------------------------------------------------->
 
-                  <div class="container_img" *ngFor="let i of data.attributes.blog_component_images.data">
-                      <img class="img_list" src="{{i.attributes.UrlImage}}">
+                  <div class="container_img" *ngFor="let i of data.attributes.blog_component_list_images.data">
+                      <img class="img_list" src="{{ i.attributes.UrlImage }}">
                   </div>
               </div>
   <!------------------------------------------------------------------------------------------------->

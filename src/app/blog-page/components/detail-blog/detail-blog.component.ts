@@ -37,6 +37,8 @@ ngOnInit() {
 
 this.getlistDetailBlog();
 
+console.log(this.dataListDetail)
+
 }
 
 
