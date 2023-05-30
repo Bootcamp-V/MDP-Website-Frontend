@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { BlogService } from '../../services/blog.service';
 import { DataBlog } from '../../model/blog.interface';
+import { DataListPage} from '../../model/list.interface';
 
 @Component({
   selector: 'app-detail-blog',
@@ -12,6 +13,7 @@ export class DetailBlogComponent implements OnInit{
 
 id!:number;
 data!:DataBlog;
+dataListDetail!:DataListPage;
 
 constructor(private rutaActiva: ActivatedRoute,private servicio:BlogService,private router:Router){
 
@@ -32,8 +34,23 @@ ngOnInit() {
       }
     );
    }
+
+this.getlistDetailBlog();
+
 }
 
+
+getlistDetailBlog(){
+this.servicio.getListDetailBlog().subscribe(
+  (res)=>{
+    for(let i of res.data){
+      if(i.attributes.BlogName==this.data.attributes.Title){
+        this.dataListDetail=i;
+      }
+    }
+  }
+);
+}
 
 
 getcategory(){
