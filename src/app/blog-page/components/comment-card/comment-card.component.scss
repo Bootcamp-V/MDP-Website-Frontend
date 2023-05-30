@@ -1,0 +1,108 @@
+span,
+p {
+    font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+.card-container{
+    width: 100%;
+}
+.card {
+    max-width: 70%;
+    margin: 2em auto;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 1px 1px 2px 2px rgba(31, 31, 31, 0.384);
+}
+
+.card-header {
+    display: flex;
+    margin: 0.5em 0;
+    padding: 1.5em 2em 0 2em;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+.comment-author{
+    display: flex;
+    width: 90%;
+}
+
+.comment-author-img {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 0.4em;
+}
+
+.comment-info {
+    display: inline-block;
+    align-items: center;
+    margin-left: 1em;
+}
+
+.name {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.date {
+    color: rgb(165, 164, 164);
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.card-block {
+    display: flex;
+    margin: 0.2em 0;
+    padding: 0 2em ;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.card-block p {
+    font-size: 13px;
+    text-align: justify;
+}
+.favorite-btn{
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3px; 
+}
+.favorite-btn i{
+    font-size: 16px;
+    margin: 0 10px;
+}
+.favorite-btn span{
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-size: 14px;
+}
+.card-footer{
+    display: block;
+    margin: 0.2em 0;
+    padding: 0 2em  1.5em 2em ;
+    justify-content: flex-start;
+    align-items: center;
+}
+.response{
+    display: flex;
+    align-items: center;
+}
+.response i{
+    font-size: 16px;
+    margin-right: .5em;
+}
+.response span{
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-size: 13px;
+}
+.warning{
+    display: block;
+    margin-bottom: 1em;
+}
+.warning span{
+    font-size: 12px;
+    font-style: italic;
+    color: #000121;
+}

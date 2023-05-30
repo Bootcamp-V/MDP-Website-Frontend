@@ -1,0 +1,41 @@
+<div class="card-container">
+  <div class="card">
+
+    <div class="card-header">
+      <div class="comment-author">
+        <img src="https://secure.gravatar.com/avatar/44dd43d9a4958b7a555fb79cf9ea956d?s=50&d=mm&r=g" alt="person-logo"
+          class="comment-author-img" />
+
+        <div class="comment-info">
+          <div class="name">
+            <span>{{comment.name}}</span>
+          </div>
+          <div class="date">
+            <span>{{ comment.date | date:'fullDate'}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="favorite-btn">
+        <i [ngClass]="(favorited ? 'fa-solid fa-heart' : 'fa-regular fa-heart')" (click)="onToggleFavorite()"></i>
+        <span>{{ this.contador }}</span>
+      </div>
+    </div>
+
+    <div class="card-block">
+      <p>
+        {{ comment.mensaje }}
+      </p>
+    </div>
+
+    <div class="card-footer">
+      <div class="warning" *ngIf="comment.published">
+        <span>Tu comentario está en espera de ser moderado.</span>
+      </div>
+      <div class="response">
+        <i class="fa-regular fa-comment-dots"></i>
+        <span> Responder </span>
+      </div>
+    </div>
+  </div>
+</div>

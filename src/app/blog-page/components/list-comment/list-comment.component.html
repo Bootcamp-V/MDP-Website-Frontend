@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-xs-12 col-md-8 offset-md-2">
+
+    <app-comment-card *ngFor="let comment of comments" [comment]="comment">
+    </app-comment-card>
+
+
+    <div class="clear" style="height:30px"></div>
+
+    <div class="form-container">
+
+      <div class="comment-respond">
+        <h3 class="comment-reply-title">
+          ¡Dejanos un comentario!
+        </h3>
+      </div>
+
+      <div class="comment-respond">
+        <p class="comment-notes">
+          <span id="email-notes">
+            Tu dirección de correo electrónico no será publicada.
+          </span>
+          Los campos obligatorios están marcados con
+          <span class="required">*</span>
+        </p>
+      </div>
+
+      <form [formGroup]="formInfo" (ngSubmit)="sendForm()">
+
+        <div class="row-3" [ngClass]="{
+                'warning-form':
+                  this.formInfo.get('mensaje')?.invalid &&
+                  this.formInfo.get('mensaje')?.touched
+              }">
+
+          <textarea class="form-control" formControlName="mensaje" rows="4" placeholder="Escribe un comentario....">
+                </textarea>
+
+        </div>
+
+        <div class="row-1">
+          <div class="input-1" [ngClass]="{
+                        'warning-form':
+                          this.formInfo.get('name')?.invalid &&
+                          this.formInfo.get('name')?.touched
+                      }">
+            <input formControlName="name" type="text" placeholder="Nombre*" />
+          </div>
+
+          <div class="input-2" [ngClass]="{
+                        'warning-form':
+                          this.formInfo.get('email')?.invalid &&
+                          this.formInfo.get('email')?.touched
+                      }">
+            <input formControlName="email" type="email" placeholder="Email*" />
+          </div>
+        </div>
+        <div class="row-2">
+          <button class="send-info" type="submit" [disabled]="formInfo.invalid" (click)="addComment()">
+            <span>Publicar comentario</span>
+          </button>
+        </div>
+        <div class="row-4">
+          <div class="comment-consent">
+            <input name="wp-comment-cookies-consent"
+             type="checkbox" value="yes"
+              checked="checked" />
+            <p>
+              Guardar mi nombre, correo electrónico y web en este navegador para
+              la próxima vez que comente.</p>
+            </div>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+</div>
