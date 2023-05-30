@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-xs-10 col-md-8 offset-md-2">
+
+    <app-comment-card *ngFor="let comment of comments">
+    </app-comment-card>
+
+    <div class="form-container">
+
+      <form [formGroup]="formInfo" (ngSubmit)="sendForm()">
+
+        <div class="row-3" [ngClass]="{
+                'warning-form':
+                  this.formInfo.get('mensaje')?.invalid &&
+                  this.formInfo.get('mensaje')?.touched
+              }">
+
+          <textarea class="form-control" formControlName="mensaje" rows="4" placeholder="Escribe un comentario....">
+                </textarea>
+
+        </div>
+
+        <div class="row-1">
+          <div class="input-1" [ngClass]="{
+                        'warning-form':
+                          this.formInfo.get('name')?.invalid &&
+                          this.formInfo.get('name')?.touched
+                      }">
+            <input formControlName="name" type="text" placeholder="Nombre*" />
+          </div>
+
+          <div class="input-2" [ngClass]="{
+                        'warning-form':
+                          this.formInfo.get('email')?.invalid &&
+                          this.formInfo.get('email')?.touched
+                      }">
+            <input formControlName="email" type="email" placeholder="Email*" />
+          </div>
+        </div>
+        <div class="row-2">
+          <button class="send-info" type="submit" [disabled]="formInfo.invalid" (click)="addComment()">
+            <span>Publicar respuesta</span>
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+</div>
+
+
