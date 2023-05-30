@@ -81,10 +81,10 @@
   <!------------------------------------------------------------------------------------------------->
   <!------------------------------------BLOG LIST--------------------------------------------->
   <!------------------------------------------------------------------------------------------------->
-  <ng-container >
-                  <p class="description_3"></p>
+  <ng-container *ngFor="let i of dataListDetail">
+                  <p  class="description_3">{{i.attributes.Description}}</p>
                   <ul>
-                      <li>Acompañar a nuestros clientes en su viaje de transformación digital a través del despliegue de operaciones sobre el único Modelo de Madurez Digital acordado por la industria y creado por los mismos miembros del TM Forum.</li>
+                      <li *ngFor="let j of i.attributes.blog_component_list_children.data">{{j.attributes.Item}}</li>
                   </ul>
   </ng-container>
   <!------------------------------------------------------------------------------------------------->

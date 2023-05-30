@@ -13,7 +13,7 @@ export class DetailBlogComponent implements OnInit{
 
 id!:number;
 data!:DataBlog;
-dataListDetail!:DataListPage;
+dataListDetail:DataListPage[]=[];
 
 constructor(private rutaActiva: ActivatedRoute,private servicio:BlogService,private router:Router){
 
@@ -37,7 +37,7 @@ ngOnInit() {
 
 this.getlistDetailBlog();
 
-console.log(this.dataListDetail)
+
 
 }
 
@@ -47,11 +47,13 @@ this.servicio.getListDetailBlog().subscribe(
   (res)=>{
     for(let i of res.data){
       if(i.attributes.BlogName==this.data.attributes.Title){
-        this.dataListDetail=i;
+        this.dataListDetail.push(i);
+
       }
     }
   }
 );
+console.log(this.dataListDetail)
 }
 
 
