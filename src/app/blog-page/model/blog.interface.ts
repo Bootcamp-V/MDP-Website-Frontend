@@ -23,8 +23,24 @@ export interface AttributesBlog {
   blog_component_definitions: BlogComponentDefinitions
   blog_component_images: BlogComponentImages
   blog_component_lists: BlogComponentLists
+  blog_component_list_images: BlogComponentListsImages
+}
+export interface BlogComponentListsImages{
+  data: DataBlogListImages[]
 }
 
+export interface DataBlogListImages{
+  id: number
+  attributes: AttributesDataBlogListImages
+}
+
+export interface AttributesDataBlogListImages {
+  BlogName: string
+  UrlImage: string
+  createdAt: string
+  updatedAt: string
+  publishedAt: string
+}
 export interface BlogComponentDescriptions {
   data: DataBlogCDescription[]
 }

@@ -1,4 +1,4 @@
-<ng-container *ngIf="data">
+
 <div class="header-arco h-[300px] w-full bg-[#000124]">
   <div class="menu-arco">
       <ul class="list-menu-arco">
@@ -19,23 +19,98 @@
   </div>
 </div>
 
+<div class="container">
+  <!------------------------------------------------------------------------------------------------->
+  <!--------------------------------------BLOG-------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
+          <div class="container_1">
+              <div class="box_date">
+                  <p class="date">{{ data.attributes.Date }}/ PUBLICADO EN </p>
+                  <b>{{ data.attributes.Category}}</b>
+              </div>
+              <div class="box_likes">
+                  <i class="fa-solid fa-heart"></i>
+                  <p class="number">{{ data.attributes.Likes}}</p>
+              </div>
+          </div>
+          <div class="container_2">
+              <h1 class="title">{{ data.attributes.Title }}</h1>
+              <h1 class="subtitle">{{ data.attributes.SubTitle}}</h1>
+              <img src="{{ data.attributes.UrlImage }}">
+  <!------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
+              <div class="container_3">
+  <!------------------------------------------------------------------------------------------------->
+  <!---------------------------------BLOG DEFINITION---------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
+  <ng-container *ngFor=" let i of data.attributes.blog_component_definitions.data">
+                  <p class="definition">{{ i.attributes.Title}}</p>
+                  <p class="description">{{ i.attributes.Definition }}</p>
+                  <br>
+  </ng-container>
+  <!------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
 
-<div class="Container-detailBlog">
-<div class="header-detailBlog">
-<span>{{data.attributes.Date}} / PUBLICADO EN {{data.attributes.Category}}</span>
-<div class="like"></div>
-</div>
+
+  <!------------------------------------------------------------------------------------------------->
+  <!-----------------------------------BLOG DESCRIPTION------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
+  <ng-container *ngFor=" let i of data.attributes.blog_component_descriptions.data">
+                  <p class="subtitle_1">{{ i.attributes.SubTitle}}</p>
+                  <p class="description_1">{{ i.attributes.Description}}</p>
+  </ng-container>
+  <!------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
 
 
-<h1 class="title-detail">{{data.attributes.Title}}</h1>
-<p class="descriptionImg-detail"></p>
 
-<div>
-<h2 class="Subtitle-description-detail"></h2>
+  <!------------------------------------------------------------------------------------------------->
+  <!----------------------------------BLOG IMAGE------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
+  <ng-container *ngFor="let i of data.attributes.blog_component_images.data">
+                  <p class="subtitle_2">{{ i.attributes.SubTitle }}</p>
+                  <img src="{{ i.attributes.UrlImage }}">
+                  <p class="description_2">{{ i.attributes.Description }}</p>
+  </ng-container>
+  <!------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
 
-</div>
 
-</div>
+  <!------------------------------------------------------------------------------------------------->
+  <!------------------------------------BLOG LIST--------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
+                  <p class="description_3">Esta semana se inició el ciclo de capacitaciones sobre Frameworx de TM Forum (eTOM, TAM y SID) para los nuevos integrantes del equipo “Telecom de MDP” (para nuestros clientes Entel y Claro) quienes estarán preparados para alinear sus actividades diarias en los modelos de referencia y estándar definidos por TM Forum y de esta manera como compañía podremos:</p>
+
+  <!------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
 
 
-</ng-container>
+  <!------------------------------------------------------------------------------------------------->
+  <!---------------------------------BLOG LIST CHILD------------------------------------------------>
+  <!------------------------------------------------------------------------------------------------->
+                  <ul>
+                      <li>Acompañar a nuestros clientes en su viaje de transformación digital a través del despliegue de operaciones sobre el único Modelo de Madurez Digital acordado por la industria y creado por los mismos miembros del TM Forum.</li>
+                      <li>Acompañar a nuestros clientes en su viaje de transformación digital a través del despliegue de operaciones sobre el único Modelo de Madurez Digital acordado por la industria y creado por los mismos miembros del TM Forum.</li>
+                      <li>Acompañar a nuestros clientes en su viaje de transformación digital a través del despliegue de operaciones sobre el único Modelo de Madurez Digital acordado por la industria y creado por los mismos miembros del TM Forum.</li>
+
+                  </ul>
+  <!------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
+
+
+  <!------------------------------------------------------------------------------------------------->
+  <!---------------------------------------BLOG LIST IMAGE--------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
+
+                  <div class="container_img" *ngFor="let i of data.attributes.blog_component_images.data">
+                      <img class="img_list" src="{{i.attributes.UrlImage}}">
+                  </div>
+              </div>
+  <!------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------->
+    </div>
