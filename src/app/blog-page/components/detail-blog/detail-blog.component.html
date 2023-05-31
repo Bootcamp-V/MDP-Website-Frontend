@@ -35,8 +35,8 @@
           </div>
           <div class="container_2">
               <h1 class="title">{{ data.attributes.Title }}</h1>
-              <h1 class="subtitle">{{ data.attributes.SubTitle}}</h1>
-              <img src="{{ data.attributes.UrlImage }}">
+              <h1 class="subtitle">{{ data.attributes.SubTitle }}</h1>
+              <img class="principal-img" src="{{ data.attributes.UrlImage }}">
   <!------------------------------------------------------------------------------------------------->
   <!------------------------------------------------------------------------------------------------->
               <div class="container_3">
@@ -84,7 +84,7 @@
   <ng-container *ngFor="let i of dataListDetail">
                   <p  class="description_3">{{i.attributes.Description}}</p>
                   <ul>
-                      <li *ngFor="let j of i.attributes.blog_component_list_children.data">{{j.attributes.Item}}</li>
+                      <li class="list" *ngFor="let j of i.attributes.blog_component_list_children.data">{{j.attributes.Item}}</li>
                   </ul>
   </ng-container>
   <!------------------------------------------------------------------------------------------------->
@@ -103,4 +103,11 @@
   <!------------------------------------------------------------------------------------------------->
   <!------------------------------------------------------------------------------------------------->
   <!------------------------------------------------------------------------------------------------->
-    </div>
+
+<div class="share">
+  
+</div>
+
+</div>
+
+

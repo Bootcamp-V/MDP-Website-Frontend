@@ -1,7 +1,5 @@
 @import "../../../../styles/abstracts/mixins";
 
-
-
 .header-arco {
   position: relative;
   display: flex;
@@ -48,6 +46,7 @@
 
 
 .container{
+  margin-top: 100px;
 }
 .container_1{
     width: 60%;
@@ -60,12 +59,13 @@ p{
 }
 
 b{
-    font-size: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
 }
 .date{
     display: inline;
-    font-size: 10px;
+    font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
     color: #9a9a9a;
 }
@@ -74,21 +74,23 @@ b{
     font-size: 10px;
 }
 .title{
-    font-size:"Oswald", sans-serif;
-    font-weight: 100;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  margin: 15px 0;
 }
 .subtitle{
     font-size:"Oswald", sans-serif;
-    font-weight: 100;
+    font-weight: 200;
     color: #535353;
 }
 .container_2{
     width: 60%;
-    margin: auto;
+    margin: 50px auto;
 }
-img{
-    width: 450px;
-    height: 500px;
+.principal-img{
+    width: 400px;
+    height: 300px;
 }
 .definition{
     color: #535353;
@@ -99,11 +101,20 @@ img{
 .description{
     font-size: 20px;
     display: inline;
+    color: #535353;
+}
+
+.description_1{
+  margin-top: 10px;
+  color: #535353;
+  font-size: 20px;
 }
 
 .description_3{
     font-size: 20px;
     display: inline;
+    margin-top: 10px;
+    color: #535353;
 }
 
 .container_img{
@@ -113,7 +124,7 @@ img{
 }
 
 .img_list{
-    width: 270px;
+    width: 250px;
     height: 250px;
     margin-bottom: 5px;
 }
@@ -131,6 +142,15 @@ img{
 .description_2{
     font-size: 20px;
     display: block;
+    color: #535353;
+}
+
+.list{
+  margin: auto;
+  width: 80%;
+  color: #535353;
+  list-style: circle;
+  font-size: 20px;
 }
 
 

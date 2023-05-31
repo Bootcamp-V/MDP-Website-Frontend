@@ -18,18 +18,14 @@
 <div class="container">
   <div *ngFor="let i of b; let index=index" class="container_1" (click)="getIndex(index)">
       <div class="container_2">
-       <img class="img" src="{{i.attributes.UrlImage}}" alt="{{i.attributes.Title}}">
-       <a class="btn_more_1"></a>
+        <img class="img" src="{{i.attributes.UrlImage}}" alt="{{i.attributes.Title}}">
+        <a class="btn_more_1"></a>
       </div>
       <br>
       <div class="container_3">
           <h4 class="title">{{i.attributes.Title}}</h4>
-          <br>
           <p class="date">{{i.attributes.Date}} POR MDP</p>
-          <br>
           <p class="text">{{i.attributes.preview}}...</p>
-          <br>
-          <br>
           <p>PUBLICADO EN {{i.attributes.Category|uppercase}}</p>
       </div>
   </div>
