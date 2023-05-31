@@ -1,5 +1,6 @@
 import { Component,  Input } from '@angular/core';
 import { Comment } from '../../models/comment.interface.model'
+import { ComponentRef, ViewChild, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 @Component({
   selector: 'app-comment-card',
   templateUrl: './comment-card.component.html',
@@ -35,4 +36,6 @@ export class CommentCardComponent {
       this.contador--;
     }
   }
+
+
 }

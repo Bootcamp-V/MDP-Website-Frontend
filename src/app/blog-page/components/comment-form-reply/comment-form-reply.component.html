@@ -1,3 +1,4 @@
+
 <div [@fadeInOut] class="row">
   <div class="col-xs-12 col-md-8 offset-md-2">
 
@@ -12,6 +13,7 @@
           <span class="required">*</span>
         </p>
       </div>
+
 
       <form [formGroup]="formInfo" (ngSubmit)="sendForm()">
 
@@ -44,8 +46,10 @@
           </div>
         </div>
 
+
         <div class="row-2">
           <button class="send-info" type="submit" [disabled]="formInfo.invalid">
+
             <span>Publicar respuesta</span>
           </button>
         </div>
@@ -56,3 +60,5 @@
 
   </div>
 </div>
+
+

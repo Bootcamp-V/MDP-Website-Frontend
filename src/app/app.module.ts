@@ -61,6 +61,7 @@ import { ListBlogsComponent } from './blog-page/components/list-blogs/list-blogs
 import { DetailBlogComponent } from './blog-page/components/detail-blog/detail-blog.component';
 import { ListCommentComponent } from './blog-page/components/list-comment/list-comment.component';
 import { CommentCardComponent } from './blog-page/components/comment-card/comment-card.component';
+import { CommentFormReplyComponent } from './blog-page/components/comment-form-reply/comment-form-reply.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -119,7 +120,8 @@ import { CommentCardComponent } from './blog-page/components/comment-card/commen
     ListBlogsComponent,
     DetailBlogComponent,
     ListCommentComponent,
-    CommentCardComponent
+    CommentCardComponent,
+    CommentFormReplyComponent
   ],
   imports: [
     BrowserModule,
