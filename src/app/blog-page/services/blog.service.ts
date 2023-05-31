@@ -25,6 +25,8 @@ export class BlogService {
   getListDetailBlog():Observable<IListDetailPage>{
     return this.http.get<IListDetailPage>(environment.baseUrl+'/api/blog-component-lists?populate=*')
   }
-
+  updateLikesBlog(data:Object,id:number):Observable<IBlog>{
+    return this.http.put<IBlog>(environment.baseUrl+'/api/blogs/'+id,data)
+  }
 
 }

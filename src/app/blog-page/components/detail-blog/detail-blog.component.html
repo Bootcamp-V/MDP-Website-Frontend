@@ -29,7 +29,7 @@
                   <b>{{ data.attributes.Category}}</b>
               </div>
               <div class="box_likes">
-                  <i class="fa-solid fa-heart"></i>
+                  <i [ngClass]="{'heardActive': heartButton==true}" class="fa-solid fa-heart" (click)="PostLike()"></i>
                   <p class="number">{{ data.attributes.Likes}}</p>
               </div>
           </div>
