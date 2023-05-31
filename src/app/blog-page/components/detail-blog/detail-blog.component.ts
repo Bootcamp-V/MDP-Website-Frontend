@@ -14,6 +14,8 @@ export class DetailBlogComponent implements OnInit{
 id!:number;
 data!:DataBlog;
 dataListDetail:DataListPage[]=[];
+heartButton:boolean=false;
+
 
 constructor(private rutaActiva: ActivatedRoute,private servicio:BlogService,private router:Router){
 
@@ -25,6 +27,7 @@ ngOnInit() {
     (params: Params) => {
       this.id=+params['id'];
       this.data=this.servicio.arrayblogs[this.id];
+
     }
   );
    if(!this.data){
@@ -60,6 +63,39 @@ console.log(this.dataListDetail)
 getcategory(){
 this.router.navigate(['blog/category/'+this.data.attributes.Category]);
 }
+
+PostLike(){
+  if(!this.heartButton){
+
+
+    let objeto = {
+      "data": {
+        "Likes": this.data.attributes.Likes+1
+      }
+
+
+    }
+
+    this.heartButton=true;
+
+    try {
+      this.servicio.updateLikesBlog(objeto,this.data.id).subscribe(
+        (res)=>{
+        console.log(res);
+        this.data.attributes.Likes=this.data.attributes.Likes+1;
+        }
+      );
+
+
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
+
+}
+
+
 
 
 }

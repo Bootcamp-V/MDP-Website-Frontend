@@ -36,7 +36,6 @@ constructor(private router:Router,private rutaActiva:ActivatedRoute,private serv
   getblogs(){
     this.servicio.getBlogs().subscribe(
       (res)=>{
-        console.log(res);
         for(let i of res.data){
           if(i.attributes.Category==this.categoryName){
             this.arrayblogDetail.push(i);
