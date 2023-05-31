@@ -6,7 +6,13 @@ import { Comment } from '../../models/comment.interface.model'
   styleUrls: ['./comment-card.component.scss']
 })
 export class CommentCardComponent {
-  
+
+  mostrarComponente = false;
+
+  showCommentReply() {
+    this.mostrarComponente = !this.mostrarComponente;
+  }
+
   @Input()
   comment!: Comment;
 
@@ -23,9 +29,9 @@ export class CommentCardComponent {
     if (this.favorited) {
 
       this.contador++;
-    } 
+    }
     else {
-      
+
       this.contador--;
     }
   }
