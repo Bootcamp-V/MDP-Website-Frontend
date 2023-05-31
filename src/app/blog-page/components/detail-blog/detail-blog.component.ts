@@ -15,7 +15,7 @@ id!:number;
 data!:DataBlog;
 dataListDetail:DataListPage[]=[];
 heartButton:boolean=false;
-numLikes!:number;
+
 
 constructor(private rutaActiva: ActivatedRoute,private servicio:BlogService,private router:Router){
 
@@ -27,7 +27,7 @@ ngOnInit() {
     (params: Params) => {
       this.id=+params['id'];
       this.data=this.servicio.arrayblogs[this.id];
-      this.numLikes=this.data.attributes.Likes;
+
     }
   );
    if(!this.data){
