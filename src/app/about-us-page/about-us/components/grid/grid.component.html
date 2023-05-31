@@ -1,7 +1,7 @@
 <ng-container *ngIf="{car: cards$ | async} as page" >
   <div class="container" *ngIf="page.car ; else loading">
     <div class="grid-container" *ngFor="let item of page.car.data; let indice = index">
-        <div class="grid-item" *ngIf="indice>2" >
+        <div class="grid-item" *ngIf="indice>2"  [routerLink]="[item.attributes.path]">
           <h2 >
               {{item.attributes.tittle_cards_about}}
           </h2>

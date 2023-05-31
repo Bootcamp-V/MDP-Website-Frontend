@@ -1,0 +1,20 @@
+.supraSlider {
+    background-image: url(https://res.cloudinary.com/dg80o93to/image/upload/v1684299972/00_libro_Reclamaciones_7c48cf2742.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    bottom: 27%;
+    overflow: hidden;
+}
+   
+@media screen and (max-width: 768px) {
+    .supraSlider {
+     position: relative;
+     top: 178px;
+     margin-bottom: 300px;
+     height: 70vh;
+    }
+}

@@ -1,5 +1,10 @@
 .grid-container{
   height: auto;
+  background-color: transparent;
+  place-items: center;
+  display: grid;
+
+  
   }
   .grid-item {
     margin-bottom: 20px;
@@ -10,6 +15,8 @@
     width: 25vw;
     height: 10vw;
     margin-left: 2vw;
+    justify-self: center; 
+    align-self: center;
     transition: all 0.3s ease-in-out;
     overflow: hidden ;
 
@@ -94,6 +101,7 @@
         justify-content: center;
         position: relative;
         bottom: 0;
+        background-color: transparent;
       }
     
       @media (max-width: 1600px) {
@@ -108,7 +116,6 @@
 
         .container{
           justify-content: center;
-          background-color: rgb(255, 255, 255);
         }
         
        
@@ -140,9 +147,6 @@
 
         .container{
           justify-content: center;
-          background-color: rgb(255, 255, 255);
-          display: block;
-          left: 20%;
         }
         
        

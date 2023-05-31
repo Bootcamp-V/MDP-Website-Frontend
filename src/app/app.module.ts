@@ -50,7 +50,13 @@ import { OurValuesComponent } from './about-us-page/purpose-vision/components/ou
 import { SectorsComponent } from './about-us-page/sectors/sectors.component';
 import { HistoryComponent } from './about-us-page/history/history.component';
 import { PostComponent } from './about-us-page/history/components/post/post.component';
+import { ComplaintsBookComponent } from './contact-page/complaints-book/complaints-book.component';
+import { ContentFormComponent } from './contact-page/complaints-book/components/content-form/content-form.component';
+import { ImageComplaintsBookComponent } from './contact-page/complaints-book/components/image-complaints-book/image-complaints-book.component';
+import { ContactUsComponent } from './contact-page/contact-us/contact-us.component';
+import { ContactFormComponent } from './contact-page/components/contact-form/contact-form.component';
 
+import { RightsArcoComponent } from './contact-page/rights-arco/rights-arco.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,6 +106,12 @@ import { PostComponent } from './about-us-page/history/components/post/post.comp
     SectorsComponent,
     HistoryComponent,
     PostComponent,
+    ComplaintsBookComponent,
+    ContentFormComponent,
+    ImageComplaintsBookComponent,
+    ContactUsComponent,
+    ContactFormComponent,
+    RightsArcoComponent
   ],
   imports: [
     BrowserModule,

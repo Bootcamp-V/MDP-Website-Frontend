@@ -1,0 +1,702 @@
+@import "../../../../styles/abstracts/variables";
+@import "../../../../styles/abstracts/mixins";
+
+
+
+label{
+  color: #969696;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 10px;
+  display: block;
+  font-weight:bold;
+  width: auto;
+ }
+
+
+ input[type=number]::-webkit-inner-spin-button,
+ input[type=number]::-webkit-outer-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+ }
+
+
+ input,textarea,select{
+padding: 0;
+margin: 0;
+border:none;
+outline: 0;
+color: #555;
+font-size: 13px;
+font-family: "Open Sans", Helvetica, sans-serif;
+width: auto;
+ }
+
+
+
+
+.section-information-services{
+  width: 100%;
+  padding: 35px 0;
+  color:#535353;
+.container-information{
+
+  max-width: 80%;
+  margin: auto;
+display: flex;
+
+  .form-info-services{
+    width: 68%;
+
+    .title-info-services{
+      margin-bottom: 45px;
+      margin-top: 30px;
+      padding: 0 15px;
+      font-size: 24px;
+      font-family: "Oswald", Helvetica, sans-serif;
+      font-weight: 300;
+      text-align: left;
+            }
+
+    form{
+      padding: 10px 15px 0 15px;
+
+
+      .input-1,.input-2,.input-3,.input-4, .row-3{
+        box-shadow: 1px 3px 0px 0px rgba(0,0,0,0.11) inset;
+        -webkit-box-shadow: 1px 3px 0px 0px rgba(0,0,0,0.11) inset;
+        -moz-box-shadow: 1px 3px 0px 0px rgba(0,0,0,0.11) inset;
+        border: 1px solid #D9D9D9;
+      }
+
+
+      .row-1{
+
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        width: 100%;
+        .warning-form{
+          border: solid 1px red;
+        }
+
+        .input-1{
+          display: flex;
+          flex-direction: column;
+          background-color: $background-white-color;
+          margin-right:15px;
+          padding: 7px 10px;
+          border-radius: 4px;
+overflow: hidden;
+        label{
+          padding-bottom: 5px;
+        }
+        }
+
+        .input-2{
+
+           display: flex;
+          flex-direction: column;
+          margin-left:15px;
+          background-color: $background-white-color;
+          padding: 7px 10px;
+          border-radius: 4px;
+          overflow: hidden;
+          label{
+            padding-bottom: 5px;
+          }
+        }
+
+
+      }
+
+      .row-2{
+        margin-top: 15px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+
+        .warning-form{
+          border: solid 1px red;
+        }
+        .input-3{
+          display: flex;
+          flex-direction: column;
+          margin-right:15px;
+          background-color: $background-white-color;
+          padding: 7px 10px;
+          border-radius: 4px;
+          overflow: hidden;
+          label{
+            padding-bottom: 5px;
+          }
+        }
+
+        .input-4{
+          display: flex;
+          flex-direction: column;
+          align-items: last baseline;
+          margin-left:15px;
+          background-color: $background-white-color;
+
+          border-radius: 4px;
+          overflow: hidden;
+
+          label{
+            padding-bottom: 5px;
+            padding-left: 7px;
+            padding-top: 7px;
+          }
+
+          select{
+            height: 100%;
+            white-space: pre;
+            -webkit-rtl-ordering: logical;
+            appearance: none;
+            font-family: "Open Sans", Helvetica, sans-serif;
+            font-size: 13px;
+            background-image: url('https://www.mdp.com.pe/wp-content/themes/kallyas/images/select-arrow.svg');
+           width: 99.8%;
+           padding-left: 10px;
+          background-repeat: no-repeat;
+          background-size: 6px 12px;
+          background-position: calc(100% - 10px) 50%;
+          background-position-y: center;
+          background-position-x: calc(100% - 10px);
+          margin: auto;
+           }
+
+
+        }
+
+
+
+
+
+      }
+
+
+        .row-3{
+
+          display: grid;
+          grid-template-columns: repeat(1,1fr);
+          background-color:$background-white-color ;
+          margin: 15px 0 15px 0;
+          border-radius: 4px;
+          padding: 7px 10px;
+          label{
+            padding-bottom: 5px;
+          }
+
+        }
+
+        .row-4{
+
+
+          font-family: "Open Sans", Helvetica, sans-serif;
+          font-size: 12px;
+          display: flex;
+
+
+         input{
+          color:#535353;
+         }
+
+         label{
+          padding-left: 5px;
+
+          font-weight: bold;
+          color:#535353;
+          text-transform: none;
+          font-size: 12px;
+
+          a{
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            text-transform: none;
+            font-size: 12px;
+
+            color: #0000ff;
+          }
+         }
+
+        }
+
+        .warning-form{
+          border: solid 1px red;
+        }
+
+        button{
+          color: $background-white-color;
+          font-size: 13px;
+          font-family: "Open Sans", Helvetica, sans-serif;
+          padding: 10px 20px;
+          font-weight: 600;
+          border-radius: 3px;
+          margin-top: 20px;
+          background-color: $background-blue-color;
+        }
+
+
+
+
+
+
+
+    }
+
+
+
+    .complaints-book{
+      display: flex;
+      padding: 0px 0 40px 0;
+      justify-content: space-between;
+
+
+.text-claimsBook{
+  width: 70%;
+  padding-right: 10%;
+  padding-left: 15px;
+  position: relative;
+
+  .title-claimsBook{
+    margin-bottom: 10px;
+    font-size: 22px;
+      font-family: "Oswald", Helvetica, sans-serif;
+      font-weight: 300;
+      color:#000124;
+  }
+
+
+.description-claimsBook{
+  font-size: 12px;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  text-align: justify;
+line-height: 1.7;
+}
+
+}
+
+
+.text-claimsBook::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 15px;
+  width: 80px;
+  height: 3px;
+  background: #000;
+  opacity: 0.1;
+
+}
+
+.button-claimsBook{
+  width: 160px;
+height: 76px;
+  display: block;
+background-color: #000124;
+border-radius: 3px;
+transition: transform 0.25s ease;
+cursor: pointer;
+
+
+  img{
+    display: none;
+  }
+
+  span{
+ color: white;
+ position: absolute;
+ z-index: 1;
+ text-align: center;
+ line-height: 1.3;
+ font-size: 17px;
+ font-family: "Open Sans", Helvetica, sans-serif;
+ font-weight: 300;
+
+  }
+}
+
+
+.button-claimsBook::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: initial;
+  bottom: -4px;
+  left: 0;
+  border-radius: 3px;
+  background-color: #000124;
+  transform: skewY(3deg);
+  z-index: 1;
+
+}
+
+.button-claimsBook::after{
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 16px;
+  top: initial;
+  bottom: -9px;
+  left: 11px;
+  border-radius: 3px;
+  background-color: #dcdcdc;
+  transform: skewY(-3deg);
+
+}
+
+
+.button-claimsBook:hover{
+  transform:scale(1.1);
+
+
+  span{
+    display: none;
+  }
+
+  img{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+}
+
+
+    }
+
+
+
+
+
+  }
+
+  .contact-us{
+
+    width: 32%;
+    padding: 0 15px 0 0;
+    font-size: 12px;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    color: white;
+
+
+
+    h1{
+      margin-bottom: 10px;
+
+      font-size: 23px;
+      font-family: "Oswald", Helvetica, sans-serif;
+      font-weight: 300;
+      text-align: left;
+    }
+
+    .container-contact{
+      background-color: #3fa9f5;
+      padding: 10px 0px 10px 0px;
+      p{
+        text-align: justify;
+      }
+      .information{
+        display: block;
+        padding-top: 20px;
+        text-align: justify;
+      }
+
+      .contact-info{
+      padding: 0 30px;
+
+      .contact-info-title{
+        color: white;
+      }
+
+      .contact-info-description{
+       color: white;
+      }
+
+
+      }
+
+
+    }
+
+    .social-network-footer{
+margin-top: 20px;
+margin-right: 10px;
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(60px,1fr));
+row-gap: 10px;
+
+      a {
+        height: 60px;
+        cursor: pointer;
+        display: block;
+       text-align: center;
+      }
+
+    }
+
+  }
+}
+}
+
+
+@media screen and (max-width: 1200px) {
+  .section-information-services{
+    margin-top: 35px;
+  }
+}
+
+
+
+
+@include tablet{
+
+
+
+  .section-information-services{
+    margin-top: 0px;
+    width: 100%;
+    padding: 35px 0;
+  .container-information{
+
+    max-width: 80%;
+    margin: auto;
+  display: flex;
+  flex-direction: column;
+
+    .form-info-services{
+      width: 100%;
+
+      form{
+        padding: 10px 15px 0 15px;
+
+
+        .row-1{
+          display: grid;
+          grid-template-columns: repeat(1,1fr);
+          width: 100%;
+
+          .input-1{
+            display: flex;
+            flex-direction: column;
+            background-color: $background-white-color;
+            margin-right:0px;
+            padding: 7px 10px;
+            border-radius: 4px;
+             overflow: hidden;
+
+          label{
+            padding-bottom: 5px;
+          }
+          }
+
+          .input-2{
+            display: flex;
+            flex-direction: column;
+            margin-left:0px;
+            margin-top: 15px;
+            background-color: $background-white-color;
+            padding: 7px 10px;
+            border-radius: 4px;
+            overflow: hidden;
+            label{
+              padding-bottom: 5px;
+            }
+          }
+
+
+        }
+
+        .row-2{
+          margin-top: 15px;
+          display: grid;
+          grid-template-columns: repeat(1,1fr);
+
+
+          .input-3{
+            display: flex;
+            flex-direction: column;
+            margin-right:0px;
+            background-color: $background-white-color;
+            padding: 7px 10px;
+            border-radius: 4px;
+            overflow: hidden;
+            label{
+              padding-bottom: 5px;
+            }
+          }
+
+          .input-4{
+            margin-left:0px;
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: last baseline;
+            padding: 7px 0px;
+            background-color: $background-white-color;
+
+            border-radius: 4px;
+            overflow: hidden;
+
+            label{
+              padding-bottom: 5px;
+              padding-left: 7px;
+              padding-top: 0px;
+            }
+
+            select{
+              height: 100%;
+              white-space: pre;
+              -webkit-rtl-ordering: logical;
+              appearance: none;
+              font-family: "Open Sans", Helvetica, sans-serif;
+              font-size: 13px;
+              background-image: url('https://www.mdp.com.pe/wp-content/themes/kallyas/images/select-arrow.svg');
+             width: 99.8%;
+             padding-left: 10px;
+            background-repeat: no-repeat;
+            background-size: 6px 12px;
+            background-position: calc(100% - 10px) 50%;
+            background-position-y: center;
+            background-position-x: calc(100% - 10px);
+            margin: auto;
+             }
+
+
+          }
+
+        }
+
+
+          .row-3{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            background-color:$background-white-color ;
+            margin: 15px 0 15px 0;
+            border-radius: 4px;
+            padding: 7px 10px;
+            label{
+              padding-bottom: 5px;
+            }
+
+          }
+
+
+
+      }
+
+
+      .complaints-book{
+        display: flex;
+
+        margin: auto;
+        flex-direction: column;
+        padding: 0px 0 40px 0;
+        justify-content: space-between;
+
+
+  .text-claimsBook{
+width: 100%;
+    padding-right: 0%;
+    margin-bottom: 20px;
+
+    .title-claimsBook{
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: 22px;
+        font-family: "Oswald", Helvetica, sans-serif;
+        font-weight: 300;
+        color:#000124;
+    }
+  .description-claimsBook{
+    font-size: 12px;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    text-align: justify;
+  line-height: 1.7;
+  }
+
+
+  }
+
+  .button-claimsBook{
+    width: 160px;
+  height: 76px;
+    display: block;
+  background-color: #000124;
+  border-radius: 3px;
+  transition: transform 0.25s ease;
+margin: auto;
+
+    img{
+      display: none;
+    }
+
+    span{
+   color: white;
+   position: absolute;
+   z-index: 1;
+   text-align: center;
+   line-height: 1.3;
+   font-size: 17px;
+   font-family: "Open Sans", Helvetica, sans-serif;
+   font-weight: 300;
+
+    }
+  }
+
+
+  .button-claimsBook::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: initial;
+    bottom: -4px;
+    left: 0;
+    border-radius: 3px;
+    background-color: #000124;
+    transform: skewY(3deg);
+    z-index: 1;
+
+  }
+
+  .button-claimsBook::after{
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 16px;
+    top: initial;
+    bottom: -9px;
+    left: 11px;
+    border-radius: 3px;
+    background-color: #dcdcdc;
+    transform: skewY(-3deg);
+
+  }
+
+
+      }
+
+    }
+
+    .contact-us{
+      width: 100%;
+      padding: 0 15px;
+      p{
+        font-size: 13px;
+        font-family: "Open Sans", Helvetica, sans-serif;
+  margin-top: 30px;
+  line-height: 1.5;
+      }
+    }
+
+  }
+  }
+
+}
+
+
