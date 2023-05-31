@@ -1,16 +1,20 @@
 <h1 class="services-title-general">Nuestros Servicios</h1>
-<div class="containerServices">
-  <ng-container *ngIf="services$ | async as services">
+<ng-container *ngIf="services$ | async as services">
 
-  <div class="services-first">
+
+<div *ngIf="services.data.length>=1" class="containerServices" >
+
+<ng-container *ngFor="let colum of services.data;let index=index">
+
+  <div *ngIf="index==0"  class="services-first">
     <div class="services-first-box">
     <img
       class="img-servicios"
-      src="{{services.data[0].attributes.imageUrl}}"
-      alt="{{services.data[0].attributes.name}}"
+      src="{{colum.attributes.imageUrl}}"
+      alt="{{colum.attributes.name}}"
     />
     <div class="title">
-      <a href="*">{{services.data[0].attributes.name}}</a>
+      <a href="*">{{colum.attributes.name}}</a>
     </div>
 
     <div class="container-button">
@@ -21,15 +25,18 @@
   </div>
   </div>
 
-  <div class="services-second">
+</ng-container>
+<ng-container *ngFor="let colum of services.data;let index=index">
+
+  <div *ngIf="index==1"  class="services-second">
     <div class="services-second-box">
       <img
         class="img-servicios"
-        src="{{services.data[1].attributes.imageUrl}}"
-        alt="{{services.data[1].attributes.name}}"
+        src="{{colum.attributes.imageUrl}}"
+        alt="{{colum.attributes.name}}"
       />
       <div class="title">
-        <a class="title-right" href="*">{{services.data[1].attributes.name}}</a>
+        <a class="title-right" href="*">{{colum.attributes.name}}</a>
       </div>
 
       <div class="container-button">
@@ -39,16 +46,19 @@
       </div>
     </div>
   </div>
+</ng-container>
 
-  <div class="services-third">
+
+<ng-container *ngFor="let colum of services.data;let index=index">
+  <div *ngIf="index==2" class="services-third">
     <div class="services-third-box">
     <img
       class="img-servicios"
-      src="{{services.data[2].attributes.imageUrl}}"
-      alt="{{services.data[2].attributes.name}}"
+      src="{{colum.attributes.imageUrl}}"
+      alt="{{colum.attributes.name}}"
     />
     <div class="title">
-      <a class="title-right" href="*">{{services.data[2].attributes.name}}</a>
+      <a class="title-right" href="*">{{colum.attributes.name}}</a>
     </div>
 
     <div class="container-button">
@@ -59,15 +69,19 @@
   </div>
   </div>
 
-  <div class="services-fourth">
+</ng-container>
+
+
+<ng-container *ngFor="let colum of services.data;let index=index">
+  <div *ngIf="index==3"  class="services-fourth">
     <div class="services-fourth-box">
     <img
       class="img-servicios"
-      src="{{services.data[3].attributes.imageUrl}}"
-      alt="{{services.data[3].attributes.name}}"
+      src="{{colum.attributes.imageUrl}}"
+      alt="{{colum.attributes.name}}"
     />
     <div class="title-last">
-      <a href="*">{{services.data[3].attributes.name}}</a>
+      <a href="*">{{colum.attributes.name}}</a>
     </div>
 
     <div class="container-button">
@@ -77,7 +91,401 @@
     </div>
   </div>
   </div>
+</ng-container>
+
+</div>
+
+
+
+<br *ngIf="services.data.length>=5">
+
+<div *ngIf="services.data.length>=5" class="containerServices">
+
+  <ng-container *ngFor="let colum of services.data;let index=index">
+
+    <div *ngIf="index==4"  class="services-first">
+      <div class="services-first-box">
+      <img
+        class="img-servicios"
+        src="{{colum.attributes.imageUrl}}"
+        alt="{{colum.attributes.name}}"
+      />
+      <div class="title">
+        <a href="*">{{colum.attributes.name}}</a>
+      </div>
+
+      <div class="container-button">
+        <div class="btn">
+          <a class="btn-more" href="">Ver más</a>
+        </div>
+      </div>
+    </div>
+    </div>
 
   </ng-container>
-</div>
+  <ng-container *ngFor="let colum of services.data;let index=index">
+
+    <div *ngIf="index==5"  class="services-second">
+      <div class="services-second-box">
+        <img
+          class="img-servicios"
+          src="{{colum.attributes.imageUrl}}"
+          alt="{{colum.attributes.name}}"
+        />
+        <div class="title">
+          <a class="title-right" href="*">{{colum.attributes.name}}</a>
+        </div>
+
+        <div class="container-button">
+          <div class="btn">
+            <a class="btn-more" href="">Ver más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+
+  <ng-container *ngFor="let colum of services.data;let index=index">
+    <div *ngIf="index==6" class="services-third">
+      <div class="services-third-box">
+      <img
+        class="img-servicios"
+        src="{{colum.attributes.imageUrl}}"
+        alt="{{colum.attributes.name}}"
+      />
+      <div class="title">
+        <a class="title-right" href="*">{{colum.attributes.name}}</a>
+      </div>
+
+      <div class="container-button">
+        <div class="btn">
+          <a class="btn-more" href="">Ver más</a>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </ng-container>
+
+
+  <ng-container *ngFor="let colum of services.data;let index=index">
+    <div *ngIf="index==7"  class="services-fourth">
+      <div class="services-fourth-box">
+      <img
+        class="img-servicios"
+        src="{{colum.attributes.imageUrl}}"
+        alt="{{colum.attributes.name}}"
+      />
+      <div class="title-last">
+        <a href="*">{{colum.attributes.name}}</a>
+      </div>
+
+      <div class="container-button">
+        <div class="btn">
+          <a class="btn-more" href="">Ver más</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </ng-container>
+
+  </div>
+
+<br *ngIf="services.data.length>=9">
+
+  <div *ngIf="services.data.length>=9" class="containerServices">
+
+    <ng-container *ngFor="let colum of services.data;let index=index">
+
+      <div *ngIf="index==8"  class="services-first">
+        <div class="services-first-box">
+        <img
+          class="img-servicios"
+          src="{{colum.attributes.imageUrl}}"
+          alt="{{colum.attributes.name}}"
+        />
+        <div class="title">
+          <a href="*">{{colum.attributes.name}}</a>
+        </div>
+
+        <div class="container-button">
+          <div class="btn">
+            <a class="btn-more" href="">Ver más</a>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </ng-container>
+    <ng-container *ngFor="let colum of services.data;let index=index">
+
+      <div *ngIf="index==9"  class="services-second">
+        <div class="services-second-box">
+          <img
+            class="img-servicios"
+            src="{{colum.attributes.imageUrl}}"
+            alt="{{colum.attributes.name}}"
+          />
+          <div class="title">
+            <a class="title-right" href="*">{{colum.attributes.name}}</a>
+          </div>
+
+          <div class="container-button">
+            <div class="btn">
+              <a class="btn-more" href="">Ver más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+
+    <ng-container *ngFor="let colum of services.data;let index=index">
+      <div *ngIf="index==10" class="services-third">
+        <div class="services-third-box">
+        <img
+          class="img-servicios"
+          src="{{colum.attributes.imageUrl}}"
+          alt="{{colum.attributes.name}}"
+        />
+        <div class="title">
+          <a class="title-right" href="*">{{colum.attributes.name}}</a>
+        </div>
+
+        <div class="container-button">
+          <div class="btn">
+            <a class="btn-more" href="">Ver más</a>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </ng-container>
+
+
+    <ng-container *ngFor="let colum of services.data;let index=index">
+      <div *ngIf="index==11"  class="services-fourth">
+        <div class="services-fourth-box">
+        <img
+          class="img-servicios"
+          src="{{colum.attributes.imageUrl}}"
+          alt="{{colum.attributes.name}}"
+        />
+        <div class="title-last">
+          <a href="*">{{colum.attributes.name}}</a>
+        </div>
+
+        <div class="container-button">
+          <div class="btn">
+            <a class="btn-more" href="">Ver más</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </ng-container>
+
+    </div>
+
+
+    <br *ngIf="services.data.length>=13">
+
+    <div *ngIf="services.data.length>=13" class="containerServices">
+
+      <ng-container *ngFor="let colum of services.data;let index=index">
+
+        <div *ngIf="index==12"  class="services-first">
+          <div class="services-first-box">
+          <img
+            class="img-servicios"
+            src="{{colum.attributes.imageUrl}}"
+            alt="{{colum.attributes.name}}"
+          />
+          <div class="title">
+            <a href="*">{{colum.attributes.name}}</a>
+          </div>
+
+          <div class="container-button">
+            <div class="btn">
+              <a class="btn-more" href="">Ver más</a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+      </ng-container>
+      <ng-container *ngFor="let colum of services.data;let index=index">
+
+        <div *ngIf="index==13"  class="services-second">
+          <div class="services-second-box">
+            <img
+              class="img-servicios"
+              src="{{colum.attributes.imageUrl}}"
+              alt="{{colum.attributes.name}}"
+            />
+            <div class="title">
+              <a class="title-right" href="*">{{colum.attributes.name}}</a>
+            </div>
+
+            <div class="container-button">
+              <div class="btn">
+                <a class="btn-more" href="">Ver más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+
+      <ng-container *ngFor="let colum of services.data;let index=index">
+        <div *ngIf="index==14" class="services-third">
+          <div class="services-third-box">
+          <img
+            class="img-servicios"
+            src="{{colum.attributes.imageUrl}}"
+            alt="{{colum.attributes.name}}"
+          />
+          <div class="title">
+            <a class="title-right" href="*">{{colum.attributes.name}}</a>
+          </div>
+
+          <div class="container-button">
+            <div class="btn">
+              <a class="btn-more" href="">Ver más</a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+      </ng-container>
+
+
+      <ng-container *ngFor="let colum of services.data;let index=index">
+        <div *ngIf="index==15"  class="services-fourth">
+          <div class="services-fourth-box">
+          <img
+            class="img-servicios"
+            src="{{colum.attributes.imageUrl}}"
+            alt="{{colum.attributes.name}}"
+          />
+          <div class="title-last">
+            <a href="*">{{colum.attributes.name}}</a>
+          </div>
+
+          <div class="container-button">
+            <div class="btn">
+              <a class="btn-more" href="">Ver más</a>
+            </div>
+          </div>
+        </div>
+        </div>
+      </ng-container>
+
+      </div>
+
+    <br *ngIf="services.data.length>=17">
+
+      <div *ngIf="services.data.length>=17" class="containerServices">
+
+        <ng-container *ngFor="let colum of services.data;let index=index">
+
+          <div *ngIf="index==16"  class="services-first">
+            <div class="services-first-box">
+            <img
+              class="img-servicios"
+              src="{{colum.attributes.imageUrl}}"
+              alt="{{colum.attributes.name}}"
+            />
+            <div class="title">
+              <a href="*">{{colum.attributes.name}}</a>
+            </div>
+
+            <div class="container-button">
+              <div class="btn">
+                <a class="btn-more" href="">Ver más</a>
+              </div>
+            </div>
+          </div>
+          </div>
+
+        </ng-container>
+        <ng-container *ngFor="let colum of services.data;let index=index">
+
+          <div *ngIf="index==17"  class="services-second">
+            <div class="services-second-box">
+              <img
+                class="img-servicios"
+                src="{{colum.attributes.imageUrl}}"
+                alt="{{colum.attributes.name}}"
+              />
+              <div class="title">
+                <a class="title-right" href="*">{{colum.attributes.name}}</a>
+              </div>
+
+              <div class="container-button">
+                <div class="btn">
+                  <a class="btn-more" href="">Ver más</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+
+
+        <ng-container *ngFor="let colum of services.data;let index=index">
+          <div *ngIf="index==18" class="services-third">
+            <div class="services-third-box">
+            <img
+              class="img-servicios"
+              src="{{colum.attributes.imageUrl}}"
+              alt="{{colum.attributes.name}}"
+            />
+            <div class="title">
+              <a class="title-right" href="*">{{colum.attributes.name}}</a>
+            </div>
+
+            <div class="container-button">
+              <div class="btn">
+                <a class="btn-more" href="">Ver más</a>
+              </div>
+            </div>
+          </div>
+          </div>
+
+        </ng-container>
+
+
+        <ng-container *ngFor="let colum of services.data;let index=index">
+          <div *ngIf="index==19"  class="services-fourth">
+            <div class="services-fourth-box">
+            <img
+              class="img-servicios"
+              src="{{colum.attributes.imageUrl}}"
+              alt="{{colum.attributes.name}}"
+            />
+            <div class="title-last">
+              <a href="*">{{colum.attributes.name}}</a>
+            </div>
+
+            <div class="container-button">
+              <div class="btn">
+                <a class="btn-more" href="">Ver más</a>
+              </div>
+            </div>
+          </div>
+          </div>
+        </ng-container>
+
+        </div>
+
+
+
+
+
+</ng-container>
+
+
+
+
+
 

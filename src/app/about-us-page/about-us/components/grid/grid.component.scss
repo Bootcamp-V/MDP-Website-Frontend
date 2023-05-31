@@ -1,5 +1,9 @@
 .grid-container{
   height: auto;
+  width: auto;
+  place-items: center;
+  display: grid;
+  
   }
   .grid-item {
     margin-bottom: 20px;
@@ -12,6 +16,8 @@
     margin-left: 2vw;
     transition: all 0.3s ease-in-out;
     overflow: hidden ;
+    justify-self: center; 
+    align-self: center;
 
   
     h2 {
@@ -108,7 +114,8 @@
 
         .container{
           justify-content: center;
-          background-color: rgb(255, 255, 255);
+
+
         }
         
        
@@ -140,9 +147,6 @@
 
         .container{
           justify-content: center;
-          background-color: rgb(255, 255, 255);
-          display: block;
-          left: 20%;
         }
         
        

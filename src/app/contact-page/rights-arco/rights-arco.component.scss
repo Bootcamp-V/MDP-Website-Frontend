@@ -1,0 +1,125 @@
+// .overlay-headerArco {
+//   background-image: linear-gradient(
+//     to bottom,
+//     transparent 0%,
+//     rgba(0, 0, 0, 0.5) 100%
+//   );
+// }
+@import "../../../styles/abstracts/variables";
+
+.header-arco {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  .menu-arco {
+    padding-left: 15px;
+    padding-right: 15px;
+    height: fit-content;
+    width: 80%;
+    position: absolute;
+    z-index: 0;
+    top: 60%;
+
+    .list-menu-arco {
+      background-color: #000124;
+      padding: 5px;
+      margin: 0 0 10px;
+      list-style: none;
+      float: left;
+      .li-arco {
+        font-size: 11px;
+        float: left;
+        position: relative;
+        text-transform: uppercase;
+        color: hsla(0, 0%, 100%, 0.85);
+        .link-style {
+          font-size: 11px;
+        }
+      }
+
+      .slash-arco:before {
+        content: "/";
+        display: inline-block;
+        margin: 0 7px;
+        color: hsla(0, 0%, 100%, 0.85);
+      }
+    }
+  }
+}
+.main-container-arco {
+  height: fit-content;
+  .container-arco {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 1.7;
+    color: #535353;
+    .main-title-arco {
+      font-size: 24px;
+      font-family: $font-nav;
+      margin-bottom: 10px;
+      font-weight: 300;
+    }
+    .second-title-arco {
+      font-size: 22px;
+      font-family: $font-nav;
+      margin-bottom: 10px;
+      font-weight: 300;
+    }
+
+    .info-arco {
+      margin-bottom: 20px;
+      font-size: 13px;
+      font-family: $font-paragraph;
+    }
+    .list-arco {
+      padding-left: 40px;
+      margin-bottom: 10px;
+      list-style: disc;
+
+      .link-arco {
+        text-decoration: none;
+        color: #0000ff;
+        font-size: 13px;
+        font-family: $font-paragraph;
+        padding: 0;
+      }
+    }
+
+    .send-info-arco {
+      font-size: 13px;
+      font-family: $font-paragraph;
+
+      .link-arco {
+        text-decoration: none;
+        color: #0000ff;
+        font-size: 13px;
+        font-family: $font-paragraph;
+        padding: 0;
+      }
+    }
+  }
+
+  hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header-arco {
+    height: 60%
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header-arco {
+    .menu-arco {
+      top: 70%;
+    }
+  }
+}

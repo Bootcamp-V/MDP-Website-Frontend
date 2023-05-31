@@ -14,11 +14,19 @@ export class StepsComponent {
   constructor( private serv:ServicesPageService){
 this.steeps$=this.serv.steepsServ$;
   }
-//#000124
+  boxColor( i: number):string
+  {
+    const colors=["#000124","#00b7e1","#33c5e7","#66d4ed"];
+    const index=(i+1)%4;
 
-//#00b7e1
+    return colors[index];
+  }
 
-//#33c5e7
+  triangleColor( a: number):string
+  {
+    const colors=["#000124","#00b7e1","#33c5e7"];
+    const index=(a)%4;
 
-//#66d4ed
+    return colors[index];
+  }
 }
