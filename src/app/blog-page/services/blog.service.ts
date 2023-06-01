@@ -22,7 +22,7 @@ export class BlogService {
   }
 
   getBlogs():Observable<IBlog>{
-    return this.http.get<IBlog>(environment.baseUrl+'/api/blogs?populate=*')
+    return this.http.get<IBlog>(environment.baseUrl+'/api/blogs?populate=*&pagination[start]=0&pagination[limit]=40')
   }
   getDetailShare():Observable<IDetailShare>{
     return this.http.get<IDetailShare>(environment.baseUrl+'/api/blog-detail-shares')
