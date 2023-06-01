@@ -17,7 +17,7 @@
     height: fit-content;
     width: 80%;
     position: absolute;
-    z-index: 9;
+    z-index: 0;
     top: 60%;
 
     .list-menu-arco {
@@ -107,6 +107,12 @@
     margin-bottom: 20px;
     border: 0;
     border-top: 1px solid #eee;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header-arco {
+    height: 60%
   }
 }
 

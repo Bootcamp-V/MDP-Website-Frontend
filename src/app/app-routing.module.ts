@@ -25,6 +25,7 @@ import { RightsArcoComponent } from './contact-page/rights-arco/rights-arco.comp
 import { ComplaintsBookComponent } from './contact-page/complaints-book/complaints-book.component';
 import { ContactUsComponent } from './contact-page/contact-us/contact-us.component';
 import { ListBlogsComponent } from './blog-page/components/list-blogs/list-blogs.component';
+import { CategoryComponent } from './blog-page/components/category/category.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -66,8 +67,8 @@ const routes: Routes = [
       path: '',
       component: ListBlogsComponent,
     },
-  { path:':id',component:DetailBlogComponent}
-
+  { path:':id',component:DetailBlogComponent},
+  { path:'category/:category',component:CategoryComponent}
 
   ] },
   { path: 'contacto', component: ContactPageComponent,

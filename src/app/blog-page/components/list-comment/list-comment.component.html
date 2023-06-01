@@ -1,10 +1,18 @@
+<ng-container *ngIf="comments$| async as c">
 <div class="row">
   <div class="col-xs-12 col-md-8 offset-md-2">
-
-    <app-comment-card *ngFor="let comment of comments" [comment]="comment">
+  <div class="comments-container" 
+  *ngFor="let comment of c"
+  >
+    <app-comment-card [data]="comment">
     </app-comment-card>
 
-
+    <div class="responses-container">
+      <app-comment-card *ngFor="let response of comment.attributes.responses.data" [data]="response">
+        
+      </app-comment-card>
+    </div>
+  </div>
     <div class="clear" style="height:30px"></div>
 
     <div class="form-container">
@@ -25,7 +33,7 @@
         </p>
       </div>
 
-      <form [formGroup]="formInfo" (ngSubmit)="sendForm()">
+      <form [formGroup]="formInfo" (ngSubmit)="addComment()">
 
         <div class="row-3" [ngClass]="{
                 'warning-form':
@@ -76,3 +84,4 @@
 
   </div>
 </div>
+</ng-container>

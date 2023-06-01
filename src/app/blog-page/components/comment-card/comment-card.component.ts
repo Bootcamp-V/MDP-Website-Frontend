@@ -1,5 +1,5 @@
 import { Component,  Input } from '@angular/core';
-import { Comment } from '../../models/comment.interface.model'
+import { DataBlogComment } from '../../model/comment.interface.model'
 @Component({
   selector: 'app-comment-card',
   templateUrl: './comment-card.component.html',
@@ -8,13 +8,13 @@ import { Comment } from '../../models/comment.interface.model'
 export class CommentCardComponent {
   
   @Input()
-  comment!: Comment;
-
+  data!:DataBlogComment;
   contador:any;
   favorited :boolean =false;
 
   ngOnInit(): void {
-    this.contador = this.comment.favoritesCount;
+    this.contador = this.data.attributes.favoritesCount;
+    
   }
 
   onToggleFavorite() {

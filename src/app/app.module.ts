@@ -59,8 +59,9 @@ import { ContactFormComponent } from './contact-page/components/contact-form/con
 import { RightsArcoComponent } from './contact-page/rights-arco/rights-arco.component';
 import { ListBlogsComponent } from './blog-page/components/list-blogs/list-blogs.component';
 import { DetailBlogComponent } from './blog-page/components/detail-blog/detail-blog.component';
-import { ListCommentComponent } from './blog-page/components/list-comment/list-comment.component';
+import { CategoryComponent } from './blog-page/components/category/category.component';
 import { CommentCardComponent } from './blog-page/components/comment-card/comment-card.component';
+import { ListCommentComponent } from './blog-page/components/list-comment/list-comment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -118,8 +119,9 @@ import { CommentCardComponent } from './blog-page/components/comment-card/commen
     RightsArcoComponent,
     ListBlogsComponent,
     DetailBlogComponent,
-    ListCommentComponent,
-    CommentCardComponent
+    CategoryComponent,
+    CommentCardComponent,
+    ListCommentComponent
   ],
   imports: [
     BrowserModule,

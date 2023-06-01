@@ -19,6 +19,27 @@
       margin: 0 0 10px;
       list-style: none;
       float: left;
+
+.li-arco-first{
+  font-size: 11px;
+  float: left;
+  position: relative;
+  text-transform: uppercase;
+  color: white;
+  color: hsla(0, 0%, 100%, 0.85);
+  .link-style-first{
+    font-size: 11px;
+    padding: 0;
+  }
+}
+
+.slash-arco-first:before {
+  content: "/";
+  display: inline-block;
+  margin: 0 7px;
+  color: hsla(0, 0%, 100%, 0.85);
+}
+
       .li-arco {
         font-size: 11px;
         float: left;
@@ -29,6 +50,7 @@
           font-size: 11px;
           padding: 0;
         }
+
       }
       .li-arco-two{
         font-size: 11px;
@@ -50,6 +72,8 @@
     }
   }
 }
+
+
 
 
 
@@ -134,6 +158,13 @@
 .container_3{
   padding: 0 30px;
 }
+
+
+
+
+
+
+
 
 
 

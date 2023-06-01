@@ -29,6 +29,7 @@
         .link-style {
           font-size: 11px;
           padding: 0;
+          cursor: pointer;
         }
       }
 
@@ -45,8 +46,103 @@
 
 
 
+
+.container{
+}
+.container_1{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+p{
+    display: inline;
+}
+
+b{
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.date{
+    display: inline;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #9a9a9a;
+}
+.number{
+    display: inline;
+    font-size: 10px;
+}
+.title{
+    font-size:"Oswald", sans-serif;
+    font-weight: 100;
+}
+.subtitle{
+    font-size:"Oswald", sans-serif;
+    font-weight: 100;
+    color: #535353;
+}
+.container_2{
+    width: 60%;
+    margin: auto;
+}
+img{
+    width: 450px;
+    height: 500px;
+}
+.definition{
+    color: #535353;
+    font-weight: bold;
+    font-size: 20px;
+    display: inline;
+}
+.description{
+    font-size: 20px;
+    display: inline;
+}
+
+.description_3{
+    font-size: 20px;
+    display: inline;
+}
+
+.container_img{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.img_list{
+    width: 270px;
+    height: 250px;
+    margin-bottom: 5px;
+}
+
+.subtitle_1{
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+}
+.subtitle_2{
+    color: #535353;
+    display: block;
+    font-size: 24px;
+}
+.description_2{
+    font-size: 20px;
+    display: block;
+}
+
+
 @include mobile{
   .header-arco {
     height: 450px;
   }
+}
+.container-comments{
+    width: 60%;
+    margin: 2em auto;
+    display: flex;
+    justify-content: flex-start;
+
 }

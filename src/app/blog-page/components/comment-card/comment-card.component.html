@@ -8,10 +8,10 @@
 
         <div class="comment-info">
           <div class="name">
-            <span>{{comment.name}}</span>
+            <span>{{ data.attributes.name }}</span>
           </div>
           <div class="date">
-            <span>{{ comment.date | date:'fullDate'}}</span>
+            <span>{{ data.attributes.date | date:'fullDate'}}</span>
           </div>
         </div>
       </div>
@@ -24,12 +24,12 @@
 
     <div class="card-block">
       <p>
-        {{ comment.mensaje }}
+        {{ data.attributes.mensaje }}
       </p>
     </div>
 
     <div class="card-footer">
-      <div class="warning" *ngIf="comment.published">
+      <div class="warning" *ngIf="data.attributes.published">
         <span>Tu comentario está en espera de ser moderado.</span>
       </div>
       <div class="response">

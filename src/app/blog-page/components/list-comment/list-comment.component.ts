@@ -1,51 +1,53 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Comment } from '../../models/comment.interface.model'
-import { Router, ActivatedRoute } from '@angular/router';
+import { AttributesBlogComment, DataBlogComment } from '../../model/comment.interface.model'
+import { Observable } from 'rxjs';
+import { BlogService } from '../../services/blog.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-list-comment',
   templateUrl: './list-comment.component.html',
   styleUrls: ['./list-comment.component.scss']
 })
-export class ListCommentComponent {
+export class ListCommentComponent implements OnInit {
+  @Input() id_blog!: number;
+
   formInfo!: FormGroup;
   isSubmitting = false;
-  comments: Comment[]=[
-    {
-      'id': 1,
-      'name': "Nadia Tinoco",
-      'date' : new Date().toISOString(),
-      'mensaje': "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut. ",
-      'email': "lorenanadia@gmail.com",
-      'favoritesCount' : 0 ,
-      'published' : true
-    },
-    {
-      'id': 2,
-      'name': "Mariel Casaverde Rodriguez",
-      'date' : new Date().toISOString(),
-      'mensaje': "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut. ",
-      'email': "s@gmail.com",
 
-      'favoritesCount' : 12 ,
-      'published' : true
-    },
-    {
-      'id': 3,
-      'name': "Positive Copany SAC",
-      'date' : new Date().toISOString(),
-      'mensaje': "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut. ",
-      'email': "behappy@gmail.com",
-      'favoritesCount' : 0 ,
-      'published' : true
-    },
-  ];
+  comments$!: Observable<DataBlogComment[]>;
+  arrayComments: DataBlogComment[] = [];
 
-  constructor(private fb: FormBuilder, private router: Router,
-    private route: ActivatedRoute,) {
+  ngOnInit() {
+
+    this.getcomments();
+  }
+
+  constructor(private fb: FormBuilder, private servicio: BlogService) {
+    this.comments$ = this.servicio.dataBlogComments$
     this.createForm();
   }
+  getcomments() {
+    this.servicio.getComments().subscribe(
+      (res) => {
+
+        for (let i of res.data) {
+
+          if (i.attributes.blog.data.id == this.id_blog + 1) {
+            this.arrayComments.push(i);
+          }
+
+        }
+        console.log(this.arrayComments);
+        this.servicio.dataBlogComments$.next(this.arrayComments);
+        this.servicio.arraycomments = this.arrayComments;
+      });
+    console.log(this.arrayComments);
+  }
+
+
+
   createForm() {
     this.formInfo = this.fb.group({
       name: ['', [Validators.required]],
@@ -63,75 +65,58 @@ export class ListCommentComponent {
     return false;
 
   }
-  addComment() {
-    const variable = this.route.snapshot.paramMap.get('id2');
-    const comment:Comment = {
-      id: 0,
-      mensaje: this.formInfo.get('mensaje')!.value,
-      date: new Date().toISOString(),
-      name: this.formInfo.get('name')!.value,
-      email: this.formInfo.get('email')!.value,
-      favoritesCount: 0,
-      published:false
-    }
+    addComment() {
 
-/*
-    this.comentarioService.add(comment).subscribe({
-      next: (data) => {
-        this.snackBar.open('El comentario fue registrado con exito!', '', {
-          duration: 3000,
-        });
-        this.commentForm.reset();
-        this.ngOnInit();       
-      },
-      error: (err) => {
-        this.snackBar.open('No se logro añadir!', '', {
-          duration: 3000,
-        });
-        console.log(err);
-      }
-    });;
-    window.location.reload();*/
+      if (this.validarForm()) {
+   
+         let object = {
+           "data": {
+             "name": this.formInfo.get('name')!.value,
+             "email": this.formInfo.get('email')!.value,
+             "mensaje": this.formInfo.get('mensaje')?.value,
+             "date": new Date().toISOString(),
+             "favoritesCount": 0,
+             "published": false
+            
+           }
+
+         }
+         console.log(object);
+         this.servicio.postCommentForm(object).subscribe({
+           next: (response) => {
+             this.showAlertSuccess();
+             this.formInfo.reset();
+           },
+           error: (error) => {
+             this.showAlertError('Ocurrio un error al hacer la peticion!');
+           }
+   
+         });
+   
+       } else {
+         this.showAlertError('Datos Incorrectos!');
+       }
+   
+     }
+     showAlertSuccess() {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Enviado!',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    }
+  
+  
+    showAlertError(title: string) {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: title,
+        showConfirmButton: false,
+        timer: 1500
+      })
+    }
+   
   }
-
-  sendForm() {
-
-    if (this.validarForm()) {
-
-      let object = {
-        "data": {
-          "name": this.formInfo.get('nombre')?.value,
-          "date": new Date().toISOString(),
-          "mensaje": this.formInfo.get('mensaje')?.value,
-          "email": this.formInfo.get('email')?.value,
-
-        }
-      }
-      console.log(object);
-      /*
-      this.serv.postContactUsForm(object).subscribe({
-        next: (response) => {
-          this.showAlertSuccess();
-          this.formInfo.reset();
-        },
-        error: (error) => {
-          this.showAlertError('Ocurrio un error al hacer la peticion!');
-        }
-
-      });
-
-    } else {
-      this.showAlertError('Datos Incorrectos!');
-    }
-*/
-    }
-    /*
-    showAlertSuccess() {
-      throw new Error('Method not implemented.');
-    }
-    showAlertError(arg0: string) {
-      throw new Error('Method not implemented.');
-    }
-     */
-  }
-}
