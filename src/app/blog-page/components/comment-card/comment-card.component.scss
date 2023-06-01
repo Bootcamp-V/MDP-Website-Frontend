@@ -68,7 +68,7 @@ p {
     cursor: pointer;
     display: flex;
     justify-content: flex-end;
-    margin-top: 3px; 
+    margin-top: 3px;
 }
 .favorite-btn i{
     font-size: 16px;
@@ -106,3 +106,24 @@ p {
     font-style: italic;
     color: #000121;
 }
+
+@media screen and (max-width: 576px) {
+  .card{
+    max-width: 80% !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .card{
+    max-width: 80% !important;
+  }
+}
+
+@media screen and (max-width: 630px) {
+
+  .card{
+    max-width: 80% !important;
+  }
+}
+

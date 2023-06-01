@@ -55,7 +55,7 @@ import { ContentFormComponent } from './contact-page/complaints-book/components/
 import { ImageComplaintsBookComponent } from './contact-page/complaints-book/components/image-complaints-book/image-complaints-book.component';
 import { ContactUsComponent } from './contact-page/contact-us/contact-us.component';
 import { ContactFormComponent } from './contact-page/components/contact-form/contact-form.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RightsArcoComponent } from './contact-page/rights-arco/rights-arco.component';
 import { ListBlogsComponent } from './blog-page/components/list-blogs/list-blogs.component';
 import { DetailBlogComponent } from './blog-page/components/detail-blog/detail-blog.component';
@@ -129,6 +129,7 @@ import { CommentFormReplyComponent } from './blog-page/components/comment-form-r
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

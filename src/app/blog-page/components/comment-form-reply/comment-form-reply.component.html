@@ -7,8 +7,12 @@
 
     <div @slideFadeInOut class="form-container" >
 
+
       <div class="comment-respond">
         <p class="comment-notes">
+          <span id="email-notes">
+            Tu dirección de correo electrónico no será publicada.
+          </span>
           Los campos obligatorios están marcados con
           <span class="required">*</span>
         </p>
@@ -45,8 +49,16 @@
             <input formControlName="email" type="email" placeholder="Email*" />
           </div>
         </div>
-
-
+        <div class="row-4">
+          <div class="comment-consent">
+            <input name="wp-comment-cookies-consent"
+             type="checkbox" value="yes"
+              checked="checked" />
+            <p>
+              Guardar mi nombre, correo electrónico y web en este navegador para
+              la próxima vez que comente.</p>
+            </div>
+        </div>
         <div class="row-2">
           <button class="send-info" type="submit" [disabled]="formInfo.invalid">
 
