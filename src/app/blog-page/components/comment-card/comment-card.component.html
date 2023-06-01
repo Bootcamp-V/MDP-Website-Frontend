@@ -34,8 +34,14 @@
       </div>
       <div class="response">
         <i class="fa-regular fa-comment-dots"></i>
-        <span> Responder </span>
+
+        <button (click)="showCommentReply()">Responder</button>
+
       </div>
     </div>
   </div>
 </div>
+
+        <div *ngIf="mostrarComponente">
+          <app-comment-form-reply></app-comment-form-reply>
+        </div>

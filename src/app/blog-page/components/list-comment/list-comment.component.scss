@@ -190,3 +190,181 @@ form {
     }
 
 }
+
+@media screen and (max-width: 1470px) {
+  .col-xs-12
+  {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 1270px) {
+  .col-xs-12
+  {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1054px) {
+  .col-xs-12
+  {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .col-xs-12
+  {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .form-container{
+    max-width: 80% !important;
+  }
+
+  .col-xs-12
+  {
+    width: 80%;
+  }
+
+  .comment-notes {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    margin: 5px auto;
+    margin-left: 0;
+  }
+
+  .comment-consent {
+    display: flex;
+      input {
+
+          margin-right: 15px !important;
+      }
+
+      p {
+          font-size: 10px !important
+      }
+    }
+
+  .row-1 {
+    display: block !important;
+
+    .input-1 {
+        flex-direction: row !important;
+        margin-bottom: 10px !important;
+        margin-right: 0px !important;
+
+    }
+
+    .input-2 {
+        flex-direction: row !important;
+        margin-left: 0px !important;
+    }
+
+
+  }
+
+}
+
+@media screen and (max-width: 630px) {
+
+  .form-container{
+    max-width: 80% !important;
+  }
+
+  .col-xs-12
+  {
+    width: 90%;
+  }
+
+  .comment-notes {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    margin: 5px auto;
+    margin-left: 0;
+  }
+
+  .comment-consent {
+    display: flex;
+      input {
+
+          margin-right: 15px !important;
+      }
+
+      p {
+          font-size: 10px !important
+      }
+    }
+
+  .row-1 {
+    display: block !important;
+
+    .input-1 {
+        flex-direction: row !important;
+        margin-bottom: 10px !important;
+        margin-right: 0px !important;
+
+    }
+
+    .input-2 {
+        flex-direction: row !important;
+        margin-left: 0px !important;
+    }
+
+
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+
+  .form-container{
+    max-width: 80% !important;
+  }
+
+  .col-xs-12
+  {
+    width: 100%;
+  }
+
+  .comment-notes {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    margin: 5px auto;
+    margin-left: 0;
+  }
+
+  .comment-consent {
+    display: flex;
+      input {
+
+          margin-right: 15px !important;
+      }
+
+      p {
+          font-size: 10px !important
+      }
+    }
+
+  .row-1 {
+    display: block !important;
+
+    .input-1 {
+        flex-direction: row !important;
+        margin-bottom: 10px !important;
+        margin-right: 0px !important;
+
+    }
+
+    .input-2 {
+        flex-direction: row !important;
+        margin-left: 0px !important;
+    }
+
+
+  }
+
+}

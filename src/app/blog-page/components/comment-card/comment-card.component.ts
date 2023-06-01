@@ -1,12 +1,19 @@
 import { Component,  Input } from '@angular/core';
 import { DataBlogComment } from '../../model/comment.interface.model'
+
 @Component({
   selector: 'app-comment-card',
   templateUrl: './comment-card.component.html',
   styleUrls: ['./comment-card.component.scss']
 })
 export class CommentCardComponent {
-  
+
+  mostrarComponente = false;
+
+  showCommentReply() {
+    this.mostrarComponente = !this.mostrarComponente;
+  }
+
   @Input()
   data!:DataBlogComment;
   contador:any;
@@ -23,10 +30,12 @@ export class CommentCardComponent {
     if (this.favorited) {
 
       this.contador++;
-    } 
+    }
     else {
-      
+
       this.contador--;
     }
   }
+
+
 }
