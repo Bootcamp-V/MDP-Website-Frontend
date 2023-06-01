@@ -20,8 +20,8 @@
 
   <br>
 <div class="container">
-  <div *ngFor="let i of arrayblogDetail; let index=index" class="container_1" (click)="getIndex(index)">
-      <div class="container_2">
+  <div *ngFor="let i of arrayblogDetail; let index=index" class="container_1" >
+      <div class="container_2" (click)="getIndex(index)">
         <img class="img" src="{{i.attributes.UrlImage}}" alt="{{i.attributes.Title}}">
         <a class="btn_more_1"></a>
       </div>
