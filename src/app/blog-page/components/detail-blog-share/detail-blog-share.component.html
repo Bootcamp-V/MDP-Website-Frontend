@@ -1,15 +1,10 @@
+<ng-container *ngIf="dataShare$ |async as d">
 <div class="container">
   <p class="share">SHARE:</p>
   <div class="container_socials">
-    <i class="fa-brands fa-twitter"></i>
-    <i class="fa-brands fa-facebook-f"></i>
-    <i class="fa-brands fa-pinterest-p"></i>
-    <i class="fa-brands fa-google-plus-g"></i>
-    <i class="fa-solid fa-envelope"></i>
-    <i class="fa-brands fa-twitter"></i>
-    <i class="fa-brands fa-facebook-f"></i>
-    <i class="fa-brands fa-pinterest-p"></i>
-    <i class="fa-brands fa-google-plus-g"></i>
-    <i class="fa-solid fa-envelope"></i>
+    <a *ngFor="let i of d.data" target="_blank" href="{{i.attributes.Url}}">
+    <i class="{{i.attributes.icon}}"></i>
+    </a>
   </div>
 </div>
+</ng-container>
