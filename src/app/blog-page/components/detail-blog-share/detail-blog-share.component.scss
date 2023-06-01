@@ -1,0 +1,28 @@
+.container{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.share{
+  color:  #535353;
+  font-weight: bold;
+}
+.container_socials{
+  display: flex;
+  flex-wrap: wrap;
+}
+i{
+  width: 40px;
+  font-size:20px;
+  margin: 0 2px;
+  padding: 9px;
+  color: #9a9a9a;
+  text-align: center;
+}
+
+i:hover{
+  color: white;
+  background-color: red;
+  border-radius: 3px;
+}
