@@ -60,6 +60,7 @@ import { RightsArcoComponent } from './contact-page/rights-arco/rights-arco.comp
 import { ListBlogsComponent } from './blog-page/components/list-blogs/list-blogs.component';
 import { DetailBlogComponent } from './blog-page/components/detail-blog/detail-blog.component';
 import { CategoryComponent } from './blog-page/components/category/category.component';
+import { DetailBlogShareComponent } from './blog-page/components/detail-blog-share/detail-blog-share.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -117,7 +118,8 @@ import { CategoryComponent } from './blog-page/components/category/category.comp
     RightsArcoComponent,
     ListBlogsComponent,
     DetailBlogComponent,
-    CategoryComponent
+    CategoryComponent,
+    DetailBlogShareComponent
   ],
   imports: [
     BrowserModule,

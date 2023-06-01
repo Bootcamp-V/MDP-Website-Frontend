@@ -20,9 +20,6 @@
 </div>
 
 <div class="container">
-  <!------------------------------------------------------------------------------------------------->
-  <!--------------------------------------BLOG-------------------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
           <div class="container_1">
               <div class="box_date">
                   <p class="date">{{ data.attributes.Date }}/ PUBLICADO EN </p>
@@ -37,77 +34,36 @@
               <h1 class="title">{{ data.attributes.Title }}</h1>
               <h1 class="subtitle">{{ data.attributes.SubTitle }}</h1>
               <img class="principal-img" src="{{ data.attributes.UrlImage }}">
-  <!------------------------------------------------------------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
               <div class="container_3">
-  <!------------------------------------------------------------------------------------------------->
-  <!---------------------------------BLOG DEFINITION---------------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
-  <ng-container *ngFor=" let i of data.attributes.blog_component_definitions.data">
-                  <p class="definition">{{ i.attributes.Title}}</p>
-                  <p class="description">{{ i.attributes.Definition }}</p>
-                  <br>
-  </ng-container>
-  <!------------------------------------------------------------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
+                    <ng-container *ngFor=" let i of data.attributes.blog_component_definitions.data">
+                      <p class="definition">{{ i.attributes.Title}}</p>
+                      <p class="description">{{ i.attributes.Definition }}</p>
+                      <br>
+                    </ng-container>
+                    <ng-container *ngFor=" let i of data.attributes.blog_component_descriptions.data">
+                      <p class="subtitle_1">{{ i.attributes.SubTitle}}</p>
+                      <p class="description_1">{{ i.attributes.Description}}</p>
+                    </ng-container>
 
+                     <ng-container *ngFor="let i of data.attributes.blog_component_images.data">
+                      <p class="subtitle_2">{{ i.attributes.SubTitle }}</p>
+                      <img src="{{ i.attributes.UrlImage }}">
+                      <p class="description_2">{{ i.attributes.Description }}</p>
+                    </ng-container>
 
-  <!------------------------------------------------------------------------------------------------->
-  <!-----------------------------------BLOG DESCRIPTION------------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
-  <ng-container *ngFor=" let i of data.attributes.blog_component_descriptions.data">
-                  <p class="subtitle_1">{{ i.attributes.SubTitle}}</p>
-                  <p class="description_1">{{ i.attributes.Description}}</p>
-  </ng-container>
-  <!------------------------------------------------------------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
+                    <ng-container *ngFor="let i of dataListDetail">
+                      <p  class="description_3">{{i.attributes.Description}}</p>
+                      <ul class="list">
+                        <li class="list_1" *ngFor="let j of i.attributes.blog_component_list_children.data">{{j.attributes.Item}}</li>
+                      </ul>
+                    </ng-container>
 
-
-
-  <!------------------------------------------------------------------------------------------------->
-  <!----------------------------------BLOG IMAGE------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
-  <ng-container *ngFor="let i of data.attributes.blog_component_images.data">
-                  <p class="subtitle_2">{{ i.attributes.SubTitle }}</p>
-                  <img src="{{ i.attributes.UrlImage }}">
-                  <p class="description_2">{{ i.attributes.Description }}</p>
-  </ng-container>
-  <!------------------------------------------------------------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
-
-
-  <!------------------------------------------------------------------------------------------------->
-  <!------------------------------------BLOG LIST--------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
-  <ng-container *ngFor="let i of dataListDetail">
-                  <p  class="description_3">{{i.attributes.Description}}</p>
-                  <ul>
-                      <li class="list" *ngFor="let j of i.attributes.blog_component_list_children.data">{{j.attributes.Item}}</li>
-                  </ul>
-  </ng-container>
-  <!------------------------------------------------------------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
-
-
-  <!------------------------------------------------------------------------------------------------->
-  <!---------------------------------------BLOG LIST IMAGE--------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
-
-                  <div class="container_img" *ngFor="let i of data.attributes.blog_component_list_images.data">
-                      <img class="img_list" src="{{ i.attributes.UrlImage }}">
+                  <div class="container_img" >
+                      <img *ngFor="let i of data.attributes.blog_component_list_images.data" class="img_list" src="{{ i.attributes.UrlImage }}">
                   </div>
               </div>
-  <!------------------------------------------------------------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
-  <!------------------------------------------------------------------------------------------------->
-
-<div class="share">
-  
-</div>
-
+            <div class="share">
+        </div>
 </div>
 
 
