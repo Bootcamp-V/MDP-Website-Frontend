@@ -1,55 +1,53 @@
 <ng-container *ngIf="datahome$ | async as dh">
-<div class="supraSlider">
-  <div class="slider">
-    <div>
-      <div (click)="goToPrevious()" class="leftArrow">❰</div>
-      <div (click)="goToNext()" class="rightArrow">❱</div>
-    </div>
-    <div class="slide" style="background-image:url({{dh.data[this.currentIndex].attributes.url}})">
-      <div class="dotsContainer">
-        <div
-          *ngFor="let slide of dh.data; let slideIndex = index"
-          class="dot"
-          (click)="goToSlide(slideIndex)"
-        >
-          <div class="dotsContainer__bar"></div>
+  <div class="supraSlider">
+    <div class="slider">
+      <div>
+        <div (click)="goToPrevious()" class="leftArrow">❰</div>
+        <div (click)="goToNext()" class="rightArrow">❱</div>
+      </div>
+      <div class="slide" style="background-image:url({{dh.data[this.currentIndex].attributes.url}})">
+        <div class="dotsContainer">
+          <div
+            *ngFor="let slide of dh.data; let slideIndex = index"
+            class="dot"
+            (click)="goToSlide(slideIndex)"
+          >
+            <div class="dotsContainer__bar"></div>
+          </div>
         </div>
-      </div>
-      <div class="iconMouse" (click)="scrollDown()">
-        <div class="iconMouse__bar"></div>
-      </div>
-
-      <div class="button" *ngIf="currentIndex === 0">
-        <p class="line0" style="font-size: 1.5vw; color: white">
-          <span>{{ dh.data[0].attributes.second_description }}</span>
-        </p>
-
-        <button class="arrow-button"></button>
-      </div>
-
-      <!--    ------------------------------------------------------------------------------------>
-
-      <div class="message">
-        <div *ngFor="let item of dh.data; let indice = index">
-        <p class="line1" *ngIf="currentIndex === indice">
-          <span>{{item.attributes.title }}</span>
-        </p>
-        <p class="line2" *ngIf="currentIndex === indice">
-          <span>{{item.attributes.first_description}}</span>
-        </p>
-        <p
-          class="line3"
-          *ngIf="currentIndex === indice"
-          style="font-size: 2vw; color: white; font-weight: 300"
-        >
-          <span>{{item.attributes.second_description }}</span>
-
-
-        </p>
-
-      </div>
+        <div class="iconMouse" (click)="scrollDown()">
+          <div class="iconMouse__bar"></div>
+        </div>
+  
+        <div class="button" *ngIf="currentIndex === 0">
+          <p class="line0">
+            <span>{{ dh.data[0].attributes.second_description }}</span>
+          </p>
+          <button class="arrow-button"></button>
+        </div>
+  
+        <!--    ------------------------------------------------------------------------------------>
+  
+        <div class="message">
+          <div *ngFor="let item of dh.data; let indice = index">
+          <p class="line1" *ngIf="currentIndex === indice">
+            <span>{{item.attributes.title }}</span>
+          </p>
+          <p class="line2" *ngIf="currentIndex === indice">
+            <span>{{item.attributes.first_description}}</span>
+          </p>
+          <p
+            class="line3"
+            *ngIf="currentIndex === indice && indice !== 0 "
+          >
+            <span>{{item.attributes.second_description }}</span>
+  
+          </p>
+  
+        </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</ng-container>
+  </ng-container>
+  
