@@ -1,12 +1,26 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import {trigger,state,style,animate,transition} from '@angular/animations';
 
 @Component({
   selector: 'app-comment-form-reply',
   templateUrl: './comment-form-reply.component.html',
   styleUrls: ['./comment-form-reply.component.scss'],
+  animations: [
+    trigger('slideFadeInOut', [
+      state('in', style({ opacity: 1, transform: 'translateY(0)' })),
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(-5%)' }),
+        animate('500ms')
+      ]),
+      transition(':leave', [
+        animate('500ms', style({ opacity: 0, transform: 'translateY(100%)' }))
+      ])
+    ])
+  ]
 })
+
 export class CommentFormReplyComponent {
   formInfo!: FormGroup;
   isSubmitting = false;

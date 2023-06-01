@@ -1,11 +1,11 @@
 
-<div [@fadeInOut] class="row">
+<div  class="row">
   <div class="col-xs-12 col-md-8 offset-md-2">
 
-    <app-comment-card *ngFor="let comment of comments">
+    <app-comment-card *ngFor="let comment of comments" >
     </app-comment-card>
 
-    <div class="form-container">
+    <div @slideFadeInOut class="form-container" >
 
       <div class="comment-respond">
         <p class="comment-notes">
