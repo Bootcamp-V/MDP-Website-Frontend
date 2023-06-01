@@ -5,19 +5,19 @@
             <li class="li-arco">
                 <a class="link-style" [routerLink]="['/']">inicio</a>
             </li>
-  
+
             <li class="li-arco-two slash-arco">
                 <a class="link-style">nuestro blog</a>
             </li>
         </ul>
     </div>
   </div>
-  
-  
+
+
   <br>
   <div class="container">
-                          <div *ngFor="let i of b | paginate: {itemsPerPage: 6, currentPage: page}; let index=index" class="container_1" (click)="getIndex(index)">
-                              <div class="container_2">
+                          <div *ngFor="let i of b | paginate: {itemsPerPage: 6, currentPage: page}; let index=index" class="container_1" >
+                              <div class="container_2" (click)="getIndex(index)">
                               <img class="img" src="{{i.attributes.UrlImage}}" alt="{{i.attributes.Title}}">
                               <a class="btn_more_1"></a>
                               </div>
@@ -29,25 +29,24 @@
                                   <br>
                                   <p class="text">{{i.attributes.preview}}...</p>
                                   <br>
-                                  <br>  
+                                  <br>
                                   <div class="content_icon">
                                       <div>
                                           <div class="icon_gallery"></div><div class="icon_rectangle"></div>
                                       </div>
                                       <p class="p_weight"><span class="p_color">PUBLICADO EN</span> {{i.attributes.Category|uppercase}}</p>
                                   </div>
-                                 
+
                               </div>
                           </div>
-     
+
   </div>
-  
+
     <div class="content-pagination-controls">
-      <pagination-controls    (pageChange)="page = $event" 
-                              previousLabel=" " 
+      <pagination-controls    (pageChange)="page = $event"
+                              previousLabel=" "
                               nextLabel=" "
                               class="my-pagination">
       </pagination-controls>
     </div>
   </ng-container>
-  
