@@ -61,6 +61,7 @@ import { ListBlogsComponent } from './blog-page/components/list-blogs/list-blogs
 import { DetailBlogComponent } from './blog-page/components/detail-blog/detail-blog.component';
 import { CategoryComponent } from './blog-page/components/category/category.component';
 import { DetailBlogShareComponent } from './blog-page/components/detail-blog-share/detail-blog-share.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -127,6 +128,7 @@ import { DetailBlogShareComponent } from './blog-page/components/detail-blog-sha
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -11,6 +11,7 @@ import { Observable, Subject } from 'rxjs';
   styleUrls: ['./list-blogs.component.scss']
 })
 export class ListBlogsComponent implements OnInit{
+page!: number;
 blog$!:Observable<DataBlog[]>
 arrayblogs:DataBlog[]=[];
 
