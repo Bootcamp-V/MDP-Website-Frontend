@@ -1,4 +1,4 @@
-<ng-container *ngIf="blog$| async as b">
+<ng-container *ngIf="blog$| async as b; else noBanner">
   <div class="header-arco  w-full bg-[#000124]">
     <div class="menu-arco">
         <ul class="list-menu-arco">
@@ -46,3 +46,10 @@
       </pagination-controls>
     </div>
   </ng-container>
+
+
+  <ng-template #noBanner>
+    <div class="container-loading">
+    <img class="logo-loading" src="https://res.cloudinary.com/dg80o93to/image/upload/v1685738117/Logo_preload_2_909f37fbc5.png" alt="mdp">
+    </div>
+  </ng-template>

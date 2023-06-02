@@ -1,5 +1,5 @@
 
-<ng-container *ngIf="bannerOb$ | async as banner">
+<ng-container *ngIf="bannerOb$ | async as banner ; else noBanner">
   <div class="banner">
     <div
       class="banner_container"
@@ -22,3 +22,8 @@
 
   </ng-container>
 
+  <ng-template #noBanner>
+    <div class="container-loading">
+    <img class="logo-loading" src="https://res.cloudinary.com/dg80o93to/image/upload/v1685738117/Logo_preload_2_909f37fbc5.png" alt="mdp">
+    </div>
+  </ng-template>
