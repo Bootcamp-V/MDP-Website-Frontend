@@ -5,15 +5,15 @@
             <li class="li-arco">
                 <a class="link-style" [routerLink]="['/']">inicio</a>
             </li>
-  
+
             <li class="li-arco-two slash-arco">
                 <a class="link-style">nuestro blog</a>
             </li>
         </ul>
     </div>
   </div>
-  
-  
+
+
   <br>
   <div class="container">
                           <div *ngFor="let i of b | paginate: {itemsPerPage: 8, currentPage: page}; let index=index" class="container_1" >
@@ -24,30 +24,25 @@
                               <br>
                               <div class="container_3">
                                   <h4 class="title">{{i.attributes.Title}}</h4>
-                                  <br>
                                   <p class="date"><span class="p_color">{{i.attributes.Date}} POR </span>MDP</p>
-                                  <br>
                                   <p class="text">{{i.attributes.preview}}...</p>
-                                  <br>
-                                  <br>  
                                   <div class="content_icon">
                                       <div>
                                           <div class="icon_gallery"></div><div class="icon_rectangle"></div>
                                       </div>
                                       <p class="p_weight"><span class="p_color">PUBLICADO EN</span> {{i.attributes.Category|uppercase}}</p>
                                   </div>
-                                 
+
                               </div>
                           </div>
-     
+
   </div>
-  
+
     <div class="content-pagination-controls">
-      <pagination-controls    (pageChange)="page = $event" 
-                              previousLabel=" " 
+      <pagination-controls    (pageChange)="page = $event"
+                              previousLabel=" "
                               nextLabel=" "
                               class="my-pagination">
       </pagination-controls>
     </div>
   </ng-container>
-  
