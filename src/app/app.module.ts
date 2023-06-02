@@ -62,7 +62,6 @@ import { DetailBlogComponent } from './blog-page/components/detail-blog/detail-b
 import { CategoryComponent } from './blog-page/components/category/category.component';
 import { DetailBlogShareComponent } from './blog-page/components/detail-blog-share/detail-blog-share.component';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { CategoryComponent } from './blog-page/components/category/category.component';
 import { CommentCardComponent } from './blog-page/components/comment-card/comment-card.component';
 import { ListCommentComponent } from './blog-page/components/list-comment/list-comment.component';
 import { CommentFormReplyComponent } from './blog-page/components/comment-form-reply/comment-form-reply.component';
@@ -137,6 +136,8 @@ import { CommentFormReplyComponent } from './blog-page/components/comment-form-r
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent],

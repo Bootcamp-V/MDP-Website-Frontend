@@ -1,13 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
+import { environment } from 'src/environments/environment'
+import { IDetailShare } from '../model/share.interface';
 import { DataBlog, IBlog } from '../model/blog.interface';
 import { Observable, Subject } from 'rxjs';
-import { environment } from 'src/environments/environment'
-import { IListDetailPage } from '../model/list.interface';
-import { DataShare, IDetailShare } from '../model/share.interface';
-import { DataBlog, IBlog } from '../model/blog.interface';
-import { Observable, Subject } from 'rxjs';
-import { environment } from 'src/environments/environment'
 import { IListDetailPage } from '../model/list.interface';
 import { DataBlogComment, IBlogComment } from '../model/comment.interface.model';
 
