@@ -41,7 +41,16 @@ export class ListBlogsComponent implements OnInit {
       this.router.navigate([id], { relativeTo: this.routerActive });
     }
 
+    getNameIndex(name: string){
 
+
+      for (let index = 0; index <this.arrayblogs.length; index++) {
+         if(this.arrayblogs[index].attributes.Title===name){
+          this.getIndex(index);
+         }
+
+      }
+    }
 
 
   }

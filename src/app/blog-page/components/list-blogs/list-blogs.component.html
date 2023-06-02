@@ -17,13 +17,13 @@
   <br>
   <div class="container">
                           <div *ngFor="let i of b | paginate: {itemsPerPage: 8, currentPage: page}; let index=index" class="container_1" >
-                              <div class="container_2" (click)="getIndex(i.id-1)">
+                              <div class="container_2" (click)="getNameIndex(i.attributes.Title)">
                               <img class="img" src="{{i.attributes.UrlImage}}" alt="{{i.attributes.Title}}">
                               <a class="btn_more_1"></a>
                               </div>
                               <br>
                               <div class="container_3">
-                                  <h4 class="title" style="cursor: pointer;" (click)="getIndex(i.id-1)">{{i.attributes.Title}}</h4>
+                                  <h4 class="title" style="cursor: pointer;" (click)="getNameIndex(i.attributes.Title)">{{i.attributes.Title}}</h4>
                                   <p class="date"><span class="p_color">{{i.attributes.Date}} POR </span>MDP</p>
                                   <p class="text">{{i.attributes.preview}}...</p>
                                   <div class="content_icon">

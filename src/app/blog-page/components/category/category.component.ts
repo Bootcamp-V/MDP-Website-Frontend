@@ -51,7 +51,16 @@ this.servicio.arrayblogs=this.arrayblogDetail;
     }
 
 
+    getNameIndex(name: string){
 
+
+      for (let index = 0; index <this.arrayblogDetail.length; index++) {
+         if(this.arrayblogDetail[index].attributes.Title===name){
+          this.getIndex(index);
+         }
+
+      }
+    }
 
 
 
