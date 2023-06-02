@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AttributesBlogComment, DataBlogComment } from '../../model/comment.interface.model'
+import { DataBlogComment } from '../../model/comment.interface.model'
 import { Observable } from 'rxjs';
 import { BlogService } from '../../services/blog.service';
 import Swal from 'sweetalert2';
@@ -46,6 +46,24 @@ export class ListCommentComponent implements OnInit {
     console.log(this.arrayComments);
   }
 
+  updateComments(){
+    this.arrayComments = [];
+    this.servicio.getComments().subscribe(
+      (res) => {
+
+        for (let i of res.data) {
+
+          if (i.attributes.blog.data.id == this.id_blog + 1) {
+            this.arrayComments.push(i);
+          }
+
+        }
+        console.log(this.arrayComments);
+        this.servicio.dataBlogComments$.next(this.arrayComments);
+        this.servicio.arraycomments = this.arrayComments;
+      });
+    console.log(this.arrayComments);
+  }
 
 
   createForm() {
@@ -76,7 +94,8 @@ export class ListCommentComponent implements OnInit {
              "mensaje": this.formInfo.get('mensaje')?.value,
              "date": new Date().toISOString(),
              "favoritesCount": 0,
-             "published": false
+             "published": false,
+             "blog": this.servicio.arrayblogs[this.id_blog]
             
            }
 
@@ -86,6 +105,7 @@ export class ListCommentComponent implements OnInit {
            next: (response) => {
              this.showAlertSuccess();
              this.formInfo.reset();
+             this.updateComments();
            },
            error: (error) => {
              this.showAlertError('Ocurrio un error al hacer la peticion!');

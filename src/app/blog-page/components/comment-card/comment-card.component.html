@@ -29,7 +29,7 @@
     </div>
 
     <div class="card-footer">
-      <div class="warning" *ngIf="data.attributes.published">
+      <div class="warning" *ngIf="!data.attributes.published">
         <span>Tu comentario está en espera de ser moderado.</span>
       </div>
       <div class="response">
@@ -42,6 +42,6 @@
   </div>
 </div>
 
-        <div *ngIf="mostrarComponente">
-          <app-comment-form-reply></app-comment-form-reply>
-        </div>
+<div *ngIf="mostrarComponente">
+  <app-comment-form-reply></app-comment-form-reply>
+</div>

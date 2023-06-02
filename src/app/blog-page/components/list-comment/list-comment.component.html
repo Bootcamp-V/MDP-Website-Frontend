@@ -8,7 +8,8 @@
     </app-comment-card>
 
     <div class="responses-container">
-      <app-comment-card *ngFor="let response of comment.attributes.responses.data" [data]="response">
+      <app-comment-card *ngFor="let response of comment.attributes.responses.data"
+      [data]="response">
         
       </app-comment-card>
     </div>
@@ -64,7 +65,7 @@
           </div>
         </div>
         <div class="row-2">
-          <button class="send-info" type="submit" [disabled]="formInfo.invalid" (click)="addComment()">
+          <button class="send-info" type="submit" [disabled]="formInfo.invalid">
             <span>Publicar comentario</span>
           </button>
         </div>

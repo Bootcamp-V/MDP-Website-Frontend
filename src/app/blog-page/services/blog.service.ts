@@ -4,7 +4,7 @@ import { DataBlog, IBlog } from '../model/blog.interface';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment'
 import { IListDetailPage } from '../model/list.interface';
-import { DataBlogComment, IBlogComment, Responses } from '../model/comment.interface.model';
+import { DataBlogComment, IBlogComment } from '../model/comment.interface.model';
 
 @Injectable({
   providedIn: 'root'
@@ -37,9 +37,10 @@ export class BlogService {
   }
 
   getCommentAllComments():Observable<IBlogComment>{
-    return this.http.get<IBlogComment>(environment.baseUrl+'/api/blog-comments?populate[0]=responses&populate[1]=blog_comment&populate[2]=blog')
+    return this.http.get<IBlogComment>(environment.baseUrl+'/api/blog-component-lists?populate=*')
   }
+
   postCommentForm(data:Object){
-    return this.http.post(environment.baseUrl+'/api/blog-comments',data,{responseType: 'text'});
+    return this.http.post(environment.baseUrl+'/api/blog-comments?populate=*',data,{responseType: 'text'});
   }
 }

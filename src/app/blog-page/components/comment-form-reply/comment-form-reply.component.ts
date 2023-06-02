@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
 import {trigger,state,style,animate,transition} from '@angular/animations';
 
 @Component({
@@ -24,12 +23,8 @@ import {trigger,state,style,animate,transition} from '@angular/animations';
 export class CommentFormReplyComponent {
   formInfo!: FormGroup;
   isSubmitting = false;
-  comments: Comment[]=[
 
-  ];
-
-  constructor(private fb: FormBuilder, private router: Router,
-    private route: ActivatedRoute,) {
+  constructor(private fb: FormBuilder) {
     this.createForm();
   }
   createForm() {
@@ -48,14 +43,7 @@ export class CommentFormReplyComponent {
     return false;
 
   }
-  addComment() {
-    const variable = this.route.snapshot.paramMap.get('id2');
-    //const comment:Comment = {
-
-    //}
-
-  }
-
+ 
   sendForm() {
 
     if (this.validarForm()) {

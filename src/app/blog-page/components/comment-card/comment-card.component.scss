@@ -56,7 +56,7 @@ p {
 
 .card-block {
     display: flex;
-    margin: 0.2em 0;
+    margin: 0.7em 0 0.8em 0;
     padding: 0 2em ;
     justify-content: flex-start;
     align-items: center;
@@ -101,7 +101,8 @@ p {
 }
 .warning{
     display: block;
-    margin-bottom: 1em;
+    margin-top: 0.2em;
+    margin-bottom: 0.8em;
 }
 .warning span{
     font-size: 12px;
