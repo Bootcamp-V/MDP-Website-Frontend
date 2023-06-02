@@ -23,7 +23,7 @@
                               </div>
                               <br>
                               <div class="container_3">
-                                  <h4 class="title">{{i.attributes.Title}}</h4>
+                                  <h4 class="title" style="cursor: pointer;" (click)="getIndex(i.id-1)">{{i.attributes.Title}}</h4>
                                   <p class="date"><span class="p_color">{{i.attributes.Date}} POR </span>MDP</p>
                                   <p class="text">{{i.attributes.preview}}...</p>
                                   <div class="content_icon">

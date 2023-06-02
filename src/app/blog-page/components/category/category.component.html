@@ -27,7 +27,7 @@
       </div>
       <br>
       <div class="container_3">
-          <h4 class="title">{{i.attributes.Title}}</h4>
+          <h4 class="title" (click)="getIndex(i.id-1)" style="cursor: pointer;">{{i.attributes.Title}}</h4>
           <p class="date">{{i.attributes.Date}} POR MDP</p>
           <p class="text">{{i.attributes.preview}}...</p>
           <p>PUBLICADO EN {{i.attributes.Category|uppercase}}</p>
