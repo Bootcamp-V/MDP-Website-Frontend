@@ -19,6 +19,8 @@ export class ListCommentComponent implements OnInit {
   comments$!: Observable<DataBlogComment[]>;
   arrayComments: DataBlogComment[] = [];
 
+  guardarDatos: boolean = false;
+
   ngOnInit() {
 
     this.getcomments();
@@ -28,6 +30,7 @@ export class ListCommentComponent implements OnInit {
     this.comments$ = this.servicio.dataBlogComments$
     this.createForm();
   }
+
   getcomments() {
     this.servicio.getComments().subscribe(
       (res) => {
@@ -46,7 +49,7 @@ export class ListCommentComponent implements OnInit {
     console.log(this.arrayComments);
   }
 
-  updateComments(){
+  updateComments() {
     this.arrayComments = [];
     this.servicio.getComments().subscribe(
       (res) => {
@@ -83,60 +86,63 @@ export class ListCommentComponent implements OnInit {
     return false;
 
   }
-    addComment() {
+  addComment() {
 
-      if (this.validarForm()) {
-   
-         let object = {
-           "data": {
-             "name": this.formInfo.get('name')!.value,
-             "email": this.formInfo.get('email')!.value,
-             "mensaje": this.formInfo.get('mensaje')?.value,
-             "date": new Date().toISOString(),
-             "favoritesCount": 0,
-             "published": false,
-             "blog": this.servicio.arrayblogs[this.id_blog]
-            
-           }
+    if (this.validarForm()) {
 
-         }
-         console.log(object);
-         this.servicio.postCommentForm(object).subscribe({
-           next: (response) => {
-             this.showAlertSuccess();
-             this.formInfo.reset();
-             this.updateComments();
-           },
-           error: (error) => {
-             this.showAlertError('Ocurrio un error al hacer la peticion!');
-           }
-   
-         });
-   
-       } else {
-         this.showAlertError('Datos Incorrectos!');
-       }
-   
-     }
-     showAlertSuccess() {
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Comentario enviado!',
-        showConfirmButton: false,
-        timer: 1500
-      })
+      let object = {
+        "data": {
+          "name": this.formInfo.get('name')!.value,
+          "email": this.formInfo.get('email')!.value,
+          "mensaje": this.formInfo.get('mensaje')?.value,
+          "date": new Date().toISOString(),
+          "favoritesCount": 0,
+          "published": false,
+          "blog": this.servicio.arrayblogs[this.id_blog]
+
+        }
+
+      }
+      console.log(object);
+      this.servicio.postCommentForm(object).subscribe({
+        next: (response) => {
+          this.showAlertSuccess();
+          this.formInfo.reset();
+          this.updateComments();
+        },
+        error: (error) => {
+          this.showAlertError('Ocurrio un error al hacer la peticion!');
+        }
+
+      });
+
+    } else {
+      this.showAlertError('Datos Incorrectos!');
     }
-  
-  
-    showAlertError(title: string) {
-      Swal.fire({
-        position: 'top-end',
-        icon: 'error',
-        title: title,
-        showConfirmButton: false,
-        timer: 1500
-      })
-    }
-   
+
   }
+  showAlertSuccess() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Comentario enviado!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
+
+  showAlertError(title: string) {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: title,
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+  changeGuardarDatos() {
+    this.guardarDatos = !this.guardarDatos;
+    console.log(this.guardarDatos);
+  }
+}

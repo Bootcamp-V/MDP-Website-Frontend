@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {trigger,state,style,animate,transition} from '@angular/animations';
+import { trigger, state, style, animate, transition } from '@angular/animations';
+import { BlogService } from '../../services/blog.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-comment-form-reply',
@@ -24,7 +26,9 @@ export class CommentFormReplyComponent {
   formInfo!: FormGroup;
   isSubmitting = false;
 
-  constructor(private fb: FormBuilder) {
+  @Input() id_blog!: number;
+
+  constructor(private fb: FormBuilder, private servicio: BlogService) {
     this.createForm();
   }
   createForm() {
@@ -43,22 +47,62 @@ export class CommentFormReplyComponent {
     return false;
 
   }
- 
-  sendForm() {
 
+  sendForm() {
+    console.log("reply id" + this.id_blog);
     if (this.validarForm()) {
 
       let object = {
         "data": {
-          "name": this.formInfo.get('nombre')?.value,
-          "date": new Date().toISOString(),
+          "name": this.formInfo.get('name')!.value,
+          "email": this.formInfo.get('email')!.value,
           "mensaje": this.formInfo.get('mensaje')?.value,
-          "email": this.formInfo.get('email')?.value,
+          "date": new Date().toISOString(),
+          "favoritesCount": 0,
+          "published": false,
+          "blog": this.servicio.arrayblogs[this.id_blog]
+
         }
+
       }
       console.log(object);
+      this.servicio.postCommentForm(object).subscribe({
+        next: (response) => {
+          this.showAlertSuccess();
+          this.formInfo.reset();
 
+        },
+        error: (error) => {
+          this.showAlertError('Ocurrio un error al hacer la peticion!');
+        }
+
+      });
+
+    } else {
+      this.showAlertError('Datos Incorrectos!');
     }
 
   }
+
+  showAlertSuccess() {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Enviado!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
+
+  showAlertError(title: string) {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: title,
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
 }

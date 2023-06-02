@@ -14,7 +14,7 @@
       </app-comment-card>
     </div>
   </div>
-    <div class="clear" style="height:30px"></div>
+    <div class="clear" style="height:60px"></div>
 
     <div class="form-container">
 
@@ -34,7 +34,7 @@
         </p>
       </div>
 
-      <form [formGroup]="formInfo" (ngSubmit)="addComment()">
+      <form [formGroup]="formInfo" (ngSubmit)="addComment()" [autocomplete]="guardarDatos ? 'on' : 'off'">
 
         <div class="row-3" [ngClass]="{
                 'warning-form':
@@ -53,7 +53,7 @@
                           this.formInfo.get('name')?.invalid &&
                           this.formInfo.get('name')?.touched
                       }">
-            <input formControlName="name" type="text" placeholder="Nombre*" />
+            <input formControlName="name" type="text" placeholder="Nombre*" [autocomplete]="guardarDatos ? 'on' : 'off'" />
           </div>
 
           <div class="input-2" [ngClass]="{
@@ -61,7 +61,7 @@
                           this.formInfo.get('email')?.invalid &&
                           this.formInfo.get('email')?.touched
                       }">
-            <input formControlName="email" type="email" placeholder="Email*" />
+            <input formControlName="email" type="email" placeholder="Email*" [autocomplete]="guardarDatos ? 'on' : 'off'"/>
           </div>
         </div>
         <div class="row-2">
@@ -72,8 +72,7 @@
         <div class="row-4">
           <div class="comment-consent">
             <input name="wp-comment-cookies-consent"
-             type="checkbox" value="yes"
-              checked="checked" />
+             type="checkbox" [value]="guardarDatos" (change)="changeGuardarDatos()"/>
             <p>
               Guardar mi nombre, correo electrónico y web en este navegador para
               la próxima vez que comente.</p>
