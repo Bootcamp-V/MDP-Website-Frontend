@@ -109,24 +109,58 @@ p {
     font-style: italic;
     color: #000121;
 }
-
-@media screen and (max-width: 576px) {
-  .card{
-    max-width: 80% !important;
-  }
+@media screen and (max-width: 1470px){
+    .comment-author-img {
+        height: 45px;
+        width: 45px;
+    
+    }
 }
-
+@media screen and (max-width: 1270px){
+    .comment-author-img {
+        height: 45px;
+        width: 45px;
+    
+    }
+}
+@media screen and (max-width: 1000px){
+    .comment-author-img {
+        height: 40px;
+        width: 40px;
+    
+    }
+}
 @media screen and (max-width: 768px) {
 
   .card{
-    max-width: 80% !important;
+    max-width: 90% !important;
   }
+  .comment-author-img {
+    height: 40px;
+    width: 40px;
+
+}
 }
 
 @media screen and (max-width: 630px) {
 
   .card{
-    max-width: 80% !important;
+    max-width: 85% !important;
   }
+  .comment-author-img {
+    height: 35px;
+    width: 35px;
+
+}
 }
 
+@media screen and (max-width: 576px) {
+    .card{
+      max-width: 80% !important;
+    }
+    .comment-author-img {
+        height: 32px;
+        width: 32px;
+    
+    }
+  }

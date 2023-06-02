@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { BlogService } from '../../services/blog.service';
 import Swal from 'sweetalert2';
+import { DataBlogComment } from '../../model/comment.interface.model';
 
 @Component({
   selector: 'app-comment-form-reply',
@@ -26,7 +27,7 @@ export class CommentFormReplyComponent {
   formInfo!: FormGroup;
   isSubmitting = false;
 
-  @Input() id_blog!: number;
+  @Input() comment!: DataBlogComment;
 
   constructor(private fb: FormBuilder, private servicio: BlogService) {
     this.createForm();
@@ -49,7 +50,7 @@ export class CommentFormReplyComponent {
   }
 
   sendForm() {
-    console.log("reply id" + this.id_blog);
+
     if (this.validarForm()) {
 
       let object = {
@@ -60,7 +61,8 @@ export class CommentFormReplyComponent {
           "date": new Date().toISOString(),
           "favoritesCount": 0,
           "published": false,
-          "blog": this.servicio.arrayblogs[this.id_blog]
+          "blog": this.comment.attributes.blog,
+          "blog_comment": [ this.comment]
 
         }
 

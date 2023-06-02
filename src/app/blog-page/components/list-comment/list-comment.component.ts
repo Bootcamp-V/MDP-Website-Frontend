@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class ListCommentComponent implements OnInit {
   @Input() id_blog!: number;
+  @Input() id_route!: number;
 
   formInfo!: FormGroup;
   isSubmitting = false;
@@ -32,12 +33,13 @@ export class ListCommentComponent implements OnInit {
   }
 
   getcomments() {
+    console.log("id_blog: " + this.id_route);
     this.servicio.getComments().subscribe(
       (res) => {
 
         for (let i of res.data) {
 
-          if (i.attributes.blog.data.id == this.id_blog + 1) {
+          if (i.attributes.blog.data.id == this.id_blog) {
             this.arrayComments.push(i);
           }
 
@@ -46,7 +48,7 @@ export class ListCommentComponent implements OnInit {
         this.servicio.dataBlogComments$.next(this.arrayComments);
         this.servicio.arraycomments = this.arrayComments;
       });
-    console.log(this.arrayComments);
+
   }
 
   updateComments() {
@@ -56,7 +58,7 @@ export class ListCommentComponent implements OnInit {
 
         for (let i of res.data) {
 
-          if (i.attributes.blog.data.id == this.id_blog + 1) {
+          if (i.attributes.blog.data.id == this.id_blog) {
             this.arrayComments.push(i);
           }
 
@@ -98,7 +100,7 @@ export class ListCommentComponent implements OnInit {
           "date": new Date().toISOString(),
           "favoritesCount": 0,
           "published": false,
-          "blog": this.servicio.arrayblogs[this.id_blog]
+          "blog": this.servicio.arrayblogs[this.id_route]
 
         }
 
