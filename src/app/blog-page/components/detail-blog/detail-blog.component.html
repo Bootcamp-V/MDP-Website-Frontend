@@ -1,115 +1,88 @@
-<div class="header-arco h-[300px] w-full bg-[#000124]">
-    <div class="menu-arco">
-        <ul class="list-menu-arco">
-            <li class="li-arco">
-                <a class="link-style" [routerLink]="['/']">inicio</a>
-            </li>
-
-            <li class="li-arco slash-arco">
-                <a class="link-style" [routerLink]="['/blog']">blog</a>
-            </li>
-
-            <li class="li-arco slash-arco">
+    <div class="header-arco h-[300px] w-full bg-[#000124]">
+      <div class="menu-arco">
+          <ul class="list-menu-arco">
+              <li class="li-arco">
+                  <a class="link-style" [routerLink]="['/']">inicio</a>
+              </li>
+    
+              <li class="li-arco slash-arco">
+                  <a class="link-style" [routerLink]="['/blog']">blog</a>
+              </li>
+    
+              <li class="li-arco slash-arco">
                 <a class="link-style" (click)="getcategory()">{{data.attributes.Category}}</a>
             </li>
-
-            <li class="li-arco slash-arco" style="color: #ffffff80">{{data.attributes.Title}}</li>
-        </ul>
+    
+              <li class="li-arco slash-arco" style="color: #ffffff80">{{data.attributes.Title}}</li>
+          </ul>
+      </div>
     </div>
-</div>
-
-<div class="container">
-    <!------------------------------------------------------------------------------------------------->
-    <!--------------------------------------BLOG-------------------------------------------------------->
-    <!------------------------------------------------------------------------------------------------->
-    <div class="container_1">
-        <div class="box_date">
-            <p class="date">{{ data.attributes.Date }}/ PUBLICADO EN </p>
-            <b>{{ data.attributes.Category}}</b>
-        </div>
-        <div class="box_likes">
-            <i class="fa-solid fa-heart"></i>
-            <p class="number">{{ data.attributes.Likes}}</p>
-        </div>
-    </div>
-    <div class="container_2">
-        <h1 class="title">{{ data.attributes.Title }}</h1>
-        <h1 class="subtitle">{{ data.attributes.SubTitle}}</h1>
-        <img src="{{ data.attributes.UrlImage }}" alt="">
-        <!------------------------------------------------------------------------------------------------->
-        <!------------------------------------------------------------------------------------------------->
-        <div class="container_3">
-            <!------------------------------------------------------------------------------------------------->
-            <!---------------------------------BLOG DEFINITION---------------------------------------------------->
-            <!------------------------------------------------------------------------------------------------->
-            <ng-container *ngFor=" let i of data.attributes.blog_component_definitions.data">
-                <p class="definition">{{ i.attributes.Title}}</p>
-                <p class="description">{{ i.attributes.Definition }}</p>
-                <br>
-            </ng-container>
-            <!------------------------------------------------------------------------------------------------->
-            <!------------------------------------------------------------------------------------------------->
-
-
-            <!------------------------------------------------------------------------------------------------->
-            <!-----------------------------------BLOG DESCRIPTION------------------------------------------------->
-            <!------------------------------------------------------------------------------------------------->
-            <ng-container *ngFor=" let i of data.attributes.blog_component_descriptions.data">
-                <p class="subtitle_1">{{ i.attributes.SubTitle}}</p>
-                <p class="description_1">{{ i.attributes.Description}}</p>
-            </ng-container>
-            <!------------------------------------------------------------------------------------------------->
-            <!------------------------------------------------------------------------------------------------->
-            <!------------------------------------------------------------------------------------------------->
-
-
-
-            <!------------------------------------------------------------------------------------------------->
-            <!----------------------------------BLOG IMAGE------------------------------------------->
-            <!------------------------------------------------------------------------------------------------->
-            <ng-container *ngFor="let i of data.attributes.blog_component_images.data">
-                <p class="subtitle_2">{{ i.attributes.SubTitle }}</p>
-                <img src="{{ i.attributes.UrlImage }}" alt="">
-                <p class="description_2">{{ i.attributes.Description }}</p>
-            </ng-container>
-            <!------------------------------------------------------------------------------------------------->
-            <!------------------------------------------------------------------------------------------------->
-            <!------------------------------------------------------------------------------------------------->
-
-
-            <!------------------------------------------------------------------------------------------------->
-            <!------------------------------------BLOG LIST--------------------------------------------->
-            <!------------------------------------------------------------------------------------------------->
-            <ng-container *ngFor="let i of dataListDetail">
-                <p class="description_3">{{i.attributes.Description}}</p>
-                <ul>
-                    <li *ngFor="let j of i.attributes.blog_component_list_children.data">{{j.attributes.Item}}</li>
-                </ul>
-            </ng-container>
-            <!------------------------------------------------------------------------------------------------->
-            <!------------------------------------------------------------------------------------------------->
-            <!------------------------------------------------------------------------------------------------->
-
-
-            <!------------------------------------------------------------------------------------------------->
-            <!---------------------------------------BLOG LIST IMAGE--------------------------------------------->
-            <!------------------------------------------------------------------------------------------------->
-
-            <div class="container_img" *ngFor="let i of data.attributes.blog_component_list_images.data">
-                <img class="img_list" src="{{ i.attributes.UrlImage }}" alt="">
+    
+    <div class="container">
+              <div class="container_1">
+                  <div class="box_date">
+                      <p class="date">{{ data.attributes.Date }}/ PUBLICADO EN </p>
+                      <b>{{data.attributes.Category}}</b>
+                  </div>
+                  <div class="box_likes">
+                      <i [ngClass]="{'heardActive': heartButton==true}" class="fa-solid fa-heart" (click)="PostLike()"></i>
+                      <p class="number">{{ data.attributes.Likes}}</p>
+                  </div>
+              </div>
+              <div class="container_2">
+                  <h1 class="title">{{ data.attributes.Title }}</h1>
+                  <h1 class="subtitle">{{ data.attributes.SubTitle }}</h1>
+                  <img class="principal-img" src="{{ data.attributes.UrlImage }}" alt="">
+                  <br>
+                  <div class="container_3">
+                        <ng-container *ngFor=" let i of data.attributes.blog_component_definitions.data">
+                          <p class="definition">{{ i.attributes.Title}}</p>
+                          <p class="description">{{ i.attributes.Definition }}</p>
+                          <br>
+                          <br>
+                        </ng-container>
+                        <ng-container *ngFor=" let i of data.attributes.blog_component_descriptions.data">
+                          <p class="subtitle_1">{{ i.attributes.SubTitle}}</p>
+                          <p class="description_1">{{ i.attributes.Description}}</p>
+                          <br>
+                          <br>
+                        </ng-container>
+                         <ng-container *ngFor="let i of data.attributes.blog_component_images.data">
+                          <p class="subtitle_2">{{ i.attributes.SubTitle }}</p>
+                          <br>
+                          <img src="{{ i.attributes.UrlImage }} " alt="">
+                          <p class="description_2">{{ i.attributes.Description }}</p>
+                          <br>
+                        </ng-container>
+                      <br>
+                        <ng-container *ngFor="let i of dataListDetail">
+                          <p  class="description_3">{{i.attributes.Description}}</p>
+                          <br>
+                          <ul class="list">
+                            <li class="list_1" *ngFor="let j of i.attributes.blog_component_list_children.data">{{j.attributes.Item}}</li>
+                          </ul>
+                        </ng-container>
+    <br>
+                      <div class="container_img" >
+                          <img *ngFor="let i of data.attributes.blog_component_list_images.data" class="img_list" src="{{ i.attributes.UrlImage }}" alt="">
+                      </div>
+                  </div>
+                <div class="share">
             </div>
-        </div>
-        <!------------------------------------------------------------------------------------------------->
-        <!------------------------------------------------------------------------------------------------->
-        <!------------------------------------------------------------------------------------------------->
+            
     </div>
+    </div>
+    
+
+
+
 
 
 
     <!------------------------------------------------------------------------------------------------->
     <!---------------------------------------BLOG COMMENTS--------------------------------------------->
     <!------------------------------------------------------------------------------------------------->
-    <div class="container-comments">
+    <div class="container-comments" style="width: 60%;  margin: 50px auto;">
         <app-list-comment [id_blog]="id" style="width:100%"></app-list-comment>
     </div>
     <!------------------------------------------------------------------------------------------------->

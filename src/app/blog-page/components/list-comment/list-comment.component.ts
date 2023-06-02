@@ -122,7 +122,7 @@ export class ListCommentComponent implements OnInit {
       Swal.fire({
         position: 'top-end',
         icon: 'success',
-        title: 'Enviado!',
+        title: 'Comentario enviado!',
         showConfirmButton: false,
         timer: 1500
       })

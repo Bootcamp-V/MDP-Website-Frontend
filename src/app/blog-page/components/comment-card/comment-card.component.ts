@@ -16,12 +16,13 @@ export class CommentCardComponent {
 
   @Input() data!: DataBlogComment;
 
+  id_comment!: number;
   comment!: DataBlogComment;
   contador: any;
   favorited: boolean = false;
 
   ngOnInit() {
-    console.log("id comment card" + this.data);
+
     this.servicio.getCommentAllComments().subscribe(
       (res) => {
         console.log(res.data);
@@ -29,13 +30,12 @@ export class CommentCardComponent {
 
           if (i.id === this.data.id) {
             this.comment = i;
-
           }
         }
       }
     );
 
-
+    this.id_comment = this.data.id;
     this.contador = this.data.attributes.favoritesCount;
 
   }
@@ -45,15 +45,48 @@ export class CommentCardComponent {
 
   onToggleFavorite() {
     this.favorited = this.favorited ? false : true;
-
+    console.log("Favorite" + this.id_comment);
     if (this.favorited) {
+      let objeto = {
+        "data": {
+          "favoritesCount": this.contador + 1
+        }
+      }
+      
+      try {
+      
+        this.servicio.updateLikesComments(objeto,this.id_comment).subscribe(
+          (res)=>{
+            this.contador++;
+          }
+        );
+  
+      } catch (error) {
+        console.log(error);
+      }
 
-      this.contador++;
     }
     else {
+      let objeto = {
+        "data": {
+          "favoritesCount": this.contador - 1
+        }
+      }
+      
+      try {
+      
+        this.servicio.updateLikesComments(objeto,this.id_comment).subscribe(
+          (res)=>{
+            this.contador--;
+          }
+        );
+  
+      } catch (error) {
+        console.log(error);
+      }
 
-      this.contador--;
     }
+
   }
 
 

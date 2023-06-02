@@ -25,11 +25,16 @@ export class BlogService {
   }
 
   getBlogs():Observable<IBlog>{
-    return this.http.get<IBlog>(environment.baseUrl+'/api/blogs?populate=*')
+    return this.http.get<IBlog>(environment.baseUrl+'/api/blogs?populate=*&pagination[start]=0&pagination[limit]=40')
   }
 
   getListDetailBlog():Observable<IListDetailPage>{
     return this.http.get<IListDetailPage>(environment.baseUrl+'/api/blog-component-lists?populate=*')
+  }
+
+
+  updateLikesBlog(data:Object,id:number):Observable<IBlog>{
+    return this.http.put<IBlog>(environment.baseUrl+'/api/blogs/'+id,data)
   }
 
   getComments():Observable<IBlogComment>{
@@ -43,4 +48,9 @@ export class BlogService {
   postCommentForm(data:Object){
     return this.http.post(environment.baseUrl+'/api/blog-comments?populate=*',data,{responseType: 'text'});
   }
+
+  updateLikesComments(data:Object,id:number):Observable<IBlogComment>{
+    return this.http.put<IBlogComment>(environment.baseUrl+'/api/blog-comments/'+id, data)
+  }
+
 }
