@@ -16,8 +16,8 @@
   
   <br>
   <div class="container">
-                          <div *ngFor="let i of b | paginate: {itemsPerPage: 6, currentPage: page}; let index=index" class="container_1" (click)="getIndex(i.id-1)">
-                              <div class="container_2">
+                          <div *ngFor="let i of b | paginate: {itemsPerPage: 8, currentPage: page}; let index=index" class="container_1" >
+                              <div class="container_2" (click)="getIndex(i.id-1)">
                               <img class="img" src="{{i.attributes.UrlImage}}" alt="{{i.attributes.Title}}">
                               <a class="btn_more_1"></a>
                               </div>
