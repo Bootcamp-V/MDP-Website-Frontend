@@ -177,3 +177,24 @@ b{
     width: 80%;
   }
 }
+
+.comments{
+  width: 60%; 
+  margin: 0 auto 7em auto;
+}
+
+@media screen and (max-width: 768px){
+  .comments{
+    width: 70%;
+  }
+}
+@media screen and (max-width: 630px){
+  .comments{
+    width: 75%;
+  }
+}
+@media screen and (max-width: 576px){
+  .comments{
+    width: 85%;
+  }
+}
