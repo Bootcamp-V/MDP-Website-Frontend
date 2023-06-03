@@ -1,6 +1,6 @@
-<h1 class="services-title-general">Nuestros Servicios</h1>
-<ng-container *ngIf="services$ | async as services">
 
+<ng-container *ngIf="services$ | async as services; else noBanner">
+  <h1 class="services-title-general">Nuestros Servicios</h1>
 
 <div *ngIf="services.data.length>=1" class="containerServices" >
 
@@ -485,7 +485,11 @@
 </ng-container>
 
 
-
+<ng-template #noBanner>
+  <div class="container-loading">
+  <img class="logo-loading" src="https://res.cloudinary.com/dg80o93to/image/upload/v1685738117/Logo_preload_2_909f37fbc5.png" alt="mdp">
+  </div>
+</ng-template>
 
 
 

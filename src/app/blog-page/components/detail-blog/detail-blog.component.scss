@@ -183,18 +183,35 @@ b{
   margin: 0 auto 7em auto;
 }
 
-@media screen and (max-width: 768px){
-  .comments{
-    width: 70%;
+@media screen and (max-width: 1470px) {
+  .comments
+  {
+    width: 65%;
   }
 }
-@media screen and (max-width: 630px){
-  .comments{
+
+@media screen and (max-width: 1270px) {
+  .comments
+  {
     width: 75%;
+  }
+}
+
+
+@media screen and (max-width: 768px){
+  .comments{
+    width: 80%;
+    padding-left: 30px;
+  }
+}
+@media screen and (max-width: 680px){
+  .comments{
+    width: 82%;
+    padding-left: 0px;
   }
 }
 @media screen and (max-width: 576px){
   .comments{
-    width: 85%;
+    width: 86%;
   }
 }

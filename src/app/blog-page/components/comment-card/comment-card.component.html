@@ -32,7 +32,7 @@
       <div class="warning" *ngIf="!data.attributes.published">
         <span>*Tu comentario está en espera de ser moderado.</span>
       </div>
-      <div class="response">
+      <div class="response" *ngIf="!response">
         <i class="fa-regular fa-comment-dots"></i>
 
         <button (click)="showCommentReply()">Responder</button>
@@ -43,5 +43,5 @@
 </div>
 
 <div *ngIf="mostrarComponente">
-  <app-comment-form-reply [id_blog]="data.attributes.blog.data.id"></app-comment-form-reply>
+  <app-comment-form-reply [comment]="data"></app-comment-form-reply>
 </div>

@@ -1,10 +1,10 @@
-<ng-container *ngIf="blog$| async as b">
-    <div class="header-arco  w-full bg-[#000124]">
-        <div class="menu-arco">
-            <ul class="list-menu-arco">
-                <li class="li-arco">
-                    <a class="link-style" [routerLink]="['/']">inicio</a>
-                </li>
+<ng-container *ngIf="blog$| async as b; else noBanner">
+  <div class="header-arco  w-full bg-[#000124]">
+    <div class="menu-arco">
+        <ul class="list-menu-arco">
+            <li class="li-arco">
+                <a class="link-style" [routerLink]="['/']">inicio</a>
+            </li>
 
                 <li class="li-arco-two slash-arco">
                     <a class="link-style">nuestro blog</a>
@@ -49,7 +49,17 @@
     </div>
 
     <div class="content-pagination-controls">
-        <pagination-controls (pageChange)="page = $event" previousLabel=" " nextLabel=" " class="my-pagination">
-        </pagination-controls>
+      <pagination-controls    (pageChange)="page = $event"
+                              previousLabel=" "
+                              nextLabel=" "
+                              class="my-pagination">
+      </pagination-controls>
     </div>
-</ng-container>
+  </ng-container>
+
+
+  <ng-template #noBanner>
+    <div class="container-loading">
+    <img class="logo-loading" src="https://res.cloudinary.com/dg80o93to/image/upload/v1685738117/Logo_preload_2_909f37fbc5.png" alt="mdp">
+    </div>
+  </ng-template>

@@ -15,7 +15,8 @@ export class CommentCardComponent {
   }
 
   @Input() data!: DataBlogComment;
-
+  @Input() response!: boolean;
+  
   id_comment!: number;
   comment!: DataBlogComment;
   contador: any;

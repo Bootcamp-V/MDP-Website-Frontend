@@ -1,5 +1,6 @@
+<ng-container *ngIf="footer$ | async as f">
 <footer>
-  <ng-container *ngIf="footer$ | async as f; else noFooter">
+
     <div class="footer-container">
       <div class="up-footer">
         <div class="last-tweets">
@@ -72,9 +73,6 @@
         </div>
       </div>
     </div>
-  </ng-container>
 
-  <ng-template #noFooter>
-    <div class="lds-dual-ring"></div>
-  </ng-template>
 </footer>
+</ng-container>
