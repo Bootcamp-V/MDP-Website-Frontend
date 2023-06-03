@@ -1,48 +1,55 @@
 <ng-container *ngIf="blog$| async as b">
-  <div class="header-arco  w-full bg-[#000124]">
-    <div class="menu-arco">
-        <ul class="list-menu-arco">
-            <li class="li-arco">
-                <a class="link-style" [routerLink]="['/']">inicio</a>
-            </li>
+    <div class="header-arco  w-full bg-[#000124]">
+        <div class="menu-arco">
+            <ul class="list-menu-arco">
+                <li class="li-arco">
+                    <a class="link-style" [routerLink]="['/']">inicio</a>
+                </li>
 
-            <li class="li-arco-two slash-arco">
-                <a class="link-style">nuestro blog</a>
-            </li>
-        </ul>
+                <li class="li-arco-two slash-arco">
+                    <a class="link-style">nuestro blog</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 
 
-  <br>
-  <div class="container">
-                          <div *ngFor="let i of b | paginate: {itemsPerPage: 8, currentPage: page}; let index=index" class="container_1" >
-                              <div class="container_2" (click)="getNameIndex(i.attributes.Title)">
-                              <img class="img" src="{{i.attributes.UrlImage}}" alt="{{i.attributes.Title}}">
-                              <a class="btn_more_1"></a>
-                              </div>
-                              <br>
-                              <div class="container_3">
-                                  <h4 class="title" style="cursor: pointer;" (click)="getNameIndex(i.attributes.Title)">{{i.attributes.Title}}</h4>
-                                  <p class="date"><span class="p_color">{{i.attributes.Date}} POR </span>MDP</p>
-                                  <p class="text">{{i.attributes.preview}}...</p>
-                                  <div class="content_icon">
-                                      <div>
-                                          <div class="icon_gallery"></div><div class="icon_rectangle"></div>
-                                      </div>
-                                      <p class="p_weight"><span class="p_color">PUBLICADO EN</span> {{i.attributes.Category|uppercase}}</p>
-                                  </div>
+    <br>
+    <div class="container">
+        <div *ngFor="let i of b | paginate: {itemsPerPage: 8, currentPage: page}; let index=index" class="container_1">
+            <div *ngIf="selectedCategory === null || i.attributes.Category === selectedCategory">
 
-                              </div>
-                          </div>
+                <div class="container_2" (click)="getNameDateIndex(i.attributes.Title, i.attributes.UrlImage)">
+                    <img class="img" src="{{i.attributes.UrlImage}}" alt="{{i.attributes.Title}}">
+                    <a class="btn_more_1"></a>
+                </div>
+                <br>
+                <div class="container_3">
+                    <h4 class="title" style="cursor: pointer;"
+                        (click)="getNameDateIndex(i.attributes.Title, i.attributes.UrlImage)">{{i.attributes.Title}}
+                    </h4>
+                    <p class="date"><span class="p_color">{{i.attributes.Date}} POR </span>MDP</p>
+                    <p class="text">{{i.attributes.preview}}...</p>
+                    <div class="content_icon">
+                        <div>
+                            <div class="icon_gallery"></div>
+                            <div class="icon_rectangle"></div>
+                        </div>
+                        <div (click)="getCategory(i.attributes.Category)">
+                        <p class="p_weight" ><span class="p_color">PUBLICADO EN</span>
+                            {{i.attributes.Category|uppercase}}
+                        </p>
+                    </div>
+                    </div>
+                </div>
 
-  </div>
+            </div>
+        </div>
+
+    </div>
 
     <div class="content-pagination-controls">
-      <pagination-controls    (pageChange)="page = $event"
-                              previousLabel=" "
-                              nextLabel=" "
-                              class="my-pagination">
-      </pagination-controls>
+        <pagination-controls (pageChange)="page = $event" previousLabel=" " nextLabel=" " class="my-pagination">
+        </pagination-controls>
     </div>
-  </ng-container>
+</ng-container>
