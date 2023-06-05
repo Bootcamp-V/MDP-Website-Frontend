@@ -9,6 +9,9 @@
                 <li class="li-arco-two slash-arco">
                     <a class="link-style">nuestro blog</a>
                 </li>
+                <li class="li-arco-two slash-arco">
+                    <a class="link-style" onclick="location.reload()" style="cursor: pointer;">CATEGORÍAS</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -35,7 +38,7 @@
                             <div class="icon_gallery"></div>
                             <div class="icon_rectangle"></div>
                         </div>
-                        <div (click)="getCategory(i.attributes.Category)">
+                        <div (click)="getCategory(i.attributes.Category)" style="cursor: pointer;">
                         <p class="p_weight" ><span class="p_color">PUBLICADO EN</span>
                             {{i.attributes.Category|uppercase}}
                         </p>
