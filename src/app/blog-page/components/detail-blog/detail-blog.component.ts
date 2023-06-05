@@ -12,7 +12,7 @@ import { DataListPage} from '../../model/list.interface';
 export class DetailBlogComponent implements OnInit{
 
 id!:number;
-blog_id!:number;
+
 data!:DataBlog;
 dataListDetail:DataListPage[]=[];
 heartButton:boolean=false;
@@ -40,7 +40,6 @@ ngOnInit() {
    }
 
 this.getlistDetailBlog();
-this.blog_id = this.data.id;
 
 }
 
@@ -56,7 +55,7 @@ this.servicio.getListDetailBlog().subscribe(
     }
   }
 );
-console.log(this.dataListDetail)
+//console.log(this.dataListDetail)
 }
 
 

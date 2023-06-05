@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { BlogService } from '../../services/blog.service';
@@ -26,7 +26,8 @@ import { DataBlogComment } from '../../model/comment.interface.model';
 export class CommentFormReplyComponent {
   formInfo!: FormGroup;
   isSubmitting = false;
-
+  @Output() envio = new EventEmitter<boolean>();
+  
   blog_id!:number;
 
   @Input() comment!: DataBlogComment;
@@ -75,6 +76,7 @@ export class CommentFormReplyComponent {
       this.servicio.postCommentForm(object).subscribe({
         next: (response) => {
           this.showAlertSuccess();
+          this.envio.emit(true);
           this.formInfo.reset();
         },
         error: (error) => {

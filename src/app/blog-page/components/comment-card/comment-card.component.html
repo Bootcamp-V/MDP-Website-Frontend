@@ -11,7 +11,7 @@
             <span>{{ data.attributes.name }}</span>
           </div>
           <div class="date">
-            <span>{{ data.attributes.date | date:'fullDate'}}</span>
+            <span>{{ data.attributes.date | date:'longDate' }} at {{ data.attributes.date | date: 'shortTime'}}</span>
           </div>
         </div>
       </div>
@@ -43,5 +43,6 @@
 </div>
 
 <div *ngIf="mostrarComponente">
-  <app-comment-form-reply [comment]="data" [id_route]="id_route"></app-comment-form-reply>
+  <app-comment-form-reply [comment]="data" [id_route]="id_route"
+  (envio)="sendResponseForm($event)"></app-comment-form-reply>
 </div>

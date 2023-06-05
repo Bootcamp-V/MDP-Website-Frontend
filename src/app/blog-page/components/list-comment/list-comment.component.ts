@@ -4,6 +4,8 @@ import { DataBlogComment } from '../../model/comment.interface.model'
 import { Observable } from 'rxjs';
 import { BlogService } from '../../services/blog.service';
 import Swal from 'sweetalert2';
+import { Params, ActivatedRoute, Router } from '@angular/router';
+import { DataBlog } from '../../model/blog.interface';
 
 @Component({
   selector: 'app-list-comment',
@@ -11,8 +13,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./list-comment.component.scss']
 })
 export class ListCommentComponent implements OnInit {
-  @Input() id_blog!: number;
-  @Input() id_route!: number;
 
   formInfo!: FormGroup;
   isSubmitting = false;
@@ -21,30 +21,52 @@ export class ListCommentComponent implements OnInit {
   arrayComments: DataBlogComment[] = [];
 
   guardarDatos: boolean = false;
+  updateDatos: boolean = false;
 
+  id!:number;
+  @Input() blog!: DataBlog;
+  data!: DataBlog;
   ngOnInit() {
 
+    this.rutaActiva.params.subscribe(
+      (params: Params) => {
+        this.id=+params['id'];
+        this.data=this.servicio.arrayblogs[this.id];
+  
+      }
+    );
+   
+     if(!this.data){
+      this.servicio.getBlogs().subscribe(
+        res=>{
+          this.data=res.data[this.id];
+        }
+      );
+     }
+
+ 
     this.getcomments();
+ 
   }
 
-  constructor(private fb: FormBuilder, private servicio: BlogService) {
+  constructor(private fb: FormBuilder, private rutaActiva: ActivatedRoute,private servicio:BlogService,private router:Router) {
     this.comments$ = this.servicio.dataBlogComments$
     this.createForm();
   }
 
   getcomments() {
-    console.log("id_blog: " + this.id_route);
+   
     this.servicio.getComments().subscribe(
       (res) => {
 
         for (let i of res.data) {
 
-          if (i.attributes.blog.data.id == this.id_blog) {
+          if (i.attributes.blog.data.id == this.blog.id) {
             this.arrayComments.push(i);
           }
 
         }
-        console.log(this.arrayComments);
+
         this.servicio.dataBlogComments$.next(this.arrayComments);
         this.servicio.arraycomments = this.arrayComments;
       });
@@ -58,18 +80,17 @@ export class ListCommentComponent implements OnInit {
 
         for (let i of res.data) {
 
-          if (i.attributes.blog.data.id == this.id_blog) {
+          if (i.attributes.blog.data.id == this.blog.id) {
             this.arrayComments.push(i);
           }
 
         }
-        console.log(this.arrayComments);
+    
         this.servicio.dataBlogComments$.next(this.arrayComments);
         this.servicio.arraycomments = this.arrayComments;
       });
-
+    this.updateDatos = false;
   }
-
 
   createForm() {
     this.formInfo = this.fb.group({
@@ -100,7 +121,7 @@ export class ListCommentComponent implements OnInit {
           "date": new Date().toISOString(),
           "favoritesCount": 0,
           "published": false,
-          "blog": this.servicio.arrayblogs[this.id_route]
+          "blog": this.servicio.arrayblogs[this.id]
 
         }
 
@@ -122,6 +143,12 @@ export class ListCommentComponent implements OnInit {
       this.showAlertError('Datos Incorrectos!');
     }
 
+  }
+
+  updateofResponse($event: boolean) {
+    this.updateDatos = $event;
+    this.updateComments();
+    this.updateDatos = false;
   }
   showAlertSuccess() {
     Swal.fire({
@@ -145,6 +172,6 @@ export class ListCommentComponent implements OnInit {
   }
   changeGuardarDatos() {
     this.guardarDatos = !this.guardarDatos;
-    console.log(this.guardarDatos);
+    
   }
 }

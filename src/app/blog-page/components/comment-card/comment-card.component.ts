@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DataBlogComment } from '../../model/comment.interface.model'
 import { BlogService } from '../../services/blog.service';
 
@@ -17,17 +17,19 @@ export class CommentCardComponent {
   @Input() data!: DataBlogComment;
   @Input() response!: boolean;
   @Input()  id_route!:number;
-  
+  @Output()  enviarResponse = new EventEmitter<boolean>();
+
   id_comment!: number;
   comment!: DataBlogComment;
   contador: any;
   favorited: boolean = false;
+  envio!:boolean;
 
   ngOnInit() {
 
     this.servicio.getCommentAllComments().subscribe(
       (res) => {
-        console.log(res.data);
+      
         for (let i of res.data) {
 
           if (i.id === this.data.id) {
@@ -47,7 +49,7 @@ export class CommentCardComponent {
 
   onToggleFavorite() {
     this.favorited = this.favorited ? false : true;
-    console.log("Favorite" + this.id_comment);
+    
     if (this.favorited) {
       let objeto = {
         "data": {
@@ -90,6 +92,10 @@ export class CommentCardComponent {
     }
 
   }
+  sendResponseForm($event: boolean){
+    this.envio = $event;
+    this.enviarResponse.emit(this.envio);
 
+  }
 
 }
