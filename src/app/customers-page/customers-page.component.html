@@ -1,3 +1,123 @@
 <app-header></app-header>
 <app-banner-pages></app-banner-pages>
+
+<ng-container *ngIf="{ cliBanca:cliBanca$ | async,
+  cliAseguradoras:cliAseguradoras$| async,
+  cliTelecomunicaciones:cliTelecomunicaciones$| async,
+  cliRetail:cliRetail$| async,
+  cliOtros:cliOtros$| async} as client">
+
+  <div *ngIf="client.cliBanca && client.cliAseguradoras && client.cliTelecomunicaciones && client.cliRetail && client.cliOtros">
+
+<div class="space"></div>
+
+  <div id="titulo" class="div-container text-center">
+    <h3 class="title">Sector Banca</h3>
+  </div>
+
+  <section id="seccion" class="div-container">
+    <div id="contenedor" class="div-container">
+      <div class="grid grid-cols-3 gap-4">
+        <div class="margin-box" *ngFor="let object of client.cliBanca.data">
+          <div>
+            <div class="image-boxes-holder">
+              <img
+                src="{{object.attributes.img.data.attributes.formats.small.url}}"
+                alt="{{object.attributes.img.data.attributes.alternativeText}}"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="titulo" class="div-container text-center">
+    <h3 class="title">Sector Aseguradoras y AFP´s</h3>
+  </div>
+
+  <section id="seccion" class="div-container">
+    <div id="contenedor" class="div-container">
+      <div class="grid grid-cols-3 gap-4">
+        <div class="margin-box" *ngFor="let object of client.cliAseguradoras.data">
+          <div>
+            <div class="image-boxes-holder">
+              <img
+                src="{{object.attributes.img.data.attributes.formats.small.url}}"
+                alt="{{object.attributes.img.data.attributes.alternativeText}}"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="titulo" class="div-container text-center">
+    <h3 class="title">Sector Telecomunicaciones</h3>
+  </div>
+
+  <section id="seccion" class="div-container">
+    <div id="contenedor" class="div-container">
+      <div class="grid grid-cols-3 gap-4">
+        <div class="margin-box" *ngFor="let object of client.cliTelecomunicaciones.data">
+          <div>
+            <div class="image-boxes-holder">
+              <img
+                src="{{object.attributes.img.data.attributes.formats.small.url}}"
+                alt="{{object.attributes.img.data.attributes.alternativeText}}"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="titulo" class="div-container text-center">
+    <h3 class="title">Sector Retail</h3>
+  </div>
+
+  <section id="seccion" class="div-container">
+    <div id="contenedor" class="div-container">
+      <div class="grid grid-cols-3 gap-4">
+        <div class="margin-box" *ngFor="let object of client.cliRetail.data">
+          <div>
+            <div class="image-boxes-holder">
+              <img
+                src="{{object.attributes.img.data.attributes.formats.small.url}}"
+                alt="{{object.attributes.img.data.attributes.alternativeText}}"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="titulo" class="div-container text-center">
+    <h3 class="title">Otros Sectores</h3>
+  </div>
+
+  <section id="seccion" class="div-container">
+    <div id="contenedor" class="div-container">
+      <div class="grid grid-cols-3 gap-4">
+        <div class="margin-box">
+          <div>
+            <div class="image-boxes-holder">
+              <img
+                src=""
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+</ng-container>
+
 <app-footer></app-footer>
