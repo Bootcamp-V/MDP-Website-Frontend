@@ -10,9 +10,7 @@ import { BannerPagesService } from 'src/app/shared/banner-pages/banner-pages.ser
   styleUrls: ['./certifications.component.scss'],
 })
 export class CertificationsComponent implements OnInit {
- 
-
- page: string = "certifications";
+  page: string = "certifications";
   banner!: IDataBP;
 
   certColaborators$!: Observable<ICertifications>;

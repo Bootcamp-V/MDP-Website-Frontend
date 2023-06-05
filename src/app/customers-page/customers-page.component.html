@@ -1,7 +1,12 @@
 <app-header></app-header>
 
-<ng-container>
-  <div>
+<ng-container *ngIf="{ cliBanca:cliBanca$ | async,
+                        cliAseguradoras:cliAseguradoras$| async,
+                        cliTelecomunicaciones:cliTelecomunicaciones$| async,
+                        cliRetail:cliRetail$| async,
+                        cliOtros:cliOtros$| async} as client">
+
+  <div *ngIf="client.cliBanca && client.cliAseguradoras && client.cliTelecomunicaciones && client.cliRetail && client.cliOtros">
   <div class="space"></div>
 
   <div id="titulo" class="div-container text-center">
@@ -11,12 +16,12 @@
   <section id="seccion" class="div-container">
     <div id="contenedor" class="div-container">
       <div class="grid grid-cols-3 gap-4">
-        <div class="margin-box">
+        <div class="margin-box" *ngFor="let object of client.cliBanca.data">
           <div>
             <div class="image-boxes-holder">
               <img
-                src=""
-                alt=""
+                src="{{object.attributes.img.data.attributes.formats.small.url}}"
+                alt="{{object.attributes.img.data.attributes.alternativeText}}"
               />
             </div>
           </div>
@@ -32,12 +37,12 @@
   <section id="seccion" class="div-container">
     <div id="contenedor" class="div-container">
       <div class="grid grid-cols-3 gap-4">
-        <div class="margin-box">
+        <div class="margin-box" *ngFor="let object of client.cliAseguradoras.data">
           <div>
             <div class="image-boxes-holder">
               <img
-                src=""
-                alt=""
+                src="{{object.attributes.img.data.attributes.formats.small.url}}"
+                alt="{{object.attributes.img.data.attributes.alternativeText}}"
               />
             </div>
           </div>
@@ -53,12 +58,12 @@
   <section id="seccion" class="div-container">
     <div id="contenedor" class="div-container">
       <div class="grid grid-cols-3 gap-4">
-        <div class="margin-box">
+        <div class="margin-box" *ngFor="let object of client.cliTelecomunicaciones.data">
           <div>
             <div class="image-boxes-holder">
               <img
-                src=""
-                alt=""
+                src="{{object.attributes.img.data.attributes.formats.small.url}}"
+                alt="{{object.attributes.img.data.attributes.alternativeText}}"
               />
             </div>
           </div>
@@ -74,12 +79,12 @@
   <section id="seccion" class="div-container">
     <div id="contenedor" class="div-container">
       <div class="grid grid-cols-3 gap-4">
-        <div class="margin-box">
+        <div class="margin-box" *ngFor="let object of client.cliRetail.data">
           <div>
             <div class="image-boxes-holder">
               <img
-                src=""
-                alt=""
+                src="{{object.attributes.img.data.attributes.formats.small.url}}"
+                alt="{{object.attributes.img.data.attributes.alternativeText}}"
               />
             </div>
           </div>
@@ -95,7 +100,7 @@
   <section id="seccion" class="div-container">
     <div id="contenedor" class="div-container">
       <div class="grid grid-cols-3 gap-4">
-        <div class="margin-box">
+        <div class="margin-box" *ngFor="let object of client.cliOtros.data">
           <div>
             <div class="image-boxes-holder">
               <img
@@ -107,9 +112,20 @@
         </div>
       </div>
     </div>
+
   </section>
+
+
 
 </div>
 </ng-container>
 
+<!-- <ng-template #loading>
+  <div class="justify-center content-center text-[20px] w-[70%] mx-auto mt-[40px]">
+      <p>Loading.......</p>
+     </div>
+</ng-template> -->
+
 <app-footer></app-footer>
+
+
