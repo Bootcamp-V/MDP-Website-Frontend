@@ -4,12 +4,12 @@
   <div class="comments-container" 
   *ngFor="let comment of c"
   >
-    <app-comment-card [data]="comment" [response]="false">
+    <app-comment-card [data]="comment" [response]="false" [id_route]="id_route">
     </app-comment-card>
 
     <div class="responses-container">
       <app-comment-card *ngFor="let response of comment.attributes.responses.data"
-      [data]="response" [response]="true">
+      [data]="response" [response]="true"  [id_route]="id_route">
         
       </app-comment-card>
     </div>

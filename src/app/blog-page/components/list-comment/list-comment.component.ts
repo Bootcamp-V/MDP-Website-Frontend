@@ -67,7 +67,7 @@ export class ListCommentComponent implements OnInit {
         this.servicio.dataBlogComments$.next(this.arrayComments);
         this.servicio.arraycomments = this.arrayComments;
       });
-    console.log(this.arrayComments);
+
   }
 
 

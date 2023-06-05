@@ -18,7 +18,6 @@ export class BlogService {
   dataBlogShare$!:Subject<IDetailShare>;
   arrayblogs:DataBlog[]=[];
 
-
   dataBlogComments$!:Subject<DataBlogComment[]>;
   arraycomments:DataBlogComment[]=[];
 

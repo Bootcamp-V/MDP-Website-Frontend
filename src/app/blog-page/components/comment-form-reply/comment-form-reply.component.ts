@@ -27,10 +27,14 @@ export class CommentFormReplyComponent {
   formInfo!: FormGroup;
   isSubmitting = false;
 
+  blog_id!:number;
+
   @Input() comment!: DataBlogComment;
+  @Input() id_route!: number;
 
   constructor(private fb: FormBuilder, private servicio: BlogService) {
     this.createForm();
+ 
   }
   createForm() {
     this.formInfo = this.fb.group({
@@ -61,7 +65,7 @@ export class CommentFormReplyComponent {
           "date": new Date().toISOString(),
           "favoritesCount": 0,
           "published": false,
-          "blog": this.comment.attributes.blog,
+          "blog": this.servicio.arrayblogs[this.id_route],
           "blog_comment": [ this.comment]
 
         }
@@ -72,7 +76,6 @@ export class CommentFormReplyComponent {
         next: (response) => {
           this.showAlertSuccess();
           this.formInfo.reset();
-
         },
         error: (error) => {
           this.showAlertError('Ocurrio un error al hacer la peticion!');

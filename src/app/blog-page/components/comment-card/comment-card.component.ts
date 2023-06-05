@@ -16,6 +16,7 @@ export class CommentCardComponent {
 
   @Input() data!: DataBlogComment;
   @Input() response!: boolean;
+  @Input()  id_route!:number;
   
   id_comment!: number;
   comment!: DataBlogComment;
