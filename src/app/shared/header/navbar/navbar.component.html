@@ -22,7 +22,7 @@
           <ul class="menu-class">
             <li class="main-list-item">
               <li class="main-list-item">
-                <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']" class="fx-hover"  routerLinkActive="router-link-active" (click)="reloadPage()">
+                <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']" class="fx-hover"  routerLinkActive="router-link-active" >
                   <span>{{ pages.data[0].attributes.name}}</span></a>
             </li>
             <li class="main-list-item">
@@ -151,7 +151,7 @@
       </li>
 
       <li class="menuppal-li">
-        <a class="fx-link" aria-current="page" [routerLink]="['/']"  (click)="reloadPage()">
+        <a class="fx-link" aria-current="page" [routerLink]="['/']"  >
           <span>{{ pages.data[0].attributes.name }} </span></a>
       </li>
 
