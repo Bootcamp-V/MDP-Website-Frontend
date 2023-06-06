@@ -102,12 +102,12 @@
   <section id="seccion" class="div-container">
     <div id="contenedor" class="div-container">
       <div class="grid grid-cols-3 gap-4">
-        <div class="margin-box">
+        <div class="margin-box" *ngFor="let object of client.cliOtros.data">
           <div>
             <div class="image-boxes-holder">
               <img
-                src=""
-                alt=""
+                src="{{object.attributes.img.data.attributes.url}}"
+                alt="{{object.attributes.img.data.attributes.alternativeText}}"
               />
             </div>
           </div>
