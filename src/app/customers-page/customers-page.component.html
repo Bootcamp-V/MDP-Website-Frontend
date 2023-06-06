@@ -1,5 +1,5 @@
 <app-header></app-header>
-
+<app-banner-pages></app-banner-pages>
 <ng-container *ngIf="{ cliBanca:cliBanca$ | async,
                         cliAseguradoras:cliAseguradoras$| async,
                         cliTelecomunicaciones:cliTelecomunicaciones$| async,
@@ -104,8 +104,8 @@
           <div>
             <div class="image-boxes-holder">
               <img
-                src=""
-                alt=""
+                src="{{object.attributes.img.data.attributes.url}}"
+                alt="{{object.attributes.img.data.attributes.alternativeText}}"
               />
             </div>
           </div>
@@ -120,11 +120,11 @@
 </div>
 </ng-container>
 
-<!-- <ng-template #loading>
+<ng-template #loading>
   <div class="justify-center content-center text-[20px] w-[70%] mx-auto mt-[40px]">
       <p>Loading.......</p>
      </div>
-</ng-template> -->
+</ng-template> 
 
 <app-footer></app-footer>
 

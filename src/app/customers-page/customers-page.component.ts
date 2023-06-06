@@ -11,7 +11,7 @@ import { CustomersService } from './services/customers.service';
   styleUrls: ['./customers-page.component.scss']
 })
 export class CustomersPageComponent implements OnInit {
-  page: string = "customers";
+  page: string = "Customers";
   banner!: IDataBP;
 
   cliBanca$!: Observable<ICustomers>;
@@ -38,7 +38,6 @@ export class CustomersPageComponent implements OnInit {
     this.cliOtros$ = this.serviceCustomers.getInfoCustomers('Otros');
 
   }
-
   getBannerPage() {
     this.servicio.getBannerPage().pipe(
       map((res) => {
@@ -55,6 +54,5 @@ export class CustomersPageComponent implements OnInit {
       this.servicio.bannerPages$.next(this.banner);
     });
   }
-
 
 }
