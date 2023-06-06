@@ -22,7 +22,7 @@
           <ul class="menu-class">
             <li class="main-list-item">
               <li class="main-list-item">
-                <a [routerLink]="['']" class="fx-hover"  routerLinkActive="router-link-active">
+                <a [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']" class="fx-hover"  routerLinkActive="router-link-active" >
                   <span>{{ pages.data[0].attributes.name}}</span></a>
             </li>
             <li class="main-list-item">
@@ -151,7 +151,7 @@
       </li>
 
       <li class="menuppal-li">
-        <a class="fx-link" aria-current="page" [routerLink]="['']">
+        <a class="fx-link" aria-current="page" [routerLink]="['/']"  >
           <span>{{ pages.data[0].attributes.name }} </span></a>
       </li>
 
@@ -169,28 +169,33 @@
           </li>
 
           <li class="menupal-item">
-            <a [routerLink]="['/servicios']" class="fx-link-items">
+            <a [routerLink]="['/servicios']" class="fx-link-items"
+            (click)="toogleSubMenuServices()" (click)="toogle()">
               <span>
                 {{ pages.data[1].attributes.sub_pages.data[0].attributes.name }}
               </span></a>
           </li>
           <li class="menupal-item">
-            <a [routerLink]="['/servicios/desarrollo-de-software']" class="fx-link-items"><span>
+            <a [routerLink]="['/servicios/desarrollo-de-software']" class="fx-link-items"
+            (click)="toogleSubMenuServices()" (click)="toogle()"><span>
                 {{ pages.data[1].attributes.sub_pages.data[1].attributes.name }}
               </span></a>
           </li>
           <li class="menupal-item">
-            <a [routerLink]="['/servicios/pruebas-de-software']" class="fx-link-items"><span>
+            <a [routerLink]="['/servicios/pruebas-de-software']" class="fx-link-items"
+            (click)="toogleSubMenuServices()" (click)="toogle()"><span>
                 {{ pages.data[1].attributes.sub_pages.data[2].attributes.name }}
               </span></a>
           </li>
           <li class="menupal-item">
-            <a [routerLink]="['/servicios/consultoria']" class="fx-link-items"><span>
+            <a [routerLink]="['/servicios/consultoria']" class="fx-link-items"
+            (click)="toogleSubMenuServices()" (click)="toogle()"><span>
                 {{ pages.data[1].attributes.sub_pages.data[3].attributes.name }}
               </span></a>
           </li>
           <li class="menupal-item">
-            <a [routerLink]="['/servicios/talento']" class="fx-link-items"><span>
+            <a [routerLink]="['/servicios/talento']" class="fx-link-items"
+            (click)="toogleSubMenuServices()" (click)="toogle()"><span>
                 {{ pages.data[1].attributes.sub_pages.data[4].attributes.name }}
               </span></a>
           </li>
@@ -210,37 +215,43 @@
             <a class="back-link" (click)="toogleSubMenuAbout()"> Back</a>
           </li>
           <li class="menupal-item">
-            <a [routerLink]="['/nosotros']" class="fx-link-items"><span>{{
+            <a [routerLink]="['/nosotros']" class="fx-link-items" (click)="toogleSubMenuAbout()" (click)="toogle()"><span>{{
                 pages.data[2].attributes.sub_pages.data[0].attributes.name
                 }}</span></a>
           </li>
           <li class="menupal-item">
-            <a [routerLink]="['/nosotros/vision-y-proposito']" class="fx-link-items"><span>{{
+            <a [routerLink]="['/nosotros/vision-y-proposito']" class="fx-link-items"
+            (click)="toogleSubMenuAbout()" (click)="toogle()" ><span>{{
                 pages.data[2].attributes.sub_pages.data[1].attributes.name
                 }}</span></a>
           </li>
           <li class="menupal-item">
-            <a [routerLink]="['/nosotros/historia']" class="fx-link-items"><span>{{
+            <a [routerLink]="['/nosotros/historia']" class="fx-link-items"
+            (click)="toogleSubMenuAbout()" (click)="toogle()"><span>{{
                 pages.data[2].attributes.sub_pages.data[2].attributes.name
                 }}</span></a>
           </li>
           <li class="menupal-item">
-            <a [routerLink]="['/nosotros/organizacion']" class="fx-link-items"><span>{{
+            <a [routerLink]="['/nosotros/organizacion']" class="fx-link-items"
+            (click)="toogleSubMenuAbout()" (click)="toogle()"><span>{{
                 pages.data[2].attributes.sub_pages.data[3].attributes.name
                 }}</span></a>
           </li>
           <li class="menupal-item">
-            <a [routerLink]="['/nosotros/modelo-de-negocio']" class="fx-link-items"><span>{{
+            <a [routerLink]="['/nosotros/modelo-de-negocio']" class="fx-link-items"
+            (click)="toogleSubMenuAbout()" (click)="toogle()"><span>{{
                 pages.data[2].attributes.sub_pages.data[4].attributes.name
                 }}</span></a>
           </li>
           <li class="menupal-item">
-            <a [routerLink]="['/nosotros/certificaciones']" class="fx-link-items"><span>{{
+            <a [routerLink]="['/nosotros/certificaciones']" class="fx-link-items"
+            (click)="toogleSubMenuAbout()" (click)="toogle()"><span>{{
                 pages.data[2].attributes.sub_pages.data[5].attributes.name
                 }}</span></a>
           </li>
           <li class="menupal-item">
-            <a [routerLink]="['/nosotros/sectores']" class="fx-link-items"><span>{{
+            <a [routerLink]="['/nosotros/sectores']" class="fx-link-items"
+            (click)="toogleSubMenuAbout()" (click)="toogle()"><span>{{
                 pages.data[2].attributes.sub_pages.data[6].attributes.name
                 }}</span></a>
           </li>
@@ -254,11 +265,11 @@
       </li>
 
       <li class="menuppal-li">
-        <a class="fx-link"><span>{{ pages.data[3].attributes.name }}</span></a>
+        <a class="fx-link" [routerLink]="['/clientes']"><span>{{ pages.data[3].attributes.name }}</span></a>
       </li>
 
       <li class="menuppal-li">
-        <a class="fx-link"><span>{{ pages.data[4].attributes.name }}</span></a>
+        <a class="fx-link" [routerLink]="['/blog']"><span>{{ pages.data[4].attributes.name }}</span></a>
       </li>
 
       <li class="menuppal-li">
@@ -274,17 +285,19 @@
             <a class="back-link" (click)="toogleSubMenuContact()"> Back</a>
           </li>
           <li class="menupal-item">
-            <a [routerLink]="['/contacto']" class="fx-link-items"><span>{{
+            <a [routerLink]="['/contacto']" class="fx-link-items" (click)="toogleSubMenuAbout()" (click)="toogle()"><span>{{
                 pages.data[5].attributes.sub_pages.data[0].attributes.name
                 }}</span></a>
           </li>
           <li class="menupal-item">
-            <a [routerLink]="['/contacto/derechos-arco']" class="fx-link-items"><span>{{
+            <a [routerLink]="['/contacto/derechos-arco']" class="fx-link-items" (click)="toogleSubMenuAbout()" (click)="toogle()"><span>{{
                 pages.data[5].attributes.sub_pages.data[1].attributes.name
                 }}</span></a>
           </li>
           <li class="menupal-item">
-            <a [routerLink]="['/contacto/libro-de-reclamaciones']" class="fx-link-items"><span>{{
+            <a [routerLink]="['/contacto/libro-de-reclamaciones']" class="fx-link-items"
+            (click)="toogleSubMenuAbout()" (click)="toogle()"
+            ><span>{{
                 pages.data[5].attributes.sub_pages.data[2].attributes.name
                 }}</span></a>
           </li>

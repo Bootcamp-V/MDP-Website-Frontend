@@ -1,6 +1,6 @@
-<h1 class="services-title-general">Nuestros Servicios</h1>
-<ng-container *ngIf="services$ | async as services">
 
+<ng-container *ngIf="services$ | async as services; else noBanner">
+  <h1 class="services-title-general">Nuestros Servicios</h1>
 
 <div *ngIf="services.data.length>=1" class="containerServices" >
 
@@ -14,12 +14,12 @@
       alt="{{colum.attributes.name}}"
     />
     <div class="title">
-      <a href="*">{{colum.attributes.name}}</a>
+      <a [routerLink]="['servicios/desarrollo-de-software']">{{colum.attributes.name}}</a>
     </div>
 
     <div class="container-button">
       <div class="btn">
-        <a class="btn-more" href="">Ver más</a>
+        <a  class="btn-more" [routerLink]="['servicios/desarrollo-de-software']">Ver más</a>
       </div>
     </div>
   </div>
@@ -36,12 +36,12 @@
         alt="{{colum.attributes.name}}"
       />
       <div class="title">
-        <a class="title-right" href="*">{{colum.attributes.name}}</a>
+        <a class="title-right" [routerLink]="['servicios/pruebas-de-software']">{{colum.attributes.name}}</a>
       </div>
 
       <div class="container-button">
         <div class="btn">
-          <a class="btn-more" href="">Ver más</a>
+          <a class="btn-more" [routerLink]="['servicios/pruebas-de-software']">Ver más</a>
         </div>
       </div>
     </div>
@@ -58,12 +58,12 @@
       alt="{{colum.attributes.name}}"
     />
     <div class="title">
-      <a class="title-right" href="*">{{colum.attributes.name}}</a>
+      <a class="title-right" [routerLink]="['servicios/consultoria']">{{colum.attributes.name}}</a>
     </div>
 
     <div class="container-button">
       <div class="btn">
-        <a class="btn-more" href="">Ver más</a>
+        <a class="btn-more" [routerLink]="['servicios/consultoria']">Ver más</a>
       </div>
     </div>
   </div>
@@ -81,12 +81,12 @@
       alt="{{colum.attributes.name}}"
     />
     <div class="title-last">
-      <a href="*">{{colum.attributes.name}}</a>
+      <a [routerLink]="['servicios/talento']">{{colum.attributes.name}}</a>
     </div>
 
     <div class="container-button">
       <div class="btn">
-        <a class="btn-more" href="">Ver más</a>
+        <a class="btn-more" [routerLink]="['servicios/talento']">Ver más</a>
       </div>
     </div>
   </div>
@@ -485,7 +485,11 @@
 </ng-container>
 
 
-
+<ng-template #noBanner>
+  <div class="container-loading">
+  <img class="logo-loading" src="https://res.cloudinary.com/dg80o93to/image/upload/v1685738117/Logo_preload_2_909f37fbc5.png" alt="mdp">
+  </div>
+</ng-template>
 
 
 

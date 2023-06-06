@@ -55,8 +55,16 @@ import { ContentFormComponent } from './contact-page/complaints-book/components/
 import { ImageComplaintsBookComponent } from './contact-page/complaints-book/components/image-complaints-book/image-complaints-book.component';
 import { ContactUsComponent } from './contact-page/contact-us/contact-us.component';
 import { ContactFormComponent } from './contact-page/components/contact-form/contact-form.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RightsArcoComponent } from './contact-page/rights-arco/rights-arco.component';
+import { ListBlogsComponent } from './blog-page/components/list-blogs/list-blogs.component';
+import { DetailBlogComponent } from './blog-page/components/detail-blog/detail-blog.component';
+import { CategoryComponent } from './blog-page/components/category/category.component';
+import { DetailBlogShareComponent } from './blog-page/components/detail-blog-share/detail-blog-share.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { CommentCardComponent } from './blog-page/components/comment-card/comment-card.component';
+import { ListCommentComponent } from './blog-page/components/list-comment/list-comment.component';
+import { CommentFormReplyComponent } from './blog-page/components/comment-form-reply/comment-form-reply.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -111,7 +119,16 @@ import { RightsArcoComponent } from './contact-page/rights-arco/rights-arco.comp
     ImageComplaintsBookComponent,
     ContactUsComponent,
     ContactFormComponent,
-    RightsArcoComponent
+    RightsArcoComponent,
+    ListBlogsComponent,
+    DetailBlogComponent,
+    CategoryComponent,
+    DetailBlogShareComponent,
+    CategoryComponent,
+    CommentCardComponent,
+    ListCommentComponent,
+    CommentCardComponent,
+    CommentFormReplyComponent
   ],
   imports: [
     BrowserModule,
@@ -119,6 +136,8 @@ import { RightsArcoComponent } from './contact-page/rights-arco/rights-arco.comp
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent],

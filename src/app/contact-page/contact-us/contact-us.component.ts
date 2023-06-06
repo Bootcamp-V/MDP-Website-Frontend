@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { IDataBP } from 'src/app/services-page/models/bannerPages.interface';
 import { BannerPagesService } from 'src/app/shared/banner-pages/banner-pages.service';
@@ -10,7 +10,7 @@ import { ContactPageService } from '../services/contact-page.service';
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.scss']
 })
-export class ContactUsComponent {
+export class ContactUsComponent implements OnInit{
   page: string = "Contact Us";
   banner!: IDataBP;
   dataCU!:IdataContactUs;

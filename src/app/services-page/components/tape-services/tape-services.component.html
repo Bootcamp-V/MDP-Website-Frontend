@@ -1,6 +1,6 @@
 <ng-container *ngIf="tapeCons$ | async as tc">
 <div class="different">
-    
+
     <div class="develop">
       <div class="text">
         <h1 class="text_2">{{tc.data[0].attributes.title}}</h1>
@@ -10,7 +10,7 @@
         </p>
       </div>
       <br><br>
-      <a class="btn_ourServices" href="*">{{tc.data[0].attributes.textButton}} </a>
+      <a class="btn_ourServices" [routerLink]="['/contacto']">{{tc.data[0].attributes.textButton}} </a>
     </div>
   </div>
 </ng-container>
