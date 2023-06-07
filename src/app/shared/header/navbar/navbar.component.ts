@@ -59,7 +59,9 @@ export class NavbarComponent implements OnInit {
     this.openSubmenuContact = !this.openSubmenuContact;
     this.submenuClass = (this.openSubmenuContact ? 'sub-menupal is-active' : 'sub-menupal')
   }
-
+  reloadPage(){
+    window.location.reload();
+  }
 }
 
 

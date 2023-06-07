@@ -448,7 +448,7 @@ ul.sub-menu {
     backface-visibility: hidden;
     border-color: rgba(0, 0, 0, .15);
     background-color: transparent;
-    width: 351px;
+    width: 90%;
   }
 
   .fx-link-items {
@@ -604,6 +604,7 @@ ul.sub-menu {
   .nav-container {
     margin-top: 50px;
   }
+ 
 }
 
 @media screen and (max-width: 450px) {
@@ -637,7 +638,7 @@ ul.sub-menu {
   .hamburger {
     left: 185px;
   }
-
+ 
 }
 
 @media screen and (max-width: 300px) {
